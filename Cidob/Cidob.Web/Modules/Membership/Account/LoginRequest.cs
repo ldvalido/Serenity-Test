@@ -10,7 +10,7 @@ namespace Cidob.Membership
     {
         [Placeholder("default username is 'admin'")]
         public string Username { get; set; }
-        [PasswordEditor, Placeholder("default password for 'admin' is 'serenity'"), Required(true)]
+        [PasswordEditor, Placeholder("default password for 'admin' is 'cidob123456'"), Required(true)]
         public string Password { get; set; }
     }
 }

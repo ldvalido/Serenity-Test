@@ -152,7 +152,7 @@ namespace Cidob
             public static class Layout
             {
                 public static LocalText FooterCopyright = "Copyright (c) 2015.";
-                public static LocalText FooterInfo = "Serenity Platform";
+                public static LocalText FooterInfo = "";
                 public static LocalText FooterRights = "All rights reserved.";
                 public static LocalText GeneralSettings = "General Settings";
                 public static LocalText Language = "Language";
