@@ -1,4 +1,7 @@
 {
     "Controls.Pager.Page": "Página",
-    "Forms.Membership.Login.FormTitle": "BIENVENIDOS A CIDOB Plantillas Online"
+    "Db.Administration.User.EntityPlural": "Usuarios",
+    "Db.Administration.User.EntitySingular": "Usuario",
+    "Forms.Membership.Login.FormTitle": "BIENVENIDOS A CIDOB Plantillas Online",
+    "Site.Layout.FooterCopyright": "Copyright (c) 2016."
 }
