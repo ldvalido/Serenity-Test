@@ -3,6 +3,7 @@
   <PropertyGroup>
     <UseIISExpress>true</UseIISExpress>
     <ToolsVersionPromptShown>2.1</ToolsVersionPromptShown>
+    <NameOfLastUsedPublishProfile>Local</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
