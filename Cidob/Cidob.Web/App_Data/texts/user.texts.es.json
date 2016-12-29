@@ -1,8 +1,13 @@
 {
+    "Controls.ColumnPickerDialog.HiddenColumns": "Columnas Ocultas",
+    "Controls.ColumnPickerDialog.RestoreDefaults": "Reestablecer Predeterminados",
+    "Controls.ColumnPickerDialog.Title": "Selector de Columnas",
+    "Controls.ColumnPickerDialog.VisibleColumns": "Columnas Visibles",
     "Controls.Pager.Page": "Página",
     "Db.Administration.User.EntityPlural": "Usuarios",
     "Db.Administration.User.EntitySingular": "Usuario",
     "Db.MasterData.Brand.Description": "Descripción",
+    "Db.MasterData.Brand.EntitySingular": "Marca",
     "Dialogs.YesButton": "Si",
     "Forms.Membership.Login.FormTitle": "BIENVENIDOS A CIDOB Plantillas Online",
     "Navigation.MasterData/Brand": "Marcas",
