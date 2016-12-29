@@ -1530,6 +1530,14 @@
     <TypeScriptCompile Include="Scripts\typings\slickgrid\slickgrid.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\sortablejs\sortablejs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
+    <Content Include="Modules\MasterData\Brand\BrandIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1705,6 +1713,12 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Brand\BrandRow.cs" />
+    <Compile Include="Modules\MasterData\Brand\BrandColumns.cs" />
+    <Compile Include="Modules\MasterData\Brand\BrandForm.cs" />
+    <Compile Include="Modules\MasterData\Brand\BrandRepository.cs" />
+    <Compile Include="Modules\MasterData\Brand\BrandEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Brand\BrandPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

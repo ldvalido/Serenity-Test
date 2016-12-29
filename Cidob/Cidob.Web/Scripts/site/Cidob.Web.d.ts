@@ -727,6 +727,49 @@ declare namespace Cidob {
         Serial?: string;
     }
 }
+declare namespace Cidob.MasterData {
+    class BrandForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface BrandForm {
+        Description: Serenity.StringEditor;
+        Enabled: Serenity.BooleanEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface BrandRow {
+        IdBrands?: number;
+        Description?: string;
+        Enabled?: boolean;
+    }
+    namespace BrandRow {
+        const idProperty = "IdBrands";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Brand";
+        namespace Fields {
+            const IdBrands: any;
+            const Description: any;
+            const Enabled: any;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace BrandService {
+        const baseUrl = "MasterData/Brand";
+        function Create(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BrandRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BrandRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace Cidob.Membership {
     class ChangePasswordForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -921,6 +964,42 @@ declare namespace Cidob.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace Cidob.MasterData {
+    class BrandDialog extends Serenity.EntityDialog<BrandRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: BrandForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class BrandEditor extends Common.GridEditorBase<BrandRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BrandEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class BrandEditorDialog extends Common.GridEditorDialog<BrandRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: BrandForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class BrandGrid extends Serenity.EntityGrid<BrandRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BrandDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace Cidob.Membership {

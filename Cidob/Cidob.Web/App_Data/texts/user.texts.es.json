@@ -2,6 +2,9 @@
     "Controls.Pager.Page": "Página",
     "Db.Administration.User.EntityPlural": "Usuarios",
     "Db.Administration.User.EntitySingular": "Usuario",
+    "Db.MasterData.Brand.Description": "Descripción",
+    "Dialogs.YesButton": "Si",
     "Forms.Membership.Login.FormTitle": "BIENVENIDOS A CIDOB Plantillas Online",
+    "Navigation.MasterData/Brand": "Marcas",
     "Site.Layout.FooterCopyright": "Copyright (c) 2016."
 }

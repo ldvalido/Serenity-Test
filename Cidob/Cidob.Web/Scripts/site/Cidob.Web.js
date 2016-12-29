@@ -1762,6 +1762,55 @@ var Cidob;
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BrandForm = (function (_super) {
+            __extends(BrandForm, _super);
+            function BrandForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BrandForm;
+        }(Serenity.PrefixedContext));
+        BrandForm.formKey = 'MasterData.Brand';
+        MasterData.BrandForm = BrandForm;
+        [['Description', function () { return Serenity.StringEditor; }], ['Enabled', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(BrandForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BrandRow;
+        (function (BrandRow) {
+            BrandRow.idProperty = 'IdBrands';
+            BrandRow.nameProperty = 'Description';
+            BrandRow.localTextPrefix = 'MasterData.Brand';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BrandRow.Fields || (BrandRow.Fields = {}));
+            ['IdBrands', 'Description', 'Enabled'].forEach(function (x) { return Fields[x] = x; });
+        })(BrandRow = MasterData.BrandRow || (MasterData.BrandRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BrandService;
+        (function (BrandService) {
+            BrandService.baseUrl = 'MasterData/Brand';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BrandService.Methods || (BrandService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BrandService[x] = function (r, s, o) { return Q.serviceRequest(BrandService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BrandService.baseUrl + '/' + x;
+            });
+        })(BrandService = MasterData.BrandService || (MasterData.BrandService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
     var Membership;
     (function (Membership) {
         var ChangePasswordForm = (function (_super) {
@@ -2390,6 +2439,98 @@ var Cidob;
         }());
         Common.UserPreferenceStorage = UserPreferenceStorage;
     })(Common = Cidob.Common || (Cidob.Common = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BrandDialog = (function (_super) {
+            __extends(BrandDialog, _super);
+            function BrandDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.BrandForm(_this.idPrefix);
+                return _this;
+            }
+            BrandDialog.prototype.getFormKey = function () { return MasterData.BrandForm.formKey; };
+            BrandDialog.prototype.getIdProperty = function () { return MasterData.BrandRow.idProperty; };
+            BrandDialog.prototype.getLocalTextPrefix = function () { return MasterData.BrandRow.localTextPrefix; };
+            BrandDialog.prototype.getNameProperty = function () { return MasterData.BrandRow.nameProperty; };
+            BrandDialog.prototype.getService = function () { return MasterData.BrandService.baseUrl; };
+            return BrandDialog;
+        }(Serenity.EntityDialog));
+        BrandDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BrandDialog);
+        MasterData.BrandDialog = BrandDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BrandEditor = (function (_super) {
+            __extends(BrandEditor, _super);
+            function BrandEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            BrandEditor.prototype.getColumnsKey = function () { return 'MasterData.Brand'; };
+            BrandEditor.prototype.getDialogType = function () { return MasterData.BrandEditorDialog; };
+            BrandEditor.prototype.getLocalTextPrefix = function () { return MasterData.BrandRow.localTextPrefix; };
+            return BrandEditor;
+        }(Cidob.Common.GridEditorBase));
+        BrandEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BrandEditor);
+        MasterData.BrandEditor = BrandEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BrandEditorDialog = (function (_super) {
+            __extends(BrandEditorDialog, _super);
+            function BrandEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.BrandForm(_this.idPrefix);
+                return _this;
+            }
+            BrandEditorDialog.prototype.getFormKey = function () { return MasterData.BrandForm.formKey; };
+            BrandEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.BrandRow.localTextPrefix; };
+            BrandEditorDialog.prototype.getNameProperty = function () { return MasterData.BrandRow.nameProperty; };
+            return BrandEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        BrandEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BrandEditorDialog);
+        MasterData.BrandEditorDialog = BrandEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BrandGrid = (function (_super) {
+            __extends(BrandGrid, _super);
+            function BrandGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            BrandGrid.prototype.getColumnsKey = function () { return 'MasterData.Brand'; };
+            BrandGrid.prototype.getDialogType = function () { return MasterData.BrandDialog; };
+            BrandGrid.prototype.getIdProperty = function () { return MasterData.BrandRow.idProperty; };
+            BrandGrid.prototype.getLocalTextPrefix = function () { return MasterData.BrandRow.localTextPrefix; };
+            BrandGrid.prototype.getService = function () { return MasterData.BrandService.baseUrl; };
+            return BrandGrid;
+        }(Serenity.EntityGrid));
+        BrandGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BrandGrid);
+        MasterData.BrandGrid = BrandGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
