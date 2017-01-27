@@ -1158,6 +1158,15 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <None Include="App_Data\texts\user.texts.en.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="App_Data\texts\user.texts.es.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\texts\user.texts.invariant.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Modules\Common\Imports\ServerTypings\ServerTypings.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1214,6 +1223,8 @@
     <Content Include="Scripts\ckeditor\README.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
+    <Content Include="Modules\MasterData\Arch\ArchIndex.cshtml" />
+    <None Include="Properties\PublishProfiles\FileCenter.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -1531,13 +1542,46 @@
     <TypeScriptCompile Include="Scripts\typings\sortablejs\sortablejs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
     <Content Include="Modules\MasterData\Brand\BrandIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\MasterData\Brand\BrandGrid.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Brand\BrandDialog.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Brand\BrandEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Brand\BrandEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Product\ProductIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ProductRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ProductService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ProductForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Product\ProductGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Product\ProductDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Product\ProductEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Product\ProductEditorDialog.ts" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ArchRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ArchService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ArchForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Arch\ArchGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Arch\ArchDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Arch\ArchEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Arch\ArchEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1659,6 +1703,12 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\MasterData\Arch\ArchColumns.cs" />
+    <Compile Include="Modules\MasterData\Arch\ArchEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Arch\ArchForm.cs" />
+    <Compile Include="Modules\MasterData\Arch\ArchPage.cs" />
+    <Compile Include="Modules\MasterData\Arch\ArchRepository.cs" />
+    <Compile Include="Modules\MasterData\Arch\ArchRow.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -1719,9 +1769,14 @@
     <Compile Include="Modules\MasterData\Brand\BrandRepository.cs" />
     <Compile Include="Modules\MasterData\Brand\BrandEndpoint.cs" />
     <Compile Include="Modules\MasterData\Brand\BrandPage.cs" />
+    <Compile Include="Modules\MasterData\Product\ProductRow.cs" />
+    <Compile Include="Modules\MasterData\Product\ProductColumns.cs" />
+    <Compile Include="Modules\MasterData\Product\ProductForm.cs" />
+    <Compile Include="Modules\MasterData\Product\ProductRepository.cs" />
+    <Compile Include="Modules\MasterData\Product\ProductEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Product\ProductPage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Scripts\typings\site\" />
   </ItemGroup>
   <ItemGroup>

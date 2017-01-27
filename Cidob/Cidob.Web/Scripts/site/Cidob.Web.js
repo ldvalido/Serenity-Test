@@ -1764,6 +1764,55 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var ArchForm = (function (_super) {
+            __extends(ArchForm, _super);
+            function ArchForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return ArchForm;
+        }(Serenity.PrefixedContext));
+        ArchForm.formKey = 'MasterData.Arch';
+        MasterData.ArchForm = ArchForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintDescription', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(ArchForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ArchRow;
+        (function (ArchRow) {
+            ArchRow.idProperty = 'Id';
+            ArchRow.nameProperty = 'Description';
+            ArchRow.localTextPrefix = 'MasterData.Arch';
+            var Fields;
+            (function (Fields) {
+            })(Fields = ArchRow.Fields || (ArchRow.Fields = {}));
+            ['Id', 'IdProduct', 'Order', 'Description', 'PrintDescription', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(ArchRow = MasterData.ArchRow || (MasterData.ArchRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ArchService;
+        (function (ArchService) {
+            ArchService.baseUrl = 'MasterData/Arch';
+            var Methods;
+            (function (Methods) {
+            })(Methods = ArchService.Methods || (ArchService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                ArchService[x] = function (r, s, o) { return Q.serviceRequest(ArchService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = ArchService.baseUrl + '/' + x;
+            });
+        })(ArchService = MasterData.ArchService || (MasterData.ArchService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var BrandForm = (function (_super) {
             __extends(BrandForm, _super);
             function BrandForm() {
@@ -1807,6 +1856,55 @@ var Cidob;
                 Methods[x] = BrandService.baseUrl + '/' + x;
             });
         })(BrandService = MasterData.BrandService || (MasterData.BrandService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ProductForm = (function (_super) {
+            __extends(ProductForm, _super);
+            function ProductForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return ProductForm;
+        }(Serenity.PrefixedContext));
+        ProductForm.formKey = 'MasterData.Product';
+        MasterData.ProductForm = ProductForm;
+        [['Description', function () { return Serenity.StringEditor; }], ['Code', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(ProductForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ProductRow;
+        (function (ProductRow) {
+            ProductRow.idProperty = 'IdProduct';
+            ProductRow.nameProperty = 'Description';
+            ProductRow.localTextPrefix = 'MasterData.Product';
+            var Fields;
+            (function (Fields) {
+            })(Fields = ProductRow.Fields || (ProductRow.Fields = {}));
+            ['IdProduct', 'Description', 'Code'].forEach(function (x) { return Fields[x] = x; });
+        })(ProductRow = MasterData.ProductRow || (MasterData.ProductRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ProductService;
+        (function (ProductService) {
+            ProductService.baseUrl = 'MasterData/Product';
+            var Methods;
+            (function (Methods) {
+            })(Methods = ProductService.Methods || (ProductService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                ProductService[x] = function (r, s, o) { return Q.serviceRequest(ProductService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = ProductService.baseUrl + '/' + x;
+            });
+        })(ProductService = MasterData.ProductService || (MasterData.ProductService = {}));
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -2444,6 +2542,98 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var ArchDialog = (function (_super) {
+            __extends(ArchDialog, _super);
+            function ArchDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.ArchForm(_this.idPrefix);
+                return _this;
+            }
+            ArchDialog.prototype.getFormKey = function () { return MasterData.ArchForm.formKey; };
+            ArchDialog.prototype.getIdProperty = function () { return MasterData.ArchRow.idProperty; };
+            ArchDialog.prototype.getLocalTextPrefix = function () { return MasterData.ArchRow.localTextPrefix; };
+            ArchDialog.prototype.getNameProperty = function () { return MasterData.ArchRow.nameProperty; };
+            ArchDialog.prototype.getService = function () { return MasterData.ArchService.baseUrl; };
+            return ArchDialog;
+        }(Serenity.EntityDialog));
+        ArchDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], ArchDialog);
+        MasterData.ArchDialog = ArchDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ArchEditor = (function (_super) {
+            __extends(ArchEditor, _super);
+            function ArchEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            ArchEditor.prototype.getColumnsKey = function () { return 'MasterData.Arch'; };
+            ArchEditor.prototype.getDialogType = function () { return MasterData.ArchEditorDialog; };
+            ArchEditor.prototype.getLocalTextPrefix = function () { return MasterData.ArchRow.localTextPrefix; };
+            return ArchEditor;
+        }(Cidob.Common.GridEditorBase));
+        ArchEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ArchEditor);
+        MasterData.ArchEditor = ArchEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ArchEditorDialog = (function (_super) {
+            __extends(ArchEditorDialog, _super);
+            function ArchEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.ArchForm(_this.idPrefix);
+                return _this;
+            }
+            ArchEditorDialog.prototype.getFormKey = function () { return MasterData.ArchForm.formKey; };
+            ArchEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.ArchRow.localTextPrefix; };
+            ArchEditorDialog.prototype.getNameProperty = function () { return MasterData.ArchRow.nameProperty; };
+            return ArchEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        ArchEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], ArchEditorDialog);
+        MasterData.ArchEditorDialog = ArchEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ArchGrid = (function (_super) {
+            __extends(ArchGrid, _super);
+            function ArchGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ArchGrid.prototype.getColumnsKey = function () { return 'MasterData.Arch'; };
+            ArchGrid.prototype.getDialogType = function () { return MasterData.ArchDialog; };
+            ArchGrid.prototype.getIdProperty = function () { return MasterData.ArchRow.idProperty; };
+            ArchGrid.prototype.getLocalTextPrefix = function () { return MasterData.ArchRow.localTextPrefix; };
+            ArchGrid.prototype.getService = function () { return MasterData.ArchService.baseUrl; };
+            return ArchGrid;
+        }(Serenity.EntityGrid));
+        ArchGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ArchGrid);
+        MasterData.ArchGrid = ArchGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var BrandDialog = (function (_super) {
             __extends(BrandDialog, _super);
             function BrandDialog() {
@@ -2530,6 +2720,98 @@ var Cidob;
             Serenity.Decorators.registerClass()
         ], BrandGrid);
         MasterData.BrandGrid = BrandGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ProductDialog = (function (_super) {
+            __extends(ProductDialog, _super);
+            function ProductDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.ProductForm(_this.idPrefix);
+                return _this;
+            }
+            ProductDialog.prototype.getFormKey = function () { return MasterData.ProductForm.formKey; };
+            ProductDialog.prototype.getIdProperty = function () { return MasterData.ProductRow.idProperty; };
+            ProductDialog.prototype.getLocalTextPrefix = function () { return MasterData.ProductRow.localTextPrefix; };
+            ProductDialog.prototype.getNameProperty = function () { return MasterData.ProductRow.nameProperty; };
+            ProductDialog.prototype.getService = function () { return MasterData.ProductService.baseUrl; };
+            return ProductDialog;
+        }(Serenity.EntityDialog));
+        ProductDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], ProductDialog);
+        MasterData.ProductDialog = ProductDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ProductEditor = (function (_super) {
+            __extends(ProductEditor, _super);
+            function ProductEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductEditor.prototype.getColumnsKey = function () { return 'MasterData.Product'; };
+            ProductEditor.prototype.getDialogType = function () { return MasterData.ProductEditorDialog; };
+            ProductEditor.prototype.getLocalTextPrefix = function () { return MasterData.ProductRow.localTextPrefix; };
+            return ProductEditor;
+        }(Cidob.Common.GridEditorBase));
+        ProductEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ProductEditor);
+        MasterData.ProductEditor = ProductEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ProductEditorDialog = (function (_super) {
+            __extends(ProductEditorDialog, _super);
+            function ProductEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.ProductForm(_this.idPrefix);
+                return _this;
+            }
+            ProductEditorDialog.prototype.getFormKey = function () { return MasterData.ProductForm.formKey; };
+            ProductEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.ProductRow.localTextPrefix; };
+            ProductEditorDialog.prototype.getNameProperty = function () { return MasterData.ProductRow.nameProperty; };
+            return ProductEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        ProductEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], ProductEditorDialog);
+        MasterData.ProductEditorDialog = ProductEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ProductGrid = (function (_super) {
+            __extends(ProductGrid, _super);
+            function ProductGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductGrid.prototype.getColumnsKey = function () { return 'MasterData.Product'; };
+            ProductGrid.prototype.getDialogType = function () { return MasterData.ProductDialog; };
+            ProductGrid.prototype.getIdProperty = function () { return MasterData.ProductRow.idProperty; };
+            ProductGrid.prototype.getLocalTextPrefix = function () { return MasterData.ProductRow.localTextPrefix; };
+            ProductGrid.prototype.getService = function () { return MasterData.ProductService.baseUrl; };
+            return ProductGrid;
+        }(Serenity.EntityGrid));
+        ProductGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ProductGrid);
+        MasterData.ProductGrid = ProductGrid;
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;

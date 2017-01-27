@@ -3,7 +3,8 @@
   <PropertyGroup>
     <UseIISExpress>true</UseIISExpress>
     <ToolsVersionPromptShown>2.1</ToolsVersionPromptShown>
-    <NameOfLastUsedPublishProfile>Local</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>FileCenter</NameOfLastUsedPublishProfile>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
