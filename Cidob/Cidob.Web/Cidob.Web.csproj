@@ -1590,6 +1590,14 @@
     <TypeScriptCompile Include="Modules\MasterData\Base\BaseDialog.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Base\BaseEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Base\BaseEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Cover\CoverIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.CoverRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.CoverService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.CoverForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Cover\CoverGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Cover\CoverDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Cover\CoverEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Cover\CoverEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1789,6 +1797,12 @@
     <Compile Include="Modules\MasterData\Base\BaseRepository.cs" />
     <Compile Include="Modules\MasterData\Base\BaseEndpoint.cs" />
     <Compile Include="Modules\MasterData\Base\BasePage.cs" />
+    <Compile Include="Modules\MasterData\Cover\CoverRow.cs" />
+    <Compile Include="Modules\MasterData\Cover\CoverColumns.cs" />
+    <Compile Include="Modules\MasterData\Cover\CoverForm.cs" />
+    <Compile Include="Modules\MasterData\Cover\CoverRepository.cs" />
+    <Compile Include="Modules\MasterData\Cover\CoverEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Cover\CoverPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

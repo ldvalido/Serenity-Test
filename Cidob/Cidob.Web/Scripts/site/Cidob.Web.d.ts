@@ -886,6 +886,59 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
+    class CoverForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface CoverForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface CoverRow {
+        IdCover?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace CoverRow {
+        const idProperty = "IdCover";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Cover";
+        namespace Fields {
+            const IdCover: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace CoverService {
+        const baseUrl = "MasterData/Cover";
+        function Create(request: Serenity.SaveRequest<CoverRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CoverRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CoverRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CoverRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
     class ProductForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -1226,6 +1279,42 @@ declare namespace Cidob.MasterData {
     class BrandGrid extends Serenity.EntityGrid<BrandRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof BrandDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class CoverDialog extends Serenity.EntityDialog<CoverRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CoverForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class CoverEditor extends Common.GridEditorBase<CoverRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CoverEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class CoverEditorDialog extends Common.GridEditorDialog<CoverRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: CoverForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class CoverGrid extends Serenity.EntityGrid<CoverRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CoverDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

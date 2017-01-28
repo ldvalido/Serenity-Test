@@ -1911,6 +1911,55 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var CoverForm = (function (_super) {
+            __extends(CoverForm, _super);
+            function CoverForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return CoverForm;
+        }(Serenity.PrefixedContext));
+        CoverForm.formKey = 'MasterData.Cover';
+        MasterData.CoverForm = CoverForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(CoverForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var CoverRow;
+        (function (CoverRow) {
+            CoverRow.idProperty = 'IdCover';
+            CoverRow.nameProperty = 'Description';
+            CoverRow.localTextPrefix = 'MasterData.Cover';
+            var Fields;
+            (function (Fields) {
+            })(Fields = CoverRow.Fields || (CoverRow.Fields = {}));
+            ['IdCover', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(CoverRow = MasterData.CoverRow || (MasterData.CoverRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var CoverService;
+        (function (CoverService) {
+            CoverService.baseUrl = 'MasterData/Cover';
+            var Methods;
+            (function (Methods) {
+            })(Methods = CoverService.Methods || (CoverService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                CoverService[x] = function (r, s, o) { return Q.serviceRequest(CoverService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = CoverService.baseUrl + '/' + x;
+            });
+        })(CoverService = MasterData.CoverService || (MasterData.CoverService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var ProductForm = (function (_super) {
             __extends(ProductForm, _super);
             function ProductForm() {
@@ -2861,6 +2910,98 @@ var Cidob;
             Serenity.Decorators.registerClass()
         ], BrandGrid);
         MasterData.BrandGrid = BrandGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var CoverDialog = (function (_super) {
+            __extends(CoverDialog, _super);
+            function CoverDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.CoverForm(_this.idPrefix);
+                return _this;
+            }
+            CoverDialog.prototype.getFormKey = function () { return MasterData.CoverForm.formKey; };
+            CoverDialog.prototype.getIdProperty = function () { return MasterData.CoverRow.idProperty; };
+            CoverDialog.prototype.getLocalTextPrefix = function () { return MasterData.CoverRow.localTextPrefix; };
+            CoverDialog.prototype.getNameProperty = function () { return MasterData.CoverRow.nameProperty; };
+            CoverDialog.prototype.getService = function () { return MasterData.CoverService.baseUrl; };
+            return CoverDialog;
+        }(Serenity.EntityDialog));
+        CoverDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], CoverDialog);
+        MasterData.CoverDialog = CoverDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var CoverEditor = (function (_super) {
+            __extends(CoverEditor, _super);
+            function CoverEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            CoverEditor.prototype.getColumnsKey = function () { return 'MasterData.Cover'; };
+            CoverEditor.prototype.getDialogType = function () { return MasterData.CoverEditorDialog; };
+            CoverEditor.prototype.getLocalTextPrefix = function () { return MasterData.CoverRow.localTextPrefix; };
+            return CoverEditor;
+        }(Cidob.Common.GridEditorBase));
+        CoverEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], CoverEditor);
+        MasterData.CoverEditor = CoverEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var CoverEditorDialog = (function (_super) {
+            __extends(CoverEditorDialog, _super);
+            function CoverEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.CoverForm(_this.idPrefix);
+                return _this;
+            }
+            CoverEditorDialog.prototype.getFormKey = function () { return MasterData.CoverForm.formKey; };
+            CoverEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.CoverRow.localTextPrefix; };
+            CoverEditorDialog.prototype.getNameProperty = function () { return MasterData.CoverRow.nameProperty; };
+            return CoverEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        CoverEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], CoverEditorDialog);
+        MasterData.CoverEditorDialog = CoverEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var CoverGrid = (function (_super) {
+            __extends(CoverGrid, _super);
+            function CoverGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            CoverGrid.prototype.getColumnsKey = function () { return 'MasterData.Cover'; };
+            CoverGrid.prototype.getDialogType = function () { return MasterData.CoverDialog; };
+            CoverGrid.prototype.getIdProperty = function () { return MasterData.CoverRow.idProperty; };
+            CoverGrid.prototype.getLocalTextPrefix = function () { return MasterData.CoverRow.localTextPrefix; };
+            CoverGrid.prototype.getService = function () { return MasterData.CoverService.baseUrl; };
+            return CoverGrid;
+        }(Serenity.EntityGrid));
+        CoverGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], CoverGrid);
+        MasterData.CoverGrid = CoverGrid;
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;

@@ -7485,3 +7485,15 @@ section.content > .s-DataGrid {
 .s-MasterData-BaseDialog .caption {
   width: 150px;
 }
+.s-MasterData-CoverDialog > .size {
+  width: 650px;
+}
+.s-MasterData-CoverDialog .caption {
+  width: 150px;
+}
+.s-MasterData-CoverDialog > .size {
+  width: 650px;
+}
+.s-MasterData-CoverDialog .caption {
+  width: 150px;
+}
