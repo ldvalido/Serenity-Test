@@ -7497,3 +7497,9 @@ section.content > .s-DataGrid {
 .s-MasterData-CoverDialog .caption {
   width: 150px;
 }
+.s-MasterData-TransversalArchDialog > .size {
+  width: 650px;
+}
+.s-MasterData-TransversalArchDialog .caption {
+  width: 150px;
+}

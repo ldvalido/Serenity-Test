@@ -981,6 +981,59 @@ declare namespace Cidob.MasterData {
         }
     }
 }
+declare namespace Cidob.MasterData {
+    class TransversalArchForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface TransversalArchForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface TransversalArchRow {
+        IdTransversalArch?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace TransversalArchRow {
+        const idProperty = "IdTransversalArch";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.TransversalArch";
+        namespace Fields {
+            const IdTransversalArch: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace TransversalArchService {
+        const baseUrl = "MasterData/TransversalArch";
+        function Create(request: Serenity.SaveRequest<TransversalArchRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TransversalArchRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TransversalArchRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TransversalArchRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace Cidob.Membership {
     class ChangePasswordForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1351,6 +1404,42 @@ declare namespace Cidob.MasterData {
     class ProductGrid extends Serenity.EntityGrid<ProductRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof ProductDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class TransversalArchDialog extends Serenity.EntityDialog<TransversalArchRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: TransversalArchForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class TransversalArchEditor extends Common.GridEditorBase<TransversalArchRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TransversalArchEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class TransversalArchEditorDialog extends Common.GridEditorDialog<TransversalArchRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: TransversalArchForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class TransversalArchGrid extends Serenity.EntityGrid<TransversalArchRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TransversalArchDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

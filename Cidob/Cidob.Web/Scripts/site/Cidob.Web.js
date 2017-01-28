@@ -2007,6 +2007,55 @@ var Cidob;
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TransversalArchForm = (function (_super) {
+            __extends(TransversalArchForm, _super);
+            function TransversalArchForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return TransversalArchForm;
+        }(Serenity.PrefixedContext));
+        TransversalArchForm.formKey = 'MasterData.TransversalArch';
+        MasterData.TransversalArchForm = TransversalArchForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(TransversalArchForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TransversalArchRow;
+        (function (TransversalArchRow) {
+            TransversalArchRow.idProperty = 'IdTransversalArch';
+            TransversalArchRow.nameProperty = 'Description';
+            TransversalArchRow.localTextPrefix = 'MasterData.TransversalArch';
+            var Fields;
+            (function (Fields) {
+            })(Fields = TransversalArchRow.Fields || (TransversalArchRow.Fields = {}));
+            ['IdTransversalArch', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(TransversalArchRow = MasterData.TransversalArchRow || (MasterData.TransversalArchRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TransversalArchService;
+        (function (TransversalArchService) {
+            TransversalArchService.baseUrl = 'MasterData/TransversalArch';
+            var Methods;
+            (function (Methods) {
+            })(Methods = TransversalArchService.Methods || (TransversalArchService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                TransversalArchService[x] = function (r, s, o) { return Q.serviceRequest(TransversalArchService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = TransversalArchService.baseUrl + '/' + x;
+            });
+        })(TransversalArchService = MasterData.TransversalArchService || (MasterData.TransversalArchService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
     var Membership;
     (function (Membership) {
         var ChangePasswordForm = (function (_super) {
@@ -3094,6 +3143,98 @@ var Cidob;
             Serenity.Decorators.registerClass()
         ], ProductGrid);
         MasterData.ProductGrid = ProductGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TransversalArchDialog = (function (_super) {
+            __extends(TransversalArchDialog, _super);
+            function TransversalArchDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.TransversalArchForm(_this.idPrefix);
+                return _this;
+            }
+            TransversalArchDialog.prototype.getFormKey = function () { return MasterData.TransversalArchForm.formKey; };
+            TransversalArchDialog.prototype.getIdProperty = function () { return MasterData.TransversalArchRow.idProperty; };
+            TransversalArchDialog.prototype.getLocalTextPrefix = function () { return MasterData.TransversalArchRow.localTextPrefix; };
+            TransversalArchDialog.prototype.getNameProperty = function () { return MasterData.TransversalArchRow.nameProperty; };
+            TransversalArchDialog.prototype.getService = function () { return MasterData.TransversalArchService.baseUrl; };
+            return TransversalArchDialog;
+        }(Serenity.EntityDialog));
+        TransversalArchDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], TransversalArchDialog);
+        MasterData.TransversalArchDialog = TransversalArchDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TransversalArchEditor = (function (_super) {
+            __extends(TransversalArchEditor, _super);
+            function TransversalArchEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            TransversalArchEditor.prototype.getColumnsKey = function () { return 'MasterData.TransversalArch'; };
+            TransversalArchEditor.prototype.getDialogType = function () { return MasterData.TransversalArchEditorDialog; };
+            TransversalArchEditor.prototype.getLocalTextPrefix = function () { return MasterData.TransversalArchRow.localTextPrefix; };
+            return TransversalArchEditor;
+        }(Cidob.Common.GridEditorBase));
+        TransversalArchEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], TransversalArchEditor);
+        MasterData.TransversalArchEditor = TransversalArchEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TransversalArchEditorDialog = (function (_super) {
+            __extends(TransversalArchEditorDialog, _super);
+            function TransversalArchEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.TransversalArchForm(_this.idPrefix);
+                return _this;
+            }
+            TransversalArchEditorDialog.prototype.getFormKey = function () { return MasterData.TransversalArchForm.formKey; };
+            TransversalArchEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.TransversalArchRow.localTextPrefix; };
+            TransversalArchEditorDialog.prototype.getNameProperty = function () { return MasterData.TransversalArchRow.nameProperty; };
+            return TransversalArchEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        TransversalArchEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], TransversalArchEditorDialog);
+        MasterData.TransversalArchEditorDialog = TransversalArchEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TransversalArchGrid = (function (_super) {
+            __extends(TransversalArchGrid, _super);
+            function TransversalArchGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            TransversalArchGrid.prototype.getColumnsKey = function () { return 'MasterData.TransversalArch'; };
+            TransversalArchGrid.prototype.getDialogType = function () { return MasterData.TransversalArchDialog; };
+            TransversalArchGrid.prototype.getIdProperty = function () { return MasterData.TransversalArchRow.idProperty; };
+            TransversalArchGrid.prototype.getLocalTextPrefix = function () { return MasterData.TransversalArchRow.localTextPrefix; };
+            TransversalArchGrid.prototype.getService = function () { return MasterData.TransversalArchService.baseUrl; };
+            return TransversalArchGrid;
+        }(Serenity.EntityGrid));
+        TransversalArchGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], TransversalArchGrid);
+        MasterData.TransversalArchGrid = TransversalArchGrid;
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;

@@ -35,6 +35,13 @@
     "Db.MasterData.Product.EntityPlural": "Productos",
     "Db.MasterData.Product.EntitySingular": "Producto",
     "Db.MasterData.Product.IdProduct": "ID",
+    "Db.MasterData.TransversalArch.Description": "Descripción",
+    "Db.MasterData.TransversalArch.EntityPlural": "Contra Arcos",
+    "Db.MasterData.TransversalArch.EntitySingular": "Contra Arco",
+    "Db.MasterData.TransversalArch.IdProduct": "Producto",
+    "Db.MasterData.TransversalArch.IdProductDescription": "Producto",
+    "Db.MasterData.TransversalArch.Order": "Orden",
+    "Db.MasterData.TransversalArch.PrintName": "Impresión",
     "Dialogs.YesButton": "Si",
     "Forms.Membership.Login.FormTitle": "BIENVENIDOS A CIDOB Plantillas Online",
     "Navigation.Administration": "Administración",
@@ -45,6 +52,7 @@
     "Navigation.MasterData/Brand": "Marcas",
     "Navigation.MasterData/Cover": "Cobertura",
     "Navigation.MasterData/Product": "Productos",
+    "Navigation.MasterData/TransversalArch": "Contra Arco",
     "Permission.Administration:Translation": "Lenguajes y Traducciones",
     "Site.Layout.FooterCopyright": "Copyright (c) 2016."
 }
