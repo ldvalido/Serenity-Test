@@ -781,6 +781,68 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
+    class BaseForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface BaseForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+        From: Serenity.IntegerEditor;
+        To: Serenity.IntegerEditor;
+        Escatola: Serenity.BooleanEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface BaseRow {
+        IdBase?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        From?: number;
+        To?: number;
+        Escatola?: boolean;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace BaseRow {
+        const idProperty = "IdBase";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Base";
+        namespace Fields {
+            const IdBase: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const From: any;
+            const To: any;
+            const Escatola: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace BaseService {
+        const baseUrl = "MasterData/Base";
+        function Create(request: Serenity.SaveRequest<BaseRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BaseRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BaseRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BaseRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
     class BrandForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -1092,6 +1154,42 @@ declare namespace Cidob.MasterData {
     class ArchGrid extends Serenity.EntityGrid<ArchRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof ArchDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class BaseDialog extends Serenity.EntityDialog<BaseRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: BaseForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class BaseEditor extends Common.GridEditorBase<BaseRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BaseEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class BaseEditorDialog extends Common.GridEditorDialog<BaseRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: BaseForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class BaseGrid extends Serenity.EntityGrid<BaseRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BaseDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

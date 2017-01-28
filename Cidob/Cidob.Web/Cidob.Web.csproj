@@ -1582,6 +1582,14 @@
     <TypeScriptCompile Include="Modules\MasterData\Arch\ArchDialog.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Arch\ArchEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Arch\ArchEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Base\BaseIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Base\BaseGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Base\BaseDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Base\BaseEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Base\BaseEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1775,6 +1783,12 @@
     <Compile Include="Modules\MasterData\Product\ProductRepository.cs" />
     <Compile Include="Modules\MasterData\Product\ProductEndpoint.cs" />
     <Compile Include="Modules\MasterData\Product\ProductPage.cs" />
+    <Compile Include="Modules\MasterData\Base\BaseRow.cs" />
+    <Compile Include="Modules\MasterData\Base\BaseColumns.cs" />
+    <Compile Include="Modules\MasterData\Base\BaseForm.cs" />
+    <Compile Include="Modules\MasterData\Base\BaseRepository.cs" />
+    <Compile Include="Modules\MasterData\Base\BaseEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Base\BasePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

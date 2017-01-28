@@ -1813,6 +1813,55 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var BaseForm = (function (_super) {
+            __extends(BaseForm, _super);
+            function BaseForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BaseForm;
+        }(Serenity.PrefixedContext));
+        BaseForm.formKey = 'MasterData.Base';
+        MasterData.BaseForm = BaseForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }], ['From', function () { return Serenity.IntegerEditor; }], ['To', function () { return Serenity.IntegerEditor; }], ['Escatola', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(BaseForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseRow;
+        (function (BaseRow) {
+            BaseRow.idProperty = 'IdBase';
+            BaseRow.nameProperty = 'Description';
+            BaseRow.localTextPrefix = 'MasterData.Base';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BaseRow.Fields || (BaseRow.Fields = {}));
+            ['IdBase', 'IdProduct', 'Order', 'Description', 'PrintName', 'From', 'To', 'Escatola', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(BaseRow = MasterData.BaseRow || (MasterData.BaseRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseService;
+        (function (BaseService) {
+            BaseService.baseUrl = 'MasterData/Base';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BaseService.Methods || (BaseService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BaseService[x] = function (r, s, o) { return Q.serviceRequest(BaseService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BaseService.baseUrl + '/' + x;
+            });
+        })(BaseService = MasterData.BaseService || (MasterData.BaseService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var BrandForm = (function (_super) {
             __extends(BrandForm, _super);
             function BrandForm() {
@@ -2628,6 +2677,98 @@ var Cidob;
             Serenity.Decorators.registerClass()
         ], ArchGrid);
         MasterData.ArchGrid = ArchGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseDialog = (function (_super) {
+            __extends(BaseDialog, _super);
+            function BaseDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.BaseForm(_this.idPrefix);
+                return _this;
+            }
+            BaseDialog.prototype.getFormKey = function () { return MasterData.BaseForm.formKey; };
+            BaseDialog.prototype.getIdProperty = function () { return MasterData.BaseRow.idProperty; };
+            BaseDialog.prototype.getLocalTextPrefix = function () { return MasterData.BaseRow.localTextPrefix; };
+            BaseDialog.prototype.getNameProperty = function () { return MasterData.BaseRow.nameProperty; };
+            BaseDialog.prototype.getService = function () { return MasterData.BaseService.baseUrl; };
+            return BaseDialog;
+        }(Serenity.EntityDialog));
+        BaseDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseDialog);
+        MasterData.BaseDialog = BaseDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseEditor = (function (_super) {
+            __extends(BaseEditor, _super);
+            function BaseEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseEditor.prototype.getColumnsKey = function () { return 'MasterData.Base'; };
+            BaseEditor.prototype.getDialogType = function () { return MasterData.BaseEditorDialog; };
+            BaseEditor.prototype.getLocalTextPrefix = function () { return MasterData.BaseRow.localTextPrefix; };
+            return BaseEditor;
+        }(Cidob.Common.GridEditorBase));
+        BaseEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseEditor);
+        MasterData.BaseEditor = BaseEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseEditorDialog = (function (_super) {
+            __extends(BaseEditorDialog, _super);
+            function BaseEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.BaseForm(_this.idPrefix);
+                return _this;
+            }
+            BaseEditorDialog.prototype.getFormKey = function () { return MasterData.BaseForm.formKey; };
+            BaseEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.BaseRow.localTextPrefix; };
+            BaseEditorDialog.prototype.getNameProperty = function () { return MasterData.BaseRow.nameProperty; };
+            return BaseEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        BaseEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseEditorDialog);
+        MasterData.BaseEditorDialog = BaseEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseGrid = (function (_super) {
+            __extends(BaseGrid, _super);
+            function BaseGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseGrid.prototype.getColumnsKey = function () { return 'MasterData.Base'; };
+            BaseGrid.prototype.getDialogType = function () { return MasterData.BaseDialog; };
+            BaseGrid.prototype.getIdProperty = function () { return MasterData.BaseRow.idProperty; };
+            BaseGrid.prototype.getLocalTextPrefix = function () { return MasterData.BaseRow.localTextPrefix; };
+            BaseGrid.prototype.getService = function () { return MasterData.BaseService.baseUrl; };
+            return BaseGrid;
+        }(Serenity.EntityGrid));
+        BaseGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseGrid);
+        MasterData.BaseGrid = BaseGrid;
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
