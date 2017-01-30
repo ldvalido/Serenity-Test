@@ -764,6 +764,71 @@ declare namespace Cidob.Default {
         }
     }
 }
+declare namespace Cidob.Default {
+    class BaseTransversalArchForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface BaseTransversalArchForm {
+        IdTransversalArch: Serenity.IntegerEditor;
+    }
+}
+declare namespace Cidob.Default {
+    interface BaseTransversalArchRow {
+        IdBase?: number;
+        IdTransversalArch?: number;
+        IdBaseIdProduct?: number;
+        IdBaseOrder?: number;
+        IdBaseDescription?: string;
+        IdBasePrintName?: string;
+        IdBaseFrom?: number;
+        IdBaseTo?: number;
+        IdBaseEscatola?: boolean;
+        IdBaseNeedArch?: boolean;
+        IdBaseNeedTransversalArch?: boolean;
+        IdTransversalArchIdProduct?: number;
+        IdTransversalArchOrder?: number;
+        IdTransversalArchDescription?: string;
+        IdTransversalArchPrintName?: string;
+    }
+    namespace BaseTransversalArchRow {
+        const idProperty = "IdBase";
+        const localTextPrefix = "Default.BaseTransversalArch";
+        namespace Fields {
+            const IdBase: any;
+            const IdTransversalArch: any;
+            const IdBaseIdProduct: string;
+            const IdBaseOrder: string;
+            const IdBaseDescription: string;
+            const IdBasePrintName: string;
+            const IdBaseFrom: string;
+            const IdBaseTo: string;
+            const IdBaseEscatola: string;
+            const IdBaseNeedArch: string;
+            const IdBaseNeedTransversalArch: string;
+            const IdTransversalArchIdProduct: string;
+            const IdTransversalArchOrder: string;
+            const IdTransversalArchDescription: string;
+            const IdTransversalArchPrintName: string;
+        }
+    }
+}
+declare namespace Cidob.Default {
+    namespace BaseTransversalArchService {
+        const baseUrl = "Default/BaseTransversalArch";
+        function Create(request: Serenity.SaveRequest<BaseTransversalArchRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BaseTransversalArchRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BaseTransversalArchRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BaseTransversalArchRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace Cidob {
     interface ExcelImportRequest extends Serenity.ServiceRequest {
         FileName?: string;
@@ -971,6 +1036,71 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
+    class BaseTransversalArchForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface BaseTransversalArchForm {
+        IdTransversalArch: Serenity.IntegerEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface BaseTransversalArchRow {
+        IdBase?: number;
+        IdTransversalArch?: number;
+        IdBaseIdProduct?: number;
+        IdBaseOrder?: number;
+        IdBaseDescription?: string;
+        IdBasePrintName?: string;
+        IdBaseFrom?: number;
+        IdBaseTo?: number;
+        IdBaseEscatola?: boolean;
+        IdBaseNeedArch?: boolean;
+        IdBaseNeedTransversalArch?: boolean;
+        IdTransversalArchIdProduct?: number;
+        IdTransversalArchOrder?: number;
+        IdTransversalArchDescription?: string;
+        IdTransversalArchPrintName?: string;
+    }
+    namespace BaseTransversalArchRow {
+        const idProperty = "IdBase";
+        const localTextPrefix = "MasterData.BaseTransversalArch";
+        namespace Fields {
+            const IdBase: any;
+            const IdTransversalArch: any;
+            const IdBaseIdProduct: string;
+            const IdBaseOrder: string;
+            const IdBaseDescription: string;
+            const IdBasePrintName: string;
+            const IdBaseFrom: string;
+            const IdBaseTo: string;
+            const IdBaseEscatola: string;
+            const IdBaseNeedArch: string;
+            const IdBaseNeedTransversalArch: string;
+            const IdTransversalArchIdProduct: string;
+            const IdTransversalArchOrder: string;
+            const IdTransversalArchDescription: string;
+            const IdTransversalArchPrintName: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace BaseTransversalArchService {
+        const baseUrl = "MasterData/BaseTransversalArch";
+        function Create(request: Serenity.SaveRequest<BaseTransversalArchRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BaseTransversalArchRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BaseTransversalArchRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BaseTransversalArchRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
     class BrandForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -1057,6 +1187,49 @@ declare namespace Cidob.MasterData {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CoverRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CoverRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    class GroupForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface GroupForm {
+        Description: Serenity.StringEditor;
+        Enabled: Serenity.BooleanEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface GroupRow {
+        IdBrands?: number;
+        Description?: string;
+        Enabled?: boolean;
+    }
+    namespace GroupRow {
+        const idProperty = "IdBrands";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Group";
+        namespace Fields {
+            const IdBrands: any;
+            const Description: any;
+            const Enabled: any;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace GroupService {
+        const baseUrl = "MasterData/Group";
+        function Create(request: Serenity.SaveRequest<GroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GroupRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GroupRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const Create: string;
             const Update: string;
@@ -1432,42 +1605,6 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
-    class BrandDialog extends Serenity.EntityDialog<BrandRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: BrandForm;
-    }
-}
-declare namespace Cidob.MasterData {
-    class BrandEditor extends Common.GridEditorBase<BrandRow> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof BrandEditorDialog;
-        protected getLocalTextPrefix(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Cidob.MasterData {
-    class BrandEditorDialog extends Common.GridEditorDialog<BrandRow> {
-        protected getFormKey(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected form: BrandForm;
-    }
-}
-declare namespace Cidob.MasterData {
-    class BrandGrid extends Serenity.EntityGrid<BrandRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof BrandDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Cidob.MasterData {
     class CoverDialog extends Serenity.EntityDialog<CoverRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1497,6 +1634,42 @@ declare namespace Cidob.MasterData {
     class CoverGrid extends Serenity.EntityGrid<CoverRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof CoverDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class GroupDialog extends Serenity.EntityDialog<GroupRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: GroupForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class GroupEditor extends Common.GridEditorBase<GroupRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GroupEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class GroupEditorDialog extends Common.GridEditorDialog<GroupRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: GroupForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class GroupGrid extends Serenity.EntityGrid<GroupRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GroupDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

@@ -11,8 +11,9 @@ namespace Cidob.MasterData.Entities
     using System.IO;
 
     [ConnectionKey("Default"), DisplayName("Cover"), InstanceName("Cover"), TwoLevelCached]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("MasterData:Cover")]
+    [ModifyPermission("MasterData:Cover")]
+
     public sealed class CoverRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Cover"), Identity]
@@ -30,7 +31,7 @@ namespace Cidob.MasterData.Entities
             set { Fields.IdProduct[this] = value; }
         }
 
-        [DisplayName("Order"), NotNull]
+        [DisplayName("Order")]
         public Int32? Order
         {
             get { return Fields.Order[this]; }
@@ -44,7 +45,7 @@ namespace Cidob.MasterData.Entities
             set { Fields.Description[this] = value; }
         }
 
-        [DisplayName("Print Name"), Size(50)]
+        [DisplayName("Print Name"), Size(50),NotNull]
         public String PrintName
         {
             get { return Fields.PrintName[this]; }

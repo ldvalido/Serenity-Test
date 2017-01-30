@@ -10,11 +10,10 @@ namespace Cidob.MasterData.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("Default"), DisplayName("Marcas"), InstanceName("Brand"), TwoLevelCached]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
-    [LookupScript("MasterData.BrandRow")]
-    public sealed class BrandRow : Row, IIdRow, INameRow
+    [ConnectionKey("Default"), DisplayName("Brand"), InstanceName("Brand"), TwoLevelCached]
+    [ReadPermission("MasterData:Group")]
+    [ModifyPermission("MasterData:Group")]
+    public sealed class GroupRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Brands"), Identity]
         public Int32? IdBrands
@@ -30,7 +29,7 @@ namespace Cidob.MasterData.Entities
             set { Fields.Description[this] = value; }
         }
 
-        [DisplayName("Activo"), NotNull]
+        [DisplayName("Enabled"), NotNull]
         public Boolean? Enabled
         {
             get { return Fields.Enabled[this]; }
@@ -49,7 +48,7 @@ namespace Cidob.MasterData.Entities
 
         public static readonly RowFields Fields = new RowFields().Init();
 
-        public BrandRow()
+        public GroupRow()
             : base(Fields)
         {
         }
@@ -63,7 +62,7 @@ namespace Cidob.MasterData.Entities
             public RowFields()
                 : base("[dbo].[Brand]")
             {
-                LocalTextPrefix = "MasterData.Brand";
+                LocalTextPrefix = "MasterData.Group";
             }
         }
     }

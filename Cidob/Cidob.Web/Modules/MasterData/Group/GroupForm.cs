@@ -1,5 +1,5 @@
 ﻿
-namespace Cidob.MasterData.Columns
+namespace Cidob.MasterData.Forms
 {
     using Serenity;
     using Serenity.ComponentModel;
@@ -9,13 +9,10 @@ namespace Cidob.MasterData.Columns
     using System.Collections.Generic;
     using System.IO;
 
-    [ColumnsScript("MasterData.Brand")]
-    [BasedOnRow(typeof(Entities.BrandRow))]
-    public class BrandColumns
+    [FormScript("MasterData.Group")]
+    [BasedOnRow(typeof(Entities.GroupRow))]
+    public class GroupForm
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public Int32 IdBrands { get; set; }
-        [EditLink]
         public String Description { get; set; }
         public Boolean Enabled { get; set; }
     }

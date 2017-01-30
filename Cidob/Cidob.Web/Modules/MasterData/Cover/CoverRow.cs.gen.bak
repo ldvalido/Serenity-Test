@@ -11,8 +11,8 @@ namespace Cidob.MasterData.Entities
     using System.IO;
 
     [ConnectionKey("Default"), DisplayName("Cover"), InstanceName("Cover"), TwoLevelCached]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("MasterData:Cover")]
+    [ModifyPermission("MasterData:Cover")]
     public sealed class CoverRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Cover"), Identity]

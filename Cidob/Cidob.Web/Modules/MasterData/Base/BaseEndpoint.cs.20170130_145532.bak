@@ -6,12 +6,12 @@ namespace Cidob.MasterData.Endpoints
     using Serenity.Services;
     using System.Data;
     using System.Web.Mvc;
-    using MyRepository = Repositories.BrandRepository;
-    using MyRow = Entities.BrandRow;
+    using MyRepository = Repositories.BaseRepository;
+    using MyRow = Entities.BaseRow;
 
-    [RoutePrefix("Services/MasterData/Brand"), Route("{action}")]
+    [RoutePrefix("Services/MasterData/Base"), Route("{action}")]
     [ConnectionKey("Default"), ServiceAuthorize("Administration:General")]
-    public class BrandController : ServiceEndpoint
+    public class BaseController : ServiceEndpoint
     {
         [HttpPost]
         public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request)

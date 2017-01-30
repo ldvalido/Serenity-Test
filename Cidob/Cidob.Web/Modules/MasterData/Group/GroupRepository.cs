@@ -7,9 +7,9 @@ namespace Cidob.MasterData.Repositories
     using Serenity.Services;
     using System;
     using System.Data;
-    using MyRow = Entities.BrandRow;
+    using MyRow = Entities.GroupRow;
 
-    public class BrandRepository
+    public class GroupRepository
     {
         private static MyRow.RowFields fld { get { return MyRow.Fields; } }
 

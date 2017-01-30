@@ -1541,7 +1541,6 @@
     <TypeScriptCompile Include="Scripts\typings\slickgrid\slickgrid.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\sortablejs\sortablejs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
-    <Content Include="Modules\MasterData\Brand\BrandIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1551,10 +1550,6 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BrandForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandGrid.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandDialog.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandEditor.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\Brand\BrandEditorDialog.ts" />
     <Content Include="Modules\MasterData\Product\ProductIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ProductRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
@@ -1640,6 +1635,38 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseGroupForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\MasterData\Group\GroupIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GroupRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GroupService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GroupForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Group\GroupGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Group\GroupDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Group\GroupEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Group\GroupEditorDialog.ts" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Default.BaseTransversalArchRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Default.BaseTransversalArchService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Default.BaseTransversalArchForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseTransversalArchRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseTransversalArchService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseTransversalArchForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
   </ItemGroup>
@@ -1823,12 +1850,6 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
-    <Compile Include="Modules\MasterData\Brand\BrandRow.cs" />
-    <Compile Include="Modules\MasterData\Brand\BrandColumns.cs" />
-    <Compile Include="Modules\MasterData\Brand\BrandForm.cs" />
-    <Compile Include="Modules\MasterData\Brand\BrandRepository.cs" />
-    <Compile Include="Modules\MasterData\Brand\BrandEndpoint.cs" />
-    <Compile Include="Modules\MasterData\Brand\BrandPage.cs" />
     <Compile Include="Modules\MasterData\Product\ProductRow.cs" />
     <Compile Include="Modules\MasterData\Product\ProductColumns.cs" />
     <Compile Include="Modules\MasterData\Product\ProductForm.cs" />
@@ -1855,6 +1876,12 @@
     <Compile Include="Modules\MasterData\TransversalArch\TransversalArchPage.cs" />
     <Compile Include="Modules\MasterData\BaseGroup\BaseGroupRow.cs" />
     <Compile Include="Modules\MasterData\BaseGroup\BaseGroupRepository.cs" />
+    <Compile Include="Modules\MasterData\Group\GroupRow.cs" />
+    <Compile Include="Modules\MasterData\Group\GroupColumns.cs" />
+    <Compile Include="Modules\MasterData\Group\GroupForm.cs" />
+    <Compile Include="Modules\MasterData\Group\GroupRepository.cs" />
+    <Compile Include="Modules\MasterData\Group\GroupEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Group\GroupPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />
