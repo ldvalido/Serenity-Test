@@ -61,11 +61,11 @@
     "Navigation.Administration/Exceptions Log": "Auditoría de Logs",
     "Navigation.Administration/Translations": "Traducciones",
     "Navigation.Administration/User Management": "Administración de Usuarios",
-    "Navigation.MasterData/Arch": "Arcos",
+    "Navigation.MasterData/Arch": "Arco",
     "Navigation.MasterData/Brand": "Marcas",
     "Navigation.MasterData/Cover": "Cobertura",
     "Navigation.MasterData/Group": "Grupo",
-    "Navigation.MasterData/Product": "Productos",
+    "Navigation.MasterData/Product": "Producto",
     "Navigation.MasterData/TransversalArch": "Contra Arco",
     "Permission.Administration:Translation": "Lenguajes y Traducciones",
     "Site.Layout.FooterCopyright": "Copyright (c) 2016."
