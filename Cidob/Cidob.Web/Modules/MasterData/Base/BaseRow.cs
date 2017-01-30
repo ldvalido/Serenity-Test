@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace Cidob.MasterData.Entities
 {
     using Newtonsoft.Json;
@@ -72,6 +74,28 @@ namespace Cidob.MasterData.Entities
             set { Fields.Escatola[this] = value; }
         }
 
+        [DisplayName("Need Arch"), NotNull]
+        public Boolean? NeedArch
+        {
+            get { return Fields.NeedArch[this]; }
+            set { Fields.NeedArch[this] = value; }
+        }
+
+        [DisplayName("Need Transversal Arch"), NotNull]
+        public Boolean? NeedTransversalArch
+        {
+            get { return Fields.NeedTransversalArch[this]; }
+            set { Fields.NeedTransversalArch[this] = value; }
+        }
+
+        [DisplayName("Groups")]
+        [LookupEditor(typeof (BrandRow), Multiple = true), NotMapped]
+        [LinkingSetRelation(typeof (BaseGroupRow), "IdBase", "IdGroup")]
+        public List<Int32> GroupList
+        {
+            get { return Fields.GroupList[this]; }
+            set { Fields.GroupList[this] = value; }
+        }
         [DisplayName("Id Product Description"), Expression("jIdProduct.[Description]")]
         public String IdProductDescription
         {
@@ -113,7 +137,10 @@ namespace Cidob.MasterData.Entities
             public Int32Field From;
             public Int32Field To;
             public BooleanField Escatola;
-
+            public BooleanField NeedArch;
+            public BooleanField NeedTransversalArch;
+            public ListField<Int32> GroupList;
+             
             public StringField IdProductDescription;
             public StringField IdProductCode;
 

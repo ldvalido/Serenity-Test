@@ -703,6 +703,67 @@ declare namespace Cidob.Common {
         Value?: string;
     }
 }
+declare namespace Cidob.Default {
+    class BaseGroupForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface BaseGroupForm {
+        IdGroup: Serenity.IntegerEditor;
+    }
+}
+declare namespace Cidob.Default {
+    interface BaseGroupRow {
+        IdBase?: number;
+        IdGroup?: number;
+        IdBaseIdProduct?: number;
+        IdBaseOrder?: number;
+        IdBaseDescription?: string;
+        IdBasePrintName?: string;
+        IdBaseFrom?: number;
+        IdBaseTo?: number;
+        IdBaseEscatola?: boolean;
+        IdBaseNeedArch?: boolean;
+        IdBaseNeedTransversalArch?: boolean;
+        IdGroupDescription?: string;
+        IdGroupEnabled?: boolean;
+    }
+    namespace BaseGroupRow {
+        const idProperty = "IdBase";
+        const localTextPrefix = "Default.BaseGroup";
+        namespace Fields {
+            const IdBase: any;
+            const IdGroup: any;
+            const IdBaseIdProduct: string;
+            const IdBaseOrder: string;
+            const IdBaseDescription: string;
+            const IdBasePrintName: string;
+            const IdBaseFrom: string;
+            const IdBaseTo: string;
+            const IdBaseEscatola: string;
+            const IdBaseNeedArch: string;
+            const IdBaseNeedTransversalArch: string;
+            const IdGroupDescription: string;
+            const IdGroupEnabled: string;
+        }
+    }
+}
+declare namespace Cidob.Default {
+    namespace BaseGroupService {
+        const baseUrl = "Default/BaseGroup";
+        function Create(request: Serenity.SaveRequest<BaseGroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BaseGroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BaseGroupRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BaseGroupRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace Cidob {
     interface ExcelImportRequest extends Serenity.ServiceRequest {
         FileName?: string;
@@ -792,6 +853,69 @@ declare namespace Cidob.MasterData {
         From: Serenity.IntegerEditor;
         To: Serenity.IntegerEditor;
         Escatola: Serenity.BooleanEditor;
+        NeedArch: Serenity.BooleanEditor;
+        NeedTransversalArch: Serenity.BooleanEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    class BaseGroupForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface BaseGroupForm {
+        IdGroup: Serenity.IntegerEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface BaseGroupRow {
+        IdBase?: number;
+        IdGroup?: number;
+        IdBaseIdProduct?: number;
+        IdBaseOrder?: number;
+        IdBaseDescription?: string;
+        IdBasePrintName?: string;
+        IdBaseFrom?: number;
+        IdBaseTo?: number;
+        IdBaseEscatola?: boolean;
+        IdBaseNeedArch?: boolean;
+        IdBaseNeedTransversalArch?: boolean;
+        IdGroupDescription?: string;
+        IdGroupEnabled?: boolean;
+    }
+    namespace BaseGroupRow {
+        const idProperty = "IdBase";
+        const localTextPrefix = "MasterData.BaseGroup";
+        namespace Fields {
+            const IdBase: any;
+            const IdGroup: any;
+            const IdBaseIdProduct: string;
+            const IdBaseOrder: string;
+            const IdBaseDescription: string;
+            const IdBasePrintName: string;
+            const IdBaseFrom: string;
+            const IdBaseTo: string;
+            const IdBaseEscatola: string;
+            const IdBaseNeedArch: string;
+            const IdBaseNeedTransversalArch: string;
+            const IdGroupDescription: string;
+            const IdGroupEnabled: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace BaseGroupService {
+        const baseUrl = "MasterData/BaseGroup";
+        function Create(request: Serenity.SaveRequest<BaseGroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BaseGroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BaseGroupRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BaseGroupRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
     }
 }
 declare namespace Cidob.MasterData {
@@ -804,6 +928,8 @@ declare namespace Cidob.MasterData {
         From?: number;
         To?: number;
         Escatola?: boolean;
+        NeedArch?: boolean;
+        NeedTransversalArch?: boolean;
         IdProductDescription?: string;
         IdProductCode?: string;
     }
@@ -820,6 +946,8 @@ declare namespace Cidob.MasterData {
             const From: any;
             const To: any;
             const Escatola: any;
+            const NeedArch: any;
+            const NeedTransversalArch: any;
             const IdProductDescription: string;
             const IdProductCode: string;
         }
@@ -1274,6 +1402,7 @@ declare namespace Cidob.MasterData {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: BaseForm;
+        dialogOpen(): void;
     }
 }
 declare namespace Cidob.MasterData {

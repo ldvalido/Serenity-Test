@@ -3,6 +3,7 @@ namespace Cidob.MasterData {
 
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.responsive()
+    @Serenity.Decorators.maximizable()
     export class BaseDialog extends Serenity.EntityDialog<BaseRow, any> {
         protected getFormKey() { return BaseForm.formKey; }
         protected getIdProperty() { return BaseRow.idProperty; }
@@ -12,5 +13,9 @@ namespace Cidob.MasterData {
 
         protected form = new BaseForm(this.idPrefix);
 
+        dialogOpen() {
+                    super.dialogOpen();
+                   this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+                 }
     }
 }

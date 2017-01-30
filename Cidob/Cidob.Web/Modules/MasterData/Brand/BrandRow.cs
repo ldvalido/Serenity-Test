@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Marcas"), InstanceName("Brand"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("MasterData.BrandRow")]
     public sealed class BrandRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Brands"), Identity]

@@ -9,6 +9,8 @@ namespace Cidob.MasterData {
         From?: number;
         To?: number;
         Escatola?: boolean;
+        NeedArch?: boolean;
+        NeedTransversalArch?: boolean;
         IdProductDescription?: string;
         IdProductCode?: string;
     }
@@ -27,11 +29,13 @@ namespace Cidob.MasterData {
             export declare const From;
             export declare const To;
             export declare const Escatola;
+            export declare const NeedArch;
+            export declare const NeedTransversalArch;
             export declare const IdProductDescription: string;
             export declare const IdProductCode: string;
         }
 
-        ['IdBase', 'IdProduct', 'Order', 'Description', 'PrintName', 'From', 'To', 'Escatola', 'IdProductDescription', 'IdProductCode'].forEach(x => (<any>Fields)[x] = x);
+        ['IdBase', 'IdProduct', 'Order', 'Description', 'PrintName', 'From', 'To', 'Escatola', 'NeedArch', 'NeedTransversalArch', 'IdProductDescription', 'IdProductCode'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

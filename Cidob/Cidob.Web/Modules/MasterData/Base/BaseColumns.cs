@@ -23,5 +23,7 @@ namespace Cidob.MasterData.Columns
         public Int32 From { get; set; }
         public Int32 To { get; set; }
         public Boolean Escatola { get; set; }
+        public Boolean NeedArch { get; set; }
+        public Boolean NeedTransversalArch { get; set; }
     }
 }

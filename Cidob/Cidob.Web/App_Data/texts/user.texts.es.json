@@ -17,6 +17,8 @@
     "Db.MasterData.Base.From": "Desde",
     "Db.MasterData.Base.IdProduct": "Producto",
     "Db.MasterData.Base.IdProductDescription": "Producto",
+    "Db.MasterData.Base.NeedArch": "Usa Arco",
+    "Db.MasterData.Base.NeedTransversalArch": "Usa Contra Arco",
     "Db.MasterData.Base.Order": "Orden",
     "Db.MasterData.Base.PrintName": "Impresión",
     "Db.MasterData.Base.To": "Hasta",

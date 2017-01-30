@@ -1762,6 +1762,54 @@ var Cidob;
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
+    var Default;
+    (function (Default) {
+        var BaseGroupForm = (function (_super) {
+            __extends(BaseGroupForm, _super);
+            function BaseGroupForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BaseGroupForm;
+        }(Serenity.PrefixedContext));
+        BaseGroupForm.formKey = 'Default.BaseGroup';
+        Default.BaseGroupForm = BaseGroupForm;
+        [['IdGroup', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(BaseGroupForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Default = Cidob.Default || (Cidob.Default = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Default;
+    (function (Default) {
+        var BaseGroupRow;
+        (function (BaseGroupRow) {
+            BaseGroupRow.idProperty = 'IdBase';
+            BaseGroupRow.localTextPrefix = 'Default.BaseGroup';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BaseGroupRow.Fields || (BaseGroupRow.Fields = {}));
+            ['IdBase', 'IdGroup', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdGroupDescription', 'IdGroupEnabled'].forEach(function (x) { return Fields[x] = x; });
+        })(BaseGroupRow = Default.BaseGroupRow || (Default.BaseGroupRow = {}));
+    })(Default = Cidob.Default || (Cidob.Default = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Default;
+    (function (Default) {
+        var BaseGroupService;
+        (function (BaseGroupService) {
+            BaseGroupService.baseUrl = 'Default/BaseGroup';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BaseGroupService.Methods || (BaseGroupService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BaseGroupService[x] = function (r, s, o) { return Q.serviceRequest(BaseGroupService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BaseGroupService.baseUrl + '/' + x;
+            });
+        })(BaseGroupService = Default.BaseGroupService || (Default.BaseGroupService = {}));
+    })(Default = Cidob.Default || (Cidob.Default = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
     var MasterData;
     (function (MasterData) {
         var ArchForm = (function (_super) {
@@ -1822,7 +1870,55 @@ var Cidob;
         }(Serenity.PrefixedContext));
         BaseForm.formKey = 'MasterData.Base';
         MasterData.BaseForm = BaseForm;
-        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }], ['From', function () { return Serenity.IntegerEditor; }], ['To', function () { return Serenity.IntegerEditor; }], ['Escatola', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(BaseForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }], ['From', function () { return Serenity.IntegerEditor; }], ['To', function () { return Serenity.IntegerEditor; }], ['Escatola', function () { return Serenity.BooleanEditor; }], ['NeedArch', function () { return Serenity.BooleanEditor; }], ['NeedTransversalArch', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(BaseForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseGroupForm = (function (_super) {
+            __extends(BaseGroupForm, _super);
+            function BaseGroupForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BaseGroupForm;
+        }(Serenity.PrefixedContext));
+        BaseGroupForm.formKey = 'MasterData.BaseGroup';
+        MasterData.BaseGroupForm = BaseGroupForm;
+        [['IdGroup', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(BaseGroupForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseGroupRow;
+        (function (BaseGroupRow) {
+            BaseGroupRow.idProperty = 'IdBase';
+            BaseGroupRow.localTextPrefix = 'MasterData.BaseGroup';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BaseGroupRow.Fields || (BaseGroupRow.Fields = {}));
+            ['IdBase', 'IdGroup', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdGroupDescription', 'IdGroupEnabled'].forEach(function (x) { return Fields[x] = x; });
+        })(BaseGroupRow = MasterData.BaseGroupRow || (MasterData.BaseGroupRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var BaseGroupService;
+        (function (BaseGroupService) {
+            BaseGroupService.baseUrl = 'MasterData/BaseGroup';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BaseGroupService.Methods || (BaseGroupService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BaseGroupService[x] = function (r, s, o) { return Q.serviceRequest(BaseGroupService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BaseGroupService.baseUrl + '/' + x;
+            });
+        })(BaseGroupService = MasterData.BaseGroupService || (MasterData.BaseGroupService = {}));
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -1837,7 +1933,7 @@ var Cidob;
             var Fields;
             (function (Fields) {
             })(Fields = BaseRow.Fields || (BaseRow.Fields = {}));
-            ['IdBase', 'IdProduct', 'Order', 'Description', 'PrintName', 'From', 'To', 'Escatola', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+            ['IdBase', 'IdProduct', 'Order', 'Description', 'PrintName', 'From', 'To', 'Escatola', 'NeedArch', 'NeedTransversalArch', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
         })(BaseRow = MasterData.BaseRow || (MasterData.BaseRow = {}));
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
@@ -2793,11 +2889,16 @@ var Cidob;
             BaseDialog.prototype.getLocalTextPrefix = function () { return MasterData.BaseRow.localTextPrefix; };
             BaseDialog.prototype.getNameProperty = function () { return MasterData.BaseRow.nameProperty; };
             BaseDialog.prototype.getService = function () { return MasterData.BaseService.baseUrl; };
+            BaseDialog.prototype.dialogOpen = function () {
+                _super.prototype.dialogOpen.call(this);
+                this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+            };
             return BaseDialog;
         }(Serenity.EntityDialog));
         BaseDialog = __decorate([
             Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
+            Serenity.Decorators.responsive(),
+            Serenity.Decorators.maximizable()
         ], BaseDialog);
         MasterData.BaseDialog = BaseDialog;
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
