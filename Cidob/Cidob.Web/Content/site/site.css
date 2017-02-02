@@ -7599,3 +7599,27 @@ section.content > .s-DataGrid {
 .s-MasterData-BaseDialog .caption {
   width: 150px;
 }
+.s-MasterData-CtDialog > .size {
+  width: 650px;
+}
+.s-MasterData-CtDialog .caption {
+  width: 150px;
+}
+.s-MasterData-CtDialog > .size {
+  width: 650px;
+}
+.s-MasterData-CtDialog .caption {
+  width: 150px;
+}
+.s-MasterData-DigitalDialog > .size {
+  width: 650px;
+}
+.s-MasterData-DigitalDialog .caption {
+  width: 150px;
+}
+.s-MasterData-HeelDialog > .size {
+  width: 650px;
+}
+.s-MasterData-HeelDialog .caption {
+  width: 150px;
+}

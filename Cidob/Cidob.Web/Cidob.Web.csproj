@@ -1669,6 +1669,30 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.BaseTransversalArchForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <Content Include="Modules\MasterData\Ct\CtIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.CtRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.CtService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.CtForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Ct\CtGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Ct\CtDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Ct\CtEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Ct\CtEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Digital\DigitalIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.DigitalRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.DigitalService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.DigitalForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Digital\DigitalGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Digital\DigitalDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Digital\DigitalEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Digital\DigitalEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Heel\HeelIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.HeelRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.HeelService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.HeelForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Heel\HeelGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Heel\HeelDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Heel\HeelEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Heel\HeelEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1882,6 +1906,24 @@
     <Compile Include="Modules\MasterData\Group\GroupRepository.cs" />
     <Compile Include="Modules\MasterData\Group\GroupEndpoint.cs" />
     <Compile Include="Modules\MasterData\Group\GroupPage.cs" />
+    <Compile Include="Modules\MasterData\Ct\CtRow.cs" />
+    <Compile Include="Modules\MasterData\Ct\CtColumns.cs" />
+    <Compile Include="Modules\MasterData\Ct\CtForm.cs" />
+    <Compile Include="Modules\MasterData\Ct\CtRepository.cs" />
+    <Compile Include="Modules\MasterData\Ct\CtEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Ct\CtPage.cs" />
+    <Compile Include="Modules\MasterData\Digital\DigitalRow.cs" />
+    <Compile Include="Modules\MasterData\Digital\DigitalColumns.cs" />
+    <Compile Include="Modules\MasterData\Digital\DigitalForm.cs" />
+    <Compile Include="Modules\MasterData\Digital\DigitalRepository.cs" />
+    <Compile Include="Modules\MasterData\Digital\DigitalEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Digital\DigitalPage.cs" />
+    <Compile Include="Modules\MasterData\Heel\HeelRow.cs" />
+    <Compile Include="Modules\MasterData\Heel\HeelColumns.cs" />
+    <Compile Include="Modules\MasterData\Heel\HeelForm.cs" />
+    <Compile Include="Modules\MasterData\Heel\HeelRepository.cs" />
+    <Compile Include="Modules\MasterData\Heel\HeelEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Heel\HeelPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />
