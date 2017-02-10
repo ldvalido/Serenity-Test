@@ -7623,3 +7623,21 @@ section.content > .s-DataGrid {
 .s-MasterData-HeelDialog .caption {
   width: 150px;
 }
+.s-MasterData-OliveDialog > .size {
+  width: 650px;
+}
+.s-MasterData-OliveDialog .caption {
+  width: 150px;
+}
+.s-MasterData-RaDialog > .size {
+  width: 650px;
+}
+.s-MasterData-RaDialog .caption {
+  width: 150px;
+}
+.s-MasterData-ShapeDialog > .size {
+  width: 650px;
+}
+.s-MasterData-ShapeDialog .caption {
+  width: 150px;
+}

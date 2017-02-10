@@ -2348,6 +2348,55 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var OliveForm = (function (_super) {
+            __extends(OliveForm, _super);
+            function OliveForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return OliveForm;
+        }(Serenity.PrefixedContext));
+        OliveForm.formKey = 'MasterData.Olive';
+        MasterData.OliveForm = OliveForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(OliveForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var OliveRow;
+        (function (OliveRow) {
+            OliveRow.idProperty = 'IdOlive';
+            OliveRow.nameProperty = 'Description';
+            OliveRow.localTextPrefix = 'MasterData.Olive';
+            var Fields;
+            (function (Fields) {
+            })(Fields = OliveRow.Fields || (OliveRow.Fields = {}));
+            ['IdOlive', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(OliveRow = MasterData.OliveRow || (MasterData.OliveRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var OliveService;
+        (function (OliveService) {
+            OliveService.baseUrl = 'MasterData/Olive';
+            var Methods;
+            (function (Methods) {
+            })(Methods = OliveService.Methods || (OliveService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                OliveService[x] = function (r, s, o) { return Q.serviceRequest(OliveService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = OliveService.baseUrl + '/' + x;
+            });
+        })(OliveService = MasterData.OliveService || (MasterData.OliveService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var ProductForm = (function (_super) {
             __extends(ProductForm, _super);
             function ProductForm() {
@@ -2391,6 +2440,104 @@ var Cidob;
                 Methods[x] = ProductService.baseUrl + '/' + x;
             });
         })(ProductService = MasterData.ProductService || (MasterData.ProductService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var RaForm = (function (_super) {
+            __extends(RaForm, _super);
+            function RaForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return RaForm;
+        }(Serenity.PrefixedContext));
+        RaForm.formKey = 'MasterData.Ra';
+        MasterData.RaForm = RaForm;
+        [['IdRa', function () { return Serenity.IntegerEditor; }], ['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RaForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var RaRow;
+        (function (RaRow) {
+            RaRow.idProperty = 'IdRa';
+            RaRow.nameProperty = 'Description';
+            RaRow.localTextPrefix = 'MasterData.Ra';
+            var Fields;
+            (function (Fields) {
+            })(Fields = RaRow.Fields || (RaRow.Fields = {}));
+            ['IdRa', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(RaRow = MasterData.RaRow || (MasterData.RaRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var RaService;
+        (function (RaService) {
+            RaService.baseUrl = 'MasterData/Ra';
+            var Methods;
+            (function (Methods) {
+            })(Methods = RaService.Methods || (RaService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                RaService[x] = function (r, s, o) { return Q.serviceRequest(RaService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = RaService.baseUrl + '/' + x;
+            });
+        })(RaService = MasterData.RaService || (MasterData.RaService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ShapeForm = (function (_super) {
+            __extends(ShapeForm, _super);
+            function ShapeForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return ShapeForm;
+        }(Serenity.PrefixedContext));
+        ShapeForm.formKey = 'MasterData.Shape';
+        MasterData.ShapeForm = ShapeForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(ShapeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ShapeRow;
+        (function (ShapeRow) {
+            ShapeRow.idProperty = 'IdShape';
+            ShapeRow.nameProperty = 'Description';
+            ShapeRow.localTextPrefix = 'MasterData.Shape';
+            var Fields;
+            (function (Fields) {
+            })(Fields = ShapeRow.Fields || (ShapeRow.Fields = {}));
+            ['IdShape', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(ShapeRow = MasterData.ShapeRow || (MasterData.ShapeRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ShapeService;
+        (function (ShapeService) {
+            ShapeService.baseUrl = 'MasterData/Shape';
+            var Methods;
+            (function (Methods) {
+            })(Methods = ShapeService.Methods || (ShapeService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                ShapeService[x] = function (r, s, o) { return Q.serviceRequest(ShapeService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = ShapeService.baseUrl + '/' + x;
+            });
+        })(ShapeService = MasterData.ShapeService || (MasterData.ShapeService = {}));
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -3726,6 +3873,98 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var OliveDialog = (function (_super) {
+            __extends(OliveDialog, _super);
+            function OliveDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.OliveForm(_this.idPrefix);
+                return _this;
+            }
+            OliveDialog.prototype.getFormKey = function () { return MasterData.OliveForm.formKey; };
+            OliveDialog.prototype.getIdProperty = function () { return MasterData.OliveRow.idProperty; };
+            OliveDialog.prototype.getLocalTextPrefix = function () { return MasterData.OliveRow.localTextPrefix; };
+            OliveDialog.prototype.getNameProperty = function () { return MasterData.OliveRow.nameProperty; };
+            OliveDialog.prototype.getService = function () { return MasterData.OliveService.baseUrl; };
+            return OliveDialog;
+        }(Serenity.EntityDialog));
+        OliveDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], OliveDialog);
+        MasterData.OliveDialog = OliveDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var OliveEditor = (function (_super) {
+            __extends(OliveEditor, _super);
+            function OliveEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            OliveEditor.prototype.getColumnsKey = function () { return 'MasterData.Olive'; };
+            OliveEditor.prototype.getDialogType = function () { return MasterData.OliveEditorDialog; };
+            OliveEditor.prototype.getLocalTextPrefix = function () { return MasterData.OliveRow.localTextPrefix; };
+            return OliveEditor;
+        }(Cidob.Common.GridEditorBase));
+        OliveEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], OliveEditor);
+        MasterData.OliveEditor = OliveEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var OliveEditorDialog = (function (_super) {
+            __extends(OliveEditorDialog, _super);
+            function OliveEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.OliveForm(_this.idPrefix);
+                return _this;
+            }
+            OliveEditorDialog.prototype.getFormKey = function () { return MasterData.OliveForm.formKey; };
+            OliveEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.OliveRow.localTextPrefix; };
+            OliveEditorDialog.prototype.getNameProperty = function () { return MasterData.OliveRow.nameProperty; };
+            return OliveEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        OliveEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], OliveEditorDialog);
+        MasterData.OliveEditorDialog = OliveEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var OliveGrid = (function (_super) {
+            __extends(OliveGrid, _super);
+            function OliveGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OliveGrid.prototype.getColumnsKey = function () { return 'MasterData.Olive'; };
+            OliveGrid.prototype.getDialogType = function () { return MasterData.OliveDialog; };
+            OliveGrid.prototype.getIdProperty = function () { return MasterData.OliveRow.idProperty; };
+            OliveGrid.prototype.getLocalTextPrefix = function () { return MasterData.OliveRow.localTextPrefix; };
+            OliveGrid.prototype.getService = function () { return MasterData.OliveService.baseUrl; };
+            return OliveGrid;
+        }(Serenity.EntityGrid));
+        OliveGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], OliveGrid);
+        MasterData.OliveGrid = OliveGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var ProductDialog = (function (_super) {
             __extends(ProductDialog, _super);
             function ProductDialog() {
@@ -3812,6 +4051,190 @@ var Cidob;
             Serenity.Decorators.registerClass()
         ], ProductGrid);
         MasterData.ProductGrid = ProductGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var RaDialog = (function (_super) {
+            __extends(RaDialog, _super);
+            function RaDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.RaForm(_this.idPrefix);
+                return _this;
+            }
+            RaDialog.prototype.getFormKey = function () { return MasterData.RaForm.formKey; };
+            RaDialog.prototype.getIdProperty = function () { return MasterData.RaRow.idProperty; };
+            RaDialog.prototype.getLocalTextPrefix = function () { return MasterData.RaRow.localTextPrefix; };
+            RaDialog.prototype.getNameProperty = function () { return MasterData.RaRow.nameProperty; };
+            RaDialog.prototype.getService = function () { return MasterData.RaService.baseUrl; };
+            return RaDialog;
+        }(Serenity.EntityDialog));
+        RaDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], RaDialog);
+        MasterData.RaDialog = RaDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var RaEditor = (function (_super) {
+            __extends(RaEditor, _super);
+            function RaEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            RaEditor.prototype.getColumnsKey = function () { return 'MasterData.Ra'; };
+            RaEditor.prototype.getDialogType = function () { return MasterData.RaEditorDialog; };
+            RaEditor.prototype.getLocalTextPrefix = function () { return MasterData.RaRow.localTextPrefix; };
+            return RaEditor;
+        }(Cidob.Common.GridEditorBase));
+        RaEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RaEditor);
+        MasterData.RaEditor = RaEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var RaEditorDialog = (function (_super) {
+            __extends(RaEditorDialog, _super);
+            function RaEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.RaForm(_this.idPrefix);
+                return _this;
+            }
+            RaEditorDialog.prototype.getFormKey = function () { return MasterData.RaForm.formKey; };
+            RaEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.RaRow.localTextPrefix; };
+            RaEditorDialog.prototype.getNameProperty = function () { return MasterData.RaRow.nameProperty; };
+            return RaEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        RaEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], RaEditorDialog);
+        MasterData.RaEditorDialog = RaEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var RaGrid = (function (_super) {
+            __extends(RaGrid, _super);
+            function RaGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            RaGrid.prototype.getColumnsKey = function () { return 'MasterData.Ra'; };
+            RaGrid.prototype.getDialogType = function () { return MasterData.RaDialog; };
+            RaGrid.prototype.getIdProperty = function () { return MasterData.RaRow.idProperty; };
+            RaGrid.prototype.getLocalTextPrefix = function () { return MasterData.RaRow.localTextPrefix; };
+            RaGrid.prototype.getService = function () { return MasterData.RaService.baseUrl; };
+            return RaGrid;
+        }(Serenity.EntityGrid));
+        RaGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], RaGrid);
+        MasterData.RaGrid = RaGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ShapeDialog = (function (_super) {
+            __extends(ShapeDialog, _super);
+            function ShapeDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.ShapeForm(_this.idPrefix);
+                return _this;
+            }
+            ShapeDialog.prototype.getFormKey = function () { return MasterData.ShapeForm.formKey; };
+            ShapeDialog.prototype.getIdProperty = function () { return MasterData.ShapeRow.idProperty; };
+            ShapeDialog.prototype.getLocalTextPrefix = function () { return MasterData.ShapeRow.localTextPrefix; };
+            ShapeDialog.prototype.getNameProperty = function () { return MasterData.ShapeRow.nameProperty; };
+            ShapeDialog.prototype.getService = function () { return MasterData.ShapeService.baseUrl; };
+            return ShapeDialog;
+        }(Serenity.EntityDialog));
+        ShapeDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], ShapeDialog);
+        MasterData.ShapeDialog = ShapeDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ShapeEditor = (function (_super) {
+            __extends(ShapeEditor, _super);
+            function ShapeEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            ShapeEditor.prototype.getColumnsKey = function () { return 'MasterData.Shape'; };
+            ShapeEditor.prototype.getDialogType = function () { return MasterData.ShapeEditorDialog; };
+            ShapeEditor.prototype.getLocalTextPrefix = function () { return MasterData.ShapeRow.localTextPrefix; };
+            return ShapeEditor;
+        }(Cidob.Common.GridEditorBase));
+        ShapeEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ShapeEditor);
+        MasterData.ShapeEditor = ShapeEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ShapeEditorDialog = (function (_super) {
+            __extends(ShapeEditorDialog, _super);
+            function ShapeEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.ShapeForm(_this.idPrefix);
+                return _this;
+            }
+            ShapeEditorDialog.prototype.getFormKey = function () { return MasterData.ShapeForm.formKey; };
+            ShapeEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.ShapeRow.localTextPrefix; };
+            ShapeEditorDialog.prototype.getNameProperty = function () { return MasterData.ShapeRow.nameProperty; };
+            return ShapeEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        ShapeEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], ShapeEditorDialog);
+        MasterData.ShapeEditorDialog = ShapeEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var ShapeGrid = (function (_super) {
+            __extends(ShapeGrid, _super);
+            function ShapeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ShapeGrid.prototype.getColumnsKey = function () { return 'MasterData.Shape'; };
+            ShapeGrid.prototype.getDialogType = function () { return MasterData.ShapeDialog; };
+            ShapeGrid.prototype.getIdProperty = function () { return MasterData.ShapeRow.idProperty; };
+            ShapeGrid.prototype.getLocalTextPrefix = function () { return MasterData.ShapeRow.localTextPrefix; };
+            ShapeGrid.prototype.getService = function () { return MasterData.ShapeService.baseUrl; };
+            return ShapeGrid;
+        }(Serenity.EntityGrid));
+        ShapeGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], ShapeGrid);
+        MasterData.ShapeGrid = ShapeGrid;
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;

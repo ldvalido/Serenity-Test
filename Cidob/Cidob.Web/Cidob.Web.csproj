@@ -1693,6 +1693,30 @@
     <TypeScriptCompile Include="Modules\MasterData\Heel\HeelDialog.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Heel\HeelEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Heel\HeelEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Olive\OliveIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.OliveRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.OliveService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.OliveForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Olive\OliveGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Olive\OliveDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Olive\OliveEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Olive\OliveEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Ra\RaIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.RaRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.RaService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.RaForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Ra\RaGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Ra\RaDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Ra\RaEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Ra\RaEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Shape\ShapeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ShapeRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ShapeService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.ShapeForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1924,6 +1948,24 @@
     <Compile Include="Modules\MasterData\Heel\HeelRepository.cs" />
     <Compile Include="Modules\MasterData\Heel\HeelEndpoint.cs" />
     <Compile Include="Modules\MasterData\Heel\HeelPage.cs" />
+    <Compile Include="Modules\MasterData\Olive\OliveRow.cs" />
+    <Compile Include="Modules\MasterData\Olive\OliveColumns.cs" />
+    <Compile Include="Modules\MasterData\Olive\OliveForm.cs" />
+    <Compile Include="Modules\MasterData\Olive\OliveRepository.cs" />
+    <Compile Include="Modules\MasterData\Olive\OliveEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Olive\OlivePage.cs" />
+    <Compile Include="Modules\MasterData\Ra\RaRow.cs" />
+    <Compile Include="Modules\MasterData\Ra\RaColumns.cs" />
+    <Compile Include="Modules\MasterData\Ra\RaForm.cs" />
+    <Compile Include="Modules\MasterData\Ra\RaRepository.cs" />
+    <Compile Include="Modules\MasterData\Ra\RaEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Ra\RaPage.cs" />
+    <Compile Include="Modules\MasterData\Shape\ShapeRow.cs" />
+    <Compile Include="Modules\MasterData\Shape\ShapeColumns.cs" />
+    <Compile Include="Modules\MasterData\Shape\ShapeForm.cs" />
+    <Compile Include="Modules\MasterData\Shape\ShapeRepository.cs" />
+    <Compile Include="Modules\MasterData\Shape\ShapeEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Shape\ShapePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

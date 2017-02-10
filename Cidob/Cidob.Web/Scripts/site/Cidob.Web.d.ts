@@ -1399,6 +1399,59 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
+    class OliveForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface OliveForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface OliveRow {
+        IdOlive?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace OliveRow {
+        const idProperty = "IdOlive";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Olive";
+        namespace Fields {
+            const IdOlive: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace OliveService {
+        const baseUrl = "MasterData/Olive";
+        function Create(request: Serenity.SaveRequest<OliveRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OliveRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OliveRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OliveRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
     class ProductForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -1432,6 +1485,112 @@ declare namespace Cidob.MasterData {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    class RaForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface RaForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface RaRow {
+        IdRa?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace RaRow {
+        const idProperty = "IdRa";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Ra";
+        namespace Fields {
+            const IdRa: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace RaService {
+        const baseUrl = "MasterData/Ra";
+        function Create(request: Serenity.SaveRequest<RaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RaRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RaRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    class ShapeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface ShapeForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface ShapeRow {
+        IdShape?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace ShapeRow {
+        const idProperty = "IdShape";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Shape";
+        namespace Fields {
+            const IdShape: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace ShapeService {
+        const baseUrl = "MasterData/Shape";
+        function Create(request: Serenity.SaveRequest<ShapeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ShapeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ShapeRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ShapeRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const Create: string;
             const Update: string;
@@ -1944,6 +2103,42 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
+    class OliveDialog extends Serenity.EntityDialog<OliveRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: OliveForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class OliveEditor extends Common.GridEditorBase<OliveRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OliveEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class OliveEditorDialog extends Common.GridEditorDialog<OliveRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: OliveForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class OliveGrid extends Serenity.EntityGrid<OliveRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OliveDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
     class ProductDialog extends Serenity.EntityDialog<ProductRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1973,6 +2168,78 @@ declare namespace Cidob.MasterData {
     class ProductGrid extends Serenity.EntityGrid<ProductRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof ProductDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class RaDialog extends Serenity.EntityDialog<RaRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RaForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class RaEditor extends Common.GridEditorBase<RaRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RaEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class RaEditorDialog extends Common.GridEditorDialog<RaRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: RaForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class RaGrid extends Serenity.EntityGrid<RaRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RaDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class ShapeDialog extends Serenity.EntityDialog<ShapeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ShapeForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class ShapeEditor extends Common.GridEditorBase<ShapeRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ShapeEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class ShapeEditorDialog extends Common.GridEditorDialog<ShapeRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: ShapeForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class ShapeGrid extends Serenity.EntityGrid<ShapeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ShapeDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
