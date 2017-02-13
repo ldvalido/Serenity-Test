@@ -1717,6 +1717,22 @@
     <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeDialog.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeEditorDialog.ts" />
+    <Content Include="Modules\MasterData\Template\TemplateIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateEditorDialog.ts" />
+    <Content Include="Modules\MasterData\TemplateType\TemplateTypeIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateTypeRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateTypeService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateTypeForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeGrid.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeDialog.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeEditor.ts" />
+    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1966,6 +1982,18 @@
     <Compile Include="Modules\MasterData\Shape\ShapeRepository.cs" />
     <Compile Include="Modules\MasterData\Shape\ShapeEndpoint.cs" />
     <Compile Include="Modules\MasterData\Shape\ShapePage.cs" />
+    <Compile Include="Modules\MasterData\Template\TemplateRow.cs" />
+    <Compile Include="Modules\MasterData\Template\TemplateColumns.cs" />
+    <Compile Include="Modules\MasterData\Template\TemplateForm.cs" />
+    <Compile Include="Modules\MasterData\Template\TemplateRepository.cs" />
+    <Compile Include="Modules\MasterData\Template\TemplateEndpoint.cs" />
+    <Compile Include="Modules\MasterData\Template\TemplatePage.cs" />
+    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeRow.cs" />
+    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeColumns.cs" />
+    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeForm.cs" />
+    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeRepository.cs" />
+    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeEndpoint.cs" />
+    <Compile Include="Modules\MasterData\TemplateType\TemplateTypePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

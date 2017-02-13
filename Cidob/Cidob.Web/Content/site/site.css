@@ -7641,3 +7641,15 @@ section.content > .s-DataGrid {
 .s-MasterData-ShapeDialog .caption {
   width: 150px;
 }
+.s-MasterData-TemplateDialog > .size {
+  width: 650px;
+}
+.s-MasterData-TemplateDialog .caption {
+  width: 150px;
+}
+.s-MasterData-TemplateTypeDialog > .size {
+  width: 650px;
+}
+.s-MasterData-TemplateTypeDialog .caption {
+  width: 150px;
+}

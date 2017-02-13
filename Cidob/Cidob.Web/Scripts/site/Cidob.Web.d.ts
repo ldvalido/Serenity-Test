@@ -1601,6 +1601,112 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
+    class TemplateForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface TemplateForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface TemplateRow {
+        IdTemplate?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace TemplateRow {
+        const idProperty = "IdTemplate";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.Template";
+        namespace Fields {
+            const IdTemplate: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace TemplateService {
+        const baseUrl = "MasterData/Template";
+        function Create(request: Serenity.SaveRequest<TemplateRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TemplateRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TemplateRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TemplateRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateTypeForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface TemplateTypeForm {
+        IdProduct: Serenity.IntegerEditor;
+        Order: Serenity.IntegerEditor;
+        Description: Serenity.StringEditor;
+        PrintName: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.MasterData {
+    interface TemplateTypeRow {
+        IdTemplateType?: number;
+        IdProduct?: number;
+        Order?: number;
+        Description?: string;
+        PrintName?: string;
+        IdProductDescription?: string;
+        IdProductCode?: string;
+    }
+    namespace TemplateTypeRow {
+        const idProperty = "IdTemplateType";
+        const nameProperty = "Description";
+        const localTextPrefix = "MasterData.TemplateType";
+        namespace Fields {
+            const IdTemplateType: any;
+            const IdProduct: any;
+            const Order: any;
+            const Description: any;
+            const PrintName: any;
+            const IdProductDescription: string;
+            const IdProductCode: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
+    namespace TemplateTypeService {
+        const baseUrl = "MasterData/TemplateType";
+        function Create(request: Serenity.SaveRequest<TemplateTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TemplateTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TemplateTypeRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TemplateTypeRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.MasterData {
     class TransversalArchForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -2240,6 +2346,78 @@ declare namespace Cidob.MasterData {
     class ShapeGrid extends Serenity.EntityGrid<ShapeRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof ShapeDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateDialog extends Serenity.EntityDialog<TemplateRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: TemplateForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateEditor extends Common.GridEditorBase<TemplateRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TemplateEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateEditorDialog extends Common.GridEditorDialog<TemplateRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: TemplateForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateGrid extends Serenity.EntityGrid<TemplateRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TemplateDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateTypeDialog extends Serenity.EntityDialog<TemplateTypeRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: TemplateTypeForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateTypeEditor extends Common.GridEditorBase<TemplateTypeRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TemplateTypeEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateTypeEditorDialog extends Common.GridEditorDialog<TemplateTypeRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: TemplateTypeForm;
+    }
+}
+declare namespace Cidob.MasterData {
+    class TemplateTypeGrid extends Serenity.EntityGrid<TemplateTypeRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TemplateTypeDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
