@@ -6,11 +6,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\projects\Serenity-Test\Publish\0.6\App</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\projects\Serenity-Test\Publish\0.7\App</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Data/texts/user.texts.es.json">
-      <publishTime>02/10/2017 14:03:46</publishTime>
+      <publishTime>02/13/2017 15:17:45</publishTime>
     </File>
     <File Include="App_Data/texts/user.texts.invariant.json">
       <publishTime>01/30/2017 14:38:08</publishTime>
@@ -19,13 +19,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/29/2016 11:08:10</publishTime>
     </File>
     <File Include="bin/App_Data/texts/user.texts.es.json">
-      <publishTime>02/10/2017 14:03:46</publishTime>
+      <publishTime>02/13/2017 15:17:45</publishTime>
     </File>
     <File Include="bin/App_Data/texts/user.texts.invariant.json">
       <publishTime>01/30/2017 14:38:08</publishTime>
     </File>
     <File Include="bin/Cidob.Web.dll">
-      <publishTime>02/10/2017 14:08:14</publishTime>
+      <publishTime>02/13/2017 15:24:36</publishTime>
     </File>
     <File Include="bin/CsQuery.dll">
       <publishTime>02/05/2013 06:41:36</publishTime>
@@ -1828,13 +1828,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2016 10:59:33</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>02/10/2017 14:08:15</publishTime>
+      <publishTime>02/13/2017 15:24:37</publishTime>
     </File>
     <File Include="Content/site/site.htmlcontent.css">
       <publishTime>12/21/2016 10:59:33</publishTime>
     </File>
     <File Include="Content/site/site.less">
-      <publishTime>02/10/2017 13:49:31</publishTime>
+      <publishTime>02/13/2017 15:06:21</publishTime>
     </File>
     <File Include="Content/site/site.membership.less">
       <publishTime>12/21/2016 10:59:33</publishTime>
@@ -2159,6 +2159,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Modules/MasterData/Shape/ShapeIndex.cshtml">
       <publishTime>02/10/2017 13:49:31</publishTime>
+    </File>
+    <File Include="Modules/MasterData/Template/TemplateIndex.cshtml">
+      <publishTime>02/13/2017 15:06:21</publishTime>
+    </File>
+    <File Include="Modules/MasterData/TemplateType/TemplateTypeIndex.cshtml">
+      <publishTime>02/13/2017 15:06:21</publishTime>
     </File>
     <File Include="Modules/MasterData/TransversalArch/TransversalArchIndex.cshtml">
       <publishTime>01/30/2017 15:05:16</publishTime>
@@ -3541,7 +3547,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2016 11:05:09</publishTime>
     </File>
     <File Include="Scripts/site/Cidob.Web.js">
-      <publishTime>02/10/2017 14:08:19</publishTime>
+      <publishTime>02/13/2017 15:24:41</publishTime>
     </File>
     <File Include="Scripts/site/texts/meeting/meeting.vi-VN.json">
       <publishTime>12/21/2016 10:59:37</publishTime>

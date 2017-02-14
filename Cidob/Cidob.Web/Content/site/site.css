@@ -7653,3 +7653,33 @@ section.content > .s-DataGrid {
 .s-MasterData-TemplateTypeDialog .caption {
   width: 150px;
 }
+.s-Relationship-BaseArchDialog > .size {
+  width: 650px;
+}
+.s-Relationship-BaseArchDialog .caption {
+  width: 150px;
+}
+.s-Relationship-BaseArchDialog > .size {
+  width: 650px;
+}
+.s-Relationship-BaseArchDialog .caption {
+  width: 150px;
+}
+.s-Relationship-BaseCoverDialog > .size {
+  width: 650px;
+}
+.s-Relationship-BaseCoverDialog .caption {
+  width: 150px;
+}
+.s-Relationship-BaseGroupDialog > .size {
+  width: 650px;
+}
+.s-Relationship-BaseGroupDialog .caption {
+  width: 150px;
+}
+.s-Relationship-BaseShapeDialog > .size {
+  width: 650px;
+}
+.s-Relationship-BaseShapeDialog .caption {
+  width: 150px;
+}

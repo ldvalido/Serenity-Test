@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Shape"), InstanceName("Shape"), TwoLevelCached]
     [ReadPermission("MasterData:Shape")]
     [ModifyPermission("MasterData:Shape")]
+    [LookupScript("MasterData.Shape")]
     public sealed class ShapeRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Shape"), Identity]

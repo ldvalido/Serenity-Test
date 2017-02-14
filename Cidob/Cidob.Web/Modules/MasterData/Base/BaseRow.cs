@@ -15,6 +15,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Base"), InstanceName("Base"), TwoLevelCached]
     [ReadPermission("MasterData:Base")]
     [ModifyPermission("MasterData:Base")]
+    [LookupScript("MasterData.Base")]
     public sealed class BaseRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Base"), Identity]
