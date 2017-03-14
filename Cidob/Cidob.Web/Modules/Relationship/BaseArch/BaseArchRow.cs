@@ -123,10 +123,15 @@ namespace Cidob.Relationship.Entities
             get { return Fields.IdArchPrintDescription[this]; }
             set { Fields.IdArchPrintDescription[this] = value; }
         }
-
+        [Expression("jIdArch.[Id] + jIdBase.[IdBase]")]
+        public String CompositeKey
+        {
+            get { return Fields.CompositeKey[this]; }
+            set { Fields.IdArchPrintDescription[this] = value; }
+        }
         IIdField IIdRow.IdField
         {
-            get { return Fields.IdBase; }
+            get { return Fields.CompositeKey; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -156,6 +161,7 @@ namespace Cidob.Relationship.Entities
             public StringField IdArchDescription;
             public StringField IdArchPrintDescription;
 
+            public StringField CompositeKey;
             public RowFields()
                 : base("[dbo].[Base_Arch]")
             {

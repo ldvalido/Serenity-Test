@@ -7683,3 +7683,15 @@ section.content > .s-DataGrid {
 .s-Relationship-BaseShapeDialog .caption {
   width: 150px;
 }
+.s-Templates-OnlineTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-OnlineTemplateDialog .caption {
+  width: 150px;
+}
+.s-MasterData-GenderDialog > .size {
+  width: 650px;
+}
+.s-MasterData-GenderDialog .caption {
+  width: 150px;
+}
