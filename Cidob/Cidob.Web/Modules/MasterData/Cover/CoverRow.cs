@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Cover"), InstanceName("Cover"), TwoLevelCached]
     [ReadPermission("MasterData:Cover")]
     [ModifyPermission("MasterData:Cover")]
+    [LookupScript("MasterData.Cover")]
 
     public sealed class CoverRow : Row, IIdRow, INameRow
     {

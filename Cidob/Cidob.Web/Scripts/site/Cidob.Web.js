@@ -2250,6 +2250,55 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var GenderForm = (function (_super) {
+            __extends(GenderForm, _super);
+            function GenderForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return GenderForm;
+        }(Serenity.PrefixedContext));
+        GenderForm.formKey = 'MasterData.Gender';
+        MasterData.GenderForm = GenderForm;
+        [['IdGender', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(GenderForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var GenderRow;
+        (function (GenderRow) {
+            GenderRow.idProperty = 'IdGender';
+            GenderRow.nameProperty = 'Description';
+            GenderRow.localTextPrefix = 'MasterData.Gender';
+            var Fields;
+            (function (Fields) {
+            })(Fields = GenderRow.Fields || (GenderRow.Fields = {}));
+            ['IdGender', 'Description'].forEach(function (x) { return Fields[x] = x; });
+        })(GenderRow = MasterData.GenderRow || (MasterData.GenderRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var GenderService;
+        (function (GenderService) {
+            GenderService.baseUrl = 'MasterData/Gender';
+            var Methods;
+            (function (Methods) {
+            })(Methods = GenderService.Methods || (GenderService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                GenderService[x] = function (r, s, o) { return Q.serviceRequest(GenderService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = GenderService.baseUrl + '/' + x;
+            });
+        })(GenderService = MasterData.GenderService || (MasterData.GenderService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var GroupForm = (function (_super) {
             __extends(GroupForm, _super);
             function GroupForm() {
@@ -2544,6 +2593,104 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var TemplateForm = (function (_super) {
+            __extends(TemplateForm, _super);
+            function TemplateForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return TemplateForm;
+        }(Serenity.PrefixedContext));
+        TemplateForm.formKey = 'MasterData.Template';
+        MasterData.TemplateForm = TemplateForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(TemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateRow;
+        (function (TemplateRow) {
+            TemplateRow.idProperty = 'IdTemplate';
+            TemplateRow.nameProperty = 'Description';
+            TemplateRow.localTextPrefix = 'MasterData.Template';
+            var Fields;
+            (function (Fields) {
+            })(Fields = TemplateRow.Fields || (TemplateRow.Fields = {}));
+            ['IdTemplate', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(TemplateRow = MasterData.TemplateRow || (MasterData.TemplateRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateService;
+        (function (TemplateService) {
+            TemplateService.baseUrl = 'MasterData/Template';
+            var Methods;
+            (function (Methods) {
+            })(Methods = TemplateService.Methods || (TemplateService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                TemplateService[x] = function (r, s, o) { return Q.serviceRequest(TemplateService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = TemplateService.baseUrl + '/' + x;
+            });
+        })(TemplateService = MasterData.TemplateService || (MasterData.TemplateService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateTypeForm = (function (_super) {
+            __extends(TemplateTypeForm, _super);
+            function TemplateTypeForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return TemplateTypeForm;
+        }(Serenity.PrefixedContext));
+        TemplateTypeForm.formKey = 'MasterData.TemplateType';
+        MasterData.TemplateTypeForm = TemplateTypeForm;
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(TemplateTypeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateTypeRow;
+        (function (TemplateTypeRow) {
+            TemplateTypeRow.idProperty = 'IdTemplateType';
+            TemplateTypeRow.nameProperty = 'Description';
+            TemplateTypeRow.localTextPrefix = 'MasterData.TemplateType';
+            var Fields;
+            (function (Fields) {
+            })(Fields = TemplateTypeRow.Fields || (TemplateTypeRow.Fields = {}));
+            ['IdTemplateType', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+        })(TemplateTypeRow = MasterData.TemplateTypeRow || (MasterData.TemplateTypeRow = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateTypeService;
+        (function (TemplateTypeService) {
+            TemplateTypeService.baseUrl = 'MasterData/TemplateType';
+            var Methods;
+            (function (Methods) {
+            })(Methods = TemplateTypeService.Methods || (TemplateTypeService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                TemplateTypeService[x] = function (r, s, o) { return Q.serviceRequest(TemplateTypeService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = TemplateTypeService.baseUrl + '/' + x;
+            });
+        })(TemplateTypeService = MasterData.TemplateTypeService || (MasterData.TemplateTypeService = {}));
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var TransversalArchForm = (function (_super) {
             __extends(TransversalArchForm, _super);
             function TransversalArchForm() {
@@ -2668,6 +2815,247 @@ var Cidob;
         Membership.SignUpForm = SignUpForm;
         [['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['ConfirmEmail', function () { return Serenity.EmailEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['ConfirmPassword', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(SignUpForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = Cidob.Membership || (Cidob.Membership = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseArchForm = (function (_super) {
+            __extends(BaseArchForm, _super);
+            function BaseArchForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BaseArchForm;
+        }(Serenity.PrefixedContext));
+        BaseArchForm.formKey = 'Relationship.BaseArch';
+        Relationship.BaseArchForm = BaseArchForm;
+        [['IdArch', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(BaseArchForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseArchRow;
+        (function (BaseArchRow) {
+            BaseArchRow.idProperty = 'IdBase';
+            BaseArchRow.localTextPrefix = 'Relationship.BaseArch';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BaseArchRow.Fields || (BaseArchRow.Fields = {}));
+            ['IdBase', 'IdArch', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdArchIdProduct', 'IdArchOrder', 'IdArchDescription', 'IdArchPrintDescription'].forEach(function (x) { return Fields[x] = x; });
+        })(BaseArchRow = Relationship.BaseArchRow || (Relationship.BaseArchRow = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseArchService;
+        (function (BaseArchService) {
+            BaseArchService.baseUrl = 'Relationship/BaseArch';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BaseArchService.Methods || (BaseArchService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BaseArchService[x] = function (r, s, o) { return Q.serviceRequest(BaseArchService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BaseArchService.baseUrl + '/' + x;
+            });
+        })(BaseArchService = Relationship.BaseArchService || (Relationship.BaseArchService = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseCoverForm = (function (_super) {
+            __extends(BaseCoverForm, _super);
+            function BaseCoverForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BaseCoverForm;
+        }(Serenity.PrefixedContext));
+        BaseCoverForm.formKey = 'Relationship.BaseCover';
+        Relationship.BaseCoverForm = BaseCoverForm;
+        [['IdCover', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(BaseCoverForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseCoverRow;
+        (function (BaseCoverRow) {
+            BaseCoverRow.idProperty = 'IdBase';
+            BaseCoverRow.localTextPrefix = 'Relationship.BaseCover';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BaseCoverRow.Fields || (BaseCoverRow.Fields = {}));
+            ['IdBase', 'IdCover', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdCoverIdProduct', 'IdCoverOrder', 'IdCoverDescription', 'IdCoverPrintName'].forEach(function (x) { return Fields[x] = x; });
+        })(BaseCoverRow = Relationship.BaseCoverRow || (Relationship.BaseCoverRow = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseCoverService;
+        (function (BaseCoverService) {
+            BaseCoverService.baseUrl = 'Relationship/BaseCover';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BaseCoverService.Methods || (BaseCoverService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BaseCoverService[x] = function (r, s, o) { return Q.serviceRequest(BaseCoverService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BaseCoverService.baseUrl + '/' + x;
+            });
+        })(BaseCoverService = Relationship.BaseCoverService || (Relationship.BaseCoverService = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseGroupForm = (function (_super) {
+            __extends(BaseGroupForm, _super);
+            function BaseGroupForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BaseGroupForm;
+        }(Serenity.PrefixedContext));
+        BaseGroupForm.formKey = 'Relationship.BaseGroup';
+        Relationship.BaseGroupForm = BaseGroupForm;
+        [['IdGroup', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(BaseGroupForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseGroupRow;
+        (function (BaseGroupRow) {
+            BaseGroupRow.idProperty = 'IdBase';
+            BaseGroupRow.localTextPrefix = 'Relationship.BaseGroup';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BaseGroupRow.Fields || (BaseGroupRow.Fields = {}));
+            ['IdBase', 'IdGroup', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdGroupDescription', 'IdGroupEnabled'].forEach(function (x) { return Fields[x] = x; });
+        })(BaseGroupRow = Relationship.BaseGroupRow || (Relationship.BaseGroupRow = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseGroupService;
+        (function (BaseGroupService) {
+            BaseGroupService.baseUrl = 'Relationship/BaseGroup';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BaseGroupService.Methods || (BaseGroupService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BaseGroupService[x] = function (r, s, o) { return Q.serviceRequest(BaseGroupService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BaseGroupService.baseUrl + '/' + x;
+            });
+        })(BaseGroupService = Relationship.BaseGroupService || (Relationship.BaseGroupService = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseShapeForm = (function (_super) {
+            __extends(BaseShapeForm, _super);
+            function BaseShapeForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return BaseShapeForm;
+        }(Serenity.PrefixedContext));
+        BaseShapeForm.formKey = 'Relationship.BaseShape';
+        Relationship.BaseShapeForm = BaseShapeForm;
+        [['IdShape', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(BaseShapeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseShapeRow;
+        (function (BaseShapeRow) {
+            BaseShapeRow.idProperty = 'IdBase';
+            BaseShapeRow.localTextPrefix = 'Relationship.BaseShape';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BaseShapeRow.Fields || (BaseShapeRow.Fields = {}));
+            ['IdBase', 'IdShape', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdShapeIdProduct', 'IdShapeOrder', 'IdShapeDescription', 'IdShapePrintName'].forEach(function (x) { return Fields[x] = x; });
+        })(BaseShapeRow = Relationship.BaseShapeRow || (Relationship.BaseShapeRow = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseShapeService;
+        (function (BaseShapeService) {
+            BaseShapeService.baseUrl = 'Relationship/BaseShape';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BaseShapeService.Methods || (BaseShapeService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                BaseShapeService[x] = function (r, s, o) { return Q.serviceRequest(BaseShapeService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = BaseShapeService.baseUrl + '/' + x;
+            });
+        })(BaseShapeService = Relationship.BaseShapeService || (Relationship.BaseShapeService = {}));
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineTemplateForm = (function (_super) {
+            __extends(OnlineTemplateForm, _super);
+            function OnlineTemplateForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return OnlineTemplateForm;
+        }(Serenity.PrefixedContext));
+        OnlineTemplateForm.formKey = 'Templates.OnlineTemplate';
+        Templates.OnlineTemplateForm = OnlineTemplateForm;
+        [['Reference', function () { return Serenity.StringEditor; }], ['Number', function () { return Serenity.IntegerEditor; }], ['IdGender', function () { return Serenity.IntegerEditor; }], ['IdBase', function () { return Serenity.IntegerEditor; }], ['Is34', function () { return Serenity.BooleanEditor; }], ['IdShape', function () { return Serenity.IntegerEditor; }], ['IdCover', function () { return Serenity.IntegerEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['Comments', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineTemplateRow;
+        (function (OnlineTemplateRow) {
+            OnlineTemplateRow.idProperty = 'IdOnlineTemplate';
+            OnlineTemplateRow.nameProperty = 'Reference';
+            OnlineTemplateRow.localTextPrefix = 'Templates.OnlineTemplate';
+            var Fields;
+            (function (Fields) {
+            })(Fields = OnlineTemplateRow.Fields || (OnlineTemplateRow.Fields = {}));
+            ['IdOnlineTemplate', 'Reference', 'Number', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Quantity', 'Comments', 'IdGenderDescription', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdShapeIdProduct', 'IdShapeOrder', 'IdShapeDescription', 'IdShapePrintName', 'IdCoverIdProduct', 'IdCoverOrder', 'IdCoverDescription', 'IdCoverPrintName'].forEach(function (x) { return Fields[x] = x; });
+        })(OnlineTemplateRow = Templates.OnlineTemplateRow || (Templates.OnlineTemplateRow = {}));
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineTemplateService;
+        (function (OnlineTemplateService) {
+            OnlineTemplateService.baseUrl = 'Templates/OnlineTemplate';
+            var Methods;
+            (function (Methods) {
+            })(Methods = OnlineTemplateService.Methods || (OnlineTemplateService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                OnlineTemplateService[x] = function (r, s, o) { return Q.serviceRequest(OnlineTemplateService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = OnlineTemplateService.baseUrl + '/' + x;
+            });
+        })(OnlineTemplateService = Templates.OnlineTemplateService || (Templates.OnlineTemplateService = {}));
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
@@ -3689,6 +4077,98 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var GenderDialog = (function (_super) {
+            __extends(GenderDialog, _super);
+            function GenderDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.GenderForm(_this.idPrefix);
+                return _this;
+            }
+            GenderDialog.prototype.getFormKey = function () { return MasterData.GenderForm.formKey; };
+            GenderDialog.prototype.getIdProperty = function () { return MasterData.GenderRow.idProperty; };
+            GenderDialog.prototype.getLocalTextPrefix = function () { return MasterData.GenderRow.localTextPrefix; };
+            GenderDialog.prototype.getNameProperty = function () { return MasterData.GenderRow.nameProperty; };
+            GenderDialog.prototype.getService = function () { return MasterData.GenderService.baseUrl; };
+            return GenderDialog;
+        }(Serenity.EntityDialog));
+        GenderDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], GenderDialog);
+        MasterData.GenderDialog = GenderDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var GenderEditor = (function (_super) {
+            __extends(GenderEditor, _super);
+            function GenderEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            GenderEditor.prototype.getColumnsKey = function () { return 'MasterData.Gender'; };
+            GenderEditor.prototype.getDialogType = function () { return MasterData.GenderEditorDialog; };
+            GenderEditor.prototype.getLocalTextPrefix = function () { return MasterData.GenderRow.localTextPrefix; };
+            return GenderEditor;
+        }(Cidob.Common.GridEditorBase));
+        GenderEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], GenderEditor);
+        MasterData.GenderEditor = GenderEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var GenderEditorDialog = (function (_super) {
+            __extends(GenderEditorDialog, _super);
+            function GenderEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.GenderForm(_this.idPrefix);
+                return _this;
+            }
+            GenderEditorDialog.prototype.getFormKey = function () { return MasterData.GenderForm.formKey; };
+            GenderEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.GenderRow.localTextPrefix; };
+            GenderEditorDialog.prototype.getNameProperty = function () { return MasterData.GenderRow.nameProperty; };
+            return GenderEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        GenderEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], GenderEditorDialog);
+        MasterData.GenderEditorDialog = GenderEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var GenderGrid = (function (_super) {
+            __extends(GenderGrid, _super);
+            function GenderGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            GenderGrid.prototype.getColumnsKey = function () { return 'MasterData.Gender'; };
+            GenderGrid.prototype.getDialogType = function () { return MasterData.GenderDialog; };
+            GenderGrid.prototype.getIdProperty = function () { return MasterData.GenderRow.idProperty; };
+            GenderGrid.prototype.getLocalTextPrefix = function () { return MasterData.GenderRow.localTextPrefix; };
+            GenderGrid.prototype.getService = function () { return MasterData.GenderService.baseUrl; };
+            return GenderGrid;
+        }(Serenity.EntityGrid));
+        GenderGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], GenderGrid);
+        MasterData.GenderGrid = GenderGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var GroupDialog = (function (_super) {
             __extends(GroupDialog, _super);
             function GroupDialog() {
@@ -4241,6 +4721,190 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
+        var TemplateDialog = (function (_super) {
+            __extends(TemplateDialog, _super);
+            function TemplateDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.TemplateForm(_this.idPrefix);
+                return _this;
+            }
+            TemplateDialog.prototype.getFormKey = function () { return MasterData.TemplateForm.formKey; };
+            TemplateDialog.prototype.getIdProperty = function () { return MasterData.TemplateRow.idProperty; };
+            TemplateDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
+            TemplateDialog.prototype.getNameProperty = function () { return MasterData.TemplateRow.nameProperty; };
+            TemplateDialog.prototype.getService = function () { return MasterData.TemplateService.baseUrl; };
+            return TemplateDialog;
+        }(Serenity.EntityDialog));
+        TemplateDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], TemplateDialog);
+        MasterData.TemplateDialog = TemplateDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateEditor = (function (_super) {
+            __extends(TemplateEditor, _super);
+            function TemplateEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            TemplateEditor.prototype.getColumnsKey = function () { return 'MasterData.Template'; };
+            TemplateEditor.prototype.getDialogType = function () { return MasterData.TemplateEditorDialog; };
+            TemplateEditor.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
+            return TemplateEditor;
+        }(Cidob.Common.GridEditorBase));
+        TemplateEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], TemplateEditor);
+        MasterData.TemplateEditor = TemplateEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateEditorDialog = (function (_super) {
+            __extends(TemplateEditorDialog, _super);
+            function TemplateEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.TemplateForm(_this.idPrefix);
+                return _this;
+            }
+            TemplateEditorDialog.prototype.getFormKey = function () { return MasterData.TemplateForm.formKey; };
+            TemplateEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
+            TemplateEditorDialog.prototype.getNameProperty = function () { return MasterData.TemplateRow.nameProperty; };
+            return TemplateEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        TemplateEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], TemplateEditorDialog);
+        MasterData.TemplateEditorDialog = TemplateEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateGrid = (function (_super) {
+            __extends(TemplateGrid, _super);
+            function TemplateGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            TemplateGrid.prototype.getColumnsKey = function () { return 'MasterData.Template'; };
+            TemplateGrid.prototype.getDialogType = function () { return MasterData.TemplateDialog; };
+            TemplateGrid.prototype.getIdProperty = function () { return MasterData.TemplateRow.idProperty; };
+            TemplateGrid.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
+            TemplateGrid.prototype.getService = function () { return MasterData.TemplateService.baseUrl; };
+            return TemplateGrid;
+        }(Serenity.EntityGrid));
+        TemplateGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], TemplateGrid);
+        MasterData.TemplateGrid = TemplateGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateTypeDialog = (function (_super) {
+            __extends(TemplateTypeDialog, _super);
+            function TemplateTypeDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.TemplateTypeForm(_this.idPrefix);
+                return _this;
+            }
+            TemplateTypeDialog.prototype.getFormKey = function () { return MasterData.TemplateTypeForm.formKey; };
+            TemplateTypeDialog.prototype.getIdProperty = function () { return MasterData.TemplateTypeRow.idProperty; };
+            TemplateTypeDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
+            TemplateTypeDialog.prototype.getNameProperty = function () { return MasterData.TemplateTypeRow.nameProperty; };
+            TemplateTypeDialog.prototype.getService = function () { return MasterData.TemplateTypeService.baseUrl; };
+            return TemplateTypeDialog;
+        }(Serenity.EntityDialog));
+        TemplateTypeDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], TemplateTypeDialog);
+        MasterData.TemplateTypeDialog = TemplateTypeDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateTypeEditor = (function (_super) {
+            __extends(TemplateTypeEditor, _super);
+            function TemplateTypeEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            TemplateTypeEditor.prototype.getColumnsKey = function () { return 'MasterData.TemplateType'; };
+            TemplateTypeEditor.prototype.getDialogType = function () { return MasterData.TemplateTypeEditorDialog; };
+            TemplateTypeEditor.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
+            return TemplateTypeEditor;
+        }(Cidob.Common.GridEditorBase));
+        TemplateTypeEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], TemplateTypeEditor);
+        MasterData.TemplateTypeEditor = TemplateTypeEditor;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateTypeEditorDialog = (function (_super) {
+            __extends(TemplateTypeEditorDialog, _super);
+            function TemplateTypeEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new MasterData.TemplateTypeForm(_this.idPrefix);
+                return _this;
+            }
+            TemplateTypeEditorDialog.prototype.getFormKey = function () { return MasterData.TemplateTypeForm.formKey; };
+            TemplateTypeEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
+            TemplateTypeEditorDialog.prototype.getNameProperty = function () { return MasterData.TemplateTypeRow.nameProperty; };
+            return TemplateTypeEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        TemplateTypeEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], TemplateTypeEditorDialog);
+        MasterData.TemplateTypeEditorDialog = TemplateTypeEditorDialog;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
+        var TemplateTypeGrid = (function (_super) {
+            __extends(TemplateTypeGrid, _super);
+            function TemplateTypeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            TemplateTypeGrid.prototype.getColumnsKey = function () { return 'MasterData.TemplateType'; };
+            TemplateTypeGrid.prototype.getDialogType = function () { return MasterData.TemplateTypeDialog; };
+            TemplateTypeGrid.prototype.getIdProperty = function () { return MasterData.TemplateTypeRow.idProperty; };
+            TemplateTypeGrid.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
+            TemplateTypeGrid.prototype.getService = function () { return MasterData.TemplateTypeService.baseUrl; };
+            return TemplateTypeGrid;
+        }(Serenity.EntityGrid));
+        TemplateTypeGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], TemplateTypeGrid);
+        MasterData.TemplateTypeGrid = TemplateTypeGrid;
+    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var MasterData;
+    (function (MasterData) {
         var TransversalArchDialog = (function (_super) {
             __extends(TransversalArchDialog, _super);
             function TransversalArchDialog() {
@@ -4561,5 +5225,457 @@ var Cidob;
         ], SignUpPanel);
         Membership.SignUpPanel = SignUpPanel;
     })(Membership = Cidob.Membership || (Cidob.Membership = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseArchDialog = (function (_super) {
+            __extends(BaseArchDialog, _super);
+            function BaseArchDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseArchForm(_this.idPrefix);
+                return _this;
+            }
+            BaseArchDialog.prototype.getFormKey = function () { return Relationship.BaseArchForm.formKey; };
+            BaseArchDialog.prototype.getIdProperty = function () { return Relationship.BaseArchRow.idProperty; };
+            BaseArchDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseArchRow.localTextPrefix; };
+            BaseArchDialog.prototype.getService = function () { return Relationship.BaseArchService.baseUrl; };
+            return BaseArchDialog;
+        }(Serenity.EntityDialog));
+        BaseArchDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseArchDialog);
+        Relationship.BaseArchDialog = BaseArchDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseArchEditor = (function (_super) {
+            __extends(BaseArchEditor, _super);
+            function BaseArchEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseArchEditor.prototype.getColumnsKey = function () { return 'Relationship.BaseArch'; };
+            BaseArchEditor.prototype.getDialogType = function () { return Relationship.BaseArchEditorDialog; };
+            BaseArchEditor.prototype.getLocalTextPrefix = function () { return Relationship.BaseArchRow.localTextPrefix; };
+            return BaseArchEditor;
+        }(Cidob.Common.GridEditorBase));
+        BaseArchEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseArchEditor);
+        Relationship.BaseArchEditor = BaseArchEditor;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseArchEditorDialog = (function (_super) {
+            __extends(BaseArchEditorDialog, _super);
+            function BaseArchEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseArchForm(_this.idPrefix);
+                return _this;
+            }
+            BaseArchEditorDialog.prototype.getFormKey = function () { return Relationship.BaseArchForm.formKey; };
+            BaseArchEditorDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseArchRow.localTextPrefix; };
+            return BaseArchEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        BaseArchEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseArchEditorDialog);
+        Relationship.BaseArchEditorDialog = BaseArchEditorDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseArchGrid = (function (_super) {
+            __extends(BaseArchGrid, _super);
+            function BaseArchGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseArchGrid.prototype.getColumnsKey = function () { return 'Relationship.BaseArch'; };
+            BaseArchGrid.prototype.getDialogType = function () { return Relationship.BaseArchDialog; };
+            BaseArchGrid.prototype.getIdProperty = function () { return Relationship.BaseArchRow.idProperty; };
+            BaseArchGrid.prototype.getLocalTextPrefix = function () { return Relationship.BaseArchRow.localTextPrefix; };
+            BaseArchGrid.prototype.getService = function () { return Relationship.BaseArchService.baseUrl; };
+            return BaseArchGrid;
+        }(Serenity.EntityGrid));
+        BaseArchGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseArchGrid);
+        Relationship.BaseArchGrid = BaseArchGrid;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseCoverDialog = (function (_super) {
+            __extends(BaseCoverDialog, _super);
+            function BaseCoverDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseCoverForm(_this.idPrefix);
+                return _this;
+            }
+            BaseCoverDialog.prototype.getFormKey = function () { return Relationship.BaseCoverForm.formKey; };
+            BaseCoverDialog.prototype.getIdProperty = function () { return Relationship.BaseCoverRow.idProperty; };
+            BaseCoverDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseCoverRow.localTextPrefix; };
+            BaseCoverDialog.prototype.getService = function () { return Relationship.BaseCoverService.baseUrl; };
+            return BaseCoverDialog;
+        }(Serenity.EntityDialog));
+        BaseCoverDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseCoverDialog);
+        Relationship.BaseCoverDialog = BaseCoverDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseCoverEditor = (function (_super) {
+            __extends(BaseCoverEditor, _super);
+            function BaseCoverEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseCoverEditor.prototype.getColumnsKey = function () { return 'Relationship.BaseCover'; };
+            BaseCoverEditor.prototype.getDialogType = function () { return Relationship.BaseCoverEditorDialog; };
+            BaseCoverEditor.prototype.getLocalTextPrefix = function () { return Relationship.BaseCoverRow.localTextPrefix; };
+            return BaseCoverEditor;
+        }(Cidob.Common.GridEditorBase));
+        BaseCoverEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseCoverEditor);
+        Relationship.BaseCoverEditor = BaseCoverEditor;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseCoverEditorDialog = (function (_super) {
+            __extends(BaseCoverEditorDialog, _super);
+            function BaseCoverEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseCoverForm(_this.idPrefix);
+                return _this;
+            }
+            BaseCoverEditorDialog.prototype.getFormKey = function () { return Relationship.BaseCoverForm.formKey; };
+            BaseCoverEditorDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseCoverRow.localTextPrefix; };
+            return BaseCoverEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        BaseCoverEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseCoverEditorDialog);
+        Relationship.BaseCoverEditorDialog = BaseCoverEditorDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseCoverGrid = (function (_super) {
+            __extends(BaseCoverGrid, _super);
+            function BaseCoverGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseCoverGrid.prototype.getColumnsKey = function () { return 'Relationship.BaseCover'; };
+            BaseCoverGrid.prototype.getDialogType = function () { return Relationship.BaseCoverDialog; };
+            BaseCoverGrid.prototype.getIdProperty = function () { return Relationship.BaseCoverRow.idProperty; };
+            BaseCoverGrid.prototype.getLocalTextPrefix = function () { return Relationship.BaseCoverRow.localTextPrefix; };
+            BaseCoverGrid.prototype.getService = function () { return Relationship.BaseCoverService.baseUrl; };
+            return BaseCoverGrid;
+        }(Serenity.EntityGrid));
+        BaseCoverGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseCoverGrid);
+        Relationship.BaseCoverGrid = BaseCoverGrid;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseGroupDialog = (function (_super) {
+            __extends(BaseGroupDialog, _super);
+            function BaseGroupDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseGroupForm(_this.idPrefix);
+                return _this;
+            }
+            BaseGroupDialog.prototype.getFormKey = function () { return Relationship.BaseGroupForm.formKey; };
+            BaseGroupDialog.prototype.getIdProperty = function () { return Relationship.BaseGroupRow.idProperty; };
+            BaseGroupDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseGroupRow.localTextPrefix; };
+            BaseGroupDialog.prototype.getService = function () { return Relationship.BaseGroupService.baseUrl; };
+            return BaseGroupDialog;
+        }(Serenity.EntityDialog));
+        BaseGroupDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseGroupDialog);
+        Relationship.BaseGroupDialog = BaseGroupDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseGroupEditor = (function (_super) {
+            __extends(BaseGroupEditor, _super);
+            function BaseGroupEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseGroupEditor.prototype.getColumnsKey = function () { return 'Relationship.BaseGroup'; };
+            BaseGroupEditor.prototype.getDialogType = function () { return Relationship.BaseGroupEditorDialog; };
+            BaseGroupEditor.prototype.getLocalTextPrefix = function () { return Relationship.BaseGroupRow.localTextPrefix; };
+            return BaseGroupEditor;
+        }(Cidob.Common.GridEditorBase));
+        BaseGroupEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseGroupEditor);
+        Relationship.BaseGroupEditor = BaseGroupEditor;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseGroupEditorDialog = (function (_super) {
+            __extends(BaseGroupEditorDialog, _super);
+            function BaseGroupEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseGroupForm(_this.idPrefix);
+                return _this;
+            }
+            BaseGroupEditorDialog.prototype.getFormKey = function () { return Relationship.BaseGroupForm.formKey; };
+            BaseGroupEditorDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseGroupRow.localTextPrefix; };
+            return BaseGroupEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        BaseGroupEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseGroupEditorDialog);
+        Relationship.BaseGroupEditorDialog = BaseGroupEditorDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseGroupGrid = (function (_super) {
+            __extends(BaseGroupGrid, _super);
+            function BaseGroupGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseGroupGrid.prototype.getColumnsKey = function () { return 'Relationship.BaseGroup'; };
+            BaseGroupGrid.prototype.getDialogType = function () { return Relationship.BaseGroupDialog; };
+            BaseGroupGrid.prototype.getIdProperty = function () { return Relationship.BaseGroupRow.idProperty; };
+            BaseGroupGrid.prototype.getLocalTextPrefix = function () { return Relationship.BaseGroupRow.localTextPrefix; };
+            BaseGroupGrid.prototype.getService = function () { return Relationship.BaseGroupService.baseUrl; };
+            return BaseGroupGrid;
+        }(Serenity.EntityGrid));
+        BaseGroupGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseGroupGrid);
+        Relationship.BaseGroupGrid = BaseGroupGrid;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseShapeDialog = (function (_super) {
+            __extends(BaseShapeDialog, _super);
+            function BaseShapeDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseShapeForm(_this.idPrefix);
+                return _this;
+            }
+            BaseShapeDialog.prototype.getFormKey = function () { return Relationship.BaseShapeForm.formKey; };
+            BaseShapeDialog.prototype.getIdProperty = function () { return Relationship.BaseShapeRow.idProperty; };
+            BaseShapeDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseShapeRow.localTextPrefix; };
+            BaseShapeDialog.prototype.getService = function () { return Relationship.BaseShapeService.baseUrl; };
+            return BaseShapeDialog;
+        }(Serenity.EntityDialog));
+        BaseShapeDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseShapeDialog);
+        Relationship.BaseShapeDialog = BaseShapeDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseShapeEditor = (function (_super) {
+            __extends(BaseShapeEditor, _super);
+            function BaseShapeEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseShapeEditor.prototype.getColumnsKey = function () { return 'Relationship.BaseShape'; };
+            BaseShapeEditor.prototype.getDialogType = function () { return Relationship.BaseShapeEditorDialog; };
+            BaseShapeEditor.prototype.getLocalTextPrefix = function () { return Relationship.BaseShapeRow.localTextPrefix; };
+            return BaseShapeEditor;
+        }(Cidob.Common.GridEditorBase));
+        BaseShapeEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseShapeEditor);
+        Relationship.BaseShapeEditor = BaseShapeEditor;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseShapeEditorDialog = (function (_super) {
+            __extends(BaseShapeEditorDialog, _super);
+            function BaseShapeEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Relationship.BaseShapeForm(_this.idPrefix);
+                return _this;
+            }
+            BaseShapeEditorDialog.prototype.getFormKey = function () { return Relationship.BaseShapeForm.formKey; };
+            BaseShapeEditorDialog.prototype.getLocalTextPrefix = function () { return Relationship.BaseShapeRow.localTextPrefix; };
+            return BaseShapeEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        BaseShapeEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], BaseShapeEditorDialog);
+        Relationship.BaseShapeEditorDialog = BaseShapeEditorDialog;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Relationship;
+    (function (Relationship) {
+        var BaseShapeGrid = (function (_super) {
+            __extends(BaseShapeGrid, _super);
+            function BaseShapeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            BaseShapeGrid.prototype.getColumnsKey = function () { return 'Relationship.BaseShape'; };
+            BaseShapeGrid.prototype.getDialogType = function () { return Relationship.BaseShapeDialog; };
+            BaseShapeGrid.prototype.getIdProperty = function () { return Relationship.BaseShapeRow.idProperty; };
+            BaseShapeGrid.prototype.getLocalTextPrefix = function () { return Relationship.BaseShapeRow.localTextPrefix; };
+            BaseShapeGrid.prototype.getService = function () { return Relationship.BaseShapeService.baseUrl; };
+            return BaseShapeGrid;
+        }(Serenity.EntityGrid));
+        BaseShapeGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], BaseShapeGrid);
+        Relationship.BaseShapeGrid = BaseShapeGrid;
+    })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineTemplateDialog = (function (_super) {
+            __extends(OnlineTemplateDialog, _super);
+            function OnlineTemplateDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Templates.OnlineTemplateForm(_this.idPrefix);
+                return _this;
+            }
+            OnlineTemplateDialog.prototype.getFormKey = function () { return Templates.OnlineTemplateForm.formKey; };
+            OnlineTemplateDialog.prototype.getIdProperty = function () { return Templates.OnlineTemplateRow.idProperty; };
+            OnlineTemplateDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
+            OnlineTemplateDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
+            OnlineTemplateDialog.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
+            return OnlineTemplateDialog;
+        }(Serenity.EntityDialog));
+        OnlineTemplateDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], OnlineTemplateDialog);
+        Templates.OnlineTemplateDialog = OnlineTemplateDialog;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineTemplateEditor = (function (_super) {
+            __extends(OnlineTemplateEditor, _super);
+            function OnlineTemplateEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            OnlineTemplateEditor.prototype.getColumnsKey = function () { return 'Templates.OnlineTemplate'; };
+            OnlineTemplateEditor.prototype.getDialogType = function () { return Templates.OnlineTemplateEditorDialog; };
+            OnlineTemplateEditor.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
+            return OnlineTemplateEditor;
+        }(Cidob.Common.GridEditorBase));
+        OnlineTemplateEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], OnlineTemplateEditor);
+        Templates.OnlineTemplateEditor = OnlineTemplateEditor;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineTemplateEditorDialog = (function (_super) {
+            __extends(OnlineTemplateEditorDialog, _super);
+            function OnlineTemplateEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Templates.OnlineTemplateForm(_this.idPrefix);
+                return _this;
+            }
+            OnlineTemplateEditorDialog.prototype.getFormKey = function () { return Templates.OnlineTemplateForm.formKey; };
+            OnlineTemplateEditorDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
+            OnlineTemplateEditorDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
+            return OnlineTemplateEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        OnlineTemplateEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], OnlineTemplateEditorDialog);
+        Templates.OnlineTemplateEditorDialog = OnlineTemplateEditorDialog;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineTemplateGrid = (function (_super) {
+            __extends(OnlineTemplateGrid, _super);
+            function OnlineTemplateGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OnlineTemplateGrid.prototype.getColumnsKey = function () { return 'Templates.OnlineTemplate'; };
+            OnlineTemplateGrid.prototype.getDialogType = function () { return Templates.OnlineTemplateDialog; };
+            OnlineTemplateGrid.prototype.getIdProperty = function () { return Templates.OnlineTemplateRow.idProperty; };
+            OnlineTemplateGrid.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
+            OnlineTemplateGrid.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
+            return OnlineTemplateGrid;
+        }(Serenity.EntityGrid));
+        OnlineTemplateGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], OnlineTemplateGrid);
+        Templates.OnlineTemplateGrid = OnlineTemplateGrid;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 //# sourceMappingURL=Cidob.Web.js.map
