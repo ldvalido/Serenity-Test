@@ -18,12 +18,13 @@ namespace Cidob.Templates.Columns
         [EditLink]
         public String Reference { get; set; }
         public Int32 Number { get; set; }
+        public Boolean Urgent { get; set; }
         public Int32 IdGender { get; set; }
         public Int32 IdBase { get; set; }
         public Boolean Is34 { get; set; }
         public Int32 IdShape { get; set; }
         public Int32 IdCover { get; set; }
+        public String Observations { get; set; }
         public Int32 Quantity { get; set; }
-        public String Comments { get; set; }
     }
 }

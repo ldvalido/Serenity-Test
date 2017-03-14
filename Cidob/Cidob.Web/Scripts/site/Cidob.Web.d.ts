@@ -2152,13 +2152,14 @@ declare namespace Cidob.Templates {
     interface OnlineTemplateForm {
         Reference: Serenity.StringEditor;
         Number: Serenity.IntegerEditor;
+        Urgent: Serenity.BooleanEditor;
         IdGender: Serenity.IntegerEditor;
         IdBase: Serenity.IntegerEditor;
         Is34: Serenity.BooleanEditor;
         IdShape: Serenity.IntegerEditor;
         IdCover: Serenity.IntegerEditor;
+        Observations: Serenity.StringEditor;
         Quantity: Serenity.IntegerEditor;
-        Comments: Serenity.StringEditor;
     }
 }
 declare namespace Cidob.Templates {
@@ -2166,14 +2167,18 @@ declare namespace Cidob.Templates {
         IdOnlineTemplate?: number;
         Reference?: string;
         Number?: number;
+        Urgent?: boolean;
         IdGender?: number;
         IdBase?: number;
         Is34?: boolean;
         IdShape?: number;
         IdCover?: number;
+        Observations?: string;
         Quantity?: number;
-        Comments?: string;
-        IdGenderDescription?: string;
+        IdOnlineTemplateIdProduct?: number;
+        IdOnlineTemplateOrder?: number;
+        IdOnlineTemplateDescription?: string;
+        IdOnlineTemplatePrintName?: string;
         IdBaseIdProduct?: number;
         IdBaseOrder?: number;
         IdBaseDescription?: string;
@@ -2183,14 +2188,6 @@ declare namespace Cidob.Templates {
         IdBaseEscatola?: boolean;
         IdBaseNeedArch?: boolean;
         IdBaseNeedTransversalArch?: boolean;
-        IdShapeIdProduct?: number;
-        IdShapeOrder?: number;
-        IdShapeDescription?: string;
-        IdShapePrintName?: string;
-        IdCoverIdProduct?: number;
-        IdCoverOrder?: number;
-        IdCoverDescription?: string;
-        IdCoverPrintName?: string;
     }
     namespace OnlineTemplateRow {
         const idProperty = "IdOnlineTemplate";
@@ -2200,14 +2197,18 @@ declare namespace Cidob.Templates {
             const IdOnlineTemplate: any;
             const Reference: any;
             const Number: any;
+            const Urgent: any;
             const IdGender: any;
             const IdBase: any;
             const Is34: any;
             const IdShape: any;
             const IdCover: any;
+            const Observations: any;
             const Quantity: any;
-            const Comments: any;
-            const IdGenderDescription: string;
+            const IdOnlineTemplateIdProduct: string;
+            const IdOnlineTemplateOrder: string;
+            const IdOnlineTemplateDescription: string;
+            const IdOnlineTemplatePrintName: string;
             const IdBaseIdProduct: string;
             const IdBaseOrder: string;
             const IdBaseDescription: string;
@@ -2217,14 +2218,6 @@ declare namespace Cidob.Templates {
             const IdBaseEscatola: string;
             const IdBaseNeedArch: string;
             const IdBaseNeedTransversalArch: string;
-            const IdShapeIdProduct: string;
-            const IdShapeOrder: string;
-            const IdShapeDescription: string;
-            const IdShapePrintName: string;
-            const IdCoverIdProduct: string;
-            const IdCoverOrder: string;
-            const IdCoverDescription: string;
-            const IdCoverPrintName: string;
         }
     }
 }
@@ -3071,6 +3064,7 @@ declare namespace Cidob.Templates {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: OnlineTemplateForm;
+        dialogOpen(): void;
     }
 }
 declare namespace Cidob.Templates {

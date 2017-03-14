@@ -15,14 +15,14 @@ namespace Cidob.Templates.Entities
     [ModifyPermission("Template:LoadTemplate")]
     public sealed class OnlineTemplateRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Id Online Template"), Identity]
+        [DisplayName("Id Online Template"), Identity, ForeignKey("[dbo].[Cover]", "IdCover"), LeftJoin("jIdOnlineTemplate"), TextualField("IdOnlineTemplateDescription")]
         public Int32? IdOnlineTemplate
         {
             get { return Fields.IdOnlineTemplate[this]; }
             set { Fields.IdOnlineTemplate[this] = value; }
         }
 
-        [DisplayName("Reference"), Size(50), NotNull, QuickSearch]
+        [DisplayName("Reference"), Size(50), QuickSearch]
         public String Reference
         {
             get { return Fields.Reference[this]; }
@@ -36,7 +36,14 @@ namespace Cidob.Templates.Entities
             set { Fields.Number[this] = value; }
         }
 
-        [DisplayName("Id Gender"), NotNull, ForeignKey("[dbo].[Gender]", "idGender"), LeftJoin("jIdGender"), TextualField("IdGenderDescription")]
+        [DisplayName("Urgent")]
+        public Boolean? Urgent
+        {
+            get { return Fields.Urgent[this]; }
+            set { Fields.Urgent[this] = value; }
+        }
+
+        [DisplayName("Id Gender"), NotNull]
         public Int32? IdGender
         {
             get { return Fields.IdGender[this]; }
@@ -50,25 +57,32 @@ namespace Cidob.Templates.Entities
             set { Fields.IdBase[this] = value; }
         }
 
-        [DisplayName("Is34"), NotNull]
+        [DisplayName("Is34")]
         public Boolean? Is34
         {
             get { return Fields.Is34[this]; }
             set { Fields.Is34[this] = value; }
         }
 
-        [DisplayName("Id Shape"), NotNull, ForeignKey("[dbo].[Shape]", "IdShape"), LeftJoin("jIdShape"), TextualField("IdShapeDescription")]
+        [DisplayName("Id Shape"), NotNull]
         public Int32? IdShape
         {
             get { return Fields.IdShape[this]; }
             set { Fields.IdShape[this] = value; }
         }
 
-        [DisplayName("Id Cover"), NotNull, ForeignKey("[dbo].[Cover]", "IdCover"), LeftJoin("jIdCover"), TextualField("IdCoverDescription")]
+        [DisplayName("Id Cover"), NotNull]
         public Int32? IdCover
         {
             get { return Fields.IdCover[this]; }
             set { Fields.IdCover[this] = value; }
+        }
+
+        [DisplayName("Observations")]
+        public String Observations
+        {
+            get { return Fields.Observations[this]; }
+            set { Fields.Observations[this] = value; }
         }
 
         [DisplayName("Quantity"), NotNull]
@@ -78,18 +92,32 @@ namespace Cidob.Templates.Entities
             set { Fields.Quantity[this] = value; }
         }
 
-        [DisplayName("Comments"), Size(255), NotNull]
-        public String Comments
+        [DisplayName("Id Online Template Id Product"), Expression("jIdOnlineTemplate.[IdProduct]")]
+        public Int32? IdOnlineTemplateIdProduct
         {
-            get { return Fields.Comments[this]; }
-            set { Fields.Comments[this] = value; }
+            get { return Fields.IdOnlineTemplateIdProduct[this]; }
+            set { Fields.IdOnlineTemplateIdProduct[this] = value; }
         }
 
-        [DisplayName("Id Gender Description"), Expression("jIdGender.[Description]")]
-        public String IdGenderDescription
+        [DisplayName("Id Online Template Order"), Expression("jIdOnlineTemplate.[Order]")]
+        public Int32? IdOnlineTemplateOrder
         {
-            get { return Fields.IdGenderDescription[this]; }
-            set { Fields.IdGenderDescription[this] = value; }
+            get { return Fields.IdOnlineTemplateOrder[this]; }
+            set { Fields.IdOnlineTemplateOrder[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Description"), Expression("jIdOnlineTemplate.[Description]")]
+        public String IdOnlineTemplateDescription
+        {
+            get { return Fields.IdOnlineTemplateDescription[this]; }
+            set { Fields.IdOnlineTemplateDescription[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Print Name"), Expression("jIdOnlineTemplate.[PrintName]")]
+        public String IdOnlineTemplatePrintName
+        {
+            get { return Fields.IdOnlineTemplatePrintName[this]; }
+            set { Fields.IdOnlineTemplatePrintName[this] = value; }
         }
 
         [DisplayName("Id Base Id Product"), Expression("jIdBase.[IdProduct]")]
@@ -155,62 +183,6 @@ namespace Cidob.Templates.Entities
             set { Fields.IdBaseNeedTransversalArch[this] = value; }
         }
 
-        [DisplayName("Id Shape Id Product"), Expression("jIdShape.[IdProduct]")]
-        public Int32? IdShapeIdProduct
-        {
-            get { return Fields.IdShapeIdProduct[this]; }
-            set { Fields.IdShapeIdProduct[this] = value; }
-        }
-
-        [DisplayName("Id Shape Order"), Expression("jIdShape.[Order]")]
-        public Int32? IdShapeOrder
-        {
-            get { return Fields.IdShapeOrder[this]; }
-            set { Fields.IdShapeOrder[this] = value; }
-        }
-
-        [DisplayName("Id Shape Description"), Expression("jIdShape.[Description]")]
-        public String IdShapeDescription
-        {
-            get { return Fields.IdShapeDescription[this]; }
-            set { Fields.IdShapeDescription[this] = value; }
-        }
-
-        [DisplayName("Id Shape Print Name"), Expression("jIdShape.[PrintName]")]
-        public String IdShapePrintName
-        {
-            get { return Fields.IdShapePrintName[this]; }
-            set { Fields.IdShapePrintName[this] = value; }
-        }
-
-        [DisplayName("Id Cover Id Product"), Expression("jIdCover.[IdProduct]")]
-        public Int32? IdCoverIdProduct
-        {
-            get { return Fields.IdCoverIdProduct[this]; }
-            set { Fields.IdCoverIdProduct[this] = value; }
-        }
-
-        [DisplayName("Id Cover Order"), Expression("jIdCover.[Order]")]
-        public Int32? IdCoverOrder
-        {
-            get { return Fields.IdCoverOrder[this]; }
-            set { Fields.IdCoverOrder[this] = value; }
-        }
-
-        [DisplayName("Id Cover Description"), Expression("jIdCover.[Description]")]
-        public String IdCoverDescription
-        {
-            get { return Fields.IdCoverDescription[this]; }
-            set { Fields.IdCoverDescription[this] = value; }
-        }
-
-        [DisplayName("Id Cover Print Name"), Expression("jIdCover.[PrintName]")]
-        public String IdCoverPrintName
-        {
-            get { return Fields.IdCoverPrintName[this]; }
-            set { Fields.IdCoverPrintName[this] = value; }
-        }
-
         IIdField IIdRow.IdField
         {
             get { return Fields.IdOnlineTemplate; }
@@ -233,15 +205,19 @@ namespace Cidob.Templates.Entities
             public Int32Field IdOnlineTemplate;
             public StringField Reference;
             public Int32Field Number;
+            public BooleanField Urgent;
             public Int32Field IdGender;
             public Int32Field IdBase;
             public BooleanField Is34;
             public Int32Field IdShape;
             public Int32Field IdCover;
+            public StringField Observations;
             public Int32Field Quantity;
-            public StringField Comments;
 
-            public StringField IdGenderDescription;
+            public Int32Field IdOnlineTemplateIdProduct;
+            public Int32Field IdOnlineTemplateOrder;
+            public StringField IdOnlineTemplateDescription;
+            public StringField IdOnlineTemplatePrintName;
 
             public Int32Field IdBaseIdProduct;
             public Int32Field IdBaseOrder;
@@ -252,16 +228,6 @@ namespace Cidob.Templates.Entities
             public BooleanField IdBaseEscatola;
             public BooleanField IdBaseNeedArch;
             public BooleanField IdBaseNeedTransversalArch;
-
-            public Int32Field IdShapeIdProduct;
-            public Int32Field IdShapeOrder;
-            public StringField IdShapeDescription;
-            public StringField IdShapePrintName;
-
-            public Int32Field IdCoverIdProduct;
-            public Int32Field IdCoverOrder;
-            public StringField IdCoverDescription;
-            public StringField IdCoverPrintName;
 
             public RowFields()
                 : base("[dbo].[OnlineTemplate]")

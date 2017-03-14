@@ -3,6 +3,7 @@ namespace Cidob.Templates {
 
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.responsive()
+    @Serenity.Decorators.maximizable()
     export class OnlineTemplateDialog extends Serenity.EntityDialog<OnlineTemplateRow, any> {
         protected getFormKey() { return OnlineTemplateForm.formKey; }
         protected getIdProperty() { return OnlineTemplateRow.idProperty; }
@@ -12,5 +13,9 @@ namespace Cidob.Templates {
 
         protected form = new OnlineTemplateForm(this.idPrefix);
 
+        dialogOpen() {
+                    super.dialogOpen();
+                   this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+                 }
     }
 }

@@ -3021,7 +3021,7 @@ var Cidob;
         }(Serenity.PrefixedContext));
         OnlineTemplateForm.formKey = 'Templates.OnlineTemplate';
         Templates.OnlineTemplateForm = OnlineTemplateForm;
-        [['Reference', function () { return Serenity.StringEditor; }], ['Number', function () { return Serenity.IntegerEditor; }], ['IdGender', function () { return Serenity.IntegerEditor; }], ['IdBase', function () { return Serenity.IntegerEditor; }], ['Is34', function () { return Serenity.BooleanEditor; }], ['IdShape', function () { return Serenity.IntegerEditor; }], ['IdCover', function () { return Serenity.IntegerEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['Comments', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Reference', function () { return Serenity.StringEditor; }], ['Number', function () { return Serenity.IntegerEditor; }], ['Urgent', function () { return Serenity.BooleanEditor; }], ['IdGender', function () { return Serenity.IntegerEditor; }], ['IdBase', function () { return Serenity.IntegerEditor; }], ['Is34', function () { return Serenity.BooleanEditor; }], ['IdShape', function () { return Serenity.IntegerEditor; }], ['IdCover', function () { return Serenity.IntegerEditor; }], ['Observations', function () { return Serenity.StringEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -3036,7 +3036,7 @@ var Cidob;
             var Fields;
             (function (Fields) {
             })(Fields = OnlineTemplateRow.Fields || (OnlineTemplateRow.Fields = {}));
-            ['IdOnlineTemplate', 'Reference', 'Number', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Quantity', 'Comments', 'IdGenderDescription', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdShapeIdProduct', 'IdShapeOrder', 'IdShapeDescription', 'IdShapePrintName', 'IdCoverIdProduct', 'IdCoverOrder', 'IdCoverDescription', 'IdCoverPrintName'].forEach(function (x) { return Fields[x] = x; });
+            ['IdOnlineTemplate', 'Reference', 'Number', 'Urgent', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Observations', 'Quantity', 'IdOnlineTemplateIdProduct', 'IdOnlineTemplateOrder', 'IdOnlineTemplateDescription', 'IdOnlineTemplatePrintName', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch'].forEach(function (x) { return Fields[x] = x; });
         })(OnlineTemplateRow = Templates.OnlineTemplateRow || (Templates.OnlineTemplateRow = {}));
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
@@ -5602,11 +5602,16 @@ var Cidob;
             OnlineTemplateDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
             OnlineTemplateDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
             OnlineTemplateDialog.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
+            OnlineTemplateDialog.prototype.dialogOpen = function () {
+                _super.prototype.dialogOpen.call(this);
+                this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+            };
             return OnlineTemplateDialog;
         }(Serenity.EntityDialog));
         OnlineTemplateDialog = __decorate([
             Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
+            Serenity.Decorators.responsive(),
+            Serenity.Decorators.maximizable()
         ], OnlineTemplateDialog);
         Templates.OnlineTemplateDialog = OnlineTemplateDialog;
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
