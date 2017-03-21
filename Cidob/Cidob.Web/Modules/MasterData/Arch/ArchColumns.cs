@@ -21,5 +21,6 @@ namespace Cidob.MasterData.Columns
         [EditLink]
         public String Description { get; set; }
         public String PrintDescription { get; set; }
+        public Boolean IsValenti { get; set; }
     }
 }

@@ -51,6 +51,13 @@ namespace Cidob.MasterData.Entities
             set { Fields.PrintName[this] = value; }
         }
 
+        [DisplayName("Is Valenti"), NotNull]
+        public Boolean? IsValenti
+        {
+            get { return Fields.IsValenti[this]; }
+            set { Fields.IsValenti[this] = value; }
+        }
+
         [DisplayName("Id Product Description"), Expression("jIdProduct.[Description]")]
         public String IdProductDescription
         {
@@ -89,6 +96,7 @@ namespace Cidob.MasterData.Entities
             public Int32Field Order;
             public StringField Description;
             public StringField PrintName;
+            public BooleanField IsValenti;
 
             public StringField IdProductDescription;
             public StringField IdProductCode;

@@ -25,7 +25,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/14/2017 13:14:59</publishTime>
     </File>
     <File Include="bin/Cidob.Web.dll">
-      <publishTime>03/14/2017 13:30:44</publishTime>
+      <publishTime>03/21/2017 10:36:04</publishTime>
     </File>
     <File Include="bin/CsQuery.dll">
       <publishTime>02/05/2013 06:41:36</publishTime>
@@ -1828,13 +1828,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2016 10:59:33</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>03/14/2017 13:30:46</publishTime>
+      <publishTime>03/21/2017 10:36:05</publishTime>
     </File>
     <File Include="Content/site/site.htmlcontent.css">
       <publishTime>12/21/2016 10:59:33</publishTime>
     </File>
     <File Include="Content/site/site.less">
-      <publishTime>03/14/2017 13:29:20</publishTime>
+      <publishTime>03/21/2017 10:28:01</publishTime>
     </File>
     <File Include="Content/site/site.membership.less">
       <publishTime>12/21/2016 10:59:33</publishTime>
@@ -2125,7 +2125,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2016 10:59:35</publishTime>
     </File>
     <File Include="Modules/MasterData/Arch/ArchIndex.cshtml">
-      <publishTime>01/30/2017 14:48:00</publishTime>
+      <publishTime>03/21/2017 10:28:00</publishTime>
     </File>
     <File Include="Modules/MasterData/Base/BaseIndex.cshtml">
       <publishTime>01/30/2017 15:07:23</publishTime>
@@ -2140,7 +2140,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/02/2017 09:40:33</publishTime>
     </File>
     <File Include="Modules/MasterData/Digital/DigitalIndex.cshtml">
-      <publishTime>02/02/2017 09:51:48</publishTime>
+      <publishTime>03/21/2017 10:28:01</publishTime>
     </File>
     <File Include="Modules/MasterData/Gender/GenderIndex.cshtml">
       <publishTime>03/14/2017 13:29:20</publishTime>
@@ -2221,7 +2221,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/14/2017 13:29:20</publishTime>
     </File>
     <File Include="Modules/Templates/OnlineTemplate/OnlineTemplateIndex.cshtml">
-      <publishTime>03/14/2017 13:29:20</publishTime>
+      <publishTime>03/14/2017 14:02:05</publishTime>
     </File>
     <File Include="Modules/Web.config">
       <publishTime>12/21/2016 10:59:37</publishTime>
@@ -3565,7 +3565,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2016 11:05:09</publishTime>
     </File>
     <File Include="Scripts/site/Cidob.Web.js">
-      <publishTime>03/14/2017 13:30:50</publishTime>
+      <publishTime>03/21/2017 10:36:10</publishTime>
     </File>
     <File Include="Scripts/site/texts/meeting/meeting.vi-VN.json">
       <publishTime>12/21/2016 10:59:37</publishTime>

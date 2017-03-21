@@ -862,6 +862,7 @@ declare namespace Cidob.MasterData {
         Order: Serenity.IntegerEditor;
         Description: Serenity.StringEditor;
         PrintDescription: Serenity.StringEditor;
+        IsValenti: Serenity.BooleanEditor;
     }
 }
 declare namespace Cidob.MasterData {
@@ -871,6 +872,7 @@ declare namespace Cidob.MasterData {
         Order?: number;
         Description?: string;
         PrintDescription?: string;
+        IsValenti?: boolean;
         IdProductDescription?: string;
         IdProductCode?: string;
     }
@@ -884,6 +886,7 @@ declare namespace Cidob.MasterData {
             const Order: any;
             const Description: any;
             const PrintDescription: any;
+            const IsValenti: any;
             const IdProductDescription: string;
             const IdProductCode: string;
         }
@@ -1258,6 +1261,7 @@ declare namespace Cidob.MasterData {
         Order: Serenity.IntegerEditor;
         Description: Serenity.StringEditor;
         PrintName: Serenity.StringEditor;
+        IsValenti: Serenity.BooleanEditor;
     }
 }
 declare namespace Cidob.MasterData {
@@ -1267,6 +1271,7 @@ declare namespace Cidob.MasterData {
         Order?: number;
         Description?: string;
         PrintName?: string;
+        IsValenti?: boolean;
         IdProductDescription?: string;
         IdProductCode?: string;
     }
@@ -1280,6 +1285,7 @@ declare namespace Cidob.MasterData {
             const Order: any;
             const Description: any;
             const PrintName: any;
+            const IsValenti: any;
             const IdProductDescription: string;
             const IdProductCode: string;
         }
@@ -2146,6 +2152,168 @@ declare namespace Cidob {
     }
 }
 declare namespace Cidob.Templates {
+    class OnlineFeetForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface OnlineFeetForm {
+        TemplateType: Serenity.IntegerEditor;
+        IdInternalArch: Serenity.IntegerEditor;
+        IdExternalArch: Serenity.IntegerEditor;
+        IdOlive: Serenity.IntegerEditor;
+        IdCt: Serenity.IntegerEditor;
+        IdRa: Serenity.IntegerEditor;
+        IdHeel: Serenity.IntegerEditor;
+        IsSingleMit: Serenity.BooleanEditor;
+        IsDoubleMit: Serenity.BooleanEditor;
+        TemplateTypeNumber: Serenity.IntegerEditor;
+        InternalArchNumber: Serenity.IntegerEditor;
+        ExternalArchNumber: Serenity.IntegerEditor;
+        OliveNumber: Serenity.IntegerEditor;
+        CtNumber: Serenity.IntegerEditor;
+        RaNumber: Serenity.IntegerEditor;
+        HeelNumber: Serenity.IntegerEditor;
+        BarValue: Serenity.StringEditor;
+        NeckValue: Serenity.StringEditor;
+        BehindNeck: Serenity.BooleanEditor;
+        IdDigital: Serenity.IntegerEditor;
+        AddaptToNumber: Serenity.IntegerEditor;
+    }
+}
+declare namespace Cidob.Templates {
+    interface OnlineFeetRow {
+        IdOnlineFeet?: number;
+        TemplateType?: number;
+        IdInternalArch?: number;
+        IdExternalArch?: number;
+        IdOlive?: number;
+        IdCt?: number;
+        IdRa?: number;
+        IdHeel?: number;
+        IsSingleMit?: boolean;
+        IsDoubleMit?: boolean;
+        TemplateTypeNumber?: number;
+        InternalArchNumber?: number;
+        ExternalArchNumber?: number;
+        OliveNumber?: number;
+        CtNumber?: number;
+        RaNumber?: number;
+        HeelNumber?: number;
+        BarValue?: string;
+        NeckValue?: string;
+        BehindNeck?: boolean;
+        IdDigital?: number;
+        AddaptToNumber?: number;
+        IdOnlineFeetIdProduct?: number;
+        IdOnlineFeetOrder?: number;
+        IdOnlineFeetDescription?: string;
+        IdOnlineFeetPrintName?: string;
+        IdInternalArchIdProduct?: number;
+        IdInternalArchOrder?: number;
+        IdInternalArchDescription?: string;
+        IdInternalArchPrintDescription?: string;
+        IdInternalArchIsValenti?: boolean;
+        IdExternalArchIdProduct?: number;
+        IdExternalArchOrder?: number;
+        IdExternalArchDescription?: string;
+        IdExternalArchPrintDescription?: string;
+        IdExternalArchIsValenti?: boolean;
+        IdOliveIdProduct?: number;
+        IdOliveOrder?: number;
+        IdOliveDescription?: string;
+        IdOlivePrintName?: string;
+        IdRaIdProduct?: number;
+        IdRaOrder?: number;
+        IdRaDescription?: string;
+        IdRaPrintName?: string;
+        IdHeelIdProduct?: number;
+        IdHeelOrder?: number;
+        IdHeelDescription?: string;
+        IdHeelPrintName?: string;
+        IdDigitalIdProduct?: number;
+        IdDigitalOrder?: number;
+        IdDigitalDescription?: string;
+        IdDigitalPrintName?: string;
+        IdDigitalIsValenti?: boolean;
+    }
+    namespace OnlineFeetRow {
+        const idProperty = "IdOnlineFeet";
+        const nameProperty = "BarValue";
+        const localTextPrefix = "Templates.OnlineFeet";
+        namespace Fields {
+            const IdOnlineFeet: any;
+            const TemplateType: any;
+            const IdInternalArch: any;
+            const IdExternalArch: any;
+            const IdOlive: any;
+            const IdCt: any;
+            const IdRa: any;
+            const IdHeel: any;
+            const IsSingleMit: any;
+            const IsDoubleMit: any;
+            const TemplateTypeNumber: any;
+            const InternalArchNumber: any;
+            const ExternalArchNumber: any;
+            const OliveNumber: any;
+            const CtNumber: any;
+            const RaNumber: any;
+            const HeelNumber: any;
+            const BarValue: any;
+            const NeckValue: any;
+            const BehindNeck: any;
+            const IdDigital: any;
+            const AddaptToNumber: any;
+            const IdOnlineFeetIdProduct: string;
+            const IdOnlineFeetOrder: string;
+            const IdOnlineFeetDescription: string;
+            const IdOnlineFeetPrintName: string;
+            const IdInternalArchIdProduct: string;
+            const IdInternalArchOrder: string;
+            const IdInternalArchDescription: string;
+            const IdInternalArchPrintDescription: string;
+            const IdInternalArchIsValenti: string;
+            const IdExternalArchIdProduct: string;
+            const IdExternalArchOrder: string;
+            const IdExternalArchDescription: string;
+            const IdExternalArchPrintDescription: string;
+            const IdExternalArchIsValenti: string;
+            const IdOliveIdProduct: string;
+            const IdOliveOrder: string;
+            const IdOliveDescription: string;
+            const IdOlivePrintName: string;
+            const IdRaIdProduct: string;
+            const IdRaOrder: string;
+            const IdRaDescription: string;
+            const IdRaPrintName: string;
+            const IdHeelIdProduct: string;
+            const IdHeelOrder: string;
+            const IdHeelDescription: string;
+            const IdHeelPrintName: string;
+            const IdDigitalIdProduct: string;
+            const IdDigitalOrder: string;
+            const IdDigitalDescription: string;
+            const IdDigitalPrintName: string;
+            const IdDigitalIsValenti: string;
+        }
+    }
+}
+declare namespace Cidob.Templates {
+    namespace OnlineFeetService {
+        const baseUrl = "Templates/OnlineFeet";
+        function Create(request: Serenity.SaveRequest<OnlineFeetRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OnlineFeetRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OnlineFeetRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OnlineFeetRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.Templates {
     class OnlineTemplateForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -2778,78 +2946,6 @@ declare namespace Cidob.MasterData {
     }
 }
 declare namespace Cidob.MasterData {
-    class TemplateDialog extends Serenity.EntityDialog<TemplateRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: TemplateForm;
-    }
-}
-declare namespace Cidob.MasterData {
-    class TemplateEditor extends Common.GridEditorBase<TemplateRow> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof TemplateEditorDialog;
-        protected getLocalTextPrefix(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Cidob.MasterData {
-    class TemplateEditorDialog extends Common.GridEditorDialog<TemplateRow> {
-        protected getFormKey(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected form: TemplateForm;
-    }
-}
-declare namespace Cidob.MasterData {
-    class TemplateGrid extends Serenity.EntityGrid<TemplateRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof TemplateDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Cidob.MasterData {
-    class TemplateTypeDialog extends Serenity.EntityDialog<TemplateTypeRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: TemplateTypeForm;
-    }
-}
-declare namespace Cidob.MasterData {
-    class TemplateTypeEditor extends Common.GridEditorBase<TemplateTypeRow> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof TemplateTypeEditorDialog;
-        protected getLocalTextPrefix(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Cidob.MasterData {
-    class TemplateTypeEditorDialog extends Common.GridEditorDialog<TemplateTypeRow> {
-        protected getFormKey(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected form: TemplateTypeForm;
-    }
-}
-declare namespace Cidob.MasterData {
-    class TemplateTypeGrid extends Serenity.EntityGrid<TemplateTypeRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof TemplateTypeDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Cidob.MasterData {
     class TransversalArchDialog extends Serenity.EntityDialog<TransversalArchRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3050,6 +3146,43 @@ declare namespace Cidob.Relationship {
     class BaseShapeGrid extends Serenity.EntityGrid<BaseShapeRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof BaseShapeDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.Templates {
+    class OnlineFeetDialog extends Serenity.EntityDialog<OnlineFeetRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: OnlineFeetForm;
+        dialogOpen(): void;
+    }
+}
+declare namespace Cidob.Templates {
+    class OnlineFeetEditor extends Common.GridEditorBase<OnlineFeetRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OnlineFeetEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.Templates {
+    class OnlineFeetEditorDialog extends Common.GridEditorDialog<OnlineFeetRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: OnlineFeetForm;
+    }
+}
+declare namespace Cidob.Templates {
+    class OnlineFeetGrid extends Serenity.EntityGrid<OnlineFeetRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OnlineFeetDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

@@ -1758,7 +1758,6 @@
     <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeDialog.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Shape\ShapeEditorDialog.ts" />
-    <Content Include="Modules\MasterData\Template\TemplateIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1768,11 +1767,6 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateGrid.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateDialog.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateEditor.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\Template\TemplateEditorDialog.ts" />
-    <Content Include="Modules\MasterData\TemplateType\TemplateTypeIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateTypeRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1782,10 +1776,6 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.TemplateTypeForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeGrid.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeDialog.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeEditor.ts" />
-    <TypeScriptCompile Include="Modules\MasterData\TemplateType\TemplateTypeEditorDialog.ts" />
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseArchRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1796,45 +1786,83 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Modules\Relationship\BaseCover\BaseCoverIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseCoverRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseCoverService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseCoverForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseCoverRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseCoverService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseCoverForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Relationship\BaseCover\BaseCoverGrid.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseCover\BaseCoverDialog.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseCover\BaseCoverEditor.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseCover\BaseCoverEditorDialog.ts" />
     <Content Include="Modules\Relationship\BaseGroup\BaseGroupIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseGroupRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseGroupService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseGroupForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseGroupRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseGroupService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseGroupForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Relationship\BaseGroup\BaseGroupGrid.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseGroup\BaseGroupDialog.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseGroup\BaseGroupEditor.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseGroup\BaseGroupEditorDialog.ts" />
     <Content Include="Modules\Relationship\BaseShape\BaseShapeIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseShapeRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseShapeService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseShapeForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseShapeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseShapeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseShapeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Relationship\BaseShape\BaseShapeGrid.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseShape\BaseShapeDialog.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseShape\BaseShapeEditor.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseShape\BaseShapeEditorDialog.ts" />
     <Content Include="Modules\Templates\OnlineTemplate\OnlineTemplateIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateGrid.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateDialog.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditor.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditorDialog.ts" />
     <Content Include="Modules\MasterData\Gender\GenderIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GenderRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GenderService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GenderForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GenderRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GenderService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GenderForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\MasterData\Gender\GenderGrid.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Gender\GenderDialog.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Gender\GenderEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Gender\GenderEditorDialog.ts" />
+    <Content Include="Modules\Templates\OnlineFeet\OnlineFeetIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetGrid.ts" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetDialog.ts" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetEditor.ts" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2090,18 +2118,6 @@
     <Compile Include="Modules\MasterData\Shape\ShapeRepository.cs" />
     <Compile Include="Modules\MasterData\Shape\ShapeEndpoint.cs" />
     <Compile Include="Modules\MasterData\Shape\ShapePage.cs" />
-    <Compile Include="Modules\MasterData\Template\TemplateRow.cs" />
-    <Compile Include="Modules\MasterData\Template\TemplateColumns.cs" />
-    <Compile Include="Modules\MasterData\Template\TemplateForm.cs" />
-    <Compile Include="Modules\MasterData\Template\TemplateRepository.cs" />
-    <Compile Include="Modules\MasterData\Template\TemplateEndpoint.cs" />
-    <Compile Include="Modules\MasterData\Template\TemplatePage.cs" />
-    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeRow.cs" />
-    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeColumns.cs" />
-    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeForm.cs" />
-    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeRepository.cs" />
-    <Compile Include="Modules\MasterData\TemplateType\TemplateTypeEndpoint.cs" />
-    <Compile Include="Modules\MasterData\TemplateType\TemplateTypePage.cs" />
     <Compile Include="Modules\Relationship\BaseCover\BaseCoverRow.cs" />
     <Compile Include="Modules\Relationship\BaseCover\BaseCoverColumns.cs" />
     <Compile Include="Modules\Relationship\BaseCover\BaseCoverForm.cs" />
@@ -2132,6 +2148,12 @@
     <Compile Include="Modules\MasterData\Gender\GenderRepository.cs" />
     <Compile Include="Modules\MasterData\Gender\GenderEndpoint.cs" />
     <Compile Include="Modules\MasterData\Gender\GenderPage.cs" />
+    <Compile Include="Modules\Templates\OnlineFeet\OnlineFeetRow.cs" />
+    <Compile Include="Modules\Templates\OnlineFeet\OnlineFeetColumns.cs" />
+    <Compile Include="Modules\Templates\OnlineFeet\OnlineFeetForm.cs" />
+    <Compile Include="Modules\Templates\OnlineFeet\OnlineFeetRepository.cs" />
+    <Compile Include="Modules\Templates\OnlineFeet\OnlineFeetEndpoint.cs" />
+    <Compile Include="Modules\Templates\OnlineFeet\OnlineFeetPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

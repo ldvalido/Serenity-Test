@@ -7701,3 +7701,21 @@ section.content > .s-DataGrid {
 .s-Templates-OnlineTemplateDialog .caption {
   width: 150px;
 }
+.s-MasterData-ArchDialog > .size {
+  width: 650px;
+}
+.s-MasterData-ArchDialog .caption {
+  width: 150px;
+}
+.s-MasterData-DigitalDialog > .size {
+  width: 650px;
+}
+.s-MasterData-DigitalDialog .caption {
+  width: 150px;
+}
+.s-Templates-OnlineFeetDialog > .size {
+  width: 650px;
+}
+.s-Templates-OnlineFeetDialog .caption {
+  width: 150px;
+}

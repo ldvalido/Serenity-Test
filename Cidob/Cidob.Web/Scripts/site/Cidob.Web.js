@@ -1869,7 +1869,7 @@ var Cidob;
         }(Serenity.PrefixedContext));
         ArchForm.formKey = 'MasterData.Arch';
         MasterData.ArchForm = ArchForm;
-        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintDescription', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(ArchForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintDescription', function () { return Serenity.StringEditor; }], ['IsValenti', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(ArchForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -1884,7 +1884,7 @@ var Cidob;
             var Fields;
             (function (Fields) {
             })(Fields = ArchRow.Fields || (ArchRow.Fields = {}));
-            ['Id', 'IdProduct', 'Order', 'Description', 'PrintDescription', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+            ['Id', 'IdProduct', 'Order', 'Description', 'PrintDescription', 'IsValenti', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
         })(ArchRow = MasterData.ArchRow || (MasterData.ArchRow = {}));
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
@@ -2210,7 +2210,7 @@ var Cidob;
         }(Serenity.PrefixedContext));
         DigitalForm.formKey = 'MasterData.Digital';
         MasterData.DigitalForm = DigitalForm;
-        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(DigitalForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IdProduct', function () { return Serenity.IntegerEditor; }], ['Order', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['PrintName', function () { return Serenity.StringEditor; }], ['IsValenti', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(DigitalForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -2225,7 +2225,7 @@ var Cidob;
             var Fields;
             (function (Fields) {
             })(Fields = DigitalRow.Fields || (DigitalRow.Fields = {}));
-            ['IdDigital', 'IdProduct', 'Order', 'Description', 'PrintName', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
+            ['IdDigital', 'IdProduct', 'Order', 'Description', 'PrintName', 'IsValenti', 'IdProductDescription', 'IdProductCode'].forEach(function (x) { return Fields[x] = x; });
         })(DigitalRow = MasterData.DigitalRow || (MasterData.DigitalRow = {}));
     })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
 })(Cidob || (Cidob = {}));
@@ -3007,6 +3007,55 @@ var Cidob;
             });
         })(BaseShapeService = Relationship.BaseShapeService || (Relationship.BaseShapeService = {}));
     })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetForm = (function (_super) {
+            __extends(OnlineFeetForm, _super);
+            function OnlineFeetForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return OnlineFeetForm;
+        }(Serenity.PrefixedContext));
+        OnlineFeetForm.formKey = 'Templates.OnlineFeet';
+        Templates.OnlineFeetForm = OnlineFeetForm;
+        [['TemplateType', function () { return Serenity.IntegerEditor; }], ['IdInternalArch', function () { return Serenity.IntegerEditor; }], ['IdExternalArch', function () { return Serenity.IntegerEditor; }], ['IdOlive', function () { return Serenity.IntegerEditor; }], ['IdCt', function () { return Serenity.IntegerEditor; }], ['IdRa', function () { return Serenity.IntegerEditor; }], ['IdHeel', function () { return Serenity.IntegerEditor; }], ['IsSingleMit', function () { return Serenity.BooleanEditor; }], ['IsDoubleMit', function () { return Serenity.BooleanEditor; }], ['TemplateTypeNumber', function () { return Serenity.IntegerEditor; }], ['InternalArchNumber', function () { return Serenity.IntegerEditor; }], ['ExternalArchNumber', function () { return Serenity.IntegerEditor; }], ['OliveNumber', function () { return Serenity.IntegerEditor; }], ['CtNumber', function () { return Serenity.IntegerEditor; }], ['RaNumber', function () { return Serenity.IntegerEditor; }], ['HeelNumber', function () { return Serenity.IntegerEditor; }], ['BarValue', function () { return Serenity.StringEditor; }], ['NeckValue', function () { return Serenity.StringEditor; }], ['BehindNeck', function () { return Serenity.BooleanEditor; }], ['IdDigital', function () { return Serenity.IntegerEditor; }], ['AddaptToNumber', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineFeetForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetRow;
+        (function (OnlineFeetRow) {
+            OnlineFeetRow.idProperty = 'IdOnlineFeet';
+            OnlineFeetRow.nameProperty = 'BarValue';
+            OnlineFeetRow.localTextPrefix = 'Templates.OnlineFeet';
+            var Fields;
+            (function (Fields) {
+            })(Fields = OnlineFeetRow.Fields || (OnlineFeetRow.Fields = {}));
+            ['IdOnlineFeet', 'TemplateType', 'IdInternalArch', 'IdExternalArch', 'IdOlive', 'IdCt', 'IdRa', 'IdHeel', 'IsSingleMit', 'IsDoubleMit', 'TemplateTypeNumber', 'InternalArchNumber', 'ExternalArchNumber', 'OliveNumber', 'CtNumber', 'RaNumber', 'HeelNumber', 'BarValue', 'NeckValue', 'BehindNeck', 'IdDigital', 'AddaptToNumber', 'IdOnlineFeetIdProduct', 'IdOnlineFeetOrder', 'IdOnlineFeetDescription', 'IdOnlineFeetPrintName', 'IdInternalArchIdProduct', 'IdInternalArchOrder', 'IdInternalArchDescription', 'IdInternalArchPrintDescription', 'IdInternalArchIsValenti', 'IdExternalArchIdProduct', 'IdExternalArchOrder', 'IdExternalArchDescription', 'IdExternalArchPrintDescription', 'IdExternalArchIsValenti', 'IdOliveIdProduct', 'IdOliveOrder', 'IdOliveDescription', 'IdOlivePrintName', 'IdRaIdProduct', 'IdRaOrder', 'IdRaDescription', 'IdRaPrintName', 'IdHeelIdProduct', 'IdHeelOrder', 'IdHeelDescription', 'IdHeelPrintName', 'IdDigitalIdProduct', 'IdDigitalOrder', 'IdDigitalDescription', 'IdDigitalPrintName', 'IdDigitalIsValenti'].forEach(function (x) { return Fields[x] = x; });
+        })(OnlineFeetRow = Templates.OnlineFeetRow || (Templates.OnlineFeetRow = {}));
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetService;
+        (function (OnlineFeetService) {
+            OnlineFeetService.baseUrl = 'Templates/OnlineFeet';
+            var Methods;
+            (function (Methods) {
+            })(Methods = OnlineFeetService.Methods || (OnlineFeetService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                OnlineFeetService[x] = function (r, s, o) { return Q.serviceRequest(OnlineFeetService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = OnlineFeetService.baseUrl + '/' + x;
+            });
+        })(OnlineFeetService = Templates.OnlineFeetService || (Templates.OnlineFeetService = {}));
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
@@ -4721,190 +4770,6 @@ var Cidob;
 (function (Cidob) {
     var MasterData;
     (function (MasterData) {
-        var TemplateDialog = (function (_super) {
-            __extends(TemplateDialog, _super);
-            function TemplateDialog() {
-                var _this = _super.apply(this, arguments) || this;
-                _this.form = new MasterData.TemplateForm(_this.idPrefix);
-                return _this;
-            }
-            TemplateDialog.prototype.getFormKey = function () { return MasterData.TemplateForm.formKey; };
-            TemplateDialog.prototype.getIdProperty = function () { return MasterData.TemplateRow.idProperty; };
-            TemplateDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
-            TemplateDialog.prototype.getNameProperty = function () { return MasterData.TemplateRow.nameProperty; };
-            TemplateDialog.prototype.getService = function () { return MasterData.TemplateService.baseUrl; };
-            return TemplateDialog;
-        }(Serenity.EntityDialog));
-        TemplateDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], TemplateDialog);
-        MasterData.TemplateDialog = TemplateDialog;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
-        var TemplateEditor = (function (_super) {
-            __extends(TemplateEditor, _super);
-            function TemplateEditor(container) {
-                return _super.call(this, container) || this;
-            }
-            TemplateEditor.prototype.getColumnsKey = function () { return 'MasterData.Template'; };
-            TemplateEditor.prototype.getDialogType = function () { return MasterData.TemplateEditorDialog; };
-            TemplateEditor.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
-            return TemplateEditor;
-        }(Cidob.Common.GridEditorBase));
-        TemplateEditor = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TemplateEditor);
-        MasterData.TemplateEditor = TemplateEditor;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
-        var TemplateEditorDialog = (function (_super) {
-            __extends(TemplateEditorDialog, _super);
-            function TemplateEditorDialog() {
-                var _this = _super.apply(this, arguments) || this;
-                _this.form = new MasterData.TemplateForm(_this.idPrefix);
-                return _this;
-            }
-            TemplateEditorDialog.prototype.getFormKey = function () { return MasterData.TemplateForm.formKey; };
-            TemplateEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
-            TemplateEditorDialog.prototype.getNameProperty = function () { return MasterData.TemplateRow.nameProperty; };
-            return TemplateEditorDialog;
-        }(Cidob.Common.GridEditorDialog));
-        TemplateEditorDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], TemplateEditorDialog);
-        MasterData.TemplateEditorDialog = TemplateEditorDialog;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
-        var TemplateGrid = (function (_super) {
-            __extends(TemplateGrid, _super);
-            function TemplateGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            TemplateGrid.prototype.getColumnsKey = function () { return 'MasterData.Template'; };
-            TemplateGrid.prototype.getDialogType = function () { return MasterData.TemplateDialog; };
-            TemplateGrid.prototype.getIdProperty = function () { return MasterData.TemplateRow.idProperty; };
-            TemplateGrid.prototype.getLocalTextPrefix = function () { return MasterData.TemplateRow.localTextPrefix; };
-            TemplateGrid.prototype.getService = function () { return MasterData.TemplateService.baseUrl; };
-            return TemplateGrid;
-        }(Serenity.EntityGrid));
-        TemplateGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TemplateGrid);
-        MasterData.TemplateGrid = TemplateGrid;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
-        var TemplateTypeDialog = (function (_super) {
-            __extends(TemplateTypeDialog, _super);
-            function TemplateTypeDialog() {
-                var _this = _super.apply(this, arguments) || this;
-                _this.form = new MasterData.TemplateTypeForm(_this.idPrefix);
-                return _this;
-            }
-            TemplateTypeDialog.prototype.getFormKey = function () { return MasterData.TemplateTypeForm.formKey; };
-            TemplateTypeDialog.prototype.getIdProperty = function () { return MasterData.TemplateTypeRow.idProperty; };
-            TemplateTypeDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
-            TemplateTypeDialog.prototype.getNameProperty = function () { return MasterData.TemplateTypeRow.nameProperty; };
-            TemplateTypeDialog.prototype.getService = function () { return MasterData.TemplateTypeService.baseUrl; };
-            return TemplateTypeDialog;
-        }(Serenity.EntityDialog));
-        TemplateTypeDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], TemplateTypeDialog);
-        MasterData.TemplateTypeDialog = TemplateTypeDialog;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
-        var TemplateTypeEditor = (function (_super) {
-            __extends(TemplateTypeEditor, _super);
-            function TemplateTypeEditor(container) {
-                return _super.call(this, container) || this;
-            }
-            TemplateTypeEditor.prototype.getColumnsKey = function () { return 'MasterData.TemplateType'; };
-            TemplateTypeEditor.prototype.getDialogType = function () { return MasterData.TemplateTypeEditorDialog; };
-            TemplateTypeEditor.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
-            return TemplateTypeEditor;
-        }(Cidob.Common.GridEditorBase));
-        TemplateTypeEditor = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TemplateTypeEditor);
-        MasterData.TemplateTypeEditor = TemplateTypeEditor;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
-        var TemplateTypeEditorDialog = (function (_super) {
-            __extends(TemplateTypeEditorDialog, _super);
-            function TemplateTypeEditorDialog() {
-                var _this = _super.apply(this, arguments) || this;
-                _this.form = new MasterData.TemplateTypeForm(_this.idPrefix);
-                return _this;
-            }
-            TemplateTypeEditorDialog.prototype.getFormKey = function () { return MasterData.TemplateTypeForm.formKey; };
-            TemplateTypeEditorDialog.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
-            TemplateTypeEditorDialog.prototype.getNameProperty = function () { return MasterData.TemplateTypeRow.nameProperty; };
-            return TemplateTypeEditorDialog;
-        }(Cidob.Common.GridEditorDialog));
-        TemplateTypeEditorDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], TemplateTypeEditorDialog);
-        MasterData.TemplateTypeEditorDialog = TemplateTypeEditorDialog;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
-        var TemplateTypeGrid = (function (_super) {
-            __extends(TemplateTypeGrid, _super);
-            function TemplateTypeGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            TemplateTypeGrid.prototype.getColumnsKey = function () { return 'MasterData.TemplateType'; };
-            TemplateTypeGrid.prototype.getDialogType = function () { return MasterData.TemplateTypeDialog; };
-            TemplateTypeGrid.prototype.getIdProperty = function () { return MasterData.TemplateTypeRow.idProperty; };
-            TemplateTypeGrid.prototype.getLocalTextPrefix = function () { return MasterData.TemplateTypeRow.localTextPrefix; };
-            TemplateTypeGrid.prototype.getService = function () { return MasterData.TemplateTypeService.baseUrl; };
-            return TemplateTypeGrid;
-        }(Serenity.EntityGrid));
-        TemplateTypeGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TemplateTypeGrid);
-        MasterData.TemplateTypeGrid = TemplateTypeGrid;
-    })(MasterData = Cidob.MasterData || (Cidob.MasterData = {}));
-})(Cidob || (Cidob = {}));
-var Cidob;
-(function (Cidob) {
-    var MasterData;
-    (function (MasterData) {
         var TransversalArchDialog = (function (_super) {
             __extends(TransversalArchDialog, _super);
             function TransversalArchDialog() {
@@ -5585,6 +5450,103 @@ var Cidob;
         ], BaseShapeGrid);
         Relationship.BaseShapeGrid = BaseShapeGrid;
     })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetDialog = (function (_super) {
+            __extends(OnlineFeetDialog, _super);
+            function OnlineFeetDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Templates.OnlineFeetForm(_this.idPrefix);
+                return _this;
+            }
+            OnlineFeetDialog.prototype.getFormKey = function () { return Templates.OnlineFeetForm.formKey; };
+            OnlineFeetDialog.prototype.getIdProperty = function () { return Templates.OnlineFeetRow.idProperty; };
+            OnlineFeetDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineFeetRow.localTextPrefix; };
+            OnlineFeetDialog.prototype.getNameProperty = function () { return Templates.OnlineFeetRow.nameProperty; };
+            OnlineFeetDialog.prototype.getService = function () { return Templates.OnlineFeetService.baseUrl; };
+            OnlineFeetDialog.prototype.dialogOpen = function () {
+                _super.prototype.dialogOpen.call(this);
+                this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+            };
+            return OnlineFeetDialog;
+        }(Serenity.EntityDialog));
+        OnlineFeetDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive(),
+            Serenity.Decorators.maximizable()
+        ], OnlineFeetDialog);
+        Templates.OnlineFeetDialog = OnlineFeetDialog;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetEditor = (function (_super) {
+            __extends(OnlineFeetEditor, _super);
+            function OnlineFeetEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            OnlineFeetEditor.prototype.getColumnsKey = function () { return 'Templates.OnlineFeet'; };
+            OnlineFeetEditor.prototype.getDialogType = function () { return Templates.OnlineFeetEditorDialog; };
+            OnlineFeetEditor.prototype.getLocalTextPrefix = function () { return Templates.OnlineFeetRow.localTextPrefix; };
+            return OnlineFeetEditor;
+        }(Cidob.Common.GridEditorBase));
+        OnlineFeetEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], OnlineFeetEditor);
+        Templates.OnlineFeetEditor = OnlineFeetEditor;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetEditorDialog = (function (_super) {
+            __extends(OnlineFeetEditorDialog, _super);
+            function OnlineFeetEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Templates.OnlineFeetForm(_this.idPrefix);
+                return _this;
+            }
+            OnlineFeetEditorDialog.prototype.getFormKey = function () { return Templates.OnlineFeetForm.formKey; };
+            OnlineFeetEditorDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineFeetRow.localTextPrefix; };
+            OnlineFeetEditorDialog.prototype.getNameProperty = function () { return Templates.OnlineFeetRow.nameProperty; };
+            return OnlineFeetEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        OnlineFeetEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], OnlineFeetEditorDialog);
+        Templates.OnlineFeetEditorDialog = OnlineFeetEditorDialog;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetGrid = (function (_super) {
+            __extends(OnlineFeetGrid, _super);
+            function OnlineFeetGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OnlineFeetGrid.prototype.getColumnsKey = function () { return 'Templates.OnlineFeet'; };
+            OnlineFeetGrid.prototype.getDialogType = function () { return Templates.OnlineFeetDialog; };
+            OnlineFeetGrid.prototype.getIdProperty = function () { return Templates.OnlineFeetRow.idProperty; };
+            OnlineFeetGrid.prototype.getLocalTextPrefix = function () { return Templates.OnlineFeetRow.localTextPrefix; };
+            OnlineFeetGrid.prototype.getService = function () { return Templates.OnlineFeetService.baseUrl; };
+            return OnlineFeetGrid;
+        }(Serenity.EntityGrid));
+        OnlineFeetGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], OnlineFeetGrid);
+        Templates.OnlineFeetGrid = OnlineFeetGrid;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {

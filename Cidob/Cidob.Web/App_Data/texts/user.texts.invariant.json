@@ -1,4 +1,6 @@
 {
+    "Db.MasterData.Arch.IsValenti": "Valenti Valenti",
+    "Db.MasterData.Digital.IsValenti": "Valenti Valenti",
     "Forms.Membership.Login.FormTitle": "Welcome to SERENE (Serenity Application Template)",
     "Site.Layout.FooterCopyright": "Copyright (c) 2016."
 }

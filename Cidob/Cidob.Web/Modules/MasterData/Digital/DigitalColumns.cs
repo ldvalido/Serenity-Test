@@ -15,10 +15,11 @@ namespace Cidob.MasterData.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 IdDigital { get; set; }
-        public String IdProductDescription { get; set; }
+        public Int32 IdProduct { get; set; }
         public Int32 Order { get; set; }
         [EditLink]
         public String Description { get; set; }
         public String PrintName { get; set; }
+        public Boolean IsValenti { get; set; }
     }
 }

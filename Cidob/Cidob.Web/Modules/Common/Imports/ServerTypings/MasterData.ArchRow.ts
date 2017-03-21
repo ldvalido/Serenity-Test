@@ -6,6 +6,7 @@ namespace Cidob.MasterData {
         Order?: number;
         Description?: string;
         PrintDescription?: string;
+        IsValenti?: boolean;
         IdProductDescription?: string;
         IdProductCode?: string;
     }
@@ -21,11 +22,12 @@ namespace Cidob.MasterData {
             export declare const Order;
             export declare const Description;
             export declare const PrintDescription;
+            export declare const IsValenti;
             export declare const IdProductDescription: string;
             export declare const IdProductCode: string;
         }
 
-        ['Id', 'IdProduct', 'Order', 'Description', 'PrintDescription', 'IdProductDescription', 'IdProductCode'].forEach(x => (<any>Fields)[x] = x);
+        ['Id', 'IdProduct', 'Order', 'Description', 'PrintDescription', 'IsValenti', 'IdProductDescription', 'IdProductCode'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

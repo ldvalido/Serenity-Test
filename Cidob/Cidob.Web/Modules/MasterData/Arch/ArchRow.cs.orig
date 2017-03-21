@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Arch"), InstanceName("Arch"), TwoLevelCached]
     [ReadPermission("MasterData:Arch")]
     [ModifyPermission("MasterData:Arch")]
+    [LookupScript("MasterData.Arch")]
     public sealed class ArchRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

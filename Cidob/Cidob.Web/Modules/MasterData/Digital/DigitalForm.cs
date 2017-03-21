@@ -17,5 +17,6 @@ namespace Cidob.MasterData.Forms
         public Int32 Order { get; set; }
         public String Description { get; set; }
         public String PrintName { get; set; }
+        public Boolean IsValenti { get; set; }
     }
 }
