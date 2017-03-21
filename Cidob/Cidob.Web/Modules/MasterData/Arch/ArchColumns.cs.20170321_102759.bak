@@ -9,16 +9,17 @@ namespace Cidob.MasterData.Columns
     using System.Collections.Generic;
     using System.IO;
 
-    [ColumnsScript("MasterData.Template")]
-    [BasedOnRow(typeof(Entities.TemplateRow))]
-    public class TemplateColumns
+    [ColumnsScript("MasterData.Arch")]
+    [BasedOnRow(typeof(Entities.ArchRow))]
+    public class ArchColumns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public Int32 IdTemplate { get; set; }
-        public String IdProductDescription { get; set; }
+        public Int32 Id { get; set; }
+        //public Int32 IdProduct { get; set; }
         public Int32 Order { get; set; }
+        public String IdProductDescription { get; set; }
         [EditLink]
         public String Description { get; set; }
-        public String PrintName { get; set; }
+        public String PrintDescription { get; set; }
     }
 }

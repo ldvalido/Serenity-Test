@@ -1,17 +1,17 @@
 ﻿
-namespace Cidob.MasterData.Endpoints
+namespace Cidob.Templates.Endpoints
 {
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
     using System.Data;
     using System.Web.Mvc;
-    using MyRepository = Repositories.TemplateRepository;
-    using MyRow = Entities.TemplateRow;
+    using MyRepository = Repositories.OnlineFeetRepository;
+    using MyRow = Entities.OnlineFeetRow;
 
-    [RoutePrefix("Services/MasterData/Template"), Route("{action}")]
-    [ConnectionKey("Default"), ServiceAuthorize("MasterData:Template")]
-    public class TemplateController : ServiceEndpoint
+    [RoutePrefix("Services/Templates/OnlineFeet"), Route("{action}")]
+    [ConnectionKey("Default"), ServiceAuthorize("Template:LoadFeet")]
+    public class OnlineFeetController : ServiceEndpoint
     {
         [HttpPost]
         public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request)

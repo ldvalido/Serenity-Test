@@ -1,15 +1,15 @@
 ﻿
 
-namespace Cidob.MasterData.Repositories
+namespace Cidob.Templates.Repositories
 {
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
     using System;
     using System.Data;
-    using MyRow = Entities.TemplateTypeRow;
+    using MyRow = Entities.OnlineFeetRow;
 
-    public class TemplateTypeRepository
+    public class OnlineFeetRepository
     {
         private static MyRow.RowFields fld { get { return MyRow.Fields; } }
 

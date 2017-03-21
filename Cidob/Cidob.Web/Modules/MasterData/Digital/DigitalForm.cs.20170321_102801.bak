@@ -9,9 +9,9 @@ namespace Cidob.MasterData.Forms
     using System.Collections.Generic;
     using System.IO;
 
-    [FormScript("MasterData.TemplateType")]
-    [BasedOnRow(typeof(Entities.TemplateTypeRow))]
-    public class TemplateTypeForm
+    [FormScript("MasterData.Digital")]
+    [BasedOnRow(typeof(Entities.DigitalRow))]
+    public class DigitalForm
     {
         public Int32 IdProduct { get; set; }
         public Int32 Order { get; set; }

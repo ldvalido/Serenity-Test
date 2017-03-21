@@ -10,16 +10,16 @@ namespace Cidob.MasterData.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("Default"), DisplayName("TemplateType"), InstanceName("TemplateType"), TwoLevelCached]
-    [ReadPermission("MasterData:TemplateType")]
-    [ModifyPermission("MasterData:TemplateType")]
-    public sealed class TemplateTypeRow : Row, IIdRow, INameRow
+    [ConnectionKey("Default"), DisplayName("Digital"), InstanceName("Digital"), TwoLevelCached]
+    [ReadPermission("MasterData:Digital")]
+    [ModifyPermission("MasterData:Digital")]
+    public sealed class DigitalRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Id Template Type"), Identity]
-        public Int32? IdTemplateType
+        [DisplayName("Id Digital"), Identity]
+        public Int32? IdDigital
         {
-            get { return Fields.IdTemplateType[this]; }
-            set { Fields.IdTemplateType[this] = value; }
+            get { return Fields.IdDigital[this]; }
+            set { Fields.IdDigital[this] = value; }
         }
 
         [DisplayName("Id Product"), NotNull, ForeignKey("[dbo].[Product]", "IdProduct"), LeftJoin("jIdProduct"), TextualField("IdProductDescription")]
@@ -67,7 +67,7 @@ namespace Cidob.MasterData.Entities
 
         IIdField IIdRow.IdField
         {
-            get { return Fields.IdTemplateType; }
+            get { return Fields.IdDigital; }
         }
 
         StringField INameRow.NameField
@@ -77,14 +77,14 @@ namespace Cidob.MasterData.Entities
 
         public static readonly RowFields Fields = new RowFields().Init();
 
-        public TemplateTypeRow()
+        public DigitalRow()
             : base(Fields)
         {
         }
 
         public class RowFields : RowFieldsBase
         {
-            public Int32Field IdTemplateType;
+            public Int32Field IdDigital;
             public Int32Field IdProduct;
             public Int32Field Order;
             public StringField Description;
@@ -94,9 +94,9 @@ namespace Cidob.MasterData.Entities
             public StringField IdProductCode;
 
             public RowFields()
-                : base("[dbo].[TemplateType]")
+                : base("[dbo].[Digital]")
             {
-                LocalTextPrefix = "MasterData.TemplateType";
+                LocalTextPrefix = "MasterData.Digital";
             }
         }
     }
