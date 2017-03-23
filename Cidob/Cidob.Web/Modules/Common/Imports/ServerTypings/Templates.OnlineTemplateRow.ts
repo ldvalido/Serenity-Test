@@ -12,6 +12,7 @@ namespace Cidob.Templates {
         IdCover?: number;
         Observations?: string;
         Quantity?: number;
+        IdUserCreation?: number;
         IdOnlineTemplateIdProduct?: number;
         IdOnlineTemplateOrder?: number;
         IdOnlineTemplateDescription?: string;
@@ -25,6 +26,19 @@ namespace Cidob.Templates {
         IdBaseEscatola?: boolean;
         IdBaseNeedArch?: boolean;
         IdBaseNeedTransversalArch?: boolean;
+        IdUserCreationUsername?: string;
+        IdUserCreationDisplayName?: string;
+        IdUserCreationEmail?: string;
+        IdUserCreationSource?: string;
+        IdUserCreationPasswordHash?: string;
+        IdUserCreationPasswordSalt?: string;
+        IdUserCreationLastDirectoryUpdate?: string;
+        IdUserCreationUserImage?: string;
+        IdUserCreationInsertDate?: string;
+        IdUserCreationInsertUserId?: number;
+        IdUserCreationUpdateDate?: string;
+        IdUserCreationUpdateUserId?: number;
+        IdUserCreationIsActive?: number;
     }
 
     export namespace OnlineTemplateRow {
@@ -44,6 +58,7 @@ namespace Cidob.Templates {
             export declare const IdCover;
             export declare const Observations;
             export declare const Quantity;
+            export declare const IdUserCreation;
             export declare const IdOnlineTemplateIdProduct: string;
             export declare const IdOnlineTemplateOrder: string;
             export declare const IdOnlineTemplateDescription: string;
@@ -57,9 +72,22 @@ namespace Cidob.Templates {
             export declare const IdBaseEscatola: string;
             export declare const IdBaseNeedArch: string;
             export declare const IdBaseNeedTransversalArch: string;
+            export declare const IdUserCreationUsername: string;
+            export declare const IdUserCreationDisplayName: string;
+            export declare const IdUserCreationEmail: string;
+            export declare const IdUserCreationSource: string;
+            export declare const IdUserCreationPasswordHash: string;
+            export declare const IdUserCreationPasswordSalt: string;
+            export declare const IdUserCreationLastDirectoryUpdate: string;
+            export declare const IdUserCreationUserImage: string;
+            export declare const IdUserCreationInsertDate: string;
+            export declare const IdUserCreationInsertUserId: string;
+            export declare const IdUserCreationUpdateDate: string;
+            export declare const IdUserCreationUpdateUserId: string;
+            export declare const IdUserCreationIsActive: string;
         }
 
-        ['IdOnlineTemplate', 'Reference', 'Number', 'Urgent', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Observations', 'Quantity', 'IdOnlineTemplateIdProduct', 'IdOnlineTemplateOrder', 'IdOnlineTemplateDescription', 'IdOnlineTemplatePrintName', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch'].forEach(x => (<any>Fields)[x] = x);
+        ['IdOnlineTemplate', 'Reference', 'Number', 'Urgent', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Observations', 'Quantity', 'IdUserCreation', 'IdOnlineTemplateIdProduct', 'IdOnlineTemplateOrder', 'IdOnlineTemplateDescription', 'IdOnlineTemplatePrintName', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdUserCreationUsername', 'IdUserCreationDisplayName', 'IdUserCreationEmail', 'IdUserCreationSource', 'IdUserCreationPasswordHash', 'IdUserCreationPasswordSalt', 'IdUserCreationLastDirectoryUpdate', 'IdUserCreationUserImage', 'IdUserCreationInsertDate', 'IdUserCreationInsertUserId', 'IdUserCreationUpdateDate', 'IdUserCreationUpdateUserId', 'IdUserCreationIsActive'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

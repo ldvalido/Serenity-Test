@@ -92,6 +92,13 @@ namespace Cidob.Templates.Entities
             set { Fields.Quantity[this] = value; }
         }
 
+        [DisplayName("Id User Creation"), Visible(false),NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIdUserCreation"), TextualField("IdUserCreationUsername")]
+        public Int32? IdUserCreation
+        {
+            get { return Fields.IdUserCreation[this]; }
+            set { Fields.IdUserCreation[this] = value; }
+        }
+
         [DisplayName("Id Online Template Id Product"), Expression("jIdOnlineTemplate.[IdProduct]")]
         public Int32? IdOnlineTemplateIdProduct
         {
@@ -183,6 +190,97 @@ namespace Cidob.Templates.Entities
             set { Fields.IdBaseNeedTransversalArch[this] = value; }
         }
 
+        [DisplayName("Id User Creation Username"), Expression("jIdUserCreation.[Username]")]
+        public String IdUserCreationUsername
+        {
+            get { return Fields.IdUserCreationUsername[this]; }
+            set { Fields.IdUserCreationUsername[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Display Name"), Expression("jIdUserCreation.[DisplayName]")]
+        public String IdUserCreationDisplayName
+        {
+            get { return Fields.IdUserCreationDisplayName[this]; }
+            set { Fields.IdUserCreationDisplayName[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Email"), Expression("jIdUserCreation.[Email]")]
+        public String IdUserCreationEmail
+        {
+            get { return Fields.IdUserCreationEmail[this]; }
+            set { Fields.IdUserCreationEmail[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Source"), Expression("jIdUserCreation.[Source]")]
+        public String IdUserCreationSource
+        {
+            get { return Fields.IdUserCreationSource[this]; }
+            set { Fields.IdUserCreationSource[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Password Hash"), Expression("jIdUserCreation.[PasswordHash]")]
+        public String IdUserCreationPasswordHash
+        {
+            get { return Fields.IdUserCreationPasswordHash[this]; }
+            set { Fields.IdUserCreationPasswordHash[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Password Salt"), Expression("jIdUserCreation.[PasswordSalt]")]
+        public String IdUserCreationPasswordSalt
+        {
+            get { return Fields.IdUserCreationPasswordSalt[this]; }
+            set { Fields.IdUserCreationPasswordSalt[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Last Directory Update"), Expression("jIdUserCreation.[LastDirectoryUpdate]")]
+        public DateTime? IdUserCreationLastDirectoryUpdate
+        {
+            get { return Fields.IdUserCreationLastDirectoryUpdate[this]; }
+            set { Fields.IdUserCreationLastDirectoryUpdate[this] = value; }
+        }
+
+        [DisplayName("Id User Creation User Image"), Expression("jIdUserCreation.[UserImage]")]
+        public String IdUserCreationUserImage
+        {
+            get { return Fields.IdUserCreationUserImage[this]; }
+            set { Fields.IdUserCreationUserImage[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Insert Date"), Expression("jIdUserCreation.[InsertDate]")]
+        public DateTime? IdUserCreationInsertDate
+        {
+            get { return Fields.IdUserCreationInsertDate[this]; }
+            set { Fields.IdUserCreationInsertDate[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Insert User Id"), Expression("jIdUserCreation.[InsertUserId]")]
+        public Int32? IdUserCreationInsertUserId
+        {
+            get { return Fields.IdUserCreationInsertUserId[this]; }
+            set { Fields.IdUserCreationInsertUserId[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Update Date"), Expression("jIdUserCreation.[UpdateDate]")]
+        public DateTime? IdUserCreationUpdateDate
+        {
+            get { return Fields.IdUserCreationUpdateDate[this]; }
+            set { Fields.IdUserCreationUpdateDate[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Update User Id"), Expression("jIdUserCreation.[UpdateUserId]")]
+        public Int32? IdUserCreationUpdateUserId
+        {
+            get { return Fields.IdUserCreationUpdateUserId[this]; }
+            set { Fields.IdUserCreationUpdateUserId[this] = value; }
+        }
+
+        [DisplayName("Id User Creation Is Active"), Expression("jIdUserCreation.[IsActive]")]
+        public Int16? IdUserCreationIsActive
+        {
+            get { return Fields.IdUserCreationIsActive[this]; }
+            set { Fields.IdUserCreationIsActive[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.IdOnlineTemplate; }
@@ -213,6 +311,7 @@ namespace Cidob.Templates.Entities
             public Int32Field IdCover;
             public StringField Observations;
             public Int32Field Quantity;
+            public Int32Field IdUserCreation;
 
             public Int32Field IdOnlineTemplateIdProduct;
             public Int32Field IdOnlineTemplateOrder;
@@ -228,6 +327,20 @@ namespace Cidob.Templates.Entities
             public BooleanField IdBaseEscatola;
             public BooleanField IdBaseNeedArch;
             public BooleanField IdBaseNeedTransversalArch;
+
+            public StringField IdUserCreationUsername;
+            public StringField IdUserCreationDisplayName;
+            public StringField IdUserCreationEmail;
+            public StringField IdUserCreationSource;
+            public StringField IdUserCreationPasswordHash;
+            public StringField IdUserCreationPasswordSalt;
+            public DateTimeField IdUserCreationLastDirectoryUpdate;
+            public StringField IdUserCreationUserImage;
+            public DateTimeField IdUserCreationInsertDate;
+            public Int32Field IdUserCreationInsertUserId;
+            public DateTimeField IdUserCreationUpdateDate;
+            public Int32Field IdUserCreationUpdateUserId;
+            public Int16Field IdUserCreationIsActive;
 
             public RowFields()
                 : base("[dbo].[OnlineTemplate]")

@@ -2328,6 +2328,7 @@ declare namespace Cidob.Templates {
         IdCover: Serenity.IntegerEditor;
         Observations: Serenity.StringEditor;
         Quantity: Serenity.IntegerEditor;
+        IdUserCreation: Serenity.IntegerEditor;
     }
 }
 declare namespace Cidob.Templates {
@@ -2343,6 +2344,7 @@ declare namespace Cidob.Templates {
         IdCover?: number;
         Observations?: string;
         Quantity?: number;
+        IdUserCreation?: number;
         IdOnlineTemplateIdProduct?: number;
         IdOnlineTemplateOrder?: number;
         IdOnlineTemplateDescription?: string;
@@ -2356,6 +2358,19 @@ declare namespace Cidob.Templates {
         IdBaseEscatola?: boolean;
         IdBaseNeedArch?: boolean;
         IdBaseNeedTransversalArch?: boolean;
+        IdUserCreationUsername?: string;
+        IdUserCreationDisplayName?: string;
+        IdUserCreationEmail?: string;
+        IdUserCreationSource?: string;
+        IdUserCreationPasswordHash?: string;
+        IdUserCreationPasswordSalt?: string;
+        IdUserCreationLastDirectoryUpdate?: string;
+        IdUserCreationUserImage?: string;
+        IdUserCreationInsertDate?: string;
+        IdUserCreationInsertUserId?: number;
+        IdUserCreationUpdateDate?: string;
+        IdUserCreationUpdateUserId?: number;
+        IdUserCreationIsActive?: number;
     }
     namespace OnlineTemplateRow {
         const idProperty = "IdOnlineTemplate";
@@ -2373,6 +2388,7 @@ declare namespace Cidob.Templates {
             const IdCover: any;
             const Observations: any;
             const Quantity: any;
+            const IdUserCreation: any;
             const IdOnlineTemplateIdProduct: string;
             const IdOnlineTemplateOrder: string;
             const IdOnlineTemplateDescription: string;
@@ -2386,6 +2402,19 @@ declare namespace Cidob.Templates {
             const IdBaseEscatola: string;
             const IdBaseNeedArch: string;
             const IdBaseNeedTransversalArch: string;
+            const IdUserCreationUsername: string;
+            const IdUserCreationDisplayName: string;
+            const IdUserCreationEmail: string;
+            const IdUserCreationSource: string;
+            const IdUserCreationPasswordHash: string;
+            const IdUserCreationPasswordSalt: string;
+            const IdUserCreationLastDirectoryUpdate: string;
+            const IdUserCreationUserImage: string;
+            const IdUserCreationInsertDate: string;
+            const IdUserCreationInsertUserId: string;
+            const IdUserCreationUpdateDate: string;
+            const IdUserCreationUpdateUserId: string;
+            const IdUserCreationIsActive: string;
         }
     }
 }
