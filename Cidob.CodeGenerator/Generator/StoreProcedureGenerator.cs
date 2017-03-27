@@ -9,23 +9,18 @@ using Cidob.CodeGenerator.MODEL.Database;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 
-namespace Cidob.CodeGenerator
+namespace Cidob.CodeGenerator.Generator
 {
-    public class StoreProcedureGenerator
+    public class StoreProcedureGenerator : IGenerator
     {
-        private readonly ExecutionInfo _info;
-        public StoreProcedureGenerator(ExecutionInfo execInfo)
-        {
-            _info = execInfo;
-        }
 
-        public void Generate()
+        public void Generate(ExecutionInfo execInfo)
         {
             var fileDalContent = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Templates\DALClassTemplate.st");
             var modelDalContent = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Templates\MODELClassTemplate.st");
 
 
-            var lstStores = GetStoreProcedure();
+            var lstStores = GetStoreProcedure(execInfo);
 
             var groups = (from sp in lstStores group sp by GetGroupName(sp.SpName)).ToDictionary(v => v.Key, v => v);
             var outputFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GENERATED");
@@ -115,13 +110,13 @@ namespace Cidob.CodeGenerator
             return returnValue;
         }
 
-        private List<StoreProcedure> GetStoreProcedure()
+        private List<StoreProcedure> GetStoreProcedure(ExecutionInfo execInfo)
         {
             var returnValue = new List<StoreProcedure>();
             var conn = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=master;Integrated Security=True");
             var srv = new Server(new ServerConnection(conn));
 
-            var db = srv.Databases[_info.DatabaseName];
+            var db = srv.Databases[execInfo.DatabaseName];
 
             foreach (StoredProcedure sp in db.StoredProcedures)
             {

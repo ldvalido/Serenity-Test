@@ -1,4 +1,5 @@
 ﻿using System;
+using Cidob.CodeGenerator.Generator;
 
 namespace Cidob.CodeGenerator
 {
