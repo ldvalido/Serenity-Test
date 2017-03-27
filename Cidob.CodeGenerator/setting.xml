@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<GeneratorSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LstTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>NVARCHAR</DatabaseType>
+      <NetFxType>string</NetFxType>
+    </GeneratorTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>VARCHAR</DatabaseType>
+      <NetFxType>string</NetFxType>
+    </GeneratorTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>TEXT</DatabaseType>
+      <NetFxType>string</NetFxType>
+    </GeneratorTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>DECIMAL</DatabaseType>
+      <NetFxType>decimal?</NetFxType>
+    </GeneratorTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>DATETIME</DatabaseType>
+      <NetFxType>DateTime?</NetFxType>
+    </GeneratorTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>BIGINT</DatabaseType>
+      <NetFxType>long?</NetFxType>
+    </GeneratorTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>NUMERIC</DatabaseType>
+      <NetFxType>int?</NetFxType>
+    </GeneratorTypeSettings>
+    <GeneratorTypeSettings>
+      <DatabaseType>INT</DatabaseType>
+      <NetFxType>int?</NetFxType>
+    </GeneratorTypeSettings>
+  </LstTypeSettings>
+</GeneratorSettings>
