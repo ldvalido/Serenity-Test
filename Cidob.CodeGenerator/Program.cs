@@ -7,18 +7,20 @@ namespace Cidob.CodeGenerator
     {
         static void Main(string[] args)
         {
+            if (args == null) throw new ArgumentNullException(nameof(args));
             var execInfoDev = new ExecutionInfo
             {
-                DatabaseName = "gd1c2015",
-                ServerInstance = "localhost\\SQLEXRESS",
-                OutputFile = $"output_{DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss")}.sql"
+                DatabaseName = "Cidob_Default_v1",
+                ServerInstance = ".\\SQLEXRESS",
+                OutputFile = $"output_{DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss")}.sql",
+                CnnStr = "Data Source=.\\SQLEXPRESS; Integrated Security=True"
             };
 
-            var spGenerator = new StoreProcedureGenerator(execInfoDev);
+            var spGenerator = new ModelGenerator();
 
-            spGenerator.Generate();
-            Console.WriteLine("Presione cualquier tecla para continuar...");
-            Console.ReadLine();
+            spGenerator.Generate(execInfoDev);
+            //Console.WriteLine("Presione cualquier tecla para continuar...");
+            //Console.ReadLine();
         }
     }
 }

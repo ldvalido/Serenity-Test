@@ -16,8 +16,8 @@ namespace Cidob.CodeGenerator.Generator
 
         public void Generate(ExecutionInfo execInfo)
         {
-            var fileDalContent = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Templates\DALClassTemplate.st");
-            var modelDalContent = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Templates\MODELClassTemplate.st");
+            var fileDalContent = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Templates\StoreProcedureGeneratorModel\DALClassTemplate.st");
+            var modelDalContent = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Templates\StoreProcedureGeneratorModel\MODELClassTemplate.st");
 
 
             var lstStores = GetStoreProcedure(execInfo);

@@ -79,7 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\FieldParameter.cs" />
+    <Compile Include="DTO\TableParameter.cs" />
     <Compile Include="ExecutionInfo.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Generator\IGenerator.cs" />
     <Compile Include="Generator\ModelGenerator.cs" />
     <Compile Include="Generator\StoreProcedureGenerator.cs" />
@@ -95,9 +98,33 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Templates\ControllerClassTemplate.st" />
-    <None Include="Templates\DALClassTemplate.st" />
-    <None Include="Templates\MODELClassTemplate.st" />
+    <None Include="Templates\ModelGeneratorModel\MappingTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\ModelGeneratorModel\ModelTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\ModelGeneratorModel\ServiceTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\ModelGeneratorModel\ControllerClassTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\ModelGeneratorModel\IServiceTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\ModelGeneratorModel\StorageTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\StoreProcedureGeneratorModel\ControllerClassTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\StoreProcedureGeneratorModel\DALClassTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\StoreProcedureGeneratorModel\MODELClassTemplate.st">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="setting.xml" />
