@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,8 +49,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\IStorageBase.cs" />
+    <Compile Include="Base\StorageBase.cs" />
+    <Compile Include="Context\CidobContext.cs" />
+    <Compile Include="Implementation\ArchStorage.cs" />
+    <Compile Include="Implementation\BaseStorage.cs" />
+    <Compile Include="Implementation\BrandStorage.cs" />
+    <Compile Include="Implementation\CoverStorage.cs" />
+    <Compile Include="Implementation\CTStorage.cs" />
+    <Compile Include="Implementation\DigitalStorage.cs" />
+    <Compile Include="Implementation\GenderStorage.cs" />
+    <Compile Include="Implementation\HeelStorage.cs" />
+    <Compile Include="Implementation\OliveStorage.cs" />
+    <Compile Include="Implementation\OnlineFeetStorage.cs" />
+    <Compile Include="Implementation\OnlineTemplateStorage.cs" />
+    <Compile Include="Implementation\ProductStorage.cs" />
+    <Compile Include="Implementation\RAStorage.cs" />
+    <Compile Include="Implementation\ShapeStorage.cs" />
+    <Compile Include="Implementation\TransversalArchStorage.cs" />
+    <Compile Include="Mapping\ArchMapping.cs" />
+    <Compile Include="Mapping\BaseMapping.cs" />
+    <Compile Include="Mapping\BrandMapping.cs" />
+    <Compile Include="Mapping\CoverMapping.cs" />
+    <Compile Include="Mapping\CTMapping.cs" />
+    <Compile Include="Mapping\DigitalMapping.cs" />
+    <Compile Include="Mapping\GenderMapping.cs" />
+    <Compile Include="Mapping\HeelMapping.cs" />
+    <Compile Include="Mapping\OliveMapping.cs" />
+    <Compile Include="Mapping\OnlineFeetMapping.cs" />
+    <Compile Include="Mapping\OnlineTemplateMapping.cs" />
+    <Compile Include="Mapping\ProductMapping.cs" />
+    <Compile Include="Mapping\RAMapping.cs" />
+    <Compile Include="Mapping\ShapeMapping.cs" />
+    <Compile Include="Mapping\TransversalArchMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cidob.Model\Cidob.Model.csproj">
+      <Project>{dd12da3c-0009-4a4f-a93a-d619bf291180}</Project>
+      <Name>Cidob.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
