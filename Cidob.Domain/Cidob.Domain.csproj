@@ -40,8 +40,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\CrudService.cs" />
+    <Compile Include="Base\ICrudService.cs" />
+    <Compile Include="Contract\IArchService.cs" />
+    <Compile Include="Contract\IBaseService.cs" />
+    <Compile Include="Contract\IBrandService.cs" />
+    <Compile Include="Contract\ICoverService.cs" />
+    <Compile Include="Contract\ICTService.cs" />
+    <Compile Include="Contract\IDigitalService.cs" />
+    <Compile Include="Contract\IGenderService.cs" />
+    <Compile Include="Contract\IHeelService.cs" />
+    <Compile Include="Contract\IOliveService.cs" />
+    <Compile Include="Contract\IOnlineFeetService.cs" />
+    <Compile Include="Contract\IOnlineTemplateService.cs" />
+    <Compile Include="Contract\IProductService.cs" />
+    <Compile Include="Contract\IRAService.cs" />
+    <Compile Include="Contract\IShapeService.cs" />
+    <Compile Include="Contract\ITransversalArchService.cs" />
+    <Compile Include="Implementation\ArchService.cs" />
+    <Compile Include="Implementation\BaseService.cs" />
+    <Compile Include="Implementation\BrandService.cs" />
+    <Compile Include="Implementation\CoverService.cs" />
+    <Compile Include="Implementation\CTService.cs" />
+    <Compile Include="Implementation\DigitalService.cs" />
+    <Compile Include="Implementation\GenderService.cs" />
+    <Compile Include="Implementation\HeelService.cs" />
+    <Compile Include="Implementation\OliveService.cs" />
+    <Compile Include="Implementation\OnlineFeetService.cs" />
+    <Compile Include="Implementation\OnlineTemplateService.cs" />
+    <Compile Include="Implementation\ProductService.cs" />
+    <Compile Include="Implementation\RAService.cs" />
+    <Compile Include="Implementation\ShapeService.cs" />
+    <Compile Include="Implementation\TransversalArchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cidob.Model\Cidob.Model.csproj">
+      <Project>{dd12da3c-0009-4a4f-a93a-d619bf291180}</Project>
+      <Name>Cidob.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cidob.Storage\Cidob.Storage.csproj">
+      <Project>{9F0E98D8-193C-4E3A-8B52-D280D1E7E310}</Project>
+      <Name>Cidob.Storage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
