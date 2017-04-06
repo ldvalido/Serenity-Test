@@ -1,4 +1,6 @@
 ﻿
+using Cidob.MasterData.Entities;
+
 namespace Cidob.Templates.Entities
 {
     using Newtonsoft.Json;
@@ -30,6 +32,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Internal Arch"), NotNull, ForeignKey("[dbo].[Arch]", "Id"), LeftJoin("jIdInternalArch"), TextualField("IdInternalArchDescription")]
+        [LookupEditor(typeof(ArchRow))]
         public Int32? IdInternalArch
         {
             get { return Fields.IdInternalArch[this]; }
@@ -37,6 +40,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id External Arch"), NotNull, ForeignKey("[dbo].[Arch]", "Id"), LeftJoin("jIdExternalArch"), TextualField("IdExternalArchDescription")]
+        [LookupEditor(typeof(ArchRow))]
         public Int32? IdExternalArch
         {
             get { return Fields.IdExternalArch[this]; }
@@ -44,6 +48,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Olive"), NotNull, ForeignKey("[dbo].[Olive]", "IdOlive"), LeftJoin("jIdOlive"), TextualField("IdOliveDescription")]
+        [LookupEditor(typeof(OliveRow))]
         public Int32? IdOlive
         {
             get { return Fields.IdOlive[this]; }
@@ -51,6 +56,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Ct"), Column("IdCT"), NotNull]
+        [LookupEditor(typeof(CtRow))]
         public Int32? IdCt
         {
             get { return Fields.IdCt[this]; }
@@ -58,6 +64,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Ra"), Column("IdRA"), NotNull, ForeignKey("[dbo].[RA]", "IdRA"), LeftJoin("jIdRa"), TextualField("IdRaDescription")]
+        [LookupEditor(typeof(RaRow))]
         public Int32? IdRa
         {
             get { return Fields.IdRa[this]; }
@@ -65,6 +72,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Heel"), NotNull, ForeignKey("[dbo].[Heel]", "IdHeel"), LeftJoin("jIdHeel"), TextualField("IdHeelDescription")]
+        [LookupEditor(typeof(HeelRow))]
         public Int32? IdHeel
         {
             get { return Fields.IdHeel[this]; }
@@ -83,13 +91,6 @@ namespace Cidob.Templates.Entities
         {
             get { return Fields.IsDoubleMit[this]; }
             set { Fields.IsDoubleMit[this] = value; }
-        }
-
-        [DisplayName("Template Type Number"), NotNull]
-        public Int32? TemplateTypeNumber
-        {
-            get { return Fields.TemplateTypeNumber[this]; }
-            set { Fields.TemplateTypeNumber[this] = value; }
         }
 
         [DisplayName("Internal Arch Number"), NotNull]
@@ -156,6 +157,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Digital"), NotNull, ForeignKey("[dbo].[Digital]", "IdDigital"), LeftJoin("jIdDigital"), TextualField("IdDigitalDescription")]
+        [LookupEditor(typeof(DigitalRow))]
         public Int32? IdDigital
         {
             get { return Fields.IdDigital[this]; }
@@ -415,7 +417,6 @@ namespace Cidob.Templates.Entities
             public Int32Field IdHeel;
             public BooleanField IsSingleMit;
             public BooleanField IsDoubleMit;
-            public Int32Field TemplateTypeNumber;
             public Int32Field InternalArchNumber;
             public Int32Field ExternalArchNumber;
             public Int32Field OliveNumber;

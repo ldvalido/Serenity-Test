@@ -1,4 +1,6 @@
 ﻿
+using Cidob.MasterData.Entities;
+
 namespace Cidob.Templates.Entities
 {
     using Newtonsoft.Json;
@@ -44,6 +46,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Gender"), NotNull]
+        [LookupEditor(typeof(GenderRow))]
         public Int32? IdGender
         {
             get { return Fields.IdGender[this]; }
@@ -51,6 +54,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Base"), NotNull, ForeignKey("[dbo].[Base]", "IdBase"), LeftJoin("jIdBase"), TextualField("IdBaseDescription")]
+        [LookupEditor(typeof(BaseRow))]
         public Int32? IdBase
         {
             get { return Fields.IdBase[this]; }
@@ -65,6 +69,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Shape"), NotNull]
+        [LookupEditor(typeof(ShapeRow))]
         public Int32? IdShape
         {
             get { return Fields.IdShape[this]; }
@@ -72,6 +77,7 @@ namespace Cidob.Templates.Entities
         }
 
         [DisplayName("Id Cover"), NotNull]
+        [LookupEditor(typeof(CoverRow))]
         public Int32? IdCover
         {
             get { return Fields.IdCover[this]; }

@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Heel"), InstanceName("Heel"), TwoLevelCached]
     [ReadPermission("MasterData:Heel")]
     [ModifyPermission("MasterData:Heel")]
+    [LookupScript("MasterData.HeelRow")]
     public sealed class HeelRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Heel"), Identity]

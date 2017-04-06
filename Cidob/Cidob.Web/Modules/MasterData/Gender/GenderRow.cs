@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Gender"), InstanceName("Gender"), TwoLevelCached]
     [ReadPermission("MasterData:Gender")]
     [ModifyPermission("MasterData:Gender")]
+    [LookupScript("MasterData.GenderRow")]
     public sealed class GenderRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Gender"), Column("idGender"), Identity]

@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Digital"), InstanceName("Digital"), TwoLevelCached]
     [ReadPermission("MasterData:Digital")]
     [ModifyPermission("MasterData:Digital")]
+    [LookupScript("MasterData.DigitalRow")]
     public sealed class DigitalRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Digital"), Identity]

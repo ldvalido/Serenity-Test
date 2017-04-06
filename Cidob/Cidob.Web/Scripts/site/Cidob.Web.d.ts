@@ -2165,7 +2165,6 @@ declare namespace Cidob.Templates {
         IdHeel: Serenity.IntegerEditor;
         IsSingleMit: Serenity.BooleanEditor;
         IsDoubleMit: Serenity.BooleanEditor;
-        TemplateTypeNumber: Serenity.IntegerEditor;
         InternalArchNumber: Serenity.IntegerEditor;
         ExternalArchNumber: Serenity.IntegerEditor;
         OliveNumber: Serenity.IntegerEditor;
@@ -2191,7 +2190,6 @@ declare namespace Cidob.Templates {
         IdHeel?: number;
         IsSingleMit?: boolean;
         IsDoubleMit?: boolean;
-        TemplateTypeNumber?: number;
         InternalArchNumber?: number;
         ExternalArchNumber?: number;
         OliveNumber?: number;
@@ -2250,7 +2248,6 @@ declare namespace Cidob.Templates {
             const IdHeel: any;
             const IsSingleMit: any;
             const IsDoubleMit: any;
-            const TemplateTypeNumber: any;
             const InternalArchNumber: any;
             const ExternalArchNumber: any;
             const OliveNumber: any;
@@ -2345,10 +2342,7 @@ declare namespace Cidob.Templates {
         Observations?: string;
         Quantity?: number;
         IdUserCreation?: number;
-        IdOnlineTemplateIdProduct?: number;
-        IdOnlineTemplateOrder?: number;
-        IdOnlineTemplateDescription?: string;
-        IdOnlineTemplatePrintName?: string;
+        IdGenderDescription?: string;
         IdBaseIdProduct?: number;
         IdBaseOrder?: number;
         IdBaseDescription?: string;
@@ -2358,6 +2352,14 @@ declare namespace Cidob.Templates {
         IdBaseEscatola?: boolean;
         IdBaseNeedArch?: boolean;
         IdBaseNeedTransversalArch?: boolean;
+        IdShapeIdProduct?: number;
+        IdShapeOrder?: number;
+        IdShapeDescription?: string;
+        IdShapePrintName?: string;
+        IdCoverIdProduct?: number;
+        IdCoverOrder?: number;
+        IdCoverDescription?: string;
+        IdCoverPrintName?: string;
         IdUserCreationUsername?: string;
         IdUserCreationDisplayName?: string;
         IdUserCreationEmail?: string;
@@ -2389,10 +2391,7 @@ declare namespace Cidob.Templates {
             const Observations: any;
             const Quantity: any;
             const IdUserCreation: any;
-            const IdOnlineTemplateIdProduct: string;
-            const IdOnlineTemplateOrder: string;
-            const IdOnlineTemplateDescription: string;
-            const IdOnlineTemplatePrintName: string;
+            const IdGenderDescription: string;
             const IdBaseIdProduct: string;
             const IdBaseOrder: string;
             const IdBaseDescription: string;
@@ -2402,6 +2401,14 @@ declare namespace Cidob.Templates {
             const IdBaseEscatola: string;
             const IdBaseNeedArch: string;
             const IdBaseNeedTransversalArch: string;
+            const IdShapeIdProduct: string;
+            const IdShapeOrder: string;
+            const IdShapeDescription: string;
+            const IdShapePrintName: string;
+            const IdCoverIdProduct: string;
+            const IdCoverOrder: string;
+            const IdCoverDescription: string;
+            const IdCoverPrintName: string;
             const IdUserCreationUsername: string;
             const IdUserCreationDisplayName: string;
             const IdUserCreationEmail: string;

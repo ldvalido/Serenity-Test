@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("CT"), InstanceName("CT"), TwoLevelCached]
     [ReadPermission("MasterData:CT")]
     [ModifyPermission("MasterData:CT")]
+    [LookupScript("MasterData.CtRow")]
     public sealed class CtRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Ct"), Column("IdCT"), Identity]

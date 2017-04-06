@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("Olive"), InstanceName("Olive"), TwoLevelCached]
     [ReadPermission("MasterData:Olive")]
     [ModifyPermission("MasterData:Olive")]
+    [LookupScript("MasterData.OliveRow")]
     public sealed class OliveRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Olive"), Identity]

@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("RA"), InstanceName("RA"), TwoLevelCached]
     [ReadPermission("MasterData:RA")]
     [ModifyPermission("MasterData:RA")]
+    [LookupScript("MasterData.RaRow")]
     public sealed class RaRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Ra"), Column("IdRA"), Identity]

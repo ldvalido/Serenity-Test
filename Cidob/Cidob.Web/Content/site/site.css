@@ -7725,3 +7725,15 @@ section.content > .s-DataGrid {
 .s-Templates-OnlineTemplateDialog .caption {
   width: 150px;
 }
+.s-Templates-OnlineTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-OnlineTemplateDialog .caption {
+  width: 150px;
+}
+.s-Templates-OnlineFeetDialog > .size {
+  width: 650px;
+}
+.s-Templates-OnlineFeetDialog .caption {
+  width: 150px;
+}

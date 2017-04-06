@@ -22,7 +22,6 @@ namespace Cidob.Templates.Forms
         public Int32 IdHeel { get; set; }
         public Boolean IsSingleMit { get; set; }
         public Boolean IsDoubleMit { get; set; }
-        public Int32 TemplateTypeNumber { get; set; }
         public Int32 InternalArchNumber { get; set; }
         public Int32 ExternalArchNumber { get; set; }
         public Int32 OliveNumber { get; set; }

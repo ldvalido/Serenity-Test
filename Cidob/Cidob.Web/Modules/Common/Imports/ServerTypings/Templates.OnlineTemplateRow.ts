@@ -13,10 +13,7 @@ namespace Cidob.Templates {
         Observations?: string;
         Quantity?: number;
         IdUserCreation?: number;
-        IdOnlineTemplateIdProduct?: number;
-        IdOnlineTemplateOrder?: number;
-        IdOnlineTemplateDescription?: string;
-        IdOnlineTemplatePrintName?: string;
+        IdGenderDescription?: string;
         IdBaseIdProduct?: number;
         IdBaseOrder?: number;
         IdBaseDescription?: string;
@@ -26,6 +23,14 @@ namespace Cidob.Templates {
         IdBaseEscatola?: boolean;
         IdBaseNeedArch?: boolean;
         IdBaseNeedTransversalArch?: boolean;
+        IdShapeIdProduct?: number;
+        IdShapeOrder?: number;
+        IdShapeDescription?: string;
+        IdShapePrintName?: string;
+        IdCoverIdProduct?: number;
+        IdCoverOrder?: number;
+        IdCoverDescription?: string;
+        IdCoverPrintName?: string;
         IdUserCreationUsername?: string;
         IdUserCreationDisplayName?: string;
         IdUserCreationEmail?: string;
@@ -59,10 +64,7 @@ namespace Cidob.Templates {
             export declare const Observations;
             export declare const Quantity;
             export declare const IdUserCreation;
-            export declare const IdOnlineTemplateIdProduct: string;
-            export declare const IdOnlineTemplateOrder: string;
-            export declare const IdOnlineTemplateDescription: string;
-            export declare const IdOnlineTemplatePrintName: string;
+            export declare const IdGenderDescription: string;
             export declare const IdBaseIdProduct: string;
             export declare const IdBaseOrder: string;
             export declare const IdBaseDescription: string;
@@ -72,6 +74,14 @@ namespace Cidob.Templates {
             export declare const IdBaseEscatola: string;
             export declare const IdBaseNeedArch: string;
             export declare const IdBaseNeedTransversalArch: string;
+            export declare const IdShapeIdProduct: string;
+            export declare const IdShapeOrder: string;
+            export declare const IdShapeDescription: string;
+            export declare const IdShapePrintName: string;
+            export declare const IdCoverIdProduct: string;
+            export declare const IdCoverOrder: string;
+            export declare const IdCoverDescription: string;
+            export declare const IdCoverPrintName: string;
             export declare const IdUserCreationUsername: string;
             export declare const IdUserCreationDisplayName: string;
             export declare const IdUserCreationEmail: string;
@@ -87,7 +97,7 @@ namespace Cidob.Templates {
             export declare const IdUserCreationIsActive: string;
         }
 
-        ['IdOnlineTemplate', 'Reference', 'Number', 'Urgent', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Observations', 'Quantity', 'IdUserCreation', 'IdOnlineTemplateIdProduct', 'IdOnlineTemplateOrder', 'IdOnlineTemplateDescription', 'IdOnlineTemplatePrintName', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdUserCreationUsername', 'IdUserCreationDisplayName', 'IdUserCreationEmail', 'IdUserCreationSource', 'IdUserCreationPasswordHash', 'IdUserCreationPasswordSalt', 'IdUserCreationLastDirectoryUpdate', 'IdUserCreationUserImage', 'IdUserCreationInsertDate', 'IdUserCreationInsertUserId', 'IdUserCreationUpdateDate', 'IdUserCreationUpdateUserId', 'IdUserCreationIsActive'].forEach(x => (<any>Fields)[x] = x);
+        ['IdOnlineTemplate', 'Reference', 'Number', 'Urgent', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Observations', 'Quantity', 'IdUserCreation', 'IdGenderDescription', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdShapeIdProduct', 'IdShapeOrder', 'IdShapeDescription', 'IdShapePrintName', 'IdCoverIdProduct', 'IdCoverOrder', 'IdCoverDescription', 'IdCoverPrintName', 'IdUserCreationUsername', 'IdUserCreationDisplayName', 'IdUserCreationEmail', 'IdUserCreationSource', 'IdUserCreationPasswordHash', 'IdUserCreationPasswordSalt', 'IdUserCreationLastDirectoryUpdate', 'IdUserCreationUserImage', 'IdUserCreationInsertDate', 'IdUserCreationInsertUserId', 'IdUserCreationUpdateDate', 'IdUserCreationUpdateUserId', 'IdUserCreationIsActive'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

@@ -11,7 +11,6 @@ namespace Cidob.Templates {
         IdHeel?: number;
         IsSingleMit?: boolean;
         IsDoubleMit?: boolean;
-        TemplateTypeNumber?: number;
         InternalArchNumber?: number;
         ExternalArchNumber?: number;
         OliveNumber?: number;
@@ -72,7 +71,6 @@ namespace Cidob.Templates {
             export declare const IdHeel;
             export declare const IsSingleMit;
             export declare const IsDoubleMit;
-            export declare const TemplateTypeNumber;
             export declare const InternalArchNumber;
             export declare const ExternalArchNumber;
             export declare const OliveNumber;
@@ -117,7 +115,7 @@ namespace Cidob.Templates {
             export declare const IdDigitalIsValenti: string;
         }
 
-        ['IdOnlineFeet', 'TemplateType', 'IdInternalArch', 'IdExternalArch', 'IdOlive', 'IdCt', 'IdRa', 'IdHeel', 'IsSingleMit', 'IsDoubleMit', 'TemplateTypeNumber', 'InternalArchNumber', 'ExternalArchNumber', 'OliveNumber', 'CtNumber', 'RaNumber', 'HeelNumber', 'BarValue', 'NeckValue', 'BehindNeck', 'IdDigital', 'AddaptToNumber', 'IdOnlineFeetIdProduct', 'IdOnlineFeetOrder', 'IdOnlineFeetDescription', 'IdOnlineFeetPrintName', 'IdInternalArchIdProduct', 'IdInternalArchOrder', 'IdInternalArchDescription', 'IdInternalArchPrintDescription', 'IdInternalArchIsValenti', 'IdExternalArchIdProduct', 'IdExternalArchOrder', 'IdExternalArchDescription', 'IdExternalArchPrintDescription', 'IdExternalArchIsValenti', 'IdOliveIdProduct', 'IdOliveOrder', 'IdOliveDescription', 'IdOlivePrintName', 'IdRaIdProduct', 'IdRaOrder', 'IdRaDescription', 'IdRaPrintName', 'IdHeelIdProduct', 'IdHeelOrder', 'IdHeelDescription', 'IdHeelPrintName', 'IdDigitalIdProduct', 'IdDigitalOrder', 'IdDigitalDescription', 'IdDigitalPrintName', 'IdDigitalIsValenti'].forEach(x => (<any>Fields)[x] = x);
+        ['IdOnlineFeet', 'TemplateType', 'IdInternalArch', 'IdExternalArch', 'IdOlive', 'IdCt', 'IdRa', 'IdHeel', 'IsSingleMit', 'IsDoubleMit', 'InternalArchNumber', 'ExternalArchNumber', 'OliveNumber', 'CtNumber', 'RaNumber', 'HeelNumber', 'BarValue', 'NeckValue', 'BehindNeck', 'IdDigital', 'AddaptToNumber', 'IdOnlineFeetIdProduct', 'IdOnlineFeetOrder', 'IdOnlineFeetDescription', 'IdOnlineFeetPrintName', 'IdInternalArchIdProduct', 'IdInternalArchOrder', 'IdInternalArchDescription', 'IdInternalArchPrintDescription', 'IdInternalArchIsValenti', 'IdExternalArchIdProduct', 'IdExternalArchOrder', 'IdExternalArchDescription', 'IdExternalArchPrintDescription', 'IdExternalArchIsValenti', 'IdOliveIdProduct', 'IdOliveOrder', 'IdOliveDescription', 'IdOlivePrintName', 'IdRaIdProduct', 'IdRaOrder', 'IdRaDescription', 'IdRaPrintName', 'IdHeelIdProduct', 'IdHeelOrder', 'IdHeelDescription', 'IdHeelPrintName', 'IdDigitalIdProduct', 'IdDigitalOrder', 'IdDigitalDescription', 'IdDigitalPrintName', 'IdDigitalIsValenti'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 
