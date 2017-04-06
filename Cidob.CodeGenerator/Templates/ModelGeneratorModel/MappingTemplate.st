@@ -9,12 +9,15 @@ namespace Cidob.Storage.Mapping
         {
             HasKey(c => c.Id).ToTable("$EntityName$");
 			$columns:{column|
-$if(column.IsForeignKey)$
-HasRequired(t => t.$column.PropertyName$).WithMany().Map(p => p.MapKey("$column.PropertyName$")).WillCascadeOnDelete(false);
+			$if(column.IsId)$
+Property(t => t.Id).HasColumnName("$column.PropertyName$");
 $else$
-public $column.PropertyType$ $column.PropertyName$ { get; set; \}			 
+Property(t => t.$column.PropertyName$).HasColumnName("$column.PropertyName$");
 $endif$
 			}$
-        }
+			$foreignKeys:{fk|
+HasRequired(t => t.$fk.RefTableName$).WithMany().Map(p => p.MapKey("$fk.FieldName$")).WillCascadeOnDelete(false);
+			}$
+		}
     }
 }

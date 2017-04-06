@@ -4,7 +4,7 @@ using Cidob.Model.Model;
 
 namespace Cidob.Domain.Implementation
 {
-    public class TitleService : CrudService<$EntityName$,int>,I$EntityName$Service
+    public class $EntityName$Service : CrudService<$EntityName$,int>,I$EntityName$Service
     {
     }
 }

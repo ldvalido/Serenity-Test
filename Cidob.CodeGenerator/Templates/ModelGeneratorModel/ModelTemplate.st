@@ -1,7 +1,7 @@
 ﻿using System;
-using Cidob.Model.Model.Base;
+using $NamespaceName$.Model.Base;
 
-namespace Cidob.Model.Model
+namespace $NamespaceName$.Model.Model
 {
     /// <summary>
     /// 
@@ -10,6 +10,7 @@ namespace Cidob.Model.Model
     public class $EntityName$ : BaseIdEntity
     {
 	$columns:{column|
+	$if(!column.IsId)$
 	/// <summary>
 	/// Gets or sets the $column.PropertyFriendlyName$.
 	/// </summary>
@@ -17,6 +18,16 @@ namespace Cidob.Model.Model
 	/// $column.PropertyFriendlyName$.
 	/// </value>
 	public $column.PropertyType$ $column.PropertyName$ { get; set; \}	
+	$endif$
+	}$
+	$foreignKeys:{fk|
+	/// <summary>
+	/// Gets or sets the $fk.PropertyFriendlyName$.
+	/// </summary>
+	/// <value>
+	/// $fk.PropertyFriendlyName$.
+	/// </value>
+	public $fk.RefTableName$ $fk.RefTableName$ {get;set;\}
 	}$
     }
 }

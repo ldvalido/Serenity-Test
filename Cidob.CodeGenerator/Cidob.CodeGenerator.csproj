@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\FieldParameter.cs" />
+    <Compile Include="DTO\ForeignKeyParameter.cs" />
     <Compile Include="DTO\TableParameter.cs" />
     <Compile Include="ExecutionInfo.cs" />
     <Compile Include="Extension\StringExtension.cs" />

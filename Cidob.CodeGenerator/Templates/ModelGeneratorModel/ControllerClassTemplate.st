@@ -45,7 +45,7 @@ namespace Cidob.API.Controllers
         /// <returns></returns>
         [Route("$EntityNameLower$s")]
         [HttpPut]
-        public Title Update($EntityName$ $EntityNameLower$)
+        public $EntityName$ Update($EntityName$ $EntityNameLower$)
         {
             return _$EntityNameLower$Service.Update($EntityNameLower$);
         }
@@ -54,9 +54,9 @@ namespace Cidob.API.Controllers
         /// </summary>
         /// <param name="$EntityNameLower$Service"></param>
         #region C...tor
-        public TitleController(I$EntityName$Service $EntityNameLower$Service)
+        public $EntityName$Controller(I$EntityName$Service $EntityNameLower$Service)
         {
-            _$EntityNameLower$Service = $EntityNameLower$;
+            _$EntityNameLower$Service = $EntityNameLower$Service;
         }
         #endregion
     }

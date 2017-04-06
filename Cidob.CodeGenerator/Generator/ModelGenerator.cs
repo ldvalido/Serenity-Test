@@ -8,6 +8,7 @@ using Antlr4.StringTemplate;
 using Cidob.CodeGenerator.DTO;
 using Cidob.CodeGenerator.Extension;
 using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Sdk.Sfc;
 using Microsoft.SqlServer.Management.Smo;
 
 namespace Cidob.CodeGenerator.Generator
@@ -35,13 +36,13 @@ namespace Cidob.CodeGenerator.Generator
 
             foreach (var table in tableNames)
             {
-               TemplateGenerator(fileControllerTemplate,table,t => Path.Combine(outputFolder, "Controller", t + "Controller.cs"));
-               TemplateGenerator(iServiceTemplate, table, t => Path.Combine(outputFolder, "Service", "Contract", "I" + t + "Service.cs"));
-               TemplateGenerator(serviceTemplate, table, t => Path.Combine(outputFolder, "Service", "Implementation", t + "Service.cs"));
-               TemplateGenerator(serviceTemplate, table, t => Path.Combine(outputFolder, "Domain", t + "Service.cs"));
-               TemplateGenerator(modelTemplate, table, t => Path.Combine(outputFolder, "Model",t + ".cs"));
-               TemplateGenerator(storageTemplate, table, t => Path.Combine(outputFolder, "Storage", t + "Storage.cs"));
-               TemplateGenerator(mappingTemplate, table, t => Path.Combine(outputFolder, "Mapping", t + "Mapping.cs"));
+               TemplateGenerator(execInfo, fileControllerTemplate, table,t => Path.Combine(outputFolder, "Controller", t + "Controller.cs"));
+               TemplateGenerator(execInfo, iServiceTemplate, table, t => Path.Combine(outputFolder, "Service", "Contract", "I" + t + "Service.cs"));
+               TemplateGenerator(execInfo, serviceTemplate, table, t => Path.Combine(outputFolder, "Service", "Implementation", t + "Service.cs"));
+               TemplateGenerator(execInfo, serviceTemplate, table, t => Path.Combine(outputFolder, "Domain", t + "Service.cs"));
+               TemplateGenerator(execInfo, modelTemplate, table, t => Path.Combine(outputFolder, "Model",t + ".cs"));
+               TemplateGenerator(execInfo, storageTemplate, table, t => Path.Combine(outputFolder, "Storage", t + "Storage.cs"));
+               TemplateGenerator(execInfo, mappingTemplate, table, t => Path.Combine(outputFolder, "Mapping", t + "Mapping.cs"));
             }
         }
 
@@ -50,15 +51,19 @@ namespace Cidob.CodeGenerator.Generator
         /// <summary>
         /// Templates the generator.
         /// </summary>
+        /// <param name="execInfo">The execInfo.</param>
         /// <param name="fileControllerTemplate">The file controller template.</param>
         /// <param name="table">The table.</param>
         /// <param name="fncResolveFileName">FNC resolve filename function.</param>
-        void TemplateGenerator(string fileControllerTemplate,TableParameter table,Func<string,string> fncResolveFileName)
+        void TemplateGenerator(ExecutionInfo execInfo, string fileControllerTemplate,TableParameter table,Func<string,string> fncResolveFileName)
         {
             var templateController = new Template(File.ReadAllText(fileControllerTemplate), '$', '$');
             templateController.Add("EntityName", table.TableName.ToCapitalLetter());
             templateController.Add("EntityNameLower", table.TableName.ToLowerInvariant());
+            templateController.Add("HasForeignKeys", table.HasForeignKeys);
             templateController.Add("columns", table.Parameters);
+            templateController.Add("foreignKeys", table.ForeignKeys);
+            templateController.Add("NamespaceName", execInfo.NamespaceName);
             var templateFinalPath = fncResolveFileName(table.TableName);
             var fileContent = templateController.Render();
             Directory.CreateDirectory(Path.GetDirectoryName(templateFinalPath));
@@ -78,29 +83,57 @@ namespace Cidob.CodeGenerator.Generator
             foreach (Table t in db.Tables)
             {
                 var table = new TableParameter {TableName = t.Name};
-                foreach (Column c in t.Columns)
-                {
-                    table.Parameters.Add(
-                        new FieldParameter
-                        {
-                            PropertyName = c.Name,
-                            PropertyFriendlyName = GetFriendlyName(c.Name),
-                            PropertyType = GetEquivalentDataType(c.DataType.Name)
-                        }
-                        );
-                }
+
 
                 //Foreign Keys
                 foreach (ForeignKey fk in t.ForeignKeys)
                 {
                     foreach (ForeignKeyColumn fkc in fk.Columns)
                     {
-                        table.Parameters.Find(col => col.PropertyName == fkc.Name).IsForeignKey = true;
+                        table.ForeignKeys.Add( new ForeignKeyParameter()
+                        {
+                            RefTableName = fk.ReferencedTable,
+                            RefFieldName = fkc.ReferencedColumn,
+                            FieldName = fkc.Name,
+                            PropertyFriendlyName = GetFriendlyName(fkc.Name)
+                        });
+                    }
+                }
+                foreach (Column c in t.Columns)
+                {
+                    if (table.ForeignKeys.All(fk => fk.FieldName != c.Name))
+                    {
+                        table.Parameters.Add(
+                            new FieldParameter
+                            {
+                                PropertyName = c.Name,
+                                PropertyFriendlyName = GetFriendlyName(c.Name),
+                                PropertyType = GetEquivalentDataType(c.DataType.Name),
+                                IsId = IsId(t.Name,c.Name)
+                            }
+                            );
                     }
                 }
                 returnValue.Add(table);
             }
             return returnValue;
+        }
+        /// <summary>
+        /// Determines whether this instance is identifier.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is identifier; otherwise, <c>false</c>.
+        /// </returns>
+        bool IsId(string tableName, string fieldName)
+        {
+            const string idKey = "id";
+            var lstPossibleNames = new List<string>
+            {
+                idKey,
+                tableName.ToLowerInvariant() + idKey,
+                idKey + tableName.ToLowerInvariant()
+            };
+            return lstPossibleNames.Contains(fieldName.ToLowerInvariant());
         }
         /// <summary>
         /// Gets the name of the friendly.
@@ -140,6 +173,7 @@ namespace Cidob.CodeGenerator.Generator
             {
                 {"varchar", "string"},
                 {"nvarchar", "string"},
+                {"nchar", "string"},
                 {"bit", "bool"},
             };
             if (equivalent.ContainsKey(source))

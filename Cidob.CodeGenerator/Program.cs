@@ -13,7 +13,8 @@ namespace Cidob.CodeGenerator
                 DatabaseName = "Cidob_Default_v1",
                 ServerInstance = ".\\SQLEXRESS",
                 OutputFile = $"output_{DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss")}.sql",
-                CnnStr = "Data Source=.\\SQLEXPRESS; Integrated Security=True"
+                CnnStr = "Data Source=.\\SQLEXPRESS; Integrated Security=True",
+                NamespaceName = "Cidob"
             };
 
             var spGenerator = new ModelGenerator();

@@ -8,5 +8,6 @@
         internal string Password { get; set; }
         internal string OutputFile { get; set; }
         internal string CnnStr { get; set; }
+        internal string NamespaceName { get; set; }
     }
 }
