@@ -7737,3 +7737,9 @@ section.content > .s-DataGrid {
 .s-Templates-OnlineFeetDialog .caption {
   width: 150px;
 }
+.s-Configuration-SettingDialog > .size {
+  width: 650px;
+}
+.s-Configuration-SettingDialog .caption {
+  width: 150px;
+}

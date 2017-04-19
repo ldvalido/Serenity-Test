@@ -703,6 +703,49 @@ declare namespace Cidob.Common {
         Value?: string;
     }
 }
+declare namespace Cidob.Configuration {
+    class SettingForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface SettingForm {
+        SettingName: Serenity.StringEditor;
+        SettingValue: Serenity.StringEditor;
+    }
+}
+declare namespace Cidob.Configuration {
+    interface SettingRow {
+        IdSetting?: number;
+        SettingName?: string;
+        SettingValue?: string;
+    }
+    namespace SettingRow {
+        const idProperty = "IdSetting";
+        const nameProperty = "SettingName";
+        const localTextPrefix = "Configuration.Setting";
+        namespace Fields {
+            const IdSetting: any;
+            const SettingName: any;
+            const SettingValue: any;
+        }
+    }
+}
+declare namespace Cidob.Configuration {
+    namespace SettingService {
+        const baseUrl = "Configuration/Setting";
+        function Create(request: Serenity.SaveRequest<SettingRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SettingRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SettingRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SettingRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace Cidob.Default {
     class BaseGroupForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2546,6 +2589,44 @@ declare namespace Cidob.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace Cidob.Configuration {
+    class SettingDialog extends Serenity.EntityDialog<SettingRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SettingForm;
+        updateInterface(): void;
+    }
+}
+declare namespace Cidob.Configuration {
+    class SettingEditor extends Common.GridEditorBase<SettingRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SettingEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.Configuration {
+    class SettingEditorDialog extends Common.GridEditorDialog<SettingRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: SettingForm;
+    }
+}
+declare namespace Cidob.Configuration {
+    class SettingGrid extends Serenity.EntityGrid<SettingRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SettingDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        getButtons(): any[];
     }
 }
 declare namespace Cidob.MasterData {

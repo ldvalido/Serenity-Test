@@ -1762,6 +1762,55 @@ var Cidob;
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
+    var Configuration;
+    (function (Configuration) {
+        var SettingForm = (function (_super) {
+            __extends(SettingForm, _super);
+            function SettingForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return SettingForm;
+        }(Serenity.PrefixedContext));
+        SettingForm.formKey = 'Configuration.Setting';
+        Configuration.SettingForm = SettingForm;
+        [['SettingName', function () { return Serenity.StringEditor; }], ['SettingValue', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(SettingForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Configuration = Cidob.Configuration || (Cidob.Configuration = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Configuration;
+    (function (Configuration) {
+        var SettingRow;
+        (function (SettingRow) {
+            SettingRow.idProperty = 'IdSetting';
+            SettingRow.nameProperty = 'SettingName';
+            SettingRow.localTextPrefix = 'Configuration.Setting';
+            var Fields;
+            (function (Fields) {
+            })(Fields = SettingRow.Fields || (SettingRow.Fields = {}));
+            ['IdSetting', 'SettingName', 'SettingValue'].forEach(function (x) { return Fields[x] = x; });
+        })(SettingRow = Configuration.SettingRow || (Configuration.SettingRow = {}));
+    })(Configuration = Cidob.Configuration || (Cidob.Configuration = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Configuration;
+    (function (Configuration) {
+        var SettingService;
+        (function (SettingService) {
+            SettingService.baseUrl = 'Configuration/Setting';
+            var Methods;
+            (function (Methods) {
+            })(Methods = SettingService.Methods || (SettingService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                SettingService[x] = function (r, s, o) { return Q.serviceRequest(SettingService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = SettingService.baseUrl + '/' + x;
+            });
+        })(SettingService = Configuration.SettingService || (Configuration.SettingService = {}));
+    })(Configuration = Cidob.Configuration || (Cidob.Configuration = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
     var Default;
     (function (Default) {
         var BaseGroupForm = (function (_super) {
@@ -3656,6 +3705,105 @@ var Cidob;
         }());
         Common.UserPreferenceStorage = UserPreferenceStorage;
     })(Common = Cidob.Common || (Cidob.Common = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Configuration;
+    (function (Configuration) {
+        var SettingDialog = (function (_super) {
+            __extends(SettingDialog, _super);
+            function SettingDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Configuration.SettingForm(_this.idPrefix);
+                return _this;
+            }
+            SettingDialog.prototype.getFormKey = function () { return Configuration.SettingForm.formKey; };
+            SettingDialog.prototype.getIdProperty = function () { return Configuration.SettingRow.idProperty; };
+            SettingDialog.prototype.getLocalTextPrefix = function () { return Configuration.SettingRow.localTextPrefix; };
+            SettingDialog.prototype.getNameProperty = function () { return Configuration.SettingRow.nameProperty; };
+            SettingDialog.prototype.getService = function () { return Configuration.SettingService.baseUrl; };
+            SettingDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                this.deleteButton.remove();
+            };
+            return SettingDialog;
+        }(Serenity.EntityDialog));
+        SettingDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], SettingDialog);
+        Configuration.SettingDialog = SettingDialog;
+    })(Configuration = Cidob.Configuration || (Cidob.Configuration = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Configuration;
+    (function (Configuration) {
+        var SettingEditor = (function (_super) {
+            __extends(SettingEditor, _super);
+            function SettingEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            SettingEditor.prototype.getColumnsKey = function () { return 'Configuration.Setting'; };
+            SettingEditor.prototype.getDialogType = function () { return Configuration.SettingEditorDialog; };
+            SettingEditor.prototype.getLocalTextPrefix = function () { return Configuration.SettingRow.localTextPrefix; };
+            return SettingEditor;
+        }(Cidob.Common.GridEditorBase));
+        SettingEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], SettingEditor);
+        Configuration.SettingEditor = SettingEditor;
+    })(Configuration = Cidob.Configuration || (Cidob.Configuration = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Configuration;
+    (function (Configuration) {
+        var SettingEditorDialog = (function (_super) {
+            __extends(SettingEditorDialog, _super);
+            function SettingEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Configuration.SettingForm(_this.idPrefix);
+                return _this;
+            }
+            SettingEditorDialog.prototype.getFormKey = function () { return Configuration.SettingForm.formKey; };
+            SettingEditorDialog.prototype.getLocalTextPrefix = function () { return Configuration.SettingRow.localTextPrefix; };
+            SettingEditorDialog.prototype.getNameProperty = function () { return Configuration.SettingRow.nameProperty; };
+            return SettingEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        SettingEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], SettingEditorDialog);
+        Configuration.SettingEditorDialog = SettingEditorDialog;
+    })(Configuration = Cidob.Configuration || (Cidob.Configuration = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Configuration;
+    (function (Configuration) {
+        var SettingGrid = (function (_super) {
+            __extends(SettingGrid, _super);
+            function SettingGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SettingGrid.prototype.getColumnsKey = function () { return 'Configuration.Setting'; };
+            SettingGrid.prototype.getDialogType = function () { return Configuration.SettingDialog; };
+            SettingGrid.prototype.getIdProperty = function () { return Configuration.SettingRow.idProperty; };
+            SettingGrid.prototype.getLocalTextPrefix = function () { return Configuration.SettingRow.localTextPrefix; };
+            SettingGrid.prototype.getService = function () { return Configuration.SettingService.baseUrl; };
+            SettingGrid.prototype.getButtons = function () {
+                return [];
+            };
+            return SettingGrid;
+        }(Serenity.EntityGrid));
+        SettingGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], SettingGrid);
+        Configuration.SettingGrid = SettingGrid;
+    })(Configuration = Cidob.Configuration || (Cidob.Configuration = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {

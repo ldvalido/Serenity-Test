@@ -1,6 +1,13 @@
 {
+    "Db.Configuration.Setting.EntityPlural": "Configuraciones",
+    "Db.Configuration.Setting.EntitySingular": "Configuración",
+    "Db.Configuration.Setting.IdSetting": "ID",
+    "Db.Configuration.Setting.SettingName": "Nombre",
+    "Db.Configuration.Setting.SettingValue": "Valor",
     "Db.MasterData.Arch.IsValenti": "Valenti Valenti",
     "Db.MasterData.Digital.IsValenti": "Valenti Valenti",
     "Forms.Membership.Login.FormTitle": "Welcome to SERENE (Serenity Application Template)",
-    "Site.Layout.FooterCopyright": "Copyright (c) 2016."
+    "Navigation.Configuration/Setting": "Configuración",
+    "Site.Layout.FooterCopyright": "Copyright (c) 2016.",
+    "Site.Layout.GeneralSettings": "Configuraciones"
 }
