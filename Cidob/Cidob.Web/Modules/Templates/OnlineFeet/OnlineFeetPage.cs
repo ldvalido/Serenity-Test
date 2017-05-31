@@ -1,6 +1,6 @@
 ﻿
 
-[assembly:Serenity.Navigation.NavigationLink(int.MaxValue, "Templates/OnlineFeet", typeof(Cidob.Templates.Pages.OnlineFeetController))]
+//[assembly:Serenity.Navigation.NavigationLink(int.MaxValue, "Templates/OnlineFeet", typeof(Cidob.Templates.Pages.OnlineFeetController))]
 
 namespace Cidob.Templates.Pages
 {

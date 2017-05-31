@@ -803,6 +803,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ClientTypes.log</LastGenOutput>
     </Content>
+    <Content Include="Modules\Templates\OnlineTemplate\OnlineTemplateDialog.Template.html" />
     <Content Include="Readme.CodeGenerator.txt" />
     <Content Include="Scripts\adminlte\app.js" />
     <Content Include="Scripts\adminlte\app.min.js" />
@@ -1225,6 +1226,10 @@
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Modules\MasterData\Arch\ArchIndex.cshtml" />
     <Content Include="Modules\Relationship\BaseArch\BaseArchIndex.cshtml" />
+    <None Include="Properties\PublishProfiles\CidobApp - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\CidobApp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\CidobApp - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\CidobApp - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FileCenter.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -1524,6 +1529,7 @@
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <Content Include="Modules\Administration\User\UserIndex.cshtml" />
     <Content Include="Modules\Administration\Language\LanguageIndex.cshtml" />
@@ -1856,17 +1862,29 @@
     <TypeScriptCompile Include="Modules\MasterData\Gender\GenderEditor.ts" />
     <TypeScriptCompile Include="Modules\MasterData\Gender\GenderEditorDialog.ts" />
     <Content Include="Modules\Templates\OnlineFeet\OnlineFeetIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineFeetForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetGrid.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetDialog.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetEditor.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineFeet\OnlineFeetEditorDialog.ts" />
     <Content Include="Modules\Configuration\Setting\SettingIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.SettingRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.SettingService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.SettingForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.SettingRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.SettingService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.SettingForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingGrid.ts" />
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingDialog.ts" />
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingEditor.ts" />

@@ -5703,8 +5703,14 @@ var Cidob;
         var OnlineTemplateDialog = (function (_super) {
             __extends(OnlineTemplateDialog, _super);
             function OnlineTemplateDialog() {
-                var _this = _super.apply(this, arguments) || this;
-                _this.form = new Templates.OnlineTemplateForm(_this.idPrefix);
+                var _this = _super.call(this) || this;
+                _this.feetPropertyGrid = new Serenity.PropertyGrid(_this.byId("FeetPropertyGrid"), {
+                    items: Q.getForm(Templates.OnlineFeetForm.formKey).filter(function (x) { return x.name != 'OnlineFeetID'; }),
+                    useCategories: true
+                });
+                _this.feetForm = new Templates.OnlineFeetForm(_this.feetPropertyGrid).idPrefix;
+                ;
+                _this.feetValidator = _this.byId("FeetForm").validate(Q.validateOptions({}));
                 return _this;
             }
             OnlineTemplateDialog.prototype.getFormKey = function () { return Templates.OnlineTemplateForm.formKey; };
@@ -5715,6 +5721,11 @@ var Cidob;
             OnlineTemplateDialog.prototype.dialogOpen = function () {
                 _super.prototype.dialogOpen.call(this);
                 this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+            };
+            OnlineTemplateDialog.prototype.loadEntity = function (entity) {
+                _super.prototype.loadEntity.call(this, entity);
+                //Serenity.TabsExtensions.setDisabled(this.tabs, 'Feet', this.isNewOrDeleted());
+                //this.agendaGrid.customerID = entity.CustomerID;
             };
             return OnlineTemplateDialog;
         }(Serenity.EntityDialog));

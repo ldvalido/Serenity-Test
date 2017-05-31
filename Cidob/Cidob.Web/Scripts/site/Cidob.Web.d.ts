@@ -3313,8 +3313,12 @@ declare namespace Cidob.Templates {
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected form: OnlineTemplateForm;
+        private feetPropertyGrid;
+        private feetForm;
+        private feetValidator;
+        constructor();
         dialogOpen(): void;
+        loadEntity(entity: OnlineTemplateRow): void;
     }
 }
 declare namespace Cidob.Templates {

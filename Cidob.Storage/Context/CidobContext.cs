@@ -29,7 +29,7 @@ namespace Cidob.Storage.Context
         /// <summary>
         /// Initializes a new instance of the <see cref="PlanetaryMotionContext"/> class.
         /// </summary>
-        public CidobContext() : base("MervalitoCnnStr")
+        public CidobContext() : base("Default")
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<CidobContext>());
             this.Configuration.LazyLoadingEnabled = true;

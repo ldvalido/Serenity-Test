@@ -14,7 +14,7 @@ namespace Cidob.IOC
         /// <summary>
         /// The assembly prefix name
         /// </summary>
-        private const string AssemblyPrefixName = "mervalito";
+        private const string AssemblyPrefixName = "cidob";
         #endregion
         #region Public Properties        
         /// <summary>

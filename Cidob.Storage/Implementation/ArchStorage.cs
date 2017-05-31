@@ -20,7 +20,6 @@ namespace Cidob.Storage.Implementation
         /// <returns></returns>
         public override IEnumerable<Arch> GetAll()
         {
-
             return this.DbContext.Set<Arch>()
 				.Include("Product")
 ;
