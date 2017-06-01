@@ -3313,10 +3313,15 @@ declare namespace Cidob.Templates {
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
+        protected form: OnlineTemplateForm;
         private feetPropertyGrid;
         private feetForm;
         private feetValidator;
         constructor();
+        protected saveFeet(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): boolean;
+        protected saveTemplate(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;
+        protected saveAll(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;
+        protected save(callback: (response: Serenity.SaveResponse) => void): void;
         dialogOpen(): void;
         loadEntity(entity: OnlineTemplateRow): void;
     }

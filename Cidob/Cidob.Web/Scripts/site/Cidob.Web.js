@@ -5704,12 +5704,12 @@ var Cidob;
             __extends(OnlineTemplateDialog, _super);
             function OnlineTemplateDialog() {
                 var _this = _super.call(this) || this;
+                _this.form = new Templates.OnlineTemplateForm(_this.idPrefix);
                 _this.feetPropertyGrid = new Serenity.PropertyGrid(_this.byId("FeetPropertyGrid"), {
                     items: Q.getForm(Templates.OnlineFeetForm.formKey).filter(function (x) { return x.name != 'OnlineFeetID'; }),
                     useCategories: true
                 });
-                _this.feetForm = new Templates.OnlineFeetForm(_this.feetPropertyGrid).idPrefix;
-                ;
+                _this.feetForm = new Templates.OnlineFeetForm(_this.feetPropertyGrid.idPrefix);
                 _this.feetValidator = _this.byId("FeetForm").validate(Q.validateOptions({}));
                 return _this;
             }
@@ -5718,6 +5718,61 @@ var Cidob;
             OnlineTemplateDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
             OnlineTemplateDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
             OnlineTemplateDialog.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
+            // Save the customer and the order
+            OnlineTemplateDialog.prototype.saveFeet = function (callback, onSuccess) {
+                var _this = this;
+                var templateId = this.get_entityId();
+                // Get current tab
+                var currTab = Serenity.TabsExtensions.activeTabKey(this.tabs);
+                // Select the correct tab and validate to see the error message in tab
+                Serenity.TabsExtensions.selectTab(this.tabs, "Template");
+                if (!this.feetValidator.form()) {
+                    return false;
+                }
+                // Re-select initial tab
+                Serenity.TabsExtensions.selectTab(this.tabs, currTab);
+                // prepare an empty entity to serialize customer details into
+                var c = {};
+                this.feetPropertyGrid.save(c);
+                Templates.OnlineFeetService.Update({
+                    EntityId: id,
+                    Entity: c
+                }, function (response) {
+                    // reload customer list just in case
+                    Q.reloadLookup(Templates.OnlineFeetRow.lookupKey);
+                    // set flag that we are triggering customer select change event
+                    // otherwise active tab will change to first one
+                    _this.selfChange++;
+                    try {
+                        // trigger change so that customer select updates its text
+                        // in case if Company Name is changed
+                        _this.form.TemplateID.element.change();
+                    }
+                    finally {
+                        _this.selfChange--;
+                    }
+                    onSuccess(response);
+                });
+                return true;
+            };
+            // Call super.save to save Order entity
+            OnlineTemplateDialog.prototype.saveTemplate = function (callback, onSuccess) {
+                _super.prototype.save.call(this, callback);
+                onSuccess(callback);
+            };
+            OnlineTemplateDialog.prototype.saveAll = function (callback, onSuccess) {
+                var _this = this;
+                this.saveTemplate(callback, 
+                // If customer success, save Order entity
+                function (resp) {
+                    _this.saveFeet(callback);
+                });
+            };
+            // This is called when save/update button is pressed
+            OnlineTemplateDialog.prototype.save = function (callback) {
+                //this.saveAll(callback);
+                this.saveAll(callback);
+            };
             OnlineTemplateDialog.prototype.dialogOpen = function () {
                 _super.prototype.dialogOpen.call(this);
                 this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
