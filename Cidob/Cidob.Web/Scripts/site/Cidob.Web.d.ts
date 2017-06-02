@@ -3317,6 +3317,7 @@ declare namespace Cidob.Templates {
         private feetPropertyGrid;
         private feetForm;
         private feetValidator;
+        private selfChange;
         constructor();
         protected saveFeet(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): boolean;
         protected saveTemplate(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;

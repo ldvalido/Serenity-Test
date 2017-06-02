@@ -16,7 +16,7 @@ namespace Cidob.Templates {
         private feetPropertyGrid: Serenity.PropertyGrid;
         private feetForm: OnlineFeetForm;
         private feetValidator: JQueryValidation.Validator;
-
+        private selfChange: number;
         constructor() {
             super();
             this.feetPropertyGrid = new Serenity.PropertyGrid(this.byId("FeetPropertyGrid"), {
@@ -49,7 +49,8 @@ namespace Cidob.Templates {
             this.feetPropertyGrid.save(c);
 
             OnlineFeetService.Update({
-                EntityId: id,
+                //EntityId: id,
+                EntityId: templateId,
                 Entity: c
             }, response => {
                 // reload customer list just in case
@@ -61,7 +62,8 @@ namespace Cidob.Templates {
                 try {
                     // trigger change so that customer select updates its text
                     // in case if Company Name is changed
-                    this.form.TemplateID.element.change();
+
+                    //this.form.TemplateID.element.change();
                 }
                 finally {
                     this.selfChange--;

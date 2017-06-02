@@ -5735,7 +5735,8 @@ var Cidob;
                 var c = {};
                 this.feetPropertyGrid.save(c);
                 Templates.OnlineFeetService.Update({
-                    EntityId: id,
+                    //EntityId: id,
+                    EntityId: templateId,
                     Entity: c
                 }, function (response) {
                     // reload customer list just in case
@@ -5744,9 +5745,6 @@ var Cidob;
                     // otherwise active tab will change to first one
                     _this.selfChange++;
                     try {
-                        // trigger change so that customer select updates its text
-                        // in case if Company Name is changed
-                        _this.form.TemplateID.element.change();
                     }
                     finally {
                         _this.selfChange--;
