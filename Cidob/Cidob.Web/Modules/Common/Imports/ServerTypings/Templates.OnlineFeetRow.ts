@@ -22,6 +22,7 @@ namespace Cidob.Templates {
         BehindNeck?: boolean;
         IdDigital?: number;
         AddaptToNumber?: number;
+        IdOnlineTemplate?: number;
         IdOnlineFeetIdProduct?: number;
         IdOnlineFeetOrder?: number;
         IdOnlineFeetDescription?: string;
@@ -53,6 +54,17 @@ namespace Cidob.Templates {
         IdDigitalDescription?: string;
         IdDigitalPrintName?: string;
         IdDigitalIsValenti?: boolean;
+        IdOnlineTemplateReference?: string;
+        IdOnlineTemplateNumber?: number;
+        IdOnlineTemplateUrgent?: boolean;
+        IdOnlineTemplateIdGender?: number;
+        IdOnlineTemplateIdBase?: number;
+        IdOnlineTemplateIs34?: boolean;
+        IdOnlineTemplateIdShape?: number;
+        IdOnlineTemplateIdCover?: number;
+        IdOnlineTemplateObservations?: string;
+        IdOnlineTemplateQuantity?: number;
+        IdOnlineTemplateIdUserCreation?: number;
     }
 
     export namespace OnlineFeetRow {
@@ -82,6 +94,7 @@ namespace Cidob.Templates {
             export declare const BehindNeck;
             export declare const IdDigital;
             export declare const AddaptToNumber;
+            export declare const IdOnlineTemplate;
             export declare const IdOnlineFeetIdProduct: string;
             export declare const IdOnlineFeetOrder: string;
             export declare const IdOnlineFeetDescription: string;
@@ -113,9 +126,20 @@ namespace Cidob.Templates {
             export declare const IdDigitalDescription: string;
             export declare const IdDigitalPrintName: string;
             export declare const IdDigitalIsValenti: string;
+            export declare const IdOnlineTemplateReference: string;
+            export declare const IdOnlineTemplateNumber: string;
+            export declare const IdOnlineTemplateUrgent: string;
+            export declare const IdOnlineTemplateIdGender: string;
+            export declare const IdOnlineTemplateIdBase: string;
+            export declare const IdOnlineTemplateIs34: string;
+            export declare const IdOnlineTemplateIdShape: string;
+            export declare const IdOnlineTemplateIdCover: string;
+            export declare const IdOnlineTemplateObservations: string;
+            export declare const IdOnlineTemplateQuantity: string;
+            export declare const IdOnlineTemplateIdUserCreation: string;
         }
 
-        ['IdOnlineFeet', 'TemplateType', 'IdInternalArch', 'IdExternalArch', 'IdOlive', 'IdCt', 'IdRa', 'IdHeel', 'IsSingleMit', 'IsDoubleMit', 'InternalArchNumber', 'ExternalArchNumber', 'OliveNumber', 'CtNumber', 'RaNumber', 'HeelNumber', 'BarValue', 'NeckValue', 'BehindNeck', 'IdDigital', 'AddaptToNumber', 'IdOnlineFeetIdProduct', 'IdOnlineFeetOrder', 'IdOnlineFeetDescription', 'IdOnlineFeetPrintName', 'IdInternalArchIdProduct', 'IdInternalArchOrder', 'IdInternalArchDescription', 'IdInternalArchPrintDescription', 'IdInternalArchIsValenti', 'IdExternalArchIdProduct', 'IdExternalArchOrder', 'IdExternalArchDescription', 'IdExternalArchPrintDescription', 'IdExternalArchIsValenti', 'IdOliveIdProduct', 'IdOliveOrder', 'IdOliveDescription', 'IdOlivePrintName', 'IdRaIdProduct', 'IdRaOrder', 'IdRaDescription', 'IdRaPrintName', 'IdHeelIdProduct', 'IdHeelOrder', 'IdHeelDescription', 'IdHeelPrintName', 'IdDigitalIdProduct', 'IdDigitalOrder', 'IdDigitalDescription', 'IdDigitalPrintName', 'IdDigitalIsValenti'].forEach(x => (<any>Fields)[x] = x);
+        ['IdOnlineFeet', 'TemplateType', 'IdInternalArch', 'IdExternalArch', 'IdOlive', 'IdCt', 'IdRa', 'IdHeel', 'IsSingleMit', 'IsDoubleMit', 'InternalArchNumber', 'ExternalArchNumber', 'OliveNumber', 'CtNumber', 'RaNumber', 'HeelNumber', 'BarValue', 'NeckValue', 'BehindNeck', 'IdDigital', 'AddaptToNumber', 'IdOnlineTemplate', 'IdOnlineFeetIdProduct', 'IdOnlineFeetOrder', 'IdOnlineFeetDescription', 'IdOnlineFeetPrintName', 'IdInternalArchIdProduct', 'IdInternalArchOrder', 'IdInternalArchDescription', 'IdInternalArchPrintDescription', 'IdInternalArchIsValenti', 'IdExternalArchIdProduct', 'IdExternalArchOrder', 'IdExternalArchDescription', 'IdExternalArchPrintDescription', 'IdExternalArchIsValenti', 'IdOliveIdProduct', 'IdOliveOrder', 'IdOliveDescription', 'IdOlivePrintName', 'IdRaIdProduct', 'IdRaOrder', 'IdRaDescription', 'IdRaPrintName', 'IdHeelIdProduct', 'IdHeelOrder', 'IdHeelDescription', 'IdHeelPrintName', 'IdDigitalIdProduct', 'IdDigitalOrder', 'IdDigitalDescription', 'IdDigitalPrintName', 'IdDigitalIsValenti', 'IdOnlineTemplateReference', 'IdOnlineTemplateNumber', 'IdOnlineTemplateUrgent', 'IdOnlineTemplateIdGender', 'IdOnlineTemplateIdBase', 'IdOnlineTemplateIs34', 'IdOnlineTemplateIdShape', 'IdOnlineTemplateIdCover', 'IdOnlineTemplateObservations', 'IdOnlineTemplateQuantity', 'IdOnlineTemplateIdUserCreation'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

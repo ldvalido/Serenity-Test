@@ -171,6 +171,14 @@ namespace Cidob.Templates.Entities
             set { Fields.AddaptToNumber[this] = value; }
         }
 
+        [DisplayName("Id Online Template"), NotNull, ForeignKey("[dbo].[OnlineTemplate]", "IdOnlineTemplate"), LeftJoin("jIdOnlineTemplate"), TextualField("IdOnlineTemplateReference")]
+        [Hidden]
+        public Int32? IdOnlineTemplate
+        {
+            get { return Fields.IdOnlineTemplate[this]; }
+            set { Fields.IdOnlineTemplate[this] = value; }
+        }
+
         [DisplayName("Id Online Feet Id Product"), Expression("jIdOnlineFeet.[IdProduct]")]
         public Int32? IdOnlineFeetIdProduct
         {
@@ -388,6 +396,83 @@ namespace Cidob.Templates.Entities
             set { Fields.IdDigitalIsValenti[this] = value; }
         }
 
+        [DisplayName("Id Online Template Reference"), Expression("jIdOnlineTemplate.[Reference]")]
+        public String IdOnlineTemplateReference
+        {
+            get { return Fields.IdOnlineTemplateReference[this]; }
+            set { Fields.IdOnlineTemplateReference[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Number"), Expression("jIdOnlineTemplate.[Number]")]
+        public Int32? IdOnlineTemplateNumber
+        {
+            get { return Fields.IdOnlineTemplateNumber[this]; }
+            set { Fields.IdOnlineTemplateNumber[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Urgent"), Expression("jIdOnlineTemplate.[Urgent]")]
+        public Boolean? IdOnlineTemplateUrgent
+        {
+            get { return Fields.IdOnlineTemplateUrgent[this]; }
+            set { Fields.IdOnlineTemplateUrgent[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Id Gender"), Expression("jIdOnlineTemplate.[IdGender]")]
+        public Int32? IdOnlineTemplateIdGender
+        {
+            get { return Fields.IdOnlineTemplateIdGender[this]; }
+            set { Fields.IdOnlineTemplateIdGender[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Id Base"), Expression("jIdOnlineTemplate.[IdBase]")]
+        public Int32? IdOnlineTemplateIdBase
+        {
+            get { return Fields.IdOnlineTemplateIdBase[this]; }
+            set { Fields.IdOnlineTemplateIdBase[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Is34"), Expression("jIdOnlineTemplate.[Is34]")]
+        public Boolean? IdOnlineTemplateIs34
+        {
+            get { return Fields.IdOnlineTemplateIs34[this]; }
+            set { Fields.IdOnlineTemplateIs34[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Id Shape"), Expression("jIdOnlineTemplate.[IdShape]")]
+        public Int32? IdOnlineTemplateIdShape
+        {
+            get { return Fields.IdOnlineTemplateIdShape[this]; }
+            set { Fields.IdOnlineTemplateIdShape[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Id Cover"), Expression("jIdOnlineTemplate.[IdCover]")]
+        public Int32? IdOnlineTemplateIdCover
+        {
+            get { return Fields.IdOnlineTemplateIdCover[this]; }
+            set { Fields.IdOnlineTemplateIdCover[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Observations"), Expression("jIdOnlineTemplate.[Observations]")]
+        public String IdOnlineTemplateObservations
+        {
+            get { return Fields.IdOnlineTemplateObservations[this]; }
+            set { Fields.IdOnlineTemplateObservations[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Quantity"), Expression("jIdOnlineTemplate.[Quantity]")]
+        public Int32? IdOnlineTemplateQuantity
+        {
+            get { return Fields.IdOnlineTemplateQuantity[this]; }
+            set { Fields.IdOnlineTemplateQuantity[this] = value; }
+        }
+
+        [DisplayName("Id Online Template Id User Creation"), Expression("jIdOnlineTemplate.[IdUserCreation]")]
+        public Int32? IdOnlineTemplateIdUserCreation
+        {
+            get { return Fields.IdOnlineTemplateIdUserCreation[this]; }
+            set { Fields.IdOnlineTemplateIdUserCreation[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.IdOnlineFeet; }
@@ -428,6 +513,7 @@ namespace Cidob.Templates.Entities
             public BooleanField BehindNeck;
             public Int32Field IdDigital;
             public Int32Field AddaptToNumber;
+            public Int32Field IdOnlineTemplate;
 
             public Int32Field IdOnlineFeetIdProduct;
             public Int32Field IdOnlineFeetOrder;
@@ -466,6 +552,18 @@ namespace Cidob.Templates.Entities
             public StringField IdDigitalDescription;
             public StringField IdDigitalPrintName;
             public BooleanField IdDigitalIsValenti;
+
+            public StringField IdOnlineTemplateReference;
+            public Int32Field IdOnlineTemplateNumber;
+            public BooleanField IdOnlineTemplateUrgent;
+            public Int32Field IdOnlineTemplateIdGender;
+            public Int32Field IdOnlineTemplateIdBase;
+            public BooleanField IdOnlineTemplateIs34;
+            public Int32Field IdOnlineTemplateIdShape;
+            public Int32Field IdOnlineTemplateIdCover;
+            public StringField IdOnlineTemplateObservations;
+            public Int32Field IdOnlineTemplateQuantity;
+            public Int32Field IdOnlineTemplateIdUserCreation;
 
             public RowFields()
                 : base("[dbo].[OnlineFeet]")

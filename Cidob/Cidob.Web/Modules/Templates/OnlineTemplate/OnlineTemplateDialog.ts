@@ -30,13 +30,13 @@ namespace Cidob.Templates {
         }
 
         // Save the customer and the order
-        protected saveFeet(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): boolean {
-            var templateId = this.get_entityId();
+        protected saveFeet(idOnlineTemplate:number): boolean {
+            
             // Get current tab
             var currTab = Serenity.TabsExtensions.activeTabKey(this.tabs);
 
             // Select the correct tab and validate to see the error message in tab
-            Serenity.TabsExtensions.selectTab(this.tabs, "Template");
+            Serenity.TabsExtensions.selectTab(this.tabs, "Feet");
             if (!this.feetValidator.form()) {
                 return false;
             }
@@ -47,57 +47,77 @@ namespace Cidob.Templates {
             // prepare an empty entity to serialize customer details into
             var c = <OnlineFeetRow>{};
             this.feetPropertyGrid.save(c);
+            c.IdOnlineTemplate = idOnlineTemplate;
+            if (this.isNewOrDeleted()) {
 
-            OnlineFeetService.Update({
-                //EntityId: id,
-                EntityId: templateId,
-                Entity: c
-            }, response => {
-                // reload customer list just in case
-                Q.reloadLookup(OnlineFeetRow.lookupKey);
+                OnlineFeetService.Create({
+                    //EntityId: id,
+                    Entity: c
+                }, response => {
+                    // reload customer list just in case
+                    Q.reloadLookup(OnlineFeetRow.lookupKey);
 
-                // set flag that we are triggering customer select change event
-                // otherwise active tab will change to first one
-                this.selfChange++;
-                try {
-                    // trigger change so that customer select updates its text
-                    // in case if Company Name is changed
+                    // set flag that we are triggering customer select change event
+                    // otherwise active tab will change to first one
+                    this.selfChange++;
+                    try {
+                        // trigger change so that customer select updates its text
+                        // in case if Company Name is changed
 
-                    //this.form.TemplateID.element.change();
-                }
-                finally {
-                    this.selfChange--;
-                }
+                        //this.form.TemplateID.element.change();
+                    } finally {
+                        this.selfChange--;
+                    }
+                });
+            } else {
 
-                onSuccess(response);
-            });
+                OnlineFeetService.Update({
+                    EntityId: c.IdOnlineFeet,
+                    Entity: c
+                }, response => {
+                    // reload customer list just in case
+                    Q.reloadLookup(OnlineFeetRow.lookupKey);
+
+                    // set flag that we are triggering customer select change event
+                    // otherwise active tab will change to first one
+                    this.selfChange++;
+                    try {
+                        // trigger change so that customer select updates its text
+                        // in case if Company Name is changed
+
+                        //this.form.TemplateID.element.change();
+                    }
+                    finally {
+                        this.selfChange--;
+                    }
+                });
+            }
 
             return true;
         }
 
-
-
         // Call super.save to save Order entity
         protected saveTemplate(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void) {
             super.save(callback);
-            onSuccess(callback);
         }
 
         protected saveAll(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void) {
-            this.saveTemplate(callback,
-                // If customer success, save Order entity
-                resp => {
-                    this.saveFeet(callback);
-                }
-            );
+            this.saveTemplate(callback, onSuccess);
         }
 
         // This is called when save/update button is pressed
         protected save(callback: (response: Serenity.SaveResponse) => void) {
-            //this.saveAll(callback);
-            this.saveAll(callback);
+            this.saveAll(callback, resp => {});
         }
-
+        protected doDelete(callback: (response: Serenity.SaveResponse) => void) {
+            alert('a');
+            super.doDelete(callback);
+        }
+        onSaveSuccess(callback: (response: Serenity.SaveResponse) => void) {
+            var templateId = callback.EntityId;
+            this.saveFeet(templateId);
+            super.dialogClose();
+        }
         dialogOpen() {
             super.dialogOpen();
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();

@@ -3070,7 +3070,7 @@ var Cidob;
         }(Serenity.PrefixedContext));
         OnlineFeetForm.formKey = 'Templates.OnlineFeet';
         Templates.OnlineFeetForm = OnlineFeetForm;
-        [['TemplateType', function () { return Serenity.IntegerEditor; }], ['IdInternalArch', function () { return Serenity.IntegerEditor; }], ['IdExternalArch', function () { return Serenity.IntegerEditor; }], ['IdOlive', function () { return Serenity.IntegerEditor; }], ['IdCt', function () { return Serenity.IntegerEditor; }], ['IdRa', function () { return Serenity.IntegerEditor; }], ['IdHeel', function () { return Serenity.IntegerEditor; }], ['IsSingleMit', function () { return Serenity.BooleanEditor; }], ['IsDoubleMit', function () { return Serenity.BooleanEditor; }], ['InternalArchNumber', function () { return Serenity.IntegerEditor; }], ['ExternalArchNumber', function () { return Serenity.IntegerEditor; }], ['OliveNumber', function () { return Serenity.IntegerEditor; }], ['CtNumber', function () { return Serenity.IntegerEditor; }], ['RaNumber', function () { return Serenity.IntegerEditor; }], ['HeelNumber', function () { return Serenity.IntegerEditor; }], ['BarValue', function () { return Serenity.StringEditor; }], ['NeckValue', function () { return Serenity.StringEditor; }], ['BehindNeck', function () { return Serenity.BooleanEditor; }], ['IdDigital', function () { return Serenity.IntegerEditor; }], ['AddaptToNumber', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineFeetForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['TemplateType', function () { return Serenity.IntegerEditor; }], ['IdInternalArch', function () { return Serenity.IntegerEditor; }], ['IdExternalArch', function () { return Serenity.IntegerEditor; }], ['IdOlive', function () { return Serenity.IntegerEditor; }], ['IdCt', function () { return Serenity.IntegerEditor; }], ['IdRa', function () { return Serenity.IntegerEditor; }], ['IdHeel', function () { return Serenity.IntegerEditor; }], ['IsSingleMit', function () { return Serenity.BooleanEditor; }], ['IsDoubleMit', function () { return Serenity.BooleanEditor; }], ['InternalArchNumber', function () { return Serenity.IntegerEditor; }], ['ExternalArchNumber', function () { return Serenity.IntegerEditor; }], ['OliveNumber', function () { return Serenity.IntegerEditor; }], ['CtNumber', function () { return Serenity.IntegerEditor; }], ['RaNumber', function () { return Serenity.IntegerEditor; }], ['HeelNumber', function () { return Serenity.IntegerEditor; }], ['BarValue', function () { return Serenity.StringEditor; }], ['NeckValue', function () { return Serenity.StringEditor; }], ['BehindNeck', function () { return Serenity.BooleanEditor; }], ['IdDigital', function () { return Serenity.IntegerEditor; }], ['AddaptToNumber', function () { return Serenity.IntegerEditor; }], ['IdOnlineTemplate', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineFeetForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -3085,7 +3085,7 @@ var Cidob;
             var Fields;
             (function (Fields) {
             })(Fields = OnlineFeetRow.Fields || (OnlineFeetRow.Fields = {}));
-            ['IdOnlineFeet', 'TemplateType', 'IdInternalArch', 'IdExternalArch', 'IdOlive', 'IdCt', 'IdRa', 'IdHeel', 'IsSingleMit', 'IsDoubleMit', 'InternalArchNumber', 'ExternalArchNumber', 'OliveNumber', 'CtNumber', 'RaNumber', 'HeelNumber', 'BarValue', 'NeckValue', 'BehindNeck', 'IdDigital', 'AddaptToNumber', 'IdOnlineFeetIdProduct', 'IdOnlineFeetOrder', 'IdOnlineFeetDescription', 'IdOnlineFeetPrintName', 'IdInternalArchIdProduct', 'IdInternalArchOrder', 'IdInternalArchDescription', 'IdInternalArchPrintDescription', 'IdInternalArchIsValenti', 'IdExternalArchIdProduct', 'IdExternalArchOrder', 'IdExternalArchDescription', 'IdExternalArchPrintDescription', 'IdExternalArchIsValenti', 'IdOliveIdProduct', 'IdOliveOrder', 'IdOliveDescription', 'IdOlivePrintName', 'IdRaIdProduct', 'IdRaOrder', 'IdRaDescription', 'IdRaPrintName', 'IdHeelIdProduct', 'IdHeelOrder', 'IdHeelDescription', 'IdHeelPrintName', 'IdDigitalIdProduct', 'IdDigitalOrder', 'IdDigitalDescription', 'IdDigitalPrintName', 'IdDigitalIsValenti'].forEach(function (x) { return Fields[x] = x; });
+            ['IdOnlineFeet', 'TemplateType', 'IdInternalArch', 'IdExternalArch', 'IdOlive', 'IdCt', 'IdRa', 'IdHeel', 'IsSingleMit', 'IsDoubleMit', 'InternalArchNumber', 'ExternalArchNumber', 'OliveNumber', 'CtNumber', 'RaNumber', 'HeelNumber', 'BarValue', 'NeckValue', 'BehindNeck', 'IdDigital', 'AddaptToNumber', 'IdOnlineTemplate', 'IdOnlineFeetIdProduct', 'IdOnlineFeetOrder', 'IdOnlineFeetDescription', 'IdOnlineFeetPrintName', 'IdInternalArchIdProduct', 'IdInternalArchOrder', 'IdInternalArchDescription', 'IdInternalArchPrintDescription', 'IdInternalArchIsValenti', 'IdExternalArchIdProduct', 'IdExternalArchOrder', 'IdExternalArchDescription', 'IdExternalArchPrintDescription', 'IdExternalArchIsValenti', 'IdOliveIdProduct', 'IdOliveOrder', 'IdOliveDescription', 'IdOlivePrintName', 'IdRaIdProduct', 'IdRaOrder', 'IdRaDescription', 'IdRaPrintName', 'IdHeelIdProduct', 'IdHeelOrder', 'IdHeelDescription', 'IdHeelPrintName', 'IdDigitalIdProduct', 'IdDigitalOrder', 'IdDigitalDescription', 'IdDigitalPrintName', 'IdDigitalIsValenti', 'IdOnlineTemplateReference', 'IdOnlineTemplateNumber', 'IdOnlineTemplateUrgent', 'IdOnlineTemplateIdGender', 'IdOnlineTemplateIdBase', 'IdOnlineTemplateIs34', 'IdOnlineTemplateIdShape', 'IdOnlineTemplateIdCover', 'IdOnlineTemplateObservations', 'IdOnlineTemplateQuantity', 'IdOnlineTemplateIdUserCreation'].forEach(function (x) { return Fields[x] = x; });
         })(OnlineFeetRow = Templates.OnlineFeetRow || (Templates.OnlineFeetRow = {}));
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
@@ -5719,13 +5719,12 @@ var Cidob;
             OnlineTemplateDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
             OnlineTemplateDialog.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
             // Save the customer and the order
-            OnlineTemplateDialog.prototype.saveFeet = function (callback, onSuccess) {
+            OnlineTemplateDialog.prototype.saveFeet = function (idOnlineTemplate) {
                 var _this = this;
-                var templateId = this.get_entityId();
                 // Get current tab
                 var currTab = Serenity.TabsExtensions.activeTabKey(this.tabs);
                 // Select the correct tab and validate to see the error message in tab
-                Serenity.TabsExtensions.selectTab(this.tabs, "Template");
+                Serenity.TabsExtensions.selectTab(this.tabs, "Feet");
                 if (!this.feetValidator.form()) {
                     return false;
                 }
@@ -5734,42 +5733,62 @@ var Cidob;
                 // prepare an empty entity to serialize customer details into
                 var c = {};
                 this.feetPropertyGrid.save(c);
-                Templates.OnlineFeetService.Update({
-                    //EntityId: id,
-                    EntityId: templateId,
-                    Entity: c
-                }, function (response) {
-                    // reload customer list just in case
-                    Q.reloadLookup(Templates.OnlineFeetRow.lookupKey);
-                    // set flag that we are triggering customer select change event
-                    // otherwise active tab will change to first one
-                    _this.selfChange++;
-                    try {
-                    }
-                    finally {
-                        _this.selfChange--;
-                    }
-                    onSuccess(response);
-                });
+                c.IdOnlineTemplate = idOnlineTemplate;
+                if (this.isNewOrDeleted()) {
+                    Templates.OnlineFeetService.Create({
+                        //EntityId: id,
+                        Entity: c
+                    }, function (response) {
+                        // reload customer list just in case
+                        Q.reloadLookup(Templates.OnlineFeetRow.lookupKey);
+                        // set flag that we are triggering customer select change event
+                        // otherwise active tab will change to first one
+                        _this.selfChange++;
+                        try {
+                        }
+                        finally {
+                            _this.selfChange--;
+                        }
+                    });
+                }
+                else {
+                    Templates.OnlineFeetService.Update({
+                        EntityId: c.IdOnlineFeet,
+                        Entity: c
+                    }, function (response) {
+                        // reload customer list just in case
+                        Q.reloadLookup(Templates.OnlineFeetRow.lookupKey);
+                        // set flag that we are triggering customer select change event
+                        // otherwise active tab will change to first one
+                        _this.selfChange++;
+                        try {
+                        }
+                        finally {
+                            _this.selfChange--;
+                        }
+                    });
+                }
                 return true;
             };
             // Call super.save to save Order entity
             OnlineTemplateDialog.prototype.saveTemplate = function (callback, onSuccess) {
                 _super.prototype.save.call(this, callback);
-                onSuccess(callback);
             };
             OnlineTemplateDialog.prototype.saveAll = function (callback, onSuccess) {
-                var _this = this;
-                this.saveTemplate(callback, 
-                // If customer success, save Order entity
-                function (resp) {
-                    _this.saveFeet(callback);
-                });
+                this.saveTemplate(callback, onSuccess);
             };
             // This is called when save/update button is pressed
             OnlineTemplateDialog.prototype.save = function (callback) {
-                //this.saveAll(callback);
-                this.saveAll(callback);
+                this.saveAll(callback, function (resp) { });
+            };
+            OnlineTemplateDialog.prototype.doDelete = function (callback) {
+                alert('a');
+                _super.prototype.doDelete.call(this, callback);
+            };
+            OnlineTemplateDialog.prototype.onSaveSuccess = function (callback) {
+                var templateId = callback.EntityId;
+                this.saveFeet(templateId);
+                _super.prototype.dialogClose.call(this);
             };
             OnlineTemplateDialog.prototype.dialogOpen = function () {
                 _super.prototype.dialogOpen.call(this);

@@ -36,5 +36,6 @@ namespace Cidob.Templates.Columns
         public Boolean BehindNeck { get; set; }
         public Int32 IdDigital { get; set; }
         public Int32 AddaptToNumber { get; set; }
+        public Int32 IdOnlineTemplate { get; set; }
     }
 }

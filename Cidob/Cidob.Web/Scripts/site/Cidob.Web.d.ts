@@ -2219,6 +2219,7 @@ declare namespace Cidob.Templates {
         BehindNeck: Serenity.BooleanEditor;
         IdDigital: Serenity.IntegerEditor;
         AddaptToNumber: Serenity.IntegerEditor;
+        IdOnlineTemplate: Serenity.IntegerEditor;
     }
 }
 declare namespace Cidob.Templates {
@@ -2244,6 +2245,7 @@ declare namespace Cidob.Templates {
         BehindNeck?: boolean;
         IdDigital?: number;
         AddaptToNumber?: number;
+        IdOnlineTemplate?: number;
         IdOnlineFeetIdProduct?: number;
         IdOnlineFeetOrder?: number;
         IdOnlineFeetDescription?: string;
@@ -2275,6 +2277,17 @@ declare namespace Cidob.Templates {
         IdDigitalDescription?: string;
         IdDigitalPrintName?: string;
         IdDigitalIsValenti?: boolean;
+        IdOnlineTemplateReference?: string;
+        IdOnlineTemplateNumber?: number;
+        IdOnlineTemplateUrgent?: boolean;
+        IdOnlineTemplateIdGender?: number;
+        IdOnlineTemplateIdBase?: number;
+        IdOnlineTemplateIs34?: boolean;
+        IdOnlineTemplateIdShape?: number;
+        IdOnlineTemplateIdCover?: number;
+        IdOnlineTemplateObservations?: string;
+        IdOnlineTemplateQuantity?: number;
+        IdOnlineTemplateIdUserCreation?: number;
     }
     namespace OnlineFeetRow {
         const idProperty = "IdOnlineFeet";
@@ -2302,6 +2315,7 @@ declare namespace Cidob.Templates {
             const BehindNeck: any;
             const IdDigital: any;
             const AddaptToNumber: any;
+            const IdOnlineTemplate: any;
             const IdOnlineFeetIdProduct: string;
             const IdOnlineFeetOrder: string;
             const IdOnlineFeetDescription: string;
@@ -2333,6 +2347,17 @@ declare namespace Cidob.Templates {
             const IdDigitalDescription: string;
             const IdDigitalPrintName: string;
             const IdDigitalIsValenti: string;
+            const IdOnlineTemplateReference: string;
+            const IdOnlineTemplateNumber: string;
+            const IdOnlineTemplateUrgent: string;
+            const IdOnlineTemplateIdGender: string;
+            const IdOnlineTemplateIdBase: string;
+            const IdOnlineTemplateIs34: string;
+            const IdOnlineTemplateIdShape: string;
+            const IdOnlineTemplateIdCover: string;
+            const IdOnlineTemplateObservations: string;
+            const IdOnlineTemplateQuantity: string;
+            const IdOnlineTemplateIdUserCreation: string;
         }
     }
 }
@@ -3319,10 +3344,12 @@ declare namespace Cidob.Templates {
         private feetValidator;
         private selfChange;
         constructor();
-        protected saveFeet(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): boolean;
+        protected saveFeet(idOnlineTemplate: number): boolean;
         protected saveTemplate(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;
         protected saveAll(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;
         protected save(callback: (response: Serenity.SaveResponse) => void): void;
+        protected doDelete(callback: (response: Serenity.SaveResponse) => void): void;
+        onSaveSuccess(callback: (response: Serenity.SaveResponse) => void): void;
         dialogOpen(): void;
         loadEntity(entity: OnlineTemplateRow): void;
     }
