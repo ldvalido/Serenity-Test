@@ -3059,6 +3059,55 @@ var Cidob;
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchronizationForm = (function (_super) {
+            __extends(SynchronizationForm, _super);
+            function SynchronizationForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return SynchronizationForm;
+        }(Serenity.PrefixedContext));
+        SynchronizationForm.formKey = 'Synchro.Synchronization';
+        Synchro.SynchronizationForm = SynchronizationForm;
+        [['Description', function () { return Serenity.StringEditor; }], ['Keyword', function () { return Serenity.StringEditor; }], ['LastSynchroOperation', function () { return Serenity.DateEditor; }]].forEach(function (x) { return Object.defineProperty(SynchronizationForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchronizationRow;
+        (function (SynchronizationRow) {
+            SynchronizationRow.idProperty = 'IdSynchroOperation';
+            SynchronizationRow.nameProperty = 'Description';
+            SynchronizationRow.localTextPrefix = 'Synchro.Synchronization';
+            var Fields;
+            (function (Fields) {
+            })(Fields = SynchronizationRow.Fields || (SynchronizationRow.Fields = {}));
+            ['IdSynchroOperation', 'Description', 'Keyword', 'LastSynchroOperation'].forEach(function (x) { return Fields[x] = x; });
+        })(SynchronizationRow = Synchro.SynchronizationRow || (Synchro.SynchronizationRow = {}));
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchronizationService;
+        (function (SynchronizationService) {
+            SynchronizationService.baseUrl = 'Synchro/Synchronization';
+            var Methods;
+            (function (Methods) {
+            })(Methods = SynchronizationService.Methods || (SynchronizationService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                SynchronizationService[x] = function (r, s, o) { return Q.serviceRequest(SynchronizationService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = SynchronizationService.baseUrl + '/' + x;
+            });
+        })(SynchronizationService = Synchro.SynchronizationService || (Synchro.SynchronizationService = {}));
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
     var Templates;
     (function (Templates) {
         var OnlineFeetForm = (function (_super) {
@@ -5598,6 +5647,125 @@ var Cidob;
         ], BaseShapeGrid);
         Relationship.BaseShapeGrid = BaseShapeGrid;
     })(Relationship = Cidob.Relationship || (Cidob.Relationship = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchronizationDialog = (function (_super) {
+            __extends(SynchronizationDialog, _super);
+            function SynchronizationDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Synchro.SynchronizationForm(_this.idPrefix);
+                return _this;
+            }
+            SynchronizationDialog.prototype.getFormKey = function () { return Synchro.SynchronizationForm.formKey; };
+            SynchronizationDialog.prototype.getIdProperty = function () { return Synchro.SynchronizationRow.idProperty; };
+            SynchronizationDialog.prototype.getLocalTextPrefix = function () { return Synchro.SynchronizationRow.localTextPrefix; };
+            SynchronizationDialog.prototype.getNameProperty = function () { return Synchro.SynchronizationRow.nameProperty; };
+            SynchronizationDialog.prototype.getService = function () { return Synchro.SynchronizationService.baseUrl; };
+            return SynchronizationDialog;
+        }(Serenity.EntityDialog));
+        SynchronizationDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], SynchronizationDialog);
+        Synchro.SynchronizationDialog = SynchronizationDialog;
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchronizationEditor = (function (_super) {
+            __extends(SynchronizationEditor, _super);
+            function SynchronizationEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            SynchronizationEditor.prototype.getColumnsKey = function () { return 'Synchro.Synchronization'; };
+            SynchronizationEditor.prototype.getDialogType = function () { return Synchro.SynchronizationEditorDialog; };
+            SynchronizationEditor.prototype.getLocalTextPrefix = function () { return Synchro.SynchronizationRow.localTextPrefix; };
+            return SynchronizationEditor;
+        }(Cidob.Common.GridEditorBase));
+        SynchronizationEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], SynchronizationEditor);
+        Synchro.SynchronizationEditor = SynchronizationEditor;
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchronizationEditorDialog = (function (_super) {
+            __extends(SynchronizationEditorDialog, _super);
+            function SynchronizationEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Synchro.SynchronizationForm(_this.idPrefix);
+                return _this;
+            }
+            SynchronizationEditorDialog.prototype.getFormKey = function () { return Synchro.SynchronizationForm.formKey; };
+            SynchronizationEditorDialog.prototype.getLocalTextPrefix = function () { return Synchro.SynchronizationRow.localTextPrefix; };
+            SynchronizationEditorDialog.prototype.getNameProperty = function () { return Synchro.SynchronizationRow.nameProperty; };
+            return SynchronizationEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        SynchronizationEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], SynchronizationEditorDialog);
+        Synchro.SynchronizationEditorDialog = SynchronizationEditorDialog;
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchronizationGrid = (function (_super) {
+            __extends(SynchronizationGrid, _super);
+            function SynchronizationGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SynchronizationGrid.prototype.getColumnsKey = function () { return 'Synchro.Synchronization'; };
+            SynchronizationGrid.prototype.getDialogType = function () { return Synchro.SynchronizationDialog; };
+            SynchronizationGrid.prototype.getIdProperty = function () { return Synchro.SynchronizationRow.idProperty; };
+            SynchronizationGrid.prototype.getLocalTextPrefix = function () { return Synchro.SynchronizationRow.localTextPrefix; };
+            SynchronizationGrid.prototype.getService = function () { return Synchro.SynchronizationService.baseUrl; };
+            SynchronizationGrid.prototype.getColumns = function () {
+                var _this = this;
+                var columns = _super.prototype.getColumns.call(this);
+                columns.splice(0, 0, Serenity.GridRowSelectionMixin.createSelectColumn(function () { return _this.rowSelection; }));
+                return columns;
+            };
+            SynchronizationGrid.prototype.createToolbarExtensions = function () {
+                _super.prototype.createToolbarExtensions.call(this);
+                this.rowSelection = new Serenity.GridRowSelectionMixin(this);
+            };
+            SynchronizationGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons[0] = {
+                    title: 'Synchro',
+                    cssClass: 'send-button',
+                    onClick: function () {
+                        if (!_this.onViewSubmit()) {
+                            return;
+                        }
+                        var action = new OrderBulkAction();
+                        action.done = function () { return _this.rowSelection.resetCheckedAndRefresh(); };
+                        action.execute(_this.rowSelection.getSelectedKeys());
+                    }
+                };
+                return buttons;
+            };
+            return SynchronizationGrid;
+        }(Serenity.EntityGrid));
+        SynchronizationGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], SynchronizationGrid);
+        Synchro.SynchronizationGrid = SynchronizationGrid;
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {

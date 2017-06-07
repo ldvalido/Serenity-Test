@@ -1891,6 +1891,14 @@
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingDialog.ts" />
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingEditor.ts" />
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingEditorDialog.ts" />
+    <Content Include="Modules\Synchro\Synchronization\SynchronizationIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationGrid.ts" />
+    <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationDialog.ts" />
+    <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationEditor.ts" />
+    <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2188,6 +2196,12 @@
     <Compile Include="Modules\Configuration\Setting\SettingRepository.cs" />
     <Compile Include="Modules\Configuration\Setting\SettingEndpoint.cs" />
     <Compile Include="Modules\Configuration\Setting\SettingPage.cs" />
+    <Compile Include="Modules\Synchro\Synchronization\SynchronizationRow.cs" />
+    <Compile Include="Modules\Synchro\Synchronization\SynchronizationColumns.cs" />
+    <Compile Include="Modules\Synchro\Synchronization\SynchronizationForm.cs" />
+    <Compile Include="Modules\Synchro\Synchronization\SynchronizationRepository.cs" />
+    <Compile Include="Modules\Synchro\Synchronization\SynchronizationEndpoint.cs" />
+    <Compile Include="Modules\Synchro\Synchronization\SynchronizationPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />
