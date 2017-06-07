@@ -5782,8 +5782,10 @@ var Cidob;
                 this.saveAll(callback, function (resp) { });
             };
             OnlineTemplateDialog.prototype.doDelete = function (callback) {
-                alert('a');
-                _super.prototype.doDelete.call(this, callback);
+                var _this = this;
+                Templates.OnlineFeetService.Delete({ EntityId: this.feetEntity.IdOnlineFeet }, function (response) {
+                    _super.prototype.doDelete.call(_this, callback);
+                });
             };
             OnlineTemplateDialog.prototype.onSaveSuccess = function (callback) {
                 var templateId = callback.EntityId;
@@ -5795,7 +5797,14 @@ var Cidob;
                 this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
             };
             OnlineTemplateDialog.prototype.loadEntity = function (entity) {
+                var _this = this;
                 _super.prototype.loadEntity.call(this, entity);
+                Templates.OnlineFeetService.List({
+                    EqualityFilter: { 'IdOnlineTemplate': this.get_entityId() }
+                }, function (response) {
+                    _this.feetEntity = response.Entities[0];
+                    _this.feetPropertyGrid.load(_this.feetEntity);
+                });
                 //Serenity.TabsExtensions.setDisabled(this.tabs, 'Feet', this.isNewOrDeleted());
                 //this.agendaGrid.customerID = entity.CustomerID;
             };

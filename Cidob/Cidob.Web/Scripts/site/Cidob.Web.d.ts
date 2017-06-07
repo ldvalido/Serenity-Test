@@ -3343,6 +3343,7 @@ declare namespace Cidob.Templates {
         private feetForm;
         private feetValidator;
         private selfChange;
+        private feetEntity;
         constructor();
         protected saveFeet(idOnlineTemplate: number): boolean;
         protected saveTemplate(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;

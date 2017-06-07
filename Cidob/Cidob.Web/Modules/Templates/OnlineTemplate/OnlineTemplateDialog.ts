@@ -17,6 +17,7 @@ namespace Cidob.Templates {
         private feetForm: OnlineFeetForm;
         private feetValidator: JQueryValidation.Validator;
         private selfChange: number;
+        private feetEntity: number;
         constructor() {
             super();
             this.feetPropertyGrid = new Serenity.PropertyGrid(this.byId("FeetPropertyGrid"), {
@@ -28,7 +29,6 @@ namespace Cidob.Templates {
 
             this.feetValidator = this.byId("FeetForm").validate(Q.validateOptions({}));
         }
-
         // Save the customer and the order
         protected saveFeet(idOnlineTemplate:number): boolean {
             
@@ -110,8 +110,9 @@ namespace Cidob.Templates {
             this.saveAll(callback, resp => {});
         }
         protected doDelete(callback: (response: Serenity.SaveResponse) => void) {
-            alert('a');
-            super.doDelete(callback);
+            OnlineFeetService.Delete({ EntityId:this.feetEntity.IdOnlineFeet}, response => {
+                super.doDelete(callback); 
+            });
         }
         onSaveSuccess(callback: (response: Serenity.SaveResponse) => void) {
             var templateId = callback.EntityId;
@@ -125,6 +126,12 @@ namespace Cidob.Templates {
         loadEntity(entity: OnlineTemplateRow) {
             super.loadEntity(entity);
 
+            OnlineFeetService.List({
+                EqualityFilter: { 'IdOnlineTemplate':this.get_entityId()}
+            }, response => {
+                this.feetEntity = response.Entities[0];
+                this.feetPropertyGrid.load(this.feetEntity);
+            });
             //Serenity.TabsExtensions.setDisabled(this.tabs, 'Feet', this.isNewOrDeleted());
 
             //this.agendaGrid.customerID = entity.CustomerID;
