@@ -1168,6 +1168,7 @@
     <Content Include="App_Data\texts\user.texts.invariant.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\site\site.templates.less" />
     <None Include="Modules\Common\Imports\ServerTypings\ServerTypings.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1892,9 +1893,15 @@
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingEditor.ts" />
     <TypeScriptCompile Include="Modules\Configuration\Setting\SettingEditorDialog.ts" />
     <Content Include="Modules\Synchro\Synchronization\SynchronizationIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Synchro.SynchronizationForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationGrid.ts" />
     <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationDialog.ts" />
     <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationEditor.ts" />

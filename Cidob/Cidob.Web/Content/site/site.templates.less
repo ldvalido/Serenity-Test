@@ -1,0 +1,23 @@
+﻿@import "site.mixins.less";
+
+.s-Templates-OnlineTemplateDialog {
+     > .size { width: 850px; height: 650px; }
+    .caption { width: 130px; }
+
+     .field.TemplateType,.field.IdInternalArch,.field.IdExternalArch,.field.IdOlive,.field.IdCt,.field.IdRa,
+     .field.IsSingleMit,.field.IsDoubleMit,.field.InternalArchNumber,.field.ExternalArchNumber,
+     .field.OliveNumber, .field.RaNumber,.field.HeelNumber, .field.CtNumber
+        {
+            flex: auto;
+            min-width: 50%;
+            max-width: 50%;
+        }
+     /*
+    @media (min-width: 768px) {
+        .field.TemplateType
+        {
+            flex: auto;
+            min-width: 50%;
+        }
+    }*/
+}

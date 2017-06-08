@@ -29,20 +29,23 @@ namespace Cidob.Templates {
 
             this.feetValidator = this.byId("FeetForm").validate(Q.validateOptions({}));
         }
-        // Save the customer and the order
-        protected saveFeet(idOnlineTemplate:number): boolean {
-            
+        protected validateTemplate(): boolean {
+            var returnValue = true;
             // Get current tab
             var currTab = Serenity.TabsExtensions.activeTabKey(this.tabs);
 
             // Select the correct tab and validate to see the error message in tab
             Serenity.TabsExtensions.selectTab(this.tabs, "Feet");
             if (!this.feetValidator.form()) {
-                return false;
+                returnValue = false;
             }
 
             // Re-select initial tab
             Serenity.TabsExtensions.selectTab(this.tabs, currTab);
+            return returnValue;
+        }
+        // Save the customer and the order
+        protected saveFeet(idOnlineTemplate:number): boolean {
 
             // prepare an empty entity to serialize customer details into
             var c = <OnlineFeetRow>{};
@@ -107,7 +110,9 @@ namespace Cidob.Templates {
 
         // This is called when save/update button is pressed
         protected save(callback: (response: Serenity.SaveResponse) => void) {
-            this.saveAll(callback, resp => {});
+            if (this.validateTemplate()) {
+                this.saveAll(callback, resp => { });   
+            }
         }
         protected doDelete(callback: (response: Serenity.SaveResponse) => void) {
             OnlineFeetService.Delete({ EntityId:this.feetEntity.IdOnlineFeet}, response => {

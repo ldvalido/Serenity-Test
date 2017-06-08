@@ -7437,6 +7437,41 @@ section.content > .s-DataGrid {
   width: 45%;
   float: right;
 }
+.s-Templates-OnlineTemplateDialog {
+  /*
+    @media (min-width: 768px) {
+        .field.TemplateType
+        {
+            flex: auto;
+            min-width: 50%;
+        }
+    }*/
+}
+.s-Templates-OnlineTemplateDialog > .size {
+  width: 850px;
+  height: 650px;
+}
+.s-Templates-OnlineTemplateDialog .caption {
+  width: 130px;
+}
+.s-Templates-OnlineTemplateDialog .field.TemplateType,
+.s-Templates-OnlineTemplateDialog .field.IdInternalArch,
+.s-Templates-OnlineTemplateDialog .field.IdExternalArch,
+.s-Templates-OnlineTemplateDialog .field.IdOlive,
+.s-Templates-OnlineTemplateDialog .field.IdCt,
+.s-Templates-OnlineTemplateDialog .field.IdRa,
+.s-Templates-OnlineTemplateDialog .field.IsSingleMit,
+.s-Templates-OnlineTemplateDialog .field.IsDoubleMit,
+.s-Templates-OnlineTemplateDialog .field.InternalArchNumber,
+.s-Templates-OnlineTemplateDialog .field.ExternalArchNumber,
+.s-Templates-OnlineTemplateDialog .field.OliveNumber,
+.s-Templates-OnlineTemplateDialog .field.RaNumber,
+.s-Templates-OnlineTemplateDialog .field.HeelNumber,
+.s-Templates-OnlineTemplateDialog .field.CtNumber {
+  flex: auto;
+  min-width: 50%;
+  max-width: 50%;
+}
 .s-MasterData-BrandDialog > .size {
   width: 650px;
 }

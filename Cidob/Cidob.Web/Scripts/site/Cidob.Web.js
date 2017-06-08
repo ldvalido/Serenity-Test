@@ -5886,18 +5886,22 @@ var Cidob;
             OnlineTemplateDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
             OnlineTemplateDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
             OnlineTemplateDialog.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
-            // Save the customer and the order
-            OnlineTemplateDialog.prototype.saveFeet = function (idOnlineTemplate) {
-                var _this = this;
+            OnlineTemplateDialog.prototype.validateTemplate = function () {
+                var returnValue = true;
                 // Get current tab
                 var currTab = Serenity.TabsExtensions.activeTabKey(this.tabs);
                 // Select the correct tab and validate to see the error message in tab
                 Serenity.TabsExtensions.selectTab(this.tabs, "Feet");
                 if (!this.feetValidator.form()) {
-                    return false;
+                    returnValue = false;
                 }
                 // Re-select initial tab
                 Serenity.TabsExtensions.selectTab(this.tabs, currTab);
+                return returnValue;
+            };
+            // Save the customer and the order
+            OnlineTemplateDialog.prototype.saveFeet = function (idOnlineTemplate) {
+                var _this = this;
                 // prepare an empty entity to serialize customer details into
                 var c = {};
                 this.feetPropertyGrid.save(c);
@@ -5947,7 +5951,9 @@ var Cidob;
             };
             // This is called when save/update button is pressed
             OnlineTemplateDialog.prototype.save = function (callback) {
-                this.saveAll(callback, function (resp) { });
+                if (this.validateTemplate()) {
+                    this.saveAll(callback, function (resp) { });
+                }
             };
             OnlineTemplateDialog.prototype.doDelete = function (callback) {
                 var _this = this;
