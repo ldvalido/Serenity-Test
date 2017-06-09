@@ -76,7 +76,7 @@ namespace Cidob.Administration.Endpoints
             result.Username = user.Username;
             result.DisplayName = user.DisplayName;
             result.IsAdmin = user.Username == "admin";
-
+            result.UserId = user.UserId;
             result.Permissions = TwoLevelCache.GetLocalStoreOnly("ScriptUserPermissions:" + user.Id, TimeSpan.Zero,
                 UserPermissionRow.Fields.GenerationKey, () =>
                 {

@@ -4,7 +4,7 @@
     <UseIISExpress>true</UseIISExpress>
     <ToolsVersionPromptShown>2.1</ToolsVersionPromptShown>
     <NameOfLastUsedPublishProfile>CidobAppDev - Web Deploy</NameOfLastUsedPublishProfile>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

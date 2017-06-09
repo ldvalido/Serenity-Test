@@ -1906,6 +1906,20 @@
     <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationDialog.ts" />
     <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationEditor.ts" />
     <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchronizationEditorDialog.ts" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.FeaturedTemplateRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.FeaturedTemplateService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.FeaturedTemplateForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateGrid.ts" />
+    <TypeScriptCompile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateDialog.ts" />
+    <TypeScriptCompile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateEditor.ts" />
+    <TypeScriptCompile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2209,6 +2223,12 @@
     <Compile Include="Modules\Synchro\Synchronization\SynchronizationRepository.cs" />
     <Compile Include="Modules\Synchro\Synchronization\SynchronizationEndpoint.cs" />
     <Compile Include="Modules\Synchro\Synchronization\SynchronizationPage.cs" />
+    <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateRow.cs" />
+    <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateColumns.cs" />
+    <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateForm.cs" />
+    <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateRepository.cs" />
+    <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateEndpoint.cs" />
+    <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplatePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />
@@ -2367,7 +2387,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:34084/</IISUrl>
+          <IISUrl>http://localhost:1725/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

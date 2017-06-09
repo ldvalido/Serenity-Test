@@ -18,6 +18,8 @@ namespace Cidob.Templates {
         private feetValidator: JQueryValidation.Validator;
         private selfChange: number;
         private feetEntity: number;
+
+        protected featuredTemplateButton: JQuery;
         constructor() {
             super();
             this.feetPropertyGrid = new Serenity.PropertyGrid(this.byId("FeetPropertyGrid"), {
@@ -28,7 +30,26 @@ namespace Cidob.Templates {
             this.feetForm = new OnlineFeetForm((this.feetPropertyGrid as any).idPrefix);
 
             this.feetValidator = this.byId("FeetForm").validate(Q.validateOptions({}));
+            //this.featuredTemplateButton = {
+            //        title: 'Save Template',
+            //        hotkey: 'alt+p',
+            //        cssClass: 'save-and-recover-featured-template-button',
+            //        onClick: function () {
+            //            alert('traer pantalla');
+            //        }
+            //    };
         }
+
+        protected updateInterface() {
+
+            // by default cloneButton is hidden in base UpdateInterface method
+            super.updateInterface();
+
+            // here we show it if it is edit mode (not new)
+            //this.featuredTemplateButton.title = this.isEditMode() ? 'Save Template' : 'Recover Template';
+            //this.featuredTemplateButton.toggle(true);
+        }
+
         protected validateTemplate(): boolean {
             var returnValue = true;
             // Get current tab

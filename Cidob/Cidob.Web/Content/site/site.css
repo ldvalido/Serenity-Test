@@ -7437,16 +7437,6 @@ section.content > .s-DataGrid {
   width: 45%;
   float: right;
 }
-.s-Templates-OnlineTemplateDialog {
-  /*
-    @media (min-width: 768px) {
-        .field.TemplateType
-        {
-            flex: auto;
-            min-width: 50%;
-        }
-    }*/
-}
 .s-Templates-OnlineTemplateDialog > .size {
   width: 850px;
   height: 650px;
@@ -7467,10 +7457,43 @@ section.content > .s-DataGrid {
 .s-Templates-OnlineTemplateDialog .field.OliveNumber,
 .s-Templates-OnlineTemplateDialog .field.RaNumber,
 .s-Templates-OnlineTemplateDialog .field.HeelNumber,
-.s-Templates-OnlineTemplateDialog .field.CtNumber {
+.s-Templates-OnlineTemplateDialog .field.CtNumber,
+.s-Templates-OnlineTemplateDialog .field.NeckValue,
+.s-Templates-OnlineTemplateDialog .field.BehindNeck,
+.s-Templates-OnlineTemplateDialog .field.IdDigital,
+.s-Templates-OnlineTemplateDialog .field.AddaptToNumber,
+.s-Templates-OnlineTemplateDialog .field.IdHeel,
+.s-Templates-OnlineTemplateDialog .field.BarValue {
   flex: auto;
-  min-width: 50%;
-  max-width: 50%;
+  min-width: 33%;
+  max-width: 33%;
+}
+.s-Templates-FeaturedTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-FeaturedTemplateDialog .caption {
+  width: 150px;
+}
+.s-Templates-FeaturedTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-FeaturedTemplateDialog .caption {
+  width: 150px;
+}
+.s-Templates-FeaturedTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-FeaturedTemplateDialog .caption {
+  width: 150px;
+}
+.s-Templates-FeaturedTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-FeaturedTemplateDialog .caption {
+  width: 150px;
+}
+.save-and-recover-featured-template-button span.button-inner {
+  background-image: url(../serenity/images/ruby.png);
 }
 .s-MasterData-BrandDialog > .size {
   width: 650px;

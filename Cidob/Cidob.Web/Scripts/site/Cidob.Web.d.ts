@@ -79,6 +79,7 @@ declare namespace Cidob.Administration {
 declare namespace Cidob.Authorization {
     let userDefinition: ScriptUserDefinition;
     function hasPermission(permissionKey: string): boolean;
+    function getUserId(): any;
 }
 declare namespace Cidob.Administration {
     class UserDialog extends Serenity.EntityDialog<UserRow, any> {
@@ -2241,6 +2242,81 @@ declare namespace Cidob.Synchro {
     }
 }
 declare namespace Cidob.Templates {
+    class FeaturedTemplateForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface FeaturedTemplateForm {
+        Title: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        Content: Serenity.StringEditor;
+        IdUserCreation: Serenity.IntegerEditor;
+    }
+}
+declare namespace Cidob.Templates {
+    interface FeaturedTemplateRow {
+        IdFeaturedTemplate?: number;
+        Title?: string;
+        Description?: string;
+        Content?: string;
+        IdUserCreation?: number;
+        IdUserCreationUsername?: string;
+        IdUserCreationDisplayName?: string;
+        IdUserCreationEmail?: string;
+        IdUserCreationSource?: string;
+        IdUserCreationPasswordHash?: string;
+        IdUserCreationPasswordSalt?: string;
+        IdUserCreationLastDirectoryUpdate?: string;
+        IdUserCreationUserImage?: string;
+        IdUserCreationInsertDate?: string;
+        IdUserCreationInsertUserId?: number;
+        IdUserCreationUpdateDate?: string;
+        IdUserCreationUpdateUserId?: number;
+        IdUserCreationIsActive?: number;
+    }
+    namespace FeaturedTemplateRow {
+        const idProperty = "IdFeaturedTemplate";
+        const nameProperty = "Title";
+        const localTextPrefix = "Templates.FeaturedTemplate";
+        namespace Fields {
+            const IdFeaturedTemplate: any;
+            const Title: any;
+            const Description: any;
+            const Content: any;
+            const IdUserCreation: any;
+            const IdUserCreationUsername: string;
+            const IdUserCreationDisplayName: string;
+            const IdUserCreationEmail: string;
+            const IdUserCreationSource: string;
+            const IdUserCreationPasswordHash: string;
+            const IdUserCreationPasswordSalt: string;
+            const IdUserCreationLastDirectoryUpdate: string;
+            const IdUserCreationUserImage: string;
+            const IdUserCreationInsertDate: string;
+            const IdUserCreationInsertUserId: string;
+            const IdUserCreationUpdateDate: string;
+            const IdUserCreationUpdateUserId: string;
+            const IdUserCreationIsActive: string;
+        }
+    }
+}
+declare namespace Cidob.Templates {
+    namespace FeaturedTemplateService {
+        const baseUrl = "Templates/FeaturedTemplate";
+        function Create(request: Serenity.SaveRequest<FeaturedTemplateRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<FeaturedTemplateRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<FeaturedTemplateRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<FeaturedTemplateRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace Cidob.Templates {
     class OnlineFeetForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -3380,6 +3456,44 @@ declare namespace Cidob.Synchro {
     }
 }
 declare namespace Cidob.Templates {
+    class FeaturedTemplateDialog extends Serenity.EntityDialog<FeaturedTemplateRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: FeaturedTemplateForm;
+    }
+}
+declare namespace Cidob.Templates {
+    class FeaturedTemplateEditor extends Common.GridEditorBase<FeaturedTemplateRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof FeaturedTemplateEditorDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.Templates {
+    class FeaturedTemplateEditorDialog extends Common.GridEditorDialog<FeaturedTemplateRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected form: FeaturedTemplateForm;
+    }
+}
+declare namespace Cidob.Templates {
+    class FeaturedTemplateGrid extends Serenity.EntityGrid<FeaturedTemplateRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof FeaturedTemplateDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected onViewSubmit(): boolean;
+    }
+}
+declare namespace Cidob.Templates {
     class OnlineFeetDialog extends Serenity.EntityDialog<OnlineFeetRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3429,7 +3543,9 @@ declare namespace Cidob.Templates {
         private feetValidator;
         private selfChange;
         private feetEntity;
+        protected featuredTemplateButton: JQuery;
         constructor();
+        protected updateInterface(): void;
         protected validateTemplate(): boolean;
         protected saveFeet(idOnlineTemplate: number): boolean;
         protected saveTemplate(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;
@@ -3465,5 +3581,6 @@ declare namespace Cidob.Templates {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected onViewSubmit(): boolean;
     }
 }

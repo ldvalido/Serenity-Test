@@ -394,6 +394,10 @@ var Cidob;
             return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
         }
         Authorization.hasPermission = hasPermission;
+        function getUserId() {
+            return Authorization.userDefinition.UserId;
+        }
+        Authorization.getUserId = getUserId;
     })(Authorization = Cidob.Authorization || (Cidob.Authorization = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -3110,6 +3114,55 @@ var Cidob;
 (function (Cidob) {
     var Templates;
     (function (Templates) {
+        var FeaturedTemplateForm = (function (_super) {
+            __extends(FeaturedTemplateForm, _super);
+            function FeaturedTemplateForm() {
+                return _super.apply(this, arguments) || this;
+            }
+            return FeaturedTemplateForm;
+        }(Serenity.PrefixedContext));
+        FeaturedTemplateForm.formKey = 'Templates.FeaturedTemplate';
+        Templates.FeaturedTemplateForm = FeaturedTemplateForm;
+        [['Title', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['Content', function () { return Serenity.StringEditor; }], ['IdUserCreation', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(FeaturedTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var FeaturedTemplateRow;
+        (function (FeaturedTemplateRow) {
+            FeaturedTemplateRow.idProperty = 'IdFeaturedTemplate';
+            FeaturedTemplateRow.nameProperty = 'Title';
+            FeaturedTemplateRow.localTextPrefix = 'Templates.FeaturedTemplate';
+            var Fields;
+            (function (Fields) {
+            })(Fields = FeaturedTemplateRow.Fields || (FeaturedTemplateRow.Fields = {}));
+            ['IdFeaturedTemplate', 'Title', 'Description', 'Content', 'IdUserCreation', 'IdUserCreationUsername', 'IdUserCreationDisplayName', 'IdUserCreationEmail', 'IdUserCreationSource', 'IdUserCreationPasswordHash', 'IdUserCreationPasswordSalt', 'IdUserCreationLastDirectoryUpdate', 'IdUserCreationUserImage', 'IdUserCreationInsertDate', 'IdUserCreationInsertUserId', 'IdUserCreationUpdateDate', 'IdUserCreationUpdateUserId', 'IdUserCreationIsActive'].forEach(function (x) { return Fields[x] = x; });
+        })(FeaturedTemplateRow = Templates.FeaturedTemplateRow || (Templates.FeaturedTemplateRow = {}));
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var FeaturedTemplateService;
+        (function (FeaturedTemplateService) {
+            FeaturedTemplateService.baseUrl = 'Templates/FeaturedTemplate';
+            var Methods;
+            (function (Methods) {
+            })(Methods = FeaturedTemplateService.Methods || (FeaturedTemplateService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                FeaturedTemplateService[x] = function (r, s, o) { return Q.serviceRequest(FeaturedTemplateService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = FeaturedTemplateService.baseUrl + '/' + x;
+            });
+        })(FeaturedTemplateService = Templates.FeaturedTemplateService || (Templates.FeaturedTemplateService = {}));
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
         var OnlineFeetForm = (function (_super) {
             __extends(OnlineFeetForm, _super);
             function OnlineFeetForm() {
@@ -5771,6 +5824,113 @@ var Cidob;
 (function (Cidob) {
     var Templates;
     (function (Templates) {
+        var FeaturedTemplateDialog = (function (_super) {
+            __extends(FeaturedTemplateDialog, _super);
+            function FeaturedTemplateDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Templates.FeaturedTemplateForm(_this.idPrefix);
+                return _this;
+            }
+            FeaturedTemplateDialog.prototype.getFormKey = function () { return Templates.FeaturedTemplateForm.formKey; };
+            FeaturedTemplateDialog.prototype.getIdProperty = function () { return Templates.FeaturedTemplateRow.idProperty; };
+            FeaturedTemplateDialog.prototype.getLocalTextPrefix = function () { return Templates.FeaturedTemplateRow.localTextPrefix; };
+            FeaturedTemplateDialog.prototype.getNameProperty = function () { return Templates.FeaturedTemplateRow.nameProperty; };
+            FeaturedTemplateDialog.prototype.getService = function () { return Templates.FeaturedTemplateService.baseUrl; };
+            return FeaturedTemplateDialog;
+        }(Serenity.EntityDialog));
+        FeaturedTemplateDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], FeaturedTemplateDialog);
+        Templates.FeaturedTemplateDialog = FeaturedTemplateDialog;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var FeaturedTemplateEditor = (function (_super) {
+            __extends(FeaturedTemplateEditor, _super);
+            function FeaturedTemplateEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            FeaturedTemplateEditor.prototype.getColumnsKey = function () { return 'Templates.FeaturedTemplate'; };
+            FeaturedTemplateEditor.prototype.getDialogType = function () { return Templates.FeaturedTemplateEditorDialog; };
+            FeaturedTemplateEditor.prototype.getLocalTextPrefix = function () { return Templates.FeaturedTemplateRow.localTextPrefix; };
+            return FeaturedTemplateEditor;
+        }(Cidob.Common.GridEditorBase));
+        FeaturedTemplateEditor = __decorate([
+            Serenity.Decorators.registerClass()
+        ], FeaturedTemplateEditor);
+        Templates.FeaturedTemplateEditor = FeaturedTemplateEditor;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var FeaturedTemplateEditorDialog = (function (_super) {
+            __extends(FeaturedTemplateEditorDialog, _super);
+            function FeaturedTemplateEditorDialog() {
+                var _this = _super.apply(this, arguments) || this;
+                _this.form = new Templates.FeaturedTemplateForm(_this.idPrefix);
+                return _this;
+            }
+            FeaturedTemplateEditorDialog.prototype.getFormKey = function () { return Templates.FeaturedTemplateForm.formKey; };
+            FeaturedTemplateEditorDialog.prototype.getLocalTextPrefix = function () { return Templates.FeaturedTemplateRow.localTextPrefix; };
+            FeaturedTemplateEditorDialog.prototype.getNameProperty = function () { return Templates.FeaturedTemplateRow.nameProperty; };
+            return FeaturedTemplateEditorDialog;
+        }(Cidob.Common.GridEditorDialog));
+        FeaturedTemplateEditorDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], FeaturedTemplateEditorDialog);
+        Templates.FeaturedTemplateEditorDialog = FeaturedTemplateEditorDialog;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var FeaturedTemplateGrid = (function (_super) {
+            __extends(FeaturedTemplateGrid, _super);
+            function FeaturedTemplateGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            FeaturedTemplateGrid.prototype.getColumnsKey = function () { return 'Templates.FeaturedTemplate'; };
+            FeaturedTemplateGrid.prototype.getDialogType = function () { return Templates.FeaturedTemplateDialog; };
+            FeaturedTemplateGrid.prototype.getIdProperty = function () { return Templates.FeaturedTemplateRow.idProperty; };
+            FeaturedTemplateGrid.prototype.getLocalTextPrefix = function () { return Templates.FeaturedTemplateRow.localTextPrefix; };
+            FeaturedTemplateGrid.prototype.getService = function () { return Templates.FeaturedTemplateService.baseUrl; };
+            FeaturedTemplateGrid.prototype.getButtons = function () {
+                //Remove Add Button
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons = buttons.slice(1, buttons.length);
+                return buttons;
+            };
+            FeaturedTemplateGrid.prototype.onViewSubmit = function () {
+                if (!_super.prototype.onViewSubmit.call(this)) {
+                    return false;
+                }
+                var request = this.view.params;
+                var userId = Cidob.Authorization.getUserId();
+                request.Criteria = Serenity.Criteria.and(request.Criteria, [['IdUserCreation'], '=', userId]);
+                return true;
+            };
+            return FeaturedTemplateGrid;
+        }(Serenity.EntityGrid));
+        FeaturedTemplateGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], FeaturedTemplateGrid);
+        Templates.FeaturedTemplateGrid = FeaturedTemplateGrid;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
         var OnlineFeetDialog = (function (_super) {
             __extends(OnlineFeetDialog, _super);
             function OnlineFeetDialog() {
@@ -5880,12 +6040,27 @@ var Cidob;
                 _this.feetForm = new Templates.OnlineFeetForm(_this.feetPropertyGrid.idPrefix);
                 _this.feetValidator = _this.byId("FeetForm").validate(Q.validateOptions({}));
                 return _this;
+                //this.featuredTemplateButton = {
+                //        title: 'Save Template',
+                //        hotkey: 'alt+p',
+                //        cssClass: 'save-and-recover-featured-template-button',
+                //        onClick: function () {
+                //            alert('traer pantalla');
+                //        }
+                //    };
             }
             OnlineTemplateDialog.prototype.getFormKey = function () { return Templates.OnlineTemplateForm.formKey; };
             OnlineTemplateDialog.prototype.getIdProperty = function () { return Templates.OnlineTemplateRow.idProperty; };
             OnlineTemplateDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
             OnlineTemplateDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
             OnlineTemplateDialog.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
+            OnlineTemplateDialog.prototype.updateInterface = function () {
+                // by default cloneButton is hidden in base UpdateInterface method
+                _super.prototype.updateInterface.call(this);
+                // here we show it if it is edit mode (not new)
+                //this.featuredTemplateButton.title = this.isEditMode() ? 'Save Template' : 'Recover Template';
+                //this.featuredTemplateButton.toggle(true);
+            };
             OnlineTemplateDialog.prototype.validateTemplate = function () {
                 var returnValue = true;
                 // Get current tab
@@ -6051,6 +6226,15 @@ var Cidob;
             OnlineTemplateGrid.prototype.getIdProperty = function () { return Templates.OnlineTemplateRow.idProperty; };
             OnlineTemplateGrid.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
             OnlineTemplateGrid.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
+            OnlineTemplateGrid.prototype.onViewSubmit = function () {
+                if (!_super.prototype.onViewSubmit.call(this)) {
+                    return false;
+                }
+                var request = this.view.params;
+                var userId = Cidob.Authorization.getUserId();
+                request.Criteria = Serenity.Criteria.and(request.Criteria, [['IdUserCreation'], '=', userId]);
+                return true;
+            };
             return OnlineTemplateGrid;
         }(Serenity.EntityGrid));
         OnlineTemplateGrid = __decorate([
