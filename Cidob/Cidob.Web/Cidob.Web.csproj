@@ -1548,6 +1548,7 @@
     <TypeScriptCompile Include="Modules\Relationship\BaseArch\BaseArchEditor.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseArch\BaseArchEditorDialog.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseArch\BaseArchGrid.ts" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineFeetEditor.ts" />
     <TypeScriptCompile Include="Scripts\serenity\Serenity.CoreLib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jspdf\jspdf.d.ts" />
@@ -2009,6 +2010,7 @@
     <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.ShipperFormatterAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Common\Imports\ClientTypes\OnlineFeetEditorAttribute.cs" />
     <Compile Include="Modules\Common\Imports\ClientTypes\Organization.BusinessUnitEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>

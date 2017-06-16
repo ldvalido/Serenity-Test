@@ -2515,6 +2515,7 @@ declare namespace Cidob.Templates {
         IdCover: Serenity.IntegerEditor;
         Observations: Serenity.StringEditor;
         Quantity: Serenity.IntegerEditor;
+        OnlineFeedList: OnlineFeetEditor;
         IdUserCreation: Serenity.IntegerEditor;
     }
 }
@@ -3528,6 +3529,21 @@ declare namespace Cidob.Templates {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace Cidob.Templates {
+    class OnlineFeetEditor extends Serenity.TemplatedWidget<any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
+        private isDirty;
+        private items;
+        constructor(div: JQuery);
+        protected getTemplate(): string;
+        protected value: OnlineFeetRow[];
+        protected updateContent(): void;
+        getEditValue(prop: Serenity.PropertyItem, target: any): void;
+        setEditValue(source: any, prop: Serenity.PropertyItem): void;
+        get_isDirty(): boolean;
+        set_isDirty(value: any): void;
+        onChange: () => void;
     }
 }
 declare namespace Cidob.Templates {

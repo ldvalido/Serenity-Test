@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using Cidob.MasterData.Entities;
 
 namespace Cidob.Templates.Entities
@@ -287,6 +288,12 @@ namespace Cidob.Templates.Entities
             set { Fields.IdUserCreationIsActive[this] = value; }
         }
 
+        [OnlineFeetEditor, NotMapped]
+        public List<OnlineFeetRow> OnlineFeedList
+        {
+            get { return Fields.OnlineFeedList[this]; }
+            set { Fields.OnlineFeedList[this] = value; }
+        }
         IIdField IIdRow.IdField
         {
             get { return Fields.IdOnlineTemplate; }
@@ -347,6 +354,8 @@ namespace Cidob.Templates.Entities
             public DateTimeField IdUserCreationUpdateDate;
             public Int32Field IdUserCreationUpdateUserId;
             public Int16Field IdUserCreationIsActive;
+
+            public RowListField<OnlineFeetRow> OnlineFeedList;
 
             public RowFields()
                 : base("[dbo].[OnlineTemplate]")

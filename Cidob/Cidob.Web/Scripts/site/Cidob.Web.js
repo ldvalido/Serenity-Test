@@ -3221,7 +3221,7 @@ var Cidob;
         }(Serenity.PrefixedContext));
         OnlineTemplateForm.formKey = 'Templates.OnlineTemplate';
         Templates.OnlineTemplateForm = OnlineTemplateForm;
-        [['Reference', function () { return Serenity.StringEditor; }], ['Number', function () { return Serenity.IntegerEditor; }], ['Urgent', function () { return Serenity.BooleanEditor; }], ['IdGender', function () { return Serenity.IntegerEditor; }], ['IdBase', function () { return Serenity.IntegerEditor; }], ['Is34', function () { return Serenity.BooleanEditor; }], ['IdShape', function () { return Serenity.IntegerEditor; }], ['IdCover', function () { return Serenity.IntegerEditor; }], ['Observations', function () { return Serenity.StringEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['IdUserCreation', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Reference', function () { return Serenity.StringEditor; }], ['Number', function () { return Serenity.IntegerEditor; }], ['Urgent', function () { return Serenity.BooleanEditor; }], ['IdGender', function () { return Serenity.IntegerEditor; }], ['IdBase', function () { return Serenity.IntegerEditor; }], ['Is34', function () { return Serenity.BooleanEditor; }], ['IdShape', function () { return Serenity.IntegerEditor; }], ['IdCover', function () { return Serenity.IntegerEditor; }], ['OnlineFeedList', function () { return Templates.OnlineFeetEditor; }], ['Observations', function () { return Serenity.StringEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['IdUserCreation', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -6022,6 +6022,61 @@ var Cidob;
             Serenity.Decorators.registerClass()
         ], OnlineFeetGrid);
         Templates.OnlineFeetGrid = OnlineFeetGrid;
+    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Templates;
+    (function (Templates) {
+        var OnlineFeetEditor = (function (_super) {
+            __extends(OnlineFeetEditor, _super);
+            function OnlineFeetEditor(div) {
+                return _super.call(this, div) || this;
+            }
+            OnlineFeetEditor.prototype.getTemplate = function () {
+                return "<div><div id='~_Toolbar'></div><ul id='~_FeetList'></ul></div>";
+            };
+            Object.defineProperty(OnlineFeetEditor.prototype, "value", {
+                get: function () {
+                    return this.items;
+                },
+                set: function (value) {
+                    this.items = value || [];
+                    this.set_isDirty(false);
+                    this.updateContent();
+                },
+                enumerable: true,
+                configurable: true
+            });
+            OnlineFeetEditor.prototype.updateContent = function () {
+                var html = [];
+                var feetList = this.byId('FeetList');
+                feetList.children().remove();
+                html.push('Pie :');
+                html.push('<input type="radio" name="feetSide" value="both">Ambos Pies');
+                html.push('<input type="radio" name="feetSide" value="single">Selección Individual');
+                html.push('Tabs');
+                feetList.append(html.join(''));
+            };
+            OnlineFeetEditor.prototype.getEditValue = function (prop, target) {
+                target[prop.name] = this.value;
+            };
+            OnlineFeetEditor.prototype.setEditValue = function (source, prop) {
+                this.value = source[prop.name] || [];
+            };
+            OnlineFeetEditor.prototype.get_isDirty = function () {
+                return this.isDirty;
+            };
+            OnlineFeetEditor.prototype.set_isDirty = function (value) {
+                this.isDirty = value;
+            };
+            return OnlineFeetEditor;
+        }(Serenity.TemplatedWidget));
+        OnlineFeetEditor = __decorate([
+            Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue]),
+            Serenity.Decorators.element("<div/>")
+        ], OnlineFeetEditor);
+        Templates.OnlineFeetEditor = OnlineFeetEditor;
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
