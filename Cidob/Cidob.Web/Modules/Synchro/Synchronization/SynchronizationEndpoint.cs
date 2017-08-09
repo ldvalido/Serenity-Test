@@ -1,4 +1,7 @@
 ﻿
+using System.Threading;
+using Cidob.Modules.Synchro.Synchronization;
+
 namespace Cidob.Synchro.Endpoints
 {
     using Serenity;
@@ -39,6 +42,13 @@ namespace Cidob.Synchro.Endpoints
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
         {
             return new MyRepository().List(connection, request);
+        }
+
+        [HttpPost]
+        public SynchroResponse Synch(IDbConnection connection, SynchroRequest request)
+        {
+            Thread.Sleep(2000);
+            return new SynchroResponse {Result = true};
         }
     }
 }

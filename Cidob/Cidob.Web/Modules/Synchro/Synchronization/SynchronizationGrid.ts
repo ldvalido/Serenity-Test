@@ -9,6 +9,7 @@ namespace Cidob.Synchro {
         protected getLocalTextPrefix() { return SynchronizationRow.localTextPrefix; }
         protected getService() { return SynchronizationService.baseUrl; }
 
+        private rowSelection: Serenity.GridRowSelectionMixin;
         constructor(container: JQuery) {
             super(container);
         }
@@ -33,10 +34,10 @@ namespace Cidob.Synchro {
                     if (!this.onViewSubmit()) {
                         return;
                     }
-
-                    var action = new OrderBulkAction();
+                    var selectedKeys = this.rowSelection.getSelectedKeys();
+                    var action = new Cidob.Synchro.SynchroBulkAction();
                     action.done = () => this.rowSelection.resetCheckedAndRefresh();
-                    action.execute(this.rowSelection.getSelectedKeys());
+                    action.execute(selectedKeys);
                 }
             };
             return buttons;

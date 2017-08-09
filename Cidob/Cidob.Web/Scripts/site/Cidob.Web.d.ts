@@ -2241,6 +2241,16 @@ declare namespace Cidob.Synchro {
         }
     }
 }
+declare namespace Cidob.Synchro {
+    interface SynchroBulkActionRequest extends Serenity.ServiceRequest {
+        SynchroID?: string[];
+    }
+}
+declare namespace Cidob.Synchro {
+    namespace SynchroService {
+        function SynchroBulkAction(): JQueryXHR;
+    }
+}
 declare namespace Cidob.Templates {
     class FeaturedTemplateForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -3418,6 +3428,13 @@ declare namespace Cidob.Relationship {
     }
 }
 declare namespace Cidob.Synchro {
+    class SynchroBulkAction extends Common.BulkServiceAction {
+        protected getParallelRequests(): number;
+        protected getBatchSize(): number;
+        protected executeForBatch(batch: any): void;
+    }
+}
+declare namespace Cidob.Synchro {
     class SynchronizationDialog extends Serenity.EntityDialog<SynchronizationRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3450,6 +3467,7 @@ declare namespace Cidob.Synchro {
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
+        private rowSelection;
         constructor(container: JQuery);
         protected getColumns(): Slick.Column[];
         protected createToolbarExtensions(): void;

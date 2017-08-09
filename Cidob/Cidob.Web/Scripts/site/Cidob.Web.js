@@ -3112,6 +3112,20 @@ var Cidob;
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
+        var SynchroService;
+        (function (SynchroService) {
+            SynchroService.SynchroBulkAction = function (parameter, cb, opt) {
+                console.log('Synchro' + parameter.OrderIDs);
+                Q.serviceRequest('Synchro/Synchronization/Synch/', parameter, cb, opt);
+                return true;
+            };
+        })(SynchroService = Synchro.SynchroService || (Synchro.SynchroService = {}));
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
     var Templates;
     (function (Templates) {
         var FeaturedTemplateForm = (function (_super) {
@@ -5705,6 +5719,36 @@ var Cidob;
 (function (Cidob) {
     var Synchro;
     (function (Synchro) {
+        var SynchroBulkAction = (function (_super) {
+            __extends(SynchroBulkAction, _super);
+            function SynchroBulkAction() {
+                return _super.apply(this, arguments) || this;
+            }
+            SynchroBulkAction.prototype.getParallelRequests = function () {
+                return 1;
+            };
+            SynchroBulkAction.prototype.getBatchSize = function () {
+                return 1;
+            };
+            SynchroBulkAction.prototype.executeForBatch = function (batch) {
+                var _this = this;
+                Synchro.SynchroService.SynchroBulkAction({
+                    OrderIDs: batch.map(function (x) { return Q.parseInteger(x); })
+                }, function (response) { return _this.set_successCount(_this.get_successCount() + batch.length); }, {
+                    blockUI: false,
+                    onError: function (response) { return _this.set_errorCount(_this.get_errorCount() + batch.length); },
+                    onCleanup: function () { return _this.serviceCallCleanup(); }
+                });
+            };
+            return SynchroBulkAction;
+        }(Cidob.Common.BulkServiceAction));
+        Synchro.SynchroBulkAction = SynchroBulkAction;
+    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
+})(Cidob || (Cidob = {}));
+var Cidob;
+(function (Cidob) {
+    var Synchro;
+    (function (Synchro) {
         var SynchronizationDialog = (function (_super) {
             __extends(SynchronizationDialog, _super);
             function SynchronizationDialog() {
@@ -5805,9 +5849,10 @@ var Cidob;
                         if (!_this.onViewSubmit()) {
                             return;
                         }
-                        var action = new OrderBulkAction();
+                        var selectedKeys = _this.rowSelection.getSelectedKeys();
+                        var action = new Cidob.Synchro.SynchroBulkAction();
                         action.done = function () { return _this.rowSelection.resetCheckedAndRefresh(); };
-                        action.execute(_this.rowSelection.getSelectedKeys());
+                        action.execute(selectedKeys);
                     }
                 };
                 return buttons;
