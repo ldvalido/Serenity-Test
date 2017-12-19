@@ -12,21 +12,28 @@
             }
 
             protected getTemplate() {
-                return "<div><div id='~_Toolbar'></div><ul id='~_FeetList'></ul></div>";
+                return "<div><div id='~_Toolbar'></div><div id='~_FeetList'></div>";
             }
             protected get value() {
                 return this.items;
             }
-            protected updateContent() {
-                var html = [];
+            protected updateContent() {                
+                var tabPie = jQuery("li[tabindex=-1]");
+                
                 var feetList = this.byId('FeetList');
-                feetList.children().remove();
-                html.push('Pie :');
-                html.push('<input type="radio" name="feetSide" value="both">Ambos Pies');
-                html.push('<input type="radio" name="feetSide" value="single">Selección Individual');
-                html.push('Tabs');
-                feetList.append(html.join(''));
+                var forms = $('form');
 
+                feetList.children().remove();
+                $('li[tabindex=0]').hide();
+                $('.Cidob_Templates_OnlineFeetEditor20_Toolbar').hide();
+                for (var i = 0; i< forms.length; i++) {
+                    var f = forms[i];
+                    
+                    if (f.id.indexOf('FeetForm') > 0) {
+                        feetList[0].appendChild(f.parentNode);
+                        tabPie.hide();
+                    }
+                }
             }
             protected set value(value: OnlineFeetRow[]) {
                 this.items = value || [];

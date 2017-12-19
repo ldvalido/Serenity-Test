@@ -4,10 +4,7 @@
     {
         /*export declare function SynchroBulkAction(
             request: SynchroBulkActionRequest,
-            onSuccess?: (response: Serenity.ServiceResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function SynchroBulkAction(r, s, o) {
-            debugger;
-        }*/
+            onSuccess?: (response: Serenity.ServiceResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;*/
         export declare function SynchroBulkAction(): JQueryXHR;
         SynchroService.SynchroBulkAction = function(parameter,cb, opt) {
             console.log('Synchro' + parameter.OrderIDs);
