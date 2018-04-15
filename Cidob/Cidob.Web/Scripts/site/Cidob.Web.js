@@ -3112,20 +3112,6 @@ var Cidob;
 })(Cidob || (Cidob = {}));
 var Cidob;
 (function (Cidob) {
-    var Synchro;
-    (function (Synchro) {
-        var SynchroService;
-        (function (SynchroService) {
-            SynchroService.SynchroBulkAction = function (parameter, cb, opt) {
-                console.log('Synchro' + parameter.OrderIDs);
-                Q.serviceRequest('Synchro/Synchronization/Synch/', parameter, cb, opt);
-                return true;
-            };
-        })(SynchroService = Synchro.SynchroService || (Synchro.SynchroService = {}));
-    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
-})(Cidob || (Cidob = {}));
-var Cidob;
-(function (Cidob) {
     var Templates;
     (function (Templates) {
         var FeaturedTemplateForm = (function (_super) {
@@ -3235,7 +3221,7 @@ var Cidob;
         }(Serenity.PrefixedContext));
         OnlineTemplateForm.formKey = 'Templates.OnlineTemplate';
         Templates.OnlineTemplateForm = OnlineTemplateForm;
-        [['Reference', function () { return Serenity.StringEditor; }], ['Number', function () { return Serenity.IntegerEditor; }], ['Urgent', function () { return Serenity.BooleanEditor; }], ['IdGender', function () { return Serenity.IntegerEditor; }], ['IdBase', function () { return Serenity.IntegerEditor; }], ['Is34', function () { return Serenity.BooleanEditor; }], ['IdShape', function () { return Serenity.IntegerEditor; }], ['IdCover', function () { return Serenity.IntegerEditor; }], ['OnlineFeedList', function () { return Templates.OnlineFeetEditor; }], ['Observations', function () { return Serenity.StringEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['IdUserCreation', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Reference', function () { return Serenity.StringEditor; }], ['Number', function () { return Serenity.IntegerEditor; }], ['Urgent', function () { return Serenity.BooleanEditor; }], ['IdGender', function () { return Serenity.IntegerEditor; }], ['IdBase', function () { return Serenity.IntegerEditor; }], ['Is34', function () { return Serenity.BooleanEditor; }], ['IdShape', function () { return Serenity.IntegerEditor; }], ['IdCover', function () { return Serenity.IntegerEditor; }], ['Observations', function () { return Serenity.StringEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['IdUserCreation', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(OnlineTemplateForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Templates = Cidob.Templates || (Cidob.Templates = {}));
 })(Cidob || (Cidob = {}));
 var Cidob;
@@ -5719,36 +5705,6 @@ var Cidob;
 (function (Cidob) {
     var Synchro;
     (function (Synchro) {
-        var SynchroBulkAction = (function (_super) {
-            __extends(SynchroBulkAction, _super);
-            function SynchroBulkAction() {
-                return _super.apply(this, arguments) || this;
-            }
-            SynchroBulkAction.prototype.getParallelRequests = function () {
-                return 1;
-            };
-            SynchroBulkAction.prototype.getBatchSize = function () {
-                return 1;
-            };
-            SynchroBulkAction.prototype.executeForBatch = function (batch) {
-                var _this = this;
-                Synchro.SynchroService.SynchroBulkAction({
-                    OrderIDs: batch.map(function (x) { return Q.parseInteger(x); })
-                }, function (response) { return _this.set_successCount(_this.get_successCount() + batch.length); }, {
-                    blockUI: false,
-                    onError: function (response) { return _this.set_errorCount(_this.get_errorCount() + batch.length); },
-                    onCleanup: function () { return _this.serviceCallCleanup(); }
-                });
-            };
-            return SynchroBulkAction;
-        }(Cidob.Common.BulkServiceAction));
-        Synchro.SynchroBulkAction = SynchroBulkAction;
-    })(Synchro = Cidob.Synchro || (Cidob.Synchro = {}));
-})(Cidob || (Cidob = {}));
-var Cidob;
-(function (Cidob) {
-    var Synchro;
-    (function (Synchro) {
         var SynchronizationDialog = (function (_super) {
             __extends(SynchronizationDialog, _super);
             function SynchronizationDialog() {
@@ -6073,194 +6029,22 @@ var Cidob;
 (function (Cidob) {
     var Templates;
     (function (Templates) {
-        var OnlineFeetEditor = (function (_super) {
-            __extends(OnlineFeetEditor, _super);
-            function OnlineFeetEditor(div) {
-                return _super.call(this, div) || this;
-            }
-            OnlineFeetEditor.prototype.getTemplate = function () {
-                return "<div><div id='~_Toolbar'></div><div id='~_FeetList'></div>";
-            };
-            Object.defineProperty(OnlineFeetEditor.prototype, "value", {
-                get: function () {
-                    return this.items;
-                },
-                set: function (value) {
-                    this.items = value || [];
-                    this.set_isDirty(false);
-                    this.updateContent();
-                },
-                enumerable: true,
-                configurable: true
-            });
-            OnlineFeetEditor.prototype.updateContent = function () {
-                var tabPie = jQuery("li[tabindex=-1]");
-                var feetList = this.byId('FeetList');
-                var forms = $('form');
-                feetList.children().remove();
-                $('li[tabindex=0]').hide();
-                $('.Cidob_Templates_OnlineFeetEditor20_Toolbar').hide();
-                for (var i = 0; i < forms.length; i++) {
-                    var f = forms[i];
-                    if (f.id.indexOf('FeetForm') > 0) {
-                        feetList[0].appendChild(f.parentNode);
-                        tabPie.hide();
-                    }
-                }
-            };
-            OnlineFeetEditor.prototype.getEditValue = function (prop, target) {
-                target[prop.name] = this.value;
-            };
-            OnlineFeetEditor.prototype.setEditValue = function (source, prop) {
-                this.value = source[prop.name] || [];
-            };
-            OnlineFeetEditor.prototype.get_isDirty = function () {
-                return this.isDirty;
-            };
-            OnlineFeetEditor.prototype.set_isDirty = function (value) {
-                this.isDirty = value;
-            };
-            return OnlineFeetEditor;
-        }(Serenity.TemplatedWidget));
-        OnlineFeetEditor = __decorate([
-            Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue]),
-            Serenity.Decorators.element("<div/>")
-        ], OnlineFeetEditor);
-        Templates.OnlineFeetEditor = OnlineFeetEditor;
-    })(Templates = Cidob.Templates || (Cidob.Templates = {}));
-})(Cidob || (Cidob = {}));
-var Cidob;
-(function (Cidob) {
-    var Templates;
-    (function (Templates) {
         var OnlineTemplateDialog = (function (_super) {
             __extends(OnlineTemplateDialog, _super);
             function OnlineTemplateDialog() {
-                var _this = _super.call(this) || this;
+                var _this = _super.apply(this, arguments) || this;
                 _this.form = new Templates.OnlineTemplateForm(_this.idPrefix);
-                _this.feetPropertyGrid = new Serenity.PropertyGrid(_this.byId("FeetPropertyGrid"), {
-                    items: Q.getForm(Templates.OnlineFeetForm.formKey).filter(function (x) { return x.name != 'OnlineFeetID'; }),
-                    useCategories: true
-                });
-                _this.feetForm = new Templates.OnlineFeetForm(_this.feetPropertyGrid.idPrefix);
-                _this.feetValidator = _this.byId("FeetForm").validate(Q.validateOptions({}));
                 return _this;
-                //this.featuredTemplateButton = {
-                //        title: 'Save Template',
-                //        hotkey: 'alt+p',
-                //        cssClass: 'save-and-recover-featured-template-button',
-                //        onClick: function () {
-                //            alert('traer pantalla');
-                //        }
-                //    };
             }
             OnlineTemplateDialog.prototype.getFormKey = function () { return Templates.OnlineTemplateForm.formKey; };
             OnlineTemplateDialog.prototype.getIdProperty = function () { return Templates.OnlineTemplateRow.idProperty; };
             OnlineTemplateDialog.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
             OnlineTemplateDialog.prototype.getNameProperty = function () { return Templates.OnlineTemplateRow.nameProperty; };
             OnlineTemplateDialog.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
-            OnlineTemplateDialog.prototype.updateInterface = function () {
-                // by default cloneButton is hidden in base UpdateInterface method
-                _super.prototype.updateInterface.call(this);
-                // here we show it if it is edit mode (not new)
-                //this.featuredTemplateButton.title = this.isEditMode() ? 'Save Template' : 'Recover Template';
-                //this.featuredTemplateButton.toggle(true);
-            };
-            OnlineTemplateDialog.prototype.validateTemplate = function () {
-                var returnValue = true;
-                // Get current tab
-                var currTab = Serenity.TabsExtensions.activeTabKey(this.tabs);
-                // Select the correct tab and validate to see the error message in tab
-                Serenity.TabsExtensions.selectTab(this.tabs, "Feet");
-                if (!this.feetValidator.form()) {
-                    returnValue = false;
-                }
-                // Re-select initial tab
-                Serenity.TabsExtensions.selectTab(this.tabs, currTab);
-                return returnValue;
-            };
-            // Save the customer and the order
-            OnlineTemplateDialog.prototype.saveFeet = function (idOnlineTemplate) {
-                var _this = this;
-                // prepare an empty entity to serialize customer details into
-                var c = {};
-                this.feetPropertyGrid.save(c);
-                c.IdOnlineTemplate = idOnlineTemplate;
-                if (this.isNewOrDeleted()) {
-                    Templates.OnlineFeetService.Create({
-                        //EntityId: id,
-                        Entity: c
-                    }, function (response) {
-                        // reload customer list just in case
-                        Q.reloadLookup(Templates.OnlineFeetRow.lookupKey);
-                        // set flag that we are triggering customer select change event
-                        // otherwise active tab will change to first one
-                        _this.selfChange++;
-                        try {
-                        }
-                        finally {
-                            _this.selfChange--;
-                        }
-                    });
-                }
-                else {
-                    Templates.OnlineFeetService.Update({
-                        EntityId: c.IdOnlineFeet,
-                        Entity: c
-                    }, function (response) {
-                        // reload customer list just in case
-                        Q.reloadLookup(Templates.OnlineFeetRow.lookupKey);
-                        // set flag that we are triggering customer select change event
-                        // otherwise active tab will change to first one
-                        _this.selfChange++;
-                        try {
-                        }
-                        finally {
-                            _this.selfChange--;
-                        }
-                    });
-                }
-                return true;
-            };
-            // Call super.save to save Order entity
-            OnlineTemplateDialog.prototype.saveTemplate = function (callback, onSuccess) {
-                _super.prototype.save.call(this, callback);
-            };
-            OnlineTemplateDialog.prototype.saveAll = function (callback, onSuccess) {
-                this.saveTemplate(callback, onSuccess);
-            };
-            // This is called when save/update button is pressed
-            OnlineTemplateDialog.prototype.save = function (callback) {
-                if (this.validateTemplate()) {
-                    this.saveAll(callback, function (resp) { });
-                }
-            };
-            OnlineTemplateDialog.prototype.doDelete = function (callback) {
-                var _this = this;
-                Templates.OnlineFeetService.Delete({ EntityId: this.feetEntity.IdOnlineFeet }, function (response) {
-                    _super.prototype.doDelete.call(_this, callback);
-                });
-            };
-            OnlineTemplateDialog.prototype.onSaveSuccess = function (callback) {
-                var templateId = callback.EntityId;
-                this.saveFeet(templateId);
-                _super.prototype.dialogClose.call(this);
-            };
             OnlineTemplateDialog.prototype.dialogOpen = function () {
+                debugger;
                 _super.prototype.dialogOpen.call(this);
                 this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
-            };
-            OnlineTemplateDialog.prototype.loadEntity = function (entity) {
-                var _this = this;
-                _super.prototype.loadEntity.call(this, entity);
-                Templates.OnlineFeetService.List({
-                    EqualityFilter: { 'IdOnlineTemplate': this.get_entityId() }
-                }, function (response) {
-                    _this.feetEntity = response.Entities[0];
-                    _this.feetPropertyGrid.load(_this.feetEntity);
-                });
-                //Serenity.TabsExtensions.setDisabled(this.tabs, 'Feet', this.isNewOrDeleted());
-                //this.agendaGrid.customerID = entity.CustomerID;
             };
             return OnlineTemplateDialog;
         }(Serenity.EntityDialog));
@@ -6331,15 +6115,6 @@ var Cidob;
             OnlineTemplateGrid.prototype.getIdProperty = function () { return Templates.OnlineTemplateRow.idProperty; };
             OnlineTemplateGrid.prototype.getLocalTextPrefix = function () { return Templates.OnlineTemplateRow.localTextPrefix; };
             OnlineTemplateGrid.prototype.getService = function () { return Templates.OnlineTemplateService.baseUrl; };
-            OnlineTemplateGrid.prototype.onViewSubmit = function () {
-                if (!_super.prototype.onViewSubmit.call(this)) {
-                    return false;
-                }
-                var request = this.view.params;
-                var userId = Cidob.Authorization.getUserId();
-                request.Criteria = Serenity.Criteria.and(request.Criteria, [['IdUserCreation'], '=', userId]);
-                return true;
-            };
             return OnlineTemplateGrid;
         }(Serenity.EntityGrid));
         OnlineTemplateGrid = __decorate([

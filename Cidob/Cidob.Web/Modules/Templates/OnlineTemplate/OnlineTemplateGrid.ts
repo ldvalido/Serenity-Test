@@ -12,17 +12,5 @@ namespace Cidob.Templates {
         constructor(container: JQuery) {
             super(container);
         }
-
-        protected onViewSubmit() {
-            if (!super.onViewSubmit()) {
-                return false;
-            }
-            var request = this.view.params as Serenity.ListRequest;
-            var userId = Authorization.getUserId();
-            request.Criteria = Serenity.Criteria.and(request.Criteria,
-                [['IdUserCreation'], '=', userId]
-            );
-            return true;
-        }
     }
 }

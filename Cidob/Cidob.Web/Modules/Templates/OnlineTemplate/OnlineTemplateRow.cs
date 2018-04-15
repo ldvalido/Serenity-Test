@@ -1,5 +1,5 @@
 ﻿
-using System.Collections.Generic;
+using Cidob.Administration.Entities;
 using Cidob.MasterData.Entities;
 
 namespace Cidob.Templates.Entities
@@ -14,354 +14,280 @@ namespace Cidob.Templates.Entities
     using System.IO;
 
     [ConnectionKey("Default"), DisplayName("OnlineTemplate"), InstanceName("OnlineTemplate"), TwoLevelCached]
-    [ReadPermission("Template:LoadTemplate")]
-    [ModifyPermission("Template:LoadTemplate")]
+    [ReadPermission("Templates:OnlineTemplate:Read")]
+    [InsertPermission("Templates:OnlineTemplate:Insert")]
+    [UpdatePermission("Templates:OnlineTemplate:Update")]
+    [DeletePermission("Templates:OnlineTemplate:Delete")]
+    [LookupScript("Templates.OnlineTemplateRow")]
     public sealed class OnlineTemplateRow : Row, IIdRow, INameRow
+    {        
+            #region Id Online Template
+            [DisplayName("Id Online Template"), Identity]
+            public Int32? IdOnlineTemplate { get { return Fields.IdOnlineTemplate[this]; } set { Fields.IdOnlineTemplate[this] = value; } }
+            public partial class RowFields { public Int32Field IdOnlineTemplate; }
+            #endregion IdOnlineTemplate
+                
+            #region Reference
+            [DisplayName("Reference"), Size(50), QuickSearch]
+            public String Reference { get { return Fields.Reference[this]; } set { Fields.Reference[this] = value; } }
+            public partial class RowFields { public StringField Reference; }
+            #endregion Reference
+                
+            #region Number
+            [DisplayName("Number"), NotNull]
+            public Int32? Number { get { return Fields.Number[this]; } set { Fields.Number[this] = value; } }
+            public partial class RowFields { public Int32Field Number; }
+            #endregion Number
+                
+            #region Urgent
+            [DisplayName("Urgent")]
+            public Boolean? Urgent { get { return Fields.Urgent[this]; } set { Fields.Urgent[this] = value; } }
+            public partial class RowFields { public BooleanField Urgent; }
+            #endregion Urgent
+                
+            #region Id Gender
+            [DisplayName("Id Gender"), NotNull, ForeignKey("[dbo].[Gender]", "IdGender"), LeftJoin("jIdGender"), TextualField("IdGenderDescription")]
+            [LookupEditor(typeof(GenderRow), InplaceAdd = true)]
+            public Int32? IdGender { get { return Fields.IdGender[this]; } set { Fields.IdGender[this] = value; } }
+            public partial class RowFields { public Int32Field IdGender; }
+            #endregion IdGender
+                
+            #region Id Base
+            [DisplayName("Id Base"), NotNull, ForeignKey("[dbo].[Base]", "IdBase"), LeftJoin("jIdBase"), TextualField("IdBaseDescription")]
+            [LookupEditor(typeof(BaseRow), InplaceAdd = true)]
+            public Int32? IdBase { get { return Fields.IdBase[this]; } set { Fields.IdBase[this] = value; } }
+            public partial class RowFields { public Int32Field IdBase; }
+            #endregion IdBase
+                
+            #region Is34
+            [DisplayName("Is34")]
+            public Boolean? Is34 { get { return Fields.Is34[this]; } set { Fields.Is34[this] = value; } }
+            public partial class RowFields { public BooleanField Is34; }
+            #endregion Is34
+                
+            #region Id Shape
+            [DisplayName("Id Shape"), NotNull, ForeignKey("[dbo].[Shape]", "IdShape"), LeftJoin("jIdShape"), TextualField("IdShapeDescription")]
+            [LookupEditor(typeof(ShapeRow), InplaceAdd = true)]
+            public Int32? IdShape { get { return Fields.IdShape[this]; } set { Fields.IdShape[this] = value; } }
+            public partial class RowFields { public Int32Field IdShape; }
+            #endregion IdShape
+                
+            #region Id Cover
+            [DisplayName("Id Cover"), NotNull, ForeignKey("[dbo].[Cover]", "IdCover"), LeftJoin("jIdCover"), TextualField("IdCoverDescription")]
+            [LookupEditor(typeof(CoverRow), InplaceAdd = true)]
+            public Int32? IdCover { get { return Fields.IdCover[this]; } set { Fields.IdCover[this] = value; } }
+            public partial class RowFields { public Int32Field IdCover; }
+            #endregion IdCover
+                
+            #region Observations
+            [DisplayName("Observations")]
+            public String Observations { get { return Fields.Observations[this]; } set { Fields.Observations[this] = value; } }
+            public partial class RowFields { public StringField Observations; }
+            #endregion Observations
+                
+            #region Quantity
+            [DisplayName("Quantity"), NotNull]
+            public Int32? Quantity { get { return Fields.Quantity[this]; } set { Fields.Quantity[this] = value; } }
+            public partial class RowFields { public Int32Field Quantity; }
+            #endregion Quantity
+                
+            #region Id User Creation
+            [DisplayName("Id User Creation"), NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIdUserCreation"), TextualField("IdUserCreationUsername")]
+            [LookupEditor(typeof(UserRow), InplaceAdd = true)]
+            public Int32? IdUserCreation { get { return Fields.IdUserCreation[this]; } set { Fields.IdUserCreation[this] = value; } }
+            public partial class RowFields { public Int32Field IdUserCreation; }
+            #endregion IdUserCreation
+        
+
+    #region Foreign Fields
+            
+                [DisplayName("Id Gender Description"), Expression("jIdGender.[Description]")]
+                public String IdGenderDescription { get { return Fields.IdGenderDescription[this]; } set { Fields.IdGenderDescription[this] = value; } }
+                public partial class RowFields { public StringField IdGenderDescription; }
+
+                        
+                [DisplayName("Id Base Id Product"), Expression("jIdBase.[IdProduct]")]
+                public Int32? IdBaseIdProduct { get { return Fields.IdBaseIdProduct[this]; } set { Fields.IdBaseIdProduct[this] = value; } }
+                public partial class RowFields { public Int32Field IdBaseIdProduct; }
+
+                        
+                [DisplayName("Id Base Order"), Expression("jIdBase.[Order]")]
+                public Int32? IdBaseOrder { get { return Fields.IdBaseOrder[this]; } set { Fields.IdBaseOrder[this] = value; } }
+                public partial class RowFields { public Int32Field IdBaseOrder; }
+
+                        
+                [DisplayName("Id Base Description"), Expression("jIdBase.[Description]")]
+                public String IdBaseDescription { get { return Fields.IdBaseDescription[this]; } set { Fields.IdBaseDescription[this] = value; } }
+                public partial class RowFields { public StringField IdBaseDescription; }
+
+                        
+                [DisplayName("Id Base Print Name"), Expression("jIdBase.[PrintName]")]
+                public String IdBasePrintName { get { return Fields.IdBasePrintName[this]; } set { Fields.IdBasePrintName[this] = value; } }
+                public partial class RowFields { public StringField IdBasePrintName; }
+
+                        
+                [DisplayName("Id Base From"), Expression("jIdBase.[From]")]
+                public Int32? IdBaseFrom { get { return Fields.IdBaseFrom[this]; } set { Fields.IdBaseFrom[this] = value; } }
+                public partial class RowFields { public Int32Field IdBaseFrom; }
+
+                        
+                [DisplayName("Id Base To"), Expression("jIdBase.[To]")]
+                public Int32? IdBaseTo { get { return Fields.IdBaseTo[this]; } set { Fields.IdBaseTo[this] = value; } }
+                public partial class RowFields { public Int32Field IdBaseTo; }
+
+                        
+                [DisplayName("Id Base Escatola"), Expression("jIdBase.[Escatola]")]
+                public Boolean? IdBaseEscatola { get { return Fields.IdBaseEscatola[this]; } set { Fields.IdBaseEscatola[this] = value; } }
+                public partial class RowFields { public BooleanField IdBaseEscatola; }
+
+                        
+                [DisplayName("Id Base Need Arch"), Expression("jIdBase.[NeedArch]")]
+                public Boolean? IdBaseNeedArch { get { return Fields.IdBaseNeedArch[this]; } set { Fields.IdBaseNeedArch[this] = value; } }
+                public partial class RowFields { public BooleanField IdBaseNeedArch; }
+
+                        
+                [DisplayName("Id Base Need Transversal Arch"), Expression("jIdBase.[NeedTransversalArch]")]
+                public Boolean? IdBaseNeedTransversalArch { get { return Fields.IdBaseNeedTransversalArch[this]; } set { Fields.IdBaseNeedTransversalArch[this] = value; } }
+                public partial class RowFields { public BooleanField IdBaseNeedTransversalArch; }
+
+                        
+                [DisplayName("Id Shape Id Product"), Expression("jIdShape.[IdProduct]")]
+                public Int32? IdShapeIdProduct { get { return Fields.IdShapeIdProduct[this]; } set { Fields.IdShapeIdProduct[this] = value; } }
+                public partial class RowFields { public Int32Field IdShapeIdProduct; }
+
+                        
+                [DisplayName("Id Shape Order"), Expression("jIdShape.[Order]")]
+                public Int32? IdShapeOrder { get { return Fields.IdShapeOrder[this]; } set { Fields.IdShapeOrder[this] = value; } }
+                public partial class RowFields { public Int32Field IdShapeOrder; }
+
+                        
+                [DisplayName("Id Shape Description"), Expression("jIdShape.[Description]")]
+                public String IdShapeDescription { get { return Fields.IdShapeDescription[this]; } set { Fields.IdShapeDescription[this] = value; } }
+                public partial class RowFields { public StringField IdShapeDescription; }
+
+                        
+                [DisplayName("Id Shape Print Name"), Expression("jIdShape.[PrintName]")]
+                public String IdShapePrintName { get { return Fields.IdShapePrintName[this]; } set { Fields.IdShapePrintName[this] = value; } }
+                public partial class RowFields { public StringField IdShapePrintName; }
+
+                        
+                [DisplayName("Id Cover Id Product"), Expression("jIdCover.[IdProduct]")]
+                public Int32? IdCoverIdProduct { get { return Fields.IdCoverIdProduct[this]; } set { Fields.IdCoverIdProduct[this] = value; } }
+                public partial class RowFields { public Int32Field IdCoverIdProduct; }
+
+                        
+                [DisplayName("Id Cover Order"), Expression("jIdCover.[Order]")]
+                public Int32? IdCoverOrder { get { return Fields.IdCoverOrder[this]; } set { Fields.IdCoverOrder[this] = value; } }
+                public partial class RowFields { public Int32Field IdCoverOrder; }
+
+                        
+                [DisplayName("Id Cover Description"), Expression("jIdCover.[Description]")]
+                public String IdCoverDescription { get { return Fields.IdCoverDescription[this]; } set { Fields.IdCoverDescription[this] = value; } }
+                public partial class RowFields { public StringField IdCoverDescription; }
+
+                        
+                [DisplayName("Id Cover Print Name"), Expression("jIdCover.[PrintName]")]
+                public String IdCoverPrintName { get { return Fields.IdCoverPrintName[this]; } set { Fields.IdCoverPrintName[this] = value; } }
+                public partial class RowFields { public StringField IdCoverPrintName; }
+
+                        
+                [DisplayName("Id User Creation Username"), Expression("jIdUserCreation.[Username]")]
+                public String IdUserCreationUsername { get { return Fields.IdUserCreationUsername[this]; } set { Fields.IdUserCreationUsername[this] = value; } }
+                public partial class RowFields { public StringField IdUserCreationUsername; }
+
+                        
+                [DisplayName("Id User Creation Display Name"), Expression("jIdUserCreation.[DisplayName]")]
+                public String IdUserCreationDisplayName { get { return Fields.IdUserCreationDisplayName[this]; } set { Fields.IdUserCreationDisplayName[this] = value; } }
+                public partial class RowFields { public StringField IdUserCreationDisplayName; }
+
+                        
+                [DisplayName("Id User Creation Email"), Expression("jIdUserCreation.[Email]")]
+                public String IdUserCreationEmail { get { return Fields.IdUserCreationEmail[this]; } set { Fields.IdUserCreationEmail[this] = value; } }
+                public partial class RowFields { public StringField IdUserCreationEmail; }
+
+                        
+                [DisplayName("Id User Creation Source"), Expression("jIdUserCreation.[Source]")]
+                public String IdUserCreationSource { get { return Fields.IdUserCreationSource[this]; } set { Fields.IdUserCreationSource[this] = value; } }
+                public partial class RowFields { public StringField IdUserCreationSource; }
+
+                        
+                [DisplayName("Id User Creation Password Hash"), Expression("jIdUserCreation.[PasswordHash]")]
+                public String IdUserCreationPasswordHash { get { return Fields.IdUserCreationPasswordHash[this]; } set { Fields.IdUserCreationPasswordHash[this] = value; } }
+                public partial class RowFields { public StringField IdUserCreationPasswordHash; }
+
+                        
+                [DisplayName("Id User Creation Password Salt"), Expression("jIdUserCreation.[PasswordSalt]")]
+                public String IdUserCreationPasswordSalt { get { return Fields.IdUserCreationPasswordSalt[this]; } set { Fields.IdUserCreationPasswordSalt[this] = value; } }
+                public partial class RowFields { public StringField IdUserCreationPasswordSalt; }
+
+                        
+                [DisplayName("Id User Creation Last Directory Update"), Expression("jIdUserCreation.[LastDirectoryUpdate]")]
+                public DateTime? IdUserCreationLastDirectoryUpdate { get { return Fields.IdUserCreationLastDirectoryUpdate[this]; } set { Fields.IdUserCreationLastDirectoryUpdate[this] = value; } }
+                public partial class RowFields { public DateTimeField IdUserCreationLastDirectoryUpdate; }
+
+                        
+                [DisplayName("Id User Creation User Image"), Expression("jIdUserCreation.[UserImage]")]
+                public String IdUserCreationUserImage { get { return Fields.IdUserCreationUserImage[this]; } set { Fields.IdUserCreationUserImage[this] = value; } }
+                public partial class RowFields { public StringField IdUserCreationUserImage; }
+
+                        
+                [DisplayName("Id User Creation Insert Date"), Expression("jIdUserCreation.[InsertDate]")]
+                public DateTime? IdUserCreationInsertDate { get { return Fields.IdUserCreationInsertDate[this]; } set { Fields.IdUserCreationInsertDate[this] = value; } }
+                public partial class RowFields { public DateTimeField IdUserCreationInsertDate; }
+
+                        
+                [DisplayName("Id User Creation Insert User Id"), Expression("jIdUserCreation.[InsertUserId]")]
+                public Int32? IdUserCreationInsertUserId { get { return Fields.IdUserCreationInsertUserId[this]; } set { Fields.IdUserCreationInsertUserId[this] = value; } }
+                public partial class RowFields { public Int32Field IdUserCreationInsertUserId; }
+
+                        
+                [DisplayName("Id User Creation Update Date"), Expression("jIdUserCreation.[UpdateDate]")]
+                public DateTime? IdUserCreationUpdateDate { get { return Fields.IdUserCreationUpdateDate[this]; } set { Fields.IdUserCreationUpdateDate[this] = value; } }
+                public partial class RowFields { public DateTimeField IdUserCreationUpdateDate; }
+
+                        
+                [DisplayName("Id User Creation Update User Id"), Expression("jIdUserCreation.[UpdateUserId]")]
+                public Int32? IdUserCreationUpdateUserId { get { return Fields.IdUserCreationUpdateUserId[this]; } set { Fields.IdUserCreationUpdateUserId[this] = value; } }
+                public partial class RowFields { public Int32Field IdUserCreationUpdateUserId; }
+
+                        
+                [DisplayName("Id User Creation Is Active"), Expression("jIdUserCreation.[IsActive]")]
+                public Int16? IdUserCreationIsActive { get { return Fields.IdUserCreationIsActive[this]; } set { Fields.IdUserCreationIsActive[this] = value; } }
+                public partial class RowFields { public Int16Field IdUserCreationIsActive; }
+
+            
+    #endregion Foreign Fields
+
+    #region Id and Name fields
+    IIdField IIdRow.IdField
     {
-        [DisplayName("Id Online Template"), Identity, ForeignKey("[dbo].[Cover]", "IdCover"), LeftJoin("jIdOnlineTemplate"), TextualField("IdOnlineTemplateDescription")]
-        public Int32? IdOnlineTemplate
-        {
-            get { return Fields.IdOnlineTemplate[this]; }
-            set { Fields.IdOnlineTemplate[this] = value; }
-        }
-
-        [DisplayName("Reference"), Size(50), QuickSearch]
-        public String Reference
-        {
-            get { return Fields.Reference[this]; }
-            set { Fields.Reference[this] = value; }
-        }
-
-        [DisplayName("Number"), NotNull]
-        public Int32? Number
-        {
-            get { return Fields.Number[this]; }
-            set { Fields.Number[this] = value; }
-        }
-
-        [DisplayName("Urgent")]
-        public Boolean? Urgent
-        {
-            get { return Fields.Urgent[this]; }
-            set { Fields.Urgent[this] = value; }
-        }
-
-        [DisplayName("Id Gender"), NotNull]
-        [LookupEditor(typeof(GenderRow))]
-        public Int32? IdGender
-        {
-            get { return Fields.IdGender[this]; }
-            set { Fields.IdGender[this] = value; }
-        }
-
-        [DisplayName("Id Base"), NotNull, ForeignKey("[dbo].[Base]", "IdBase"), LeftJoin("jIdBase"), TextualField("IdBaseDescription")]
-        [LookupEditor(typeof(BaseRow))]
-        public Int32? IdBase
-        {
-            get { return Fields.IdBase[this]; }
-            set { Fields.IdBase[this] = value; }
-        }
-
-        [DisplayName("Is34")]
-        public Boolean? Is34
-        {
-            get { return Fields.Is34[this]; }
-            set { Fields.Is34[this] = value; }
-        }
-
-        [DisplayName("Id Shape"), NotNull]
-        [LookupEditor(typeof(ShapeRow))]
-        public Int32? IdShape
-        {
-            get { return Fields.IdShape[this]; }
-            set { Fields.IdShape[this] = value; }
-        }
-
-        [DisplayName("Id Cover"), NotNull]
-        [LookupEditor(typeof(CoverRow))]
-        public Int32? IdCover
-        {
-            get { return Fields.IdCover[this]; }
-            set { Fields.IdCover[this] = value; }
-        }
-
-        [DisplayName("Observations")]
-        public String Observations
-        {
-            get { return Fields.Observations[this]; }
-            set { Fields.Observations[this] = value; }
-        }
-
-        [DisplayName("Quantity"), NotNull]
-        public Int32? Quantity
-        {
-            get { return Fields.Quantity[this]; }
-            set { Fields.Quantity[this] = value; }
-        }
-
-        [DisplayName("Id User Creation"), Visible(false),NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIdUserCreation"), TextualField("IdUserCreationUsername")]
-        public Int32? IdUserCreation
-        {
-            get { return Fields.IdUserCreation[this]; }
-            set { Fields.IdUserCreation[this] = value; }
-        }
-
-        [DisplayName("Id Online Template Id Product"), Expression("jIdOnlineTemplate.[IdProduct]")]
-        public Int32? IdOnlineTemplateIdProduct
-        {
-            get { return Fields.IdOnlineTemplateIdProduct[this]; }
-            set { Fields.IdOnlineTemplateIdProduct[this] = value; }
-        }
-
-        [DisplayName("Id Online Template Order"), Expression("jIdOnlineTemplate.[Order]")]
-        public Int32? IdOnlineTemplateOrder
-        {
-            get { return Fields.IdOnlineTemplateOrder[this]; }
-            set { Fields.IdOnlineTemplateOrder[this] = value; }
-        }
-
-        [DisplayName("Id Online Template Description"), Expression("jIdOnlineTemplate.[Description]")]
-        public String IdOnlineTemplateDescription
-        {
-            get { return Fields.IdOnlineTemplateDescription[this]; }
-            set { Fields.IdOnlineTemplateDescription[this] = value; }
-        }
-
-        [DisplayName("Id Online Template Print Name"), Expression("jIdOnlineTemplate.[PrintName]")]
-        public String IdOnlineTemplatePrintName
-        {
-            get { return Fields.IdOnlineTemplatePrintName[this]; }
-            set { Fields.IdOnlineTemplatePrintName[this] = value; }
-        }
-
-        [DisplayName("Id Base Id Product"), Expression("jIdBase.[IdProduct]")]
-        public Int32? IdBaseIdProduct
-        {
-            get { return Fields.IdBaseIdProduct[this]; }
-            set { Fields.IdBaseIdProduct[this] = value; }
-        }
-
-        [DisplayName("Id Base Order"), Expression("jIdBase.[Order]")]
-        public Int32? IdBaseOrder
-        {
-            get { return Fields.IdBaseOrder[this]; }
-            set { Fields.IdBaseOrder[this] = value; }
-        }
-
-        [DisplayName("Id Base Description"), Expression("jIdBase.[Description]")]
-        public String IdBaseDescription
-        {
-            get { return Fields.IdBaseDescription[this]; }
-            set { Fields.IdBaseDescription[this] = value; }
-        }
-
-        [DisplayName("Id Base Print Name"), Expression("jIdBase.[PrintName]")]
-        public String IdBasePrintName
-        {
-            get { return Fields.IdBasePrintName[this]; }
-            set { Fields.IdBasePrintName[this] = value; }
-        }
-
-        [DisplayName("Id Base From"), Expression("jIdBase.[From]")]
-        public Int32? IdBaseFrom
-        {
-            get { return Fields.IdBaseFrom[this]; }
-            set { Fields.IdBaseFrom[this] = value; }
-        }
-
-        [DisplayName("Id Base To"), Expression("jIdBase.[To]")]
-        public Int32? IdBaseTo
-        {
-            get { return Fields.IdBaseTo[this]; }
-            set { Fields.IdBaseTo[this] = value; }
-        }
-
-        [DisplayName("Id Base Escatola"), Expression("jIdBase.[Escatola]")]
-        public Boolean? IdBaseEscatola
-        {
-            get { return Fields.IdBaseEscatola[this]; }
-            set { Fields.IdBaseEscatola[this] = value; }
-        }
-
-        [DisplayName("Id Base Need Arch"), Expression("jIdBase.[NeedArch]")]
-        public Boolean? IdBaseNeedArch
-        {
-            get { return Fields.IdBaseNeedArch[this]; }
-            set { Fields.IdBaseNeedArch[this] = value; }
-        }
-
-        [DisplayName("Id Base Need Transversal Arch"), Expression("jIdBase.[NeedTransversalArch]")]
-        public Boolean? IdBaseNeedTransversalArch
-        {
-            get { return Fields.IdBaseNeedTransversalArch[this]; }
-            set { Fields.IdBaseNeedTransversalArch[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Username"), Expression("jIdUserCreation.[Username]")]
-        public String IdUserCreationUsername
-        {
-            get { return Fields.IdUserCreationUsername[this]; }
-            set { Fields.IdUserCreationUsername[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Display Name"), Expression("jIdUserCreation.[DisplayName]")]
-        public String IdUserCreationDisplayName
-        {
-            get { return Fields.IdUserCreationDisplayName[this]; }
-            set { Fields.IdUserCreationDisplayName[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Email"), Expression("jIdUserCreation.[Email]")]
-        public String IdUserCreationEmail
-        {
-            get { return Fields.IdUserCreationEmail[this]; }
-            set { Fields.IdUserCreationEmail[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Source"), Expression("jIdUserCreation.[Source]")]
-        public String IdUserCreationSource
-        {
-            get { return Fields.IdUserCreationSource[this]; }
-            set { Fields.IdUserCreationSource[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Password Hash"), Expression("jIdUserCreation.[PasswordHash]")]
-        public String IdUserCreationPasswordHash
-        {
-            get { return Fields.IdUserCreationPasswordHash[this]; }
-            set { Fields.IdUserCreationPasswordHash[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Password Salt"), Expression("jIdUserCreation.[PasswordSalt]")]
-        public String IdUserCreationPasswordSalt
-        {
-            get { return Fields.IdUserCreationPasswordSalt[this]; }
-            set { Fields.IdUserCreationPasswordSalt[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Last Directory Update"), Expression("jIdUserCreation.[LastDirectoryUpdate]")]
-        public DateTime? IdUserCreationLastDirectoryUpdate
-        {
-            get { return Fields.IdUserCreationLastDirectoryUpdate[this]; }
-            set { Fields.IdUserCreationLastDirectoryUpdate[this] = value; }
-        }
-
-        [DisplayName("Id User Creation User Image"), Expression("jIdUserCreation.[UserImage]")]
-        public String IdUserCreationUserImage
-        {
-            get { return Fields.IdUserCreationUserImage[this]; }
-            set { Fields.IdUserCreationUserImage[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Insert Date"), Expression("jIdUserCreation.[InsertDate]")]
-        public DateTime? IdUserCreationInsertDate
-        {
-            get { return Fields.IdUserCreationInsertDate[this]; }
-            set { Fields.IdUserCreationInsertDate[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Insert User Id"), Expression("jIdUserCreation.[InsertUserId]")]
-        public Int32? IdUserCreationInsertUserId
-        {
-            get { return Fields.IdUserCreationInsertUserId[this]; }
-            set { Fields.IdUserCreationInsertUserId[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Update Date"), Expression("jIdUserCreation.[UpdateDate]")]
-        public DateTime? IdUserCreationUpdateDate
-        {
-            get { return Fields.IdUserCreationUpdateDate[this]; }
-            set { Fields.IdUserCreationUpdateDate[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Update User Id"), Expression("jIdUserCreation.[UpdateUserId]")]
-        public Int32? IdUserCreationUpdateUserId
-        {
-            get { return Fields.IdUserCreationUpdateUserId[this]; }
-            set { Fields.IdUserCreationUpdateUserId[this] = value; }
-        }
-
-        [DisplayName("Id User Creation Is Active"), Expression("jIdUserCreation.[IsActive]")]
-        public Int16? IdUserCreationIsActive
-        {
-            get { return Fields.IdUserCreationIsActive[this]; }
-            set { Fields.IdUserCreationIsActive[this] = value; }
-        }
-
-        [OnlineFeetEditor, NotMapped]
-        public List<OnlineFeetRow> OnlineFeedList
-        {
-            get { return Fields.OnlineFeedList[this]; }
-            set { Fields.OnlineFeedList[this] = value; }
-        }
-        IIdField IIdRow.IdField
-        {
-            get { return Fields.IdOnlineTemplate; }
-        }
-
-        StringField INameRow.NameField
-        {
-            get { return Fields.Reference; }
-        }
-
-        public static readonly RowFields Fields = new RowFields().Init();
-
-        public OnlineTemplateRow()
-            : base(Fields)
-        {
-        }
-
-        public class RowFields : RowFieldsBase
-        {
-            public Int32Field IdOnlineTemplate;
-            public StringField Reference;
-            public Int32Field Number;
-            public BooleanField Urgent;
-            public Int32Field IdGender;
-            public Int32Field IdBase;
-            public BooleanField Is34;
-            public Int32Field IdShape;
-            public Int32Field IdCover;
-            public StringField Observations;
-            public Int32Field Quantity;
-            public Int32Field IdUserCreation;
-
-            public Int32Field IdOnlineTemplateIdProduct;
-            public Int32Field IdOnlineTemplateOrder;
-            public StringField IdOnlineTemplateDescription;
-            public StringField IdOnlineTemplatePrintName;
-
-            public Int32Field IdBaseIdProduct;
-            public Int32Field IdBaseOrder;
-            public StringField IdBaseDescription;
-            public StringField IdBasePrintName;
-            public Int32Field IdBaseFrom;
-            public Int32Field IdBaseTo;
-            public BooleanField IdBaseEscatola;
-            public BooleanField IdBaseNeedArch;
-            public BooleanField IdBaseNeedTransversalArch;
-
-            public StringField IdUserCreationUsername;
-            public StringField IdUserCreationDisplayName;
-            public StringField IdUserCreationEmail;
-            public StringField IdUserCreationSource;
-            public StringField IdUserCreationPasswordHash;
-            public StringField IdUserCreationPasswordSalt;
-            public DateTimeField IdUserCreationLastDirectoryUpdate;
-            public StringField IdUserCreationUserImage;
-            public DateTimeField IdUserCreationInsertDate;
-            public Int32Field IdUserCreationInsertUserId;
-            public DateTimeField IdUserCreationUpdateDate;
-            public Int32Field IdUserCreationUpdateUserId;
-            public Int16Field IdUserCreationIsActive;
-
-            public RowListField<OnlineFeetRow> OnlineFeedList;
-
-            public RowFields()
-                : base("[dbo].[OnlineTemplate]")
-            {
-                LocalTextPrefix = "Templates.OnlineTemplate";
-            }
-        }
+    get { return Fields.IdOnlineTemplate; }
     }
-}
+        
+            StringField INameRow.NameField
+            {
+            get { return Fields.Reference; }
+            }
+            #endregion Id and Name fields
+
+    #region Constructor
+    public OnlineTemplateRow()
+    : base(Fields)
+    {
+    }
+    #endregion Constructor
+
+    #region RowFields
+    public static readonly RowFields Fields = new RowFields().Init();
+
+    public partial class RowFields : RowFieldsBase
+    {
+    public RowFields()
+    : base("[dbo].[OnlineTemplate]")
+    {
+    LocalTextPrefix = "Templates.OnlineTemplate";
+    }
+    }
+    #endregion RowFields
+    }
+    }

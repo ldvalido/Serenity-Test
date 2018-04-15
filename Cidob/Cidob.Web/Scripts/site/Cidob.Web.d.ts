@@ -2248,7 +2248,6 @@ declare namespace Cidob.Synchro {
 }
 declare namespace Cidob.Synchro {
     namespace SynchroService {
-        function SynchroBulkAction(): JQueryXHR;
     }
 }
 declare namespace Cidob.Templates {
@@ -2525,7 +2524,6 @@ declare namespace Cidob.Templates {
         IdCover: Serenity.IntegerEditor;
         Observations: Serenity.StringEditor;
         Quantity: Serenity.IntegerEditor;
-        OnlineFeedList: OnlineFeetEditor;
         IdUserCreation: Serenity.IntegerEditor;
     }
 }
@@ -3428,11 +3426,6 @@ declare namespace Cidob.Relationship {
     }
 }
 declare namespace Cidob.Synchro {
-    class SynchroBulkAction extends Common.BulkServiceAction {
-        protected getParallelRequests(): number;
-        protected getBatchSize(): number;
-        protected executeForBatch(batch: any): void;
-    }
 }
 declare namespace Cidob.Synchro {
     class SynchronizationDialog extends Serenity.EntityDialog<SynchronizationRow, any> {
@@ -3550,21 +3543,6 @@ declare namespace Cidob.Templates {
     }
 }
 declare namespace Cidob.Templates {
-    class OnlineFeetEditor extends Serenity.TemplatedWidget<any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
-        private isDirty;
-        private items;
-        constructor(div: JQuery);
-        protected getTemplate(): string;
-        protected value: OnlineFeetRow[];
-        protected updateContent(): void;
-        getEditValue(prop: Serenity.PropertyItem, target: any): void;
-        setEditValue(source: any, prop: Serenity.PropertyItem): void;
-        get_isDirty(): boolean;
-        set_isDirty(value: any): void;
-        onChange: () => void;
-    }
-}
-declare namespace Cidob.Templates {
     class OnlineTemplateDialog extends Serenity.EntityDialog<OnlineTemplateRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3572,23 +3550,7 @@ declare namespace Cidob.Templates {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: OnlineTemplateForm;
-        private feetPropertyGrid;
-        private feetForm;
-        private feetValidator;
-        private selfChange;
-        private feetEntity;
-        protected featuredTemplateButton: JQuery;
-        constructor();
-        protected updateInterface(): void;
-        protected validateTemplate(): boolean;
-        protected saveFeet(idOnlineTemplate: number): boolean;
-        protected saveTemplate(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;
-        protected saveAll(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): void;
-        protected save(callback: (response: Serenity.SaveResponse) => void): void;
-        protected doDelete(callback: (response: Serenity.SaveResponse) => void): void;
-        onSaveSuccess(callback: (response: Serenity.SaveResponse) => void): void;
         dialogOpen(): void;
-        loadEntity(entity: OnlineTemplateRow): void;
     }
 }
 declare namespace Cidob.Templates {
@@ -3615,6 +3577,5 @@ declare namespace Cidob.Templates {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-        protected onViewSubmit(): boolean;
     }
 }

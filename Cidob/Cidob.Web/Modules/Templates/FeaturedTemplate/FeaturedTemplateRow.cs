@@ -1,4 +1,6 @@
 ﻿
+using Cidob.Administration.Entities;
+
 namespace Cidob.Templates.Entities
 {
     using Newtonsoft.Json;
@@ -44,7 +46,7 @@ namespace Cidob.Templates.Entities
                 
             #region Id User Creation
             [DisplayName("Id User Creation"), NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIdUserCreation"), TextualField("IdUserCreationUsername"), Hidden]
-            [LookupEditor(typeof(Cidob.Administration.Entities.UserRow), InplaceAdd = true)]
+            [LookupEditor(typeof(UserRow), InplaceAdd = true)]
             public Int32? IdUserCreation { get { return Fields.IdUserCreation[this]; } set { Fields.IdUserCreation[this] = value; } }
             public partial class RowFields { public Int32Field IdUserCreation; }
             #endregion IdUserCreation

@@ -1,7 +1,8 @@
 ﻿
+using Cidob.Administration.Entities;
+
 namespace Cidob.Administration
 {
-    using Cidob.Administration.Entities;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Web;

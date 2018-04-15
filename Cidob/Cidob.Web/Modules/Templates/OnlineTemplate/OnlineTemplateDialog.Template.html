@@ -1,31 +1,330 @@
-﻿<link href="/Content/themes/cidob/cidob.css" rel="stylesheet" type="text/css" />
+﻿<link rel="stylesheet" href="/Content/onlineTemplate/onlineTemplate.css"/>
 
-<div id="~_Toolbar" class="s-DialogToolbar">
-</div>
 <div id="~_Tabs" class="s-DialogContent">
-    <ul>
-        <li><a href="#~_TabInfo"><span>{{text:"Db.Templates.OnlineTemplate.EntityPlural"}}</span></a></li>
-        <li><a href="#~_TabFeet"><span>{{text:"Db.Templates.OnlineFeet.EntityPlural"}}</span></a></li>
-    </ul>
     <div id="~_TabInfo" class="tab-pane s-TabInfo">
-        <div class="s-Form">
-            <form id="~_Form" action="">
-                <div class="fieldset">
-                    <div id="~_PropertyGrid"></div>
-                </div>
-            </form>
+        <div id="~_Toolbar" class="s-DialogToolbar">
         </div>
     </div>
-    <div id="~_TabFeet" class="tab-pane s-TabCustomer">
-        <div id="~_FeetToolbar" class="s-DialogToolbar">
-        </div>
-        <div class="s-Form">
-            <form id="~_FeetForm" action="">
-                <div class="fieldset">
-                    <div id="~_FeetPropertyGrid"></div>
-                    <div class="clear"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <div class="form-group row">
+                    <label for="referencia" class="col-xs-4 col-form-label">Referencia</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" id="referencia">
+                    </div>
                 </div>
-            </form>
+                <div class="form-group input-group-md row">
+                    <label for="plantillaId" class="col-md-4 col-form-label">Plantilla ID</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" id="plantillaId">
+                    </div>
+                </div>
+                <div class="form-group input-group-sm row">
+                    <label for="number" class="col-md-4 col-form-label">Numero</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="number" id="number">
+                    </div>
+                </div>
+                <div class="form-group input-group-md row">
+                    <label for="fullName" class="col-md-4 col-form-label">Nombre</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" id="fullName">
+                    </div>
+                </div>
+                <div class="form-group input-group-md row">
+                    <label for="age" class="col-md-4 col-form-label">Edad</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" id="age">
+                    </div>
+                </div>
+                <div class="form-group input-group-md row">
+                    <label for="entity" class="col-md-4 col-form-label">Entidad</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" id="entity">
+                    </div>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="status">
+                        <input class="form-check-input" type="checkbox" name="status" id="status">
+                        Urgente
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-xs pull-right">Buscar</button>
+                </div>
+
+            </div>
+            <div class="box">
+                <h4 class="text-center">Favoritos</h4>
+                <ul class="list-checkbox">
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="test">
+                        <label class="form-check-label" for="test">
+                            Ambos1
+                        </label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="test2">
+                        <label class="form-check-label" for="test2">
+                            Ambos2
+                        </label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="checkbox" value="" id="test3">
+                        <label class="form-check-label" for="test3">
+                            Ambos3
+                        </label>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <button type="submit" class="btn btn-success btn-sm">Agregar</button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button type="submit" class="btn btn-primary btn-sm">Modificar</button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="box">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group row">
+                            <label for="genere" class="col-md-4 col-form-label">Sexo</label>
+                            <div class="col-md-8">
+                                <select class="form-control" id="genere">
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                    <option value="U">Unisex</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group input-group-sm row">
+                            <label for="base" class="col-md-4 col-form-label">Base <span class="pull-right">
+                                <input class="form-check-input" type="checkbox" name="status" id="base">3/4</span></label>
+                            <div class="col-md-8">
+                                <select class="form-control" id="bases">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group input-group-sm row">
+                            <label for="base" class="col-md-4 col-form-label">Horma</label>
+                            <div class="col-md-8">
+                                <select class="form-control" id="bases">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group input-group-sm row">
+                            <label for="base" class="col-md-4 col-form-label">Cobertura</label>
+                            <div class="col-md-8">
+                                <select class="form-control" id="bases">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check text-center">
+                            <label class="form-check-label" for="pies">
+                                <input class="form-check-input" checked="" type="radio" name="status" id="pies">
+                                Ambos pies
+                            </label>
+                        </div>
+                        <div class="border">
+                            <div class="form-check text-center">
+                                <label class="form-check-label" for="selc">
+                                    <input class="form-check-input" type="radio" name="status" id="selc">
+                                    Seleccion individual
+                                </label>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check text-center">
+                                        <label class="form-check-label" for="izq">
+                                            <input class="form-check-input" type="checkbox" name="status" id="izq">
+                                            Izq
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check text-center">
+                                        <label class="form-check-label" for="der">
+                                            <input class="form-check-input" type="checkbox" name="status" id="der">
+                                            Der
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h4>Ambos</h4>
+                                <div class="form-group row">
+                                    <label for="tipoDePlantilla" class="col-md-3 col-form-label">Tipo de Plantilla</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" id="tipoDePlantilla"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Medial Interno</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id=""></select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="text" id="" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Medial Externo</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id=""></select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="text" id="" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Metatarsal</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id=""></select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="text" id="" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">C.T</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id=""></select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="text" id="" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">R.A</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id=""></select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="text" id="" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Talon</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id=""></select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-control" type="text" id="" value="0">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Barra MTT</label>
+                                    <div class="col-md-3 text-center">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        Simple
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        Doble
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Barras</label>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        1
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        2
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        3
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        4
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        5
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Cuello</label>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        1
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        2
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        3
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        4
+                                    </div>
+                                    <div class="col-md-1 text-center checkbox">
+                                        <input class="form-check-input" type="checkbox" name="" id="">
+                                        5
+                                    </div>
+                                    <div class="col-md-4 checkbox">
+                                        <input class="form-check-input checkbox" type="checkbox" name="" id="">
+                                        Cuello atras
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="" class="col-md-3 col-form-label">Apoyo Digital</label>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id=""></select>
+                                    </div>
+                                    <label for="" class="col-md-3 col-form-label">Adaptar a numero</label>
+                                    <div class="col-md-3">
+                                        <input class="form-control" type="text" id="" value="0">
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="form-group input-group-sm row">
+                                    <label for="" class="col-md-3 col-form-label">Observaciones</label>
+                                    <div class="col-md-7">
+                                        <input class="form-control" type="text" id="">
+                                        <input class="form-control" type="text" id="">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="" class="col-form-label">Cantidad</label>
+                                        <input class="form-control" type="text" id="" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 colPaddingTop">
+                                <button type="submit" class="btn btn-info float-right">Limpiar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

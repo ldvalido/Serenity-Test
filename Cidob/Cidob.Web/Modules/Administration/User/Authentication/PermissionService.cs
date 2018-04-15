@@ -1,6 +1,7 @@
-﻿namespace Cidob.Administration
+﻿using Cidob.Administration.Entities;
+
+namespace Cidob.Administration
 {
-    using Cidob.Administration.Entities;
     using Serenity;
     using Serenity.Abstractions;
     using Serenity.Data;

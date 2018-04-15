@@ -1,7 +1,5 @@
 ﻿
 
-using Serenity.Data.Mapping;
-
 namespace Cidob.Templates.Repositories
 {
     using Serenity;
@@ -40,33 +38,9 @@ namespace Cidob.Templates.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow>
-        {
-            #region Overrides of SaveRequestHandler<OnlineTemplateRow,SaveRequest<OnlineTemplateRow>,SaveResponse>
-
-            protected override void SetInternalFields()
-            {
-                base.SetInternalFields();
-                if (IsCreate)
-                {
-                    Row.IdUserCreation = ((UserDefinition) Authorization.UserDefinition).UserId;
-                }
-            }
-
-            #endregion
-        }
+        private class MySaveHandler : SaveRequestHandler<MyRow> { }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> {
-            #region Overrides of ListRequestHandler<OnlineTemplateRow,ListRequest,ListResponse<OnlineTemplateRow>>
-
-            protected override void ApplyFilters(SqlQuery query)
-            {
-                base.ApplyFilters(query);
-                query.Where(expression: $"IdUserCreation = {((UserDefinition) Authorization.UserDefinition).UserId}");
-            }
-
-            #endregion
-        }
+        private class MyListHandler : ListRequestHandler<MyRow> { }
     }
 }

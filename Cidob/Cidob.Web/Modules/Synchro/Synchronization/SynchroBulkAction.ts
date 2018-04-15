@@ -1,6 +1,6 @@
 ﻿namespace Cidob.Synchro
 {
-    export class SynchroBulkAction extends Common.BulkServiceAction {
+    /*export class SynchroBulkAction extends Common.BulkServiceAction {
         protected getParallelRequests() {
             return 1;
         }
@@ -20,5 +20,5 @@
                 });
         }
         
-    }
+    }*/
 }

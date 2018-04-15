@@ -1,7 +1,8 @@
 ﻿
+using Cidob.Administration.Entities;
+
 namespace Cidob.Navigation
 {
-    using Cidob.Administration.Entities;
     using Serenity;
     using Serenity.Navigation;
     using System;

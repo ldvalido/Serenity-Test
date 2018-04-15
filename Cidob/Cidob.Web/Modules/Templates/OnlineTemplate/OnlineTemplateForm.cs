@@ -1,6 +1,4 @@
 ﻿
-using Cidob.Templates.Entities;
-
 namespace Cidob.Templates.Forms
 {
     using Serenity;
@@ -25,7 +23,6 @@ namespace Cidob.Templates.Forms
         public Int32 IdCover { get; set; }
         public String Observations { get; set; }
         public Int32 Quantity { get; set; }
-        public object OnlineFeedList { get; set; }
         public Int32 IdUserCreation { get; set; }
     }
 }

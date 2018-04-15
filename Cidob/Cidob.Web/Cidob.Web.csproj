@@ -170,6 +170,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap4.min.css" />
     <Content Include="Content\colorbox\images\border.png" />
     <Content Include="Content\colorbox\images\controls.png" />
     <Content Include="Content\colorbox\images\loading.gif" />
@@ -193,6 +194,7 @@
     <Content Include="Content\ionicons.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jquery.fileupload.css" />
+    <Content Include="Content\onlineTemplate\onlineTemplate.css" />
     <Content Include="Content\pace.css" />
     <Content Include="Content\serenity\images\32px.png" />
     <Content Include="Content\serenity\images\accessright.png" />
@@ -821,6 +823,7 @@
     <Content Include="Scripts\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap4.min.js" />
     <Content Include="Scripts\chartjs\Chart.js" />
     <Content Include="Scripts\chartjs\Chart.min.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
@@ -1170,6 +1173,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\site\site.templates.less" />
+    <Content Include="Content\onlineTemplate\onlineTemplate.scss" />
+    <Content Include="Content\onlineTemplate\onlineTemplate.map" />
     <None Include="Modules\Common\Imports\ServerTypings\ServerTypings.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1552,7 +1557,6 @@
     <TypeScriptCompile Include="Modules\Relationship\BaseArch\BaseArchEditorDialog.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseArch\BaseArchGrid.ts" />
     <TypeScriptCompile Include="Modules\Synchro\Synchronization\SynchroBulkAction.ts" />
-    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineFeetEditor.ts" />
     <TypeScriptCompile Include="Scripts\serenity\Serenity.CoreLib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jspdf\jspdf.d.ts" />
@@ -1841,7 +1845,6 @@
     <TypeScriptCompile Include="Modules\Relationship\BaseShape\BaseShapeDialog.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseShape\BaseShapeEditor.ts" />
     <TypeScriptCompile Include="Modules\Relationship\BaseShape\BaseShapeEditorDialog.ts" />
-    <Content Include="Modules\Templates\OnlineTemplate\OnlineTemplateIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1851,10 +1854,6 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Templates.OnlineTemplateForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateGrid.ts" />
-    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateDialog.ts" />
-    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditor.ts" />
-    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditorDialog.ts" />
     <Content Include="Modules\MasterData\Gender\GenderIndex.cshtml" />
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MasterData.GenderRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
@@ -1925,6 +1924,11 @@
     <TypeScriptCompile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateDialog.ts" />
     <TypeScriptCompile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateEditor.ts" />
     <TypeScriptCompile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateEditorDialog.ts" />
+    <Content Include="Modules\Templates\OnlineTemplate\OnlineTemplateIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateGrid.ts" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateDialog.ts" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditor.ts" />
+    <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2201,12 +2205,6 @@
     <Compile Include="Modules\Relationship\BaseShape\BaseShapeRepository.cs" />
     <Compile Include="Modules\Relationship\BaseShape\BaseShapeEndpoint.cs" />
     <Compile Include="Modules\Relationship\BaseShape\BaseShapePage.cs" />
-    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateRow.cs" />
-    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateColumns.cs" />
-    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateForm.cs" />
-    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateRepository.cs" />
-    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEndpoint.cs" />
-    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplatePage.cs" />
     <Compile Include="Modules\MasterData\Gender\GenderRow.cs" />
     <Compile Include="Modules\MasterData\Gender\GenderColumns.cs" />
     <Compile Include="Modules\MasterData\Gender\GenderForm.cs" />
@@ -2237,6 +2235,12 @@
     <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateRepository.cs" />
     <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplateEndpoint.cs" />
     <Compile Include="Modules\Templates\FeaturedTemplate\FeaturedTemplatePage.cs" />
+    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateRow.cs" />
+    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateColumns.cs" />
+    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateForm.cs" />
+    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateRepository.cs" />
+    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEndpoint.cs" />
+    <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplatePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

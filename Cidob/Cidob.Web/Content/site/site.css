@@ -7495,6 +7495,18 @@ section.content > .s-DataGrid {
 .save-and-recover-featured-template-button span.button-inner {
   background-image: url(../serenity/images/ruby.png);
 }
+.s-Templates-OnlineTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-OnlineTemplateDialog .caption {
+  width: 150px;
+}
+.s-Templates-OnlineTemplateDialog > .size {
+  width: 650px;
+}
+.s-Templates-OnlineTemplateDialog .caption {
+  width: 150px;
+}
 .s-MasterData-BrandDialog > .size {
   width: 650px;
 }

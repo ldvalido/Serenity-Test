@@ -1,4 +1,6 @@
 ﻿
+using Cidob.Administration.Entities;
+
 namespace Cidob.Administration.Repositories
 {
     using Newtonsoft.Json.Linq;
@@ -13,9 +15,7 @@ namespace Cidob.Administration.Repositories
     using System.IO;
     using System.Reflection;
     using System.Web.Hosting;
-    using Newtonsoft.Json;
     using Serenity.Web;
-    using Cidob.Administration.Entities;
     using Serenity.Navigation;
     using Serenity.Extensibility;
     using Serenity.ComponentModel;
