@@ -20,7 +20,7 @@ h1 {
   background-color: #efefef;
   padding: 5px 15px 10px 15px;
   border-radius: 3px;
-  font-size: 12px; }
+  font-size: 13px; }
 
 .border {
   border: 1px solid #333;
@@ -42,20 +42,22 @@ hr {
   color: #fff;
   border-radius: 3px;
   padding: 15px 0;
-  padding-left: 40px; }
-  .list-checkbox li {
+  padding-left: 40px; 
+}
+  .list-checkbox li 
+  {
     list-style: none;
     padding: 0 5px;
     line-height: 20px;
     height: 20px;
-    font-size: 12px; }
+    font-size: 13px; 
+  }
 
 .form-group {
-  margin-bottom: 5px; }
+  margin-bottom: 5px; 
+}
 
 .form-control {
-    
-    
   padding: .2rem .75rem;
   font-size: 1rem;
     height: auto;
@@ -65,5 +67,12 @@ select.form-control:not([size]):not([multiple]) {
   height: auto; }
 .radio, .checkbox {
     margin-top: 0px !important;
+}
+input {
+  vertical-align: middle;
+}
+input[type="checkbox"] {
+    margin-top: 0px !important;
+    position: static !important;
 }
 /*# sourceMappingURL=main.css.map */
