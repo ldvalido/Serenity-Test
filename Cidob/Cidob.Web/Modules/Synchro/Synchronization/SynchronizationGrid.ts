@@ -35,9 +35,9 @@ namespace Cidob.Synchro {
                         return;
                     }
                     var selectedKeys = this.rowSelection.getSelectedKeys();
-                    var action = new Cidob.Synchro.SynchroBulkAction();
-                    action.done = () => this.rowSelection.resetCheckedAndRefresh();
-                    action.execute(selectedKeys);
+                    //var action = new Cidob.Synchro.SynchroBulkAction();
+                    //action.done = () => this.rowSelection.resetCheckedAndRefresh();
+                    //action.execute(selectedKeys);
                 }
             };
             return buttons;

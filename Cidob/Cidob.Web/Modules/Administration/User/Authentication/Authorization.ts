@@ -12,6 +12,7 @@
         return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
     }
     export function getUserId() {
-        return userDefinition.UserId;
+        return 0;
+        //return userDefinition.UserId;
     }
 }

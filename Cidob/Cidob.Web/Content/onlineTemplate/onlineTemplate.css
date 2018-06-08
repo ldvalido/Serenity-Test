@@ -75,4 +75,7 @@ input[type="checkbox"] {
     margin-top: 0px !important;
     position: static !important;
 }
+label{
+  font-weight: normal !important;
+}
 /*# sourceMappingURL=main.css.map */
