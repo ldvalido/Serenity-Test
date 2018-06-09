@@ -14,36 +14,36 @@
         <div class="form-group row">
             <label for="referencia" class="col-xs-4 col-form-label">Referencia</label>
             <div class="col-md-8">
-                <input class="form-control" type="text" id="referencia">
+                <input class="form-control" type="text" id="txtReference">
             </div>
         </div>
         <div class="form-group input-group-sm row">
             <label for="number" class="col-md-4 col-form-label">Numero</label>
             <div class="col-md-8">
-                <input class="form-control" type="number" id="number">
+                <input class="form-control" type="number" id="txtNumber">
             </div>
         </div>
         <div class="form-group input-group-md row">
             <label for="fullName" class="col-md-4 col-form-label">Nombre</label>
             <div class="col-md-8">
-                <input class="form-control" type="text" id="fullName">
+                <input class="form-control" type="text" id="txtName">
             </div>
         </div>
         <div class="form-group input-group-md row">
             <label for="age" class="col-md-4 col-form-label">Edad</label>
             <div class="col-md-8">
-                <input class="form-control" type="text" id="age">
+                <input class="form-control" type="text" id="txtAge">
             </div>
         </div>
         <div class="form-group input-group-md row">
             <label for="entity" class="col-md-4 col-form-label">Entidad</label>
             <div class="col-md-8">
-                <input class="form-control" type="text" id="entity">
+                <input class="form-control" type="text" id="txtEntity">
             </div>
         </div>
         <div class="form-check">
-            <label class="form-check-label" for="status">
-                <input class="form-check-input" type="checkbox" name="status" id="status">
+            <label class="form-check-label" for="chkUrgent">
+                <input class="form-check-input" type="checkbox" name="status" id="chkUrgent">
                 Urgente
             </label>
             <button type="submit" class="btn btn-primary btn-xs pull-right">Buscar</button>
@@ -110,35 +110,29 @@
             <div class="form-group row">
                 <label for="genere" class="col-md-4 col-form-label">Sexo</label>
                 <div class="col-md-8">
-                    <select class="form-control" id="genere">
-                        <option value="M">Masculino</option>
-                        <option value="F">Femenino</option>
-                        <option value="U">Unisex</option>
+                    <select class="form-control" id="cmbGender">
                     </select>
                 </div>
             </div>
             <div class="form-group input-group-sm row">
                 <label for="base" class="col-md-4 col-form-label">Base <span class="pull-right">
-                                <input class="form-check-input" type="checkbox" name="status" id="base">3/4</span></label>
+                        <input class="form-check-input" type="checkbox" name="status" id="chk34">3/4</span></label>
                 <div class="col-md-8">
-                    <select class="form-control" id="bases">
-                        <option value=""></option>
+                    <select class="form-control" id="cmbBase">
                     </select>
                 </div>
             </div>
             <div class="form-group input-group-sm row">
                 <label for="base" class="col-md-4 col-form-label">Horma</label>
                 <div class="col-md-8">
-                    <select class="form-control" id="bases">
-                        <option value=""></option>
+                    <select class="form-control" id="cmbShape">
                     </select>
                 </div>
             </div>
             <div class="form-group input-group-sm row">
                 <label for="base" class="col-md-4 col-form-label">Cobertura</label>
                 <div class="col-md-8">
-                    <select class="form-control" id="bases">
-                        <option value=""></option>
+                    <select class="form-control" id="cmbCover">
                     </select>
                 </div>
             </div>
@@ -146,14 +140,14 @@
         <div class="col-md-4">
             <div class="form-check text-center">
                 <label class="form-check-label" for="pies">
-                    <input class="form-check-input" checked="" type="radio" name="status" id="pies">
+                    <input class="form-check-input" checked="" type="radio" name="status" id="rdFootBoth">
                     Ambos pies
                 </label>
             </div>
             <div class="border">
                 <div class="form-check text-center">
                     <label class="form-check-label" for="selc">
-                        <input class="form-check-input" type="radio" name="status" id="selc">
+                        <input class="form-check-input" type="radio" name="status" id="rdFootSingle">
                         Seleccion individual
                     </label>
                 </div>
@@ -161,7 +155,7 @@
                     <div class="col-md-6">
                         <div class="form-check text-center">
                             <label class="form-check-label" for="izq">
-                                <input class="form-check-input" type="checkbox" name="status" id="izq">
+                                <input class="form-check-input" type="checkbox" name="status" id="chkFootLeft">
                                 Izq
                             </label>
                         </div>
@@ -169,7 +163,7 @@
                     <div class="col-md-6">
                         <div class="form-check text-center">
                             <label class="form-check-label" for="der">
-                                <input class="form-check-input" type="checkbox" name="status" id="der">
+                                <input class="form-check-input" type="checkbox" name="status" id="chkFootRight">
                                 Der
                             </label>
                         </div>
@@ -186,18 +180,12 @@
                 <div class="col-md-10">
                     <h4>Ambos</h4>
                     <div class="form-group row">
-                        <label for="tipoDePlantilla" class="col-md-3 col-form-label">Tipo de Plantilla</label>
-                        <div class="col-md-9">
-                            <select class="form-control" id="tipoDePlantilla"></select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">Medial Interno</label>
                         <div class="col-md-7">
                             <select class="form-control" id=""></select>
                         </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" id="" value="0">
+                            <input class="form-control" type="text" id="txtInternalMedial" value="0">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -206,114 +194,114 @@
                             <select class="form-control" id=""></select>
                         </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" id="" value="0">
+                            <input class="form-control" type="text" id="txtExternalMedial" value="0">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">Metatarsal</label>
                         <div class="col-md-7">
-                            <select class="form-control" id=""></select>
+                            <select class="form-control" id="cmbOlive"></select>
                         </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" id="" value="0">
+                            <input class="form-control" type="text" id="txtMetatarsal" value="0">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">C.T</label>
                         <div class="col-md-7">
-                            <select class="form-control" id=""></select>
+                            <select class="form-control" id="cmbCt"></select>
                         </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" id="" value="0">
+                            <input class="form-control" type="text" id="txtCt" value="0">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">R.A</label>
                         <div class="col-md-7">
-                            <select class="form-control" id=""></select>
+                            <select class="form-control" id="cmbRa"></select>
                         </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" id="" value="0">
+                            <input class="form-control" type="text" id="txtRa" value="0">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">Talon</label>
                         <div class="col-md-7">
-                            <select class="form-control" id=""></select>
+                            <select class="form-control" id="cmbHeel"></select>
                         </div>
                         <div class="col-md-2">
-                            <input class="form-control" type="text" id="" value="0">
+                            <input class="form-control" type="text" id="txtHeel" value="0">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">Barra MTT</label>
                         <div class="col-md-3 text-center">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkSingle">
                             Simple
                         </div>
                         <div class="col-md-3">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkDouble">
                             Doble
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">Barras</label>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkBar1">
                             1
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkBar2">
                             2
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkBar3">
                             3
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkBar4">
                             4
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkBar5">
                             5
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">Cuello</label>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkNeck1">
                             1
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkNeck2">
                             2
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkNeck3">
                             3
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkNeck4">
                             4
                         </div>
                         <div class="col-md-1 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkNeck5">
                             5
                         </div>
                         <div class="col-md-2 text-center checkbox">
-                            <input class="form-check-input" type="checkbox" name="" id="">
+                            <input class="form-check-input" type="checkbox" name="" id="chkNeckBack">
                             Cuello Atras
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="" class="col-md-3 col-form-label">Apoyo Digital</label>
                         <div class="col-md-3">
-                            <select class="form-control" id=""></select>
+                            <select class="form-control" id="cmbDigital"></select>
                         </div>
                         <label for="" class="col-md-3 col-form-label">Adaptar a numero</label>
                         <div class="col-md-3">
-                            <input class="form-control" type="text" id="" value="0">
+                            <input class="form-control" type="text" id="txtAddaptToNumber" value="0">
                         </div>
                     </div>
                     <hr>
@@ -321,17 +309,17 @@
                     <div class="form-group input-group-sm row">
                         <label for="" class="col-md-3 col-form-label">Observaciones</label>
                         <div class="col-md-7">
-                            <input class="form-control" type="text" id="">
-                            <input class="form-control" type="text" id="">
+                            <input class="form-control" type="text" id="txtObservation1">
+                            <input class="form-control" type="text" id="txtObservation2">
                         </div>
                         <div class="col-md-2">
                             <label for="" class="col-form-label">Cantidad</label>
-                            <input class="form-control" type="text" id="" value="1">
+                            <input class="form-control" type="text" id="txtQuantity" value="1">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2 colPaddingTop">
-                    <button type="submit" class="btn btn-info float-right">Limpiar</button>
+                    <button type="submit" class="btn btn-info float-right" id="btnClear">Limpiar</button>
                 </div>
             </div>
         </div>
