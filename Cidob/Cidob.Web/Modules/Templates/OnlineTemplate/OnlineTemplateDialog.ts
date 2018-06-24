@@ -77,11 +77,41 @@ namespace Cidob.Templates {
             this.fillData(metadata);
             this.setUi();
             var btnClear = this.element.find("#btnClear")[0];
+            
             $(btnClear).click(() => {
                 this.clear();
             });
             
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+            $(txtReference).on("keyup", function()  {
+                var selection = window.getSelection().toString();
+                if (selection !== '') {
+                    return;
+                }
+
+                // When the arrow keys are pressed, abort.
+                if ($.inArray(event.keyCode, [38, 40, 37, 39]) !== -1) {
+                    return;
+                }
+
+                var $this = $(this);
+                var input = $this.val();
+                input = input.replace(/[\W\s\._\-]+/g, '');
+
+                var split = 3;
+                var chunk = [];
+
+                if (input.length > split) {
+                    chunk.push(input.substr(0, split));
+                    chunk.push(input.substr(split, input.length - split ));
+                } else {
+                    chunk.push(input);
+                }
+
+                $this.val(function () {
+                    return chunk.join("-").toUpperCase();
+                });
+            });
         }
         setUi() {
             this.cmbBase = $("#cmbBase").first();
@@ -186,8 +216,7 @@ namespace Cidob.Templates {
                 });
             });
         }
-
-        getDictData() : Array<Data> {
+        getDictData(): Array<Data> {
             let returnValue:Array<Data> = [];
             returnValue.push(new Data("cmbGender", "/Services/MasterData/Gender/List", "IdGender", "Description"));
             returnValue.push(new Data("cmbBase", "/Services/MasterData/Base/List", "IdBase", "PrintName"));
