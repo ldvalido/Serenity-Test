@@ -87,6 +87,7 @@ namespace Cidob.Templates {
             this.setUi();
             var btnClear = this.element.find("#btnClear")[0];
             var btnSearch = this.element.find("#btnSearch")[0];
+            var btnFeaturedTemplateDelete = this.element.find("#btnFeaturedTemplateDelete")[0];
             var liFeaturedTemplates = this.element.find("#liFeaturedTemplates")[0];
 
             $(btnClear).click(() => {
@@ -94,6 +95,9 @@ namespace Cidob.Templates {
             });
             $(btnSearch).click(() => {
                 this.doSearch();
+            });
+            $(btnFeaturedTemplateDelete).click(() => {
+                this.doFeaturedTemplateConfirmDelete(liFeaturedTemplates);
             });
             this.fillFeaturedTemplates(liFeaturedTemplates);
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
@@ -127,6 +131,42 @@ namespace Cidob.Templates {
                 });
             });
         }
+        doFeaturedTemplateDelete(idFeaturedTemplate: number) {
+
+            var url = "/Services/Templates/FeaturedTemplate/Delete";
+            $.post(
+                {
+                    contentType: 'application/json',
+                    url: url,
+                    data: JSON.stringify({ EntityId: idFeaturedTemplate})
+
+            });
+        }
+        doFeaturedTemplateConfirmDelete(liFeaturedTemplates: any) {
+            var self = this;
+            var elements = this.element.find("input[name='chkFeaturedTemplate']");
+            var lstToPerform = [];
+            for (var i = 0; i < elements.length; i++) {
+                var el = elements[i];
+                if (el.checked) {
+                    lstToPerform.push(el.id);
+                }
+            }
+
+            if (lstToPerform.length > 0) {
+                Q.confirm("¿Está seguro de borrar estos elementos?", function () {
+                    for (var i = 0; i < lstToPerform.length; i++) {
+                        self.doFeaturedTemplateDelete(lstToPerform[i]);
+                    }
+                    Q.notifySuccess("Operación exitosa");
+                    $(liFeaturedTemplates).empty();
+                    self.fillFeaturedTemplates(liFeaturedTemplates);
+                }, {
+                        title: 'Confirmación'
+                    });
+                
+            }
+        }
         fillFeaturedTemplates(liFeaturedTemplates: any) {
             var url = "/Services/Templates/FeaturedTemplate/List";
             var filter = { Take: 100, Criteria: [['IdUserCreation'], '=', Authorization.userDefinition.UserId] };
@@ -143,7 +183,7 @@ namespace Cidob.Templates {
             });
         }
         addFeaturedTemplate(liFeaturedTemplates: any, entity: any) {
-            var pattern = '<li><input class="form-check-input" type="checkbox" value="" id="{0}"><label class="form-check-label" for="test">&nbsp;&nbsp;&nbsp;{1} </label></li>';
+            var pattern = '<li><input class="form-check-input" type="checkbox" value="" name="chkFeaturedTemplate" id="{0}"><label class="form-check-label" for="test">&nbsp;&nbsp;&nbsp;{1} </label></li>';
             var textToAdd = this.format(pattern, entity.IdFeaturedTemplate, entity.Title);
             liFeaturedTemplates.innerHTML += textToAdd;
 
