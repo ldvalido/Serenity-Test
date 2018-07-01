@@ -1,0 +1,10 @@
+DELETE FROM Shape
+INSERT INTO Shape VALUES (4,2,'Neutro','||')
+INSERT INTO Shape VALUES (4,3,'H10','||H10')
+INSERT INTO Shape VALUES (4,4,'Horma Ancha','||H Ancha')
+INSERT INTO Shape VALUES (4,5,'Evertido','||Evertido')
+INSERT INTO Shape VALUES (4,6,'Recto','||Recto')
+INSERT INTO Shape VALUES (4,7,'Deportiva','||Deportiva')
+INSERT INTO Shape VALUES (4,8,'Florentina','||Florentina')
+INSERT INTO Shape VALUES (4,9,'Canadiense','||Canadiense')
+INSERT INTO Shape VALUES (4,10,'H45','||H45')
