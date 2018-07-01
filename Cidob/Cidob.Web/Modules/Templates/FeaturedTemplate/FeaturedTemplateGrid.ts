@@ -24,7 +24,7 @@ namespace Cidob.Templates {
                 return false;
             }
             var request = this.view.params as Serenity.ListRequest;
-            var userId = Authorization.getUserId();
+            var userId = Authorization.userDefinition.UserId;
             request.Criteria = Serenity.Criteria.and(request.Criteria,
                 [['IdUserCreation'], '=', userId]
                 );

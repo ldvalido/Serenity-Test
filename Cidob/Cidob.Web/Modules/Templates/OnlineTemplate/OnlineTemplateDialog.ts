@@ -6,22 +6,31 @@ namespace Cidob.Templates {
         url: string;
         idProperty:string;
         friendlyProperty: string;
+        bodyData: string;
+        allowBlank: boolean;
 
-        constructor(cmbName:string, url:string, idProperty: string, friendlyProperty:string){
+        constructor(cmbName:string, url:string, bodyData:string, idProperty: string, friendlyProperty:string, allowBlank: boolean){
             this.cmbName = cmbName;
             this.url = url;
             this.idProperty = idProperty;
             this.friendlyProperty = friendlyProperty;
+            this.bodyData = bodyData;
+            this.allowBlank = allowBlank;
         }
      }
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.responsive()
     @Serenity.Decorators.maximizable()
+
     export class OnlineTemplateDialog extends Serenity.EntityDialog<OnlineTemplateRow, any> {
         protected getFormKey() { return OnlineTemplateForm.formKey; }
+
         protected getIdProperty() { return OnlineTemplateRow.idProperty; }
+
         protected getLocalTextPrefix() { return OnlineTemplateRow.localTextPrefix; }
+
         protected getNameProperty() { return OnlineTemplateRow.nameProperty; }
+
         protected getService() { return OnlineTemplateService.baseUrl; }
 
         protected form = new OnlineTemplateForm(this.idPrefix);
@@ -77,13 +86,18 @@ namespace Cidob.Templates {
             this.fillData(metadata);
             this.setUi();
             var btnClear = this.element.find("#btnClear")[0];
-            
+            var btnSearch = this.element.find("#btnSearch")[0];
+            var liFeaturedTemplates = this.element.find("#liFeaturedTemplates")[0];
+
             $(btnClear).click(() => {
                 this.clear();
             });
-            
+            $(btnSearch).click(() => {
+                this.doSearch();
+            });
+            this.fillFeaturedTemplates(liFeaturedTemplates);
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
-            $(txtReference).on("keyup", function()  {
+            $(txtReference).on("keyup", function() {
                 var selection = window.getSelection().toString();
                 if (selection !== '') {
                     return;
@@ -103,16 +117,95 @@ namespace Cidob.Templates {
 
                 if (input.length > split) {
                     chunk.push(input.substr(0, split));
-                    chunk.push(input.substr(split, input.length - split ));
+                    chunk.push(input.substr(split, input.length - split));
                 } else {
                     chunk.push(input);
                 }
 
-                $this.val(function () {
+                $this.val(function() {
                     return chunk.join("-").toUpperCase();
                 });
             });
         }
+        fillFeaturedTemplates(liFeaturedTemplates: any) {
+            var url = "/Services/Templates/FeaturedTemplate/List";
+            var filter = { Take: 100, Criteria: [['IdUserCreation'], '=', Authorization.userDefinition.UserId] };
+            $.post({
+                contentType: 'application/json',
+                url: url,
+                data: JSON.stringify(filter),
+                success: (response: any) => {
+                    for (var i =  0; i < response.Entities.length; i++) {
+                        var entity = response.Entities[i];
+                        this.addFeaturedTemplate(liFeaturedTemplates, entity);
+                    }
+                }
+            });
+        }
+        addFeaturedTemplate(liFeaturedTemplates: any, entity: any) {
+            var pattern = '<li><input class="form-check-input" type="checkbox" value="" id="{0}"><label class="form-check-label" for="test">&nbsp;&nbsp;&nbsp;{1} </label></li>';
+            var textToAdd = this.format(pattern, entity.IdFeaturedTemplate, entity.Title);
+            liFeaturedTemplates.innerHTML += textToAdd;
+
+
+        }
+        format(...args: any[]) {
+            var s = args[0];
+            for (var i = 0; i < args.length - 1; i++) {
+                var reg = new RegExp("\\{" + i + "\\}", "gm");
+                s = s.replace(reg, args[i + 1]);
+            }
+
+            return s;
+        }
+        doSearch() {
+            var filter = {
+                Reference: this.txtReference.val(),
+                Number: this.isEmpty(this.txtNumber.val()) ? null : parseInt(this.txtNumber.val())
+            }
+            var request = { take: 100, EqualityFilter: filter };
+
+            var url = "/Services/Templates/OnlineTemplate/List";
+            $.post({
+                contentType: 'application/json',
+                data: JSON.stringify(request),
+                url: url,
+                success: (response: any) => {
+                    alert(response.TotalCount);
+                    switch (response.TotalCount) {
+                        case 0:
+                            break;
+                        case 1:
+                            //fill Data
+                            break;
+                        case 2:
+                            //chooseRecord();
+                            break;
+                    }
+                }
+            })
+        }
+
+        isEmpty(data: any) {
+            if (typeof (data) === 'object') {
+                if (JSON.stringify(data) === '{}' || JSON.stringify(data) === '[]') {
+                    return true;
+                } else if (!data) {
+                    return true;
+                }
+                return false;
+            } else if (typeof (data) === 'string') {
+                if (!data.trim()) {
+                    return true;
+                }
+                return false;
+            } else if (typeof (data) === 'undefined') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
         setUi() {
             this.cmbBase = $("#cmbBase").first();
             this.cmbShape = $("#cmbShape").first();
@@ -158,6 +251,7 @@ namespace Cidob.Templates {
             this.txtEntity = $("#txtEntity").first();
             this.chkUrgent = $("#chkUrgent").first();
         }
+
         clear() {
             this.cmbBase.val("");
             this.cmbShape.val("");
@@ -200,33 +294,44 @@ namespace Cidob.Templates {
             this.txtName.val("");
             this.txtAge.val("");
             this.txtEntity.val("");
-            this.chkUrgent.prop("checked",false);
+            this.chkUrgent.prop("checked", false);
         }
+
         fillData(dataDict: Array<Data>) {
             dataDict.forEach(element => {
-                $.get(element.url, (data:any) => {
-                    var cmb = $("#" + element.cmbName);
-                    $(data.Entities).each((pos: number, it: any) => {
-                        var friendlyName = it[element.friendlyProperty];
-                        var id = it[element.idProperty];
-                        var option = $('<option />');
-                        option.attr('value', id).text(friendlyName);
-                        cmb.append(option);
-                    });
+                $.post({
+                    contentType: 'application/json',
+                    data: element.bodyData || '',
+                    url: element.url,
+                    success: (data: any) => {
+                        var cmb = $("#" + element.cmbName);
+                        if (element.allowBlank) {
+                            var option = $('<option />');
+                            option.attr('value', '-1').text('');
+                            cmb.append(option);
+                        }
+                        $(data.Entities).each((pos: number, it: any) => {
+                            var friendlyName = it[element.friendlyProperty];
+                            var id = it[element.idProperty];
+                            var option = $('<option />');
+                            option.attr('value', id).text(friendlyName);
+                            cmb.append(option);
+                        });
+                    }
                 });
             });
         }
         getDictData(): Array<Data> {
             let returnValue:Array<Data> = [];
-            returnValue.push(new Data("cmbGender", "/Services/MasterData/Gender/List", "IdGender", "Description"));
-            returnValue.push(new Data("cmbBase", "/Services/MasterData/Base/List", "IdBase", "PrintName"));
-            returnValue.push(new Data("cmbShape","/Services/MasterData/Shape/List","IdShape","PrintName"));
-            returnValue.push(new Data("cmbCover","/Services/MasterData/Cover/List","IdCover","PrintName"));
-            returnValue.push(new Data("cmbCt", "/Services/MasterData/CT/List","IdCt","PrintName"));
-            returnValue.push(new Data("cmbRa", "/Services/MasterData/RA/List", "IdRa", "PrintName"));
-            returnValue.push(new Data("cmbHeel", "/Services/MasterData/Heel/List", "IdHeel", "PrintName"));
-            returnValue.push(new Data("cmbDigital", "/Services/MasterData/Digital/List", "IdDigital", "PrintName"));
-            returnValue.push(new Data("cmbOlive", "/Services/MasterData/Olive/List", "IdOlive", "PrintName"));
+            returnValue.push(new Data("cmbGender", "/Services/MasterData/Gender/List", "{}", "IdGender", "Description", false));
+            returnValue.push(new Data("cmbBase", "/Services/MasterData/Base/List", '{Sort: [\"Order\"]}', "IdBase", "Description", true));
+            returnValue.push(new Data("cmbShape", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape","Description", true));
+            returnValue.push(new Data("cmbCover", "/Services/MasterData/Cover/List", '{Sort: [\"Order\"]}', "IdCover","Description", true));
+            returnValue.push(new Data("cmbCt", "/Services/MasterData/CT/List", '{Sort: [\"Order\"]}', "IdCt","Description", true));
+            returnValue.push(new Data("cmbRa", "/Services/MasterData/RA/List", '{Sort: [\"Order\"]}', "IdRa", "Description", true));
+            returnValue.push(new Data("cmbHeel", "/Services/MasterData/Heel/List", '{Sort: [\"Order\"]}', "IdHeel", "Description", true));
+            returnValue.push(new Data("cmbDigital", "/Services/MasterData/Digital/List", '{Sort: [\"Order\"]}', "IdDigital", "Description", true));
+            returnValue.push(new Data("cmbOlive", "/Services/MasterData/Olive/List", '{Sort: [\"Order\"]}', "IdOlive", "Description", true));
             return returnValue;
         }
     }
