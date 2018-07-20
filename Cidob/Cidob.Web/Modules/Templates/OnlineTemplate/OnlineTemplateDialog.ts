@@ -238,7 +238,6 @@ namespace Cidob.Templates {
                 }
             })
         }
-
         isEmpty(data: any) {
             if (typeof (data) === 'object') {
                 if (JSON.stringify(data) === '{}' || JSON.stringify(data) === '[]') {
@@ -258,7 +257,6 @@ namespace Cidob.Templates {
                 return false;
             }
         }
-
         setUi() {
             this.cmbBase = $("#cmbBase").first();
             this.cmbShape = $("#cmbShape").first();
@@ -306,7 +304,6 @@ namespace Cidob.Templates {
             this.cmbInternalMedial = $("cmbInternalMedial").first();
             this.cmbExternalMedial = $("cmbExternalMedial").first();
         }
-
         clear() {
             this.cmbBase.val("");
             this.cmbShape.val("");
@@ -351,7 +348,6 @@ namespace Cidob.Templates {
             this.txtEntity.val("");
             this.chkUrgent.prop("checked", false);
         }
-
         fillData(dataDict: Array<Data>) {
             dataDict.forEach(element => {
                 $.post({
@@ -362,7 +358,7 @@ namespace Cidob.Templates {
                         var cmb = $("#" + element.cmbName);
                         if (element.allowBlank) {
                             var option = $('<option />');
-                            option.attr('value', '-1').text('');
+                            option.attr('value', '').text('');
                             cmb.append(option);
                         }
                         $(data.Entities).each((pos: number, it: any) => {
