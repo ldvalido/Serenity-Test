@@ -45,6 +45,8 @@ namespace Cidob.Templates {
         protected cmbHeel;
         protected cmbOlive;
         protected cmbDigital;
+        protected cmbInternalMedial;
+        protected cmbExternalMedial;
         protected txtInternalMedial;
         protected txtExternalMedial;
         protected txtMetatarsal;
@@ -290,6 +292,8 @@ namespace Cidob.Templates {
             this.txtAge = $("#txtAge").first();
             this.txtEntity = $("#txtEntity").first();
             this.chkUrgent = $("#chkUrgent").first();
+            this.cmbInternalMedial = $("cmbInternalMedial").first();
+            this.cmbExternalMedial = $("cmbExternalMedial").first();
         }
 
         clear() {
@@ -372,6 +376,8 @@ namespace Cidob.Templates {
             returnValue.push(new Data("cmbHeel", "/Services/MasterData/Heel/List", '{Sort: [\"Order\"]}', "IdHeel", "Description", true));
             returnValue.push(new Data("cmbDigital", "/Services/MasterData/Digital/List", '{Sort: [\"Order\"]}', "IdDigital", "Description", true));
             returnValue.push(new Data("cmbOlive", "/Services/MasterData/Olive/List", '{Sort: [\"Order\"]}', "IdOlive", "Description", true));
+            returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
+            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
             return returnValue;
         }
     }
