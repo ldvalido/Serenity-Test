@@ -91,6 +91,17 @@ namespace Cidob.Templates {
             var btnSearch = this.element.find("#btnSearch")[0];
             var btnFeaturedTemplateDelete = this.element.find("#btnFeaturedTemplateDelete")[0];
             var liFeaturedTemplates = this.element.find("#liFeaturedTemplates")[0];
+            $(this.chkBar1).change(() => { $(this.chkNeck1).prop('checked', false); });
+            $(this.chkBar2).change(() => { $(this.chkNeck2).prop('checked', false); });
+            $(this.chkBar3).change(() => { $(this.chkNeck3).prop('checked', false); });
+            $(this.chkBar4).change(() => { $(this.chkNeck4).prop('checked', false); });
+            $(this.chkBar5).change(() => { $(this.chkNeck5).prop('checked', false); });
+
+            $(this.chkNeck1).change(() => { $(this.chkBar1).prop('checked', false); });
+            $(this.chkNeck2).change(() => { $(this.chkBar2).prop('checked', false); });
+            $(this.chkNeck3).change(() => { $(this.chkBar3).prop('checked', false); });
+            $(this.chkNeck4).change(() => { $(this.chkBar4).prop('checked', false); });
+            $(this.chkNeck5).change(() => { $(this.chkBar5).prop('checked', false); });
 
             $(btnClear).click(() => {
                 this.clear();
