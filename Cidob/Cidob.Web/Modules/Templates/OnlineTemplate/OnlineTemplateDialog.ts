@@ -183,7 +183,7 @@ namespace Cidob.Templates {
             });
         }
         addFeaturedTemplate(liFeaturedTemplates: any, entity: any) {
-            var pattern = '<li><input class="form-check-input" type="checkbox" value="" name="chkFeaturedTemplate" id="{0}"><label class="form-check-label" for="test">&nbsp;&nbsp;&nbsp;{1} </label></li>';
+            var pattern = '<li><input class="form-check-input" type="checkbox" value="" name="chkFeaturedTemplate" id="{0}" tabIndex="-1"><label class="form-check-label" for="test">&nbsp;&nbsp;&nbsp;{1} </label></li>';
             var textToAdd = this.format(pattern, entity.IdFeaturedTemplate, entity.Title);
             liFeaturedTemplates.innerHTML += textToAdd;
 
