@@ -1,6 +1,75 @@
 ﻿
 namespace Cidob.Templates {
+    export class OnlineFeet {
+        constructor(IdInternalArch: number, IdExternalArch: number, IdOlive: number, IdCt: number, IdRa: number, IdHeel: number, IsSingleMit: boolean, IsDoubleMit: boolean, InternalArchNumber: number, ExternalArchNumber: number, OliveNumber: number, CtNumber: number, RaNumber: number, HeelNumber: number, BarValue: string, NeckValue: string, BehindNeck: boolean, IdDigital: number, AddaptToNumber: number, IdOnlineTemplate: number) {
+            this.IdInternalArch = IdInternalArch;
+            this.IdExternalArch = IdExternalArch;
+            this.IdOlive = IdOlive;
+            this.IdCt = IdCt;
+            this.IdRa = IdRa;
+            this.IdHeel = IdHeel;
+            this.IsSingleMit = IsSingleMit;
+            this.IsDoubleMit = IsDoubleMit;
+            this.InternalArchNumber = InternalArchNumber;
+            this.ExternalArchNumber = ExternalArchNumber;
+            this.OliveNumber = OliveNumber;
+            this.CtNumber = CtNumber;
+            this.RaNumber = RaNumber;
+            this.HeelNumber = HeelNumber;
+            this.BarValue = BarValue;
+            this.NeckValue = NeckValue;
+            this.BehindNeck = BehindNeck;
+            this.IdDigital = IdDigital;
+            this.AddaptToNumber = AddaptToNumber;
+            this.IdOnlineTemplate = IdOnlineTemplate;
+        }
 
+        IdInternalArch: number;
+        IdExternalArch: number;
+        IdOlive: number;
+        IdCt: number;
+        IdRa: number;
+        IdHeel: number;
+        IsSingleMit: boolean;
+        IsDoubleMit: boolean;
+        InternalArchNumber: number;
+        ExternalArchNumber: number;
+        OliveNumber: number;
+        CtNumber: number;
+        RaNumber: number;
+        HeelNumber: number;
+        BarValue: string;
+        NeckValue: string;
+        BehindNeck: boolean;
+        IdDigital: number;
+        AddaptToNumber: number;
+        IdOnlineTemplate: number;
+
+        
+    }
+    export class OnlineTemplate {
+        Reference: string;
+        Number: number;
+        IdGender: number;
+        IdBase: number;
+        IdShape: number;
+        IdCover: number;
+        Observations: string;
+        Quantity: number;
+        Is34: boolean;
+        constructor(Reference: String, Number: number, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean) {
+            this.Reference = Reference;
+            this.Number = Number;
+            this.IdGender = IdGender;
+            this.IdBase = IdBase;
+            this.IdShape = IdShape;
+            this.IdCover = IdCover;
+            this.Observations = Observations;
+            this.Quantity = Quantity;
+            this.Is34 = Is34;
+        }
+    }
+    
     export class Data {
         cmbName: string;
         url: string;
@@ -144,17 +213,19 @@ namespace Cidob.Templates {
                 });
             });
         }
+
         doFeaturedTemplateDelete(idFeaturedTemplate: number) {
 
             var url = "/Services/Templates/FeaturedTemplate/Delete";
             $.post(
-                {
-                    contentType: 'application/json',
-                    url: url,
-                    data: JSON.stringify({ EntityId: idFeaturedTemplate})
+            {
+                contentType: 'application/json',
+                url: url,
+                data: JSON.stringify({ EntityId: idFeaturedTemplate })
 
             });
         }
+
         doFeaturedTemplateConfirmDelete(liFeaturedTemplates: any) {
             var self = this;
             var elements = this.element.find("input[name='chkFeaturedTemplate']");
@@ -167,7 +238,7 @@ namespace Cidob.Templates {
             }
 
             if (lstToPerform.length > 0) {
-                Q.confirm("¿Está seguro de borrar estos elementos?", function () {
+                Q.confirm("¿Está seguro de borrar estos elementos?", function() {
                     for (var i = 0; i < lstToPerform.length; i++) {
                         self.doFeaturedTemplateDelete(lstToPerform[i]);
                     }
@@ -175,11 +246,12 @@ namespace Cidob.Templates {
                     $(liFeaturedTemplates).empty();
                     self.fillFeaturedTemplates(liFeaturedTemplates);
                 }, {
-                        title: 'Confirmación'
-                    });
-                
+                    title: 'Confirmación'
+                });
+
             }
         }
+
         fillFeaturedTemplates(liFeaturedTemplates: any) {
             var url = "/Services/Templates/FeaturedTemplate/List";
             var filter = { Take: 100, Criteria: [['IdUserCreation'], '=', Authorization.userDefinition.UserId] };
@@ -188,13 +260,14 @@ namespace Cidob.Templates {
                 url: url,
                 data: JSON.stringify(filter),
                 success: (response: any) => {
-                    for (var i =  0; i < response.Entities.length; i++) {
+                    for (var i = 0; i < response.Entities.length; i++) {
                         var entity = response.Entities[i];
                         this.addFeaturedTemplate(liFeaturedTemplates, entity);
                     }
                 }
             });
         }
+
         addFeaturedTemplate(liFeaturedTemplates: any, entity: any) {
             var pattern = '<li><input class="form-check-input" type="checkbox" value="" name="chkFeaturedTemplate" id="{0}" tabIndex="-1"><label class="form-check-label" for="test">&nbsp;&nbsp;&nbsp;{1} </label></li>';
             var textToAdd = this.format(pattern, entity.IdFeaturedTemplate, entity.Title);
@@ -202,6 +275,7 @@ namespace Cidob.Templates {
 
 
         }
+
         format(...args: any[]) {
             var s = args[0];
             for (var i = 0; i < args.length - 1; i++) {
@@ -211,6 +285,7 @@ namespace Cidob.Templates {
 
             return s;
         }
+
         doSearch() {
             var filter = {
                 Reference: this.txtReference.val(),
@@ -226,18 +301,19 @@ namespace Cidob.Templates {
                 success: (response: any) => {
                     alert(response.TotalCount);
                     switch (response.TotalCount) {
-                        case 0:
-                            break;
-                        case 1:
-                            //fill Data
-                            break;
-                        case 2:
-                            //chooseRecord();
-                            break;
+                    case 0:
+                        break;
+                    case 1:
+                        //fill Data
+                        break;
+                    case 2:
+                        //chooseRecord();
+                        break;
                     }
                 }
             })
         }
+
         isEmpty(data: any) {
             if (typeof (data) === 'object') {
                 if (JSON.stringify(data) === '{}' || JSON.stringify(data) === '[]') {
@@ -257,6 +333,7 @@ namespace Cidob.Templates {
                 return false;
             }
         }
+
         setUi() {
             this.cmbBase = $("#cmbBase").first();
             this.cmbShape = $("#cmbShape").first();
@@ -304,6 +381,7 @@ namespace Cidob.Templates {
             this.cmbInternalMedial = $("cmbInternalMedial").first();
             this.cmbExternalMedial = $("cmbExternalMedial").first();
         }
+
         clear() {
             this.cmbBase.val("");
             this.cmbShape.val("");
@@ -348,6 +426,7 @@ namespace Cidob.Templates {
             this.txtEntity.val("");
             this.chkUrgent.prop("checked", false);
         }
+
         fillData(dataDict: Array<Data>) {
             dataDict.forEach(element => {
                 $.post({
@@ -372,13 +451,14 @@ namespace Cidob.Templates {
                 });
             });
         }
+
         getDictData(): Array<Data> {
-            let returnValue:Array<Data> = [];
+            let returnValue: Array<Data> = [];
             returnValue.push(new Data("cmbGender", "/Services/MasterData/Gender/List", "{}", "IdGender", "Description", false));
             returnValue.push(new Data("cmbBase", "/Services/MasterData/Base/List", '{Sort: [\"Order\"]}', "IdBase", "Description", true));
-            returnValue.push(new Data("cmbShape", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape","Description", true));
-            returnValue.push(new Data("cmbCover", "/Services/MasterData/Cover/List", '{Sort: [\"Order\"]}', "IdCover","Description", true));
-            returnValue.push(new Data("cmbCt", "/Services/MasterData/CT/List", '{Sort: [\"Order\"]}', "IdCt","Description", true));
+            returnValue.push(new Data("cmbShape", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
+            returnValue.push(new Data("cmbCover", "/Services/MasterData/Cover/List", '{Sort: [\"Order\"]}', "IdCover", "Description", true));
+            returnValue.push(new Data("cmbCt", "/Services/MasterData/CT/List", '{Sort: [\"Order\"]}', "IdCt", "Description", true));
             returnValue.push(new Data("cmbRa", "/Services/MasterData/RA/List", '{Sort: [\"Order\"]}', "IdRa", "Description", true));
             returnValue.push(new Data("cmbHeel", "/Services/MasterData/Heel/List", '{Sort: [\"Order\"]}', "IdHeel", "Description", true));
             returnValue.push(new Data("cmbDigital", "/Services/MasterData/Digital/List", '{Sort: [\"Order\"]}', "IdDigital", "Description", true));
@@ -387,5 +467,66 @@ namespace Cidob.Templates {
             returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
             return returnValue;
         }
-    }
+
+        isValid(): boolean {
+            return true;
+        }
+        saveFeet(data:any, callback: any, form: any) {
+            var onlineFeet = new OnlineFeet(
+                parseInt(this.txtInternalMedial.val()),
+                parseInt(this.txtExternalMedial.val()),
+                parseInt(this.cmbOlive.val()),
+                parseInt(this.cmbCt.val()),
+                parseInt(this.cmbRa.val()),
+                parseInt(this.cmbHeel.val()),
+                this.chkSingle.attr('checked'),
+                this.chkDouble.attr('checked'),
+                parseInt(this.txtInternalMedial.val()),
+                parseInt(this.txtExternalMedial.val()),
+                parseInt(this.txtMetatarsal.val()),
+                parseInt(this.txtCt.val()),
+                parseInt(this.txtRa.val()),
+                parseInt(this.txtHeel.val()),
+                "",
+                "",
+                this.chkNeckBack.atr("checked"),
+                parseInt(this.cmbDigital.val()),
+                parseInt(this.txtAddaptToNumber.val()),
+                data.id
+                );
+            $.post({
+                url: '/Services/Templates/OnlineFeet/Create',
+                contentType: 'application/json',
+                data: JSON.stringify({ Entity: onlineFeet }),
+                success: (data: any) => {
+                    callback.apply(data);
+                }
+            });
+        }
+        save(callback: any) {
+            var self = this;
+            if (this.isValid()) {
+                var onlineTemplate = new OnlineTemplate(
+                    this.txtReference.val(),
+                    parseInt(this.txtNumber.val()),
+                    parseInt(this.cmbGender.val()),
+                    parseInt(this.cmbBase.val()),
+                    parseInt(this.cmbShape.val()),
+                    parseInt(this.cmbCover.val()),
+                    this.txtObservation1.val() + "\n" + this.txtObservation2.val(),
+                    parseInt(this.txtQuantity.val()),
+                    this.chk34.attr("checked")
+
+                );
+                $.post({
+                    url: '/Services/Templates/OnlineTemplate/Create',
+                    contentType: 'application/json',
+                    data: JSON.stringify({Entity:onlineTemplate}),
+                    success: (data: any) => {
+                        //self.saveFeet(data, callback, self);
+                        self.element.dialog().dialog('close');
+                    }
+                });
+            }
+        }
 }

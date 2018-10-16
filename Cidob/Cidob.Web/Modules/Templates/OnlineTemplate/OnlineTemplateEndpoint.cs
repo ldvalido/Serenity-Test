@@ -16,6 +16,7 @@ namespace Cidob.Templates.Endpoints
         [HttpPost]
         public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request)
         {
+            request.Entity.IdUserCreation = int.Parse(Authorization.UserId);
             return new MyRepository().Create(uow, request);
         }
 
