@@ -469,6 +469,7 @@ namespace Cidob.Templates {
         }
 
         isValid(): boolean {
+            //TODO: Implement logic
             return true;
         }
         saveFeet(data:any, callback: any, form: any) {
