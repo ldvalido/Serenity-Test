@@ -1241,6 +1241,8 @@
     <None Include="Properties\PublishProfiles\CidobAppDev - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\cidobTemplate - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\cidobTemplate - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\cidobTemplates - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\cidobTemplates - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FileCenter.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
