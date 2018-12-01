@@ -468,9 +468,51 @@ namespace Cidob.Templates {
             return returnValue;
         }
 
+        hasValue(ctrl: any, minimumValueLength?: number): boolean {
+            var minLength = minimumValueLength == undefined ? 0 : minimumValueLength;
+            var content = ctrl.val();
+            var returnValue = content != null && content !== '';
+            if (returnValue) {
+                returnValue = returnValue && content.length >= minLength;
+            }
+            ctrl.addClass(returnValue ? 'valid' : 'error');
+            return returnValue;
+        }
+    
         isValid(): boolean {
-            //TODO: Implement logic
-            return true;
+            var isReferenceValid = this.hasValue(this.txtReference, 10);
+            var isNumberValid = this.hasValue(this.txtNumber);
+            var isNameValid = this.hasValue(this.txtName);
+            var isAgeValid = this.hasValue(this.txtAge);
+            var isEntityValid = this.hasValue(this.txtEntity);
+            var isGenderValid = this.hasValue(this.cmbGender);
+            var isBaseValid = this.hasValue(this.cmbBase);
+            var isShapeValid = this.hasValue(this.cmbShape);
+            var isCoverValid = this.hasValue(this.cmbCover);
+            var isInternalMediaValid = this.hasValue(this.cmbInternalMedial);
+            var isExternalMediaValid = this.hasValue(this.cmbExternalMedial);
+            var isOliveValid = this.hasValue(this.cmbOlive);
+            var isCtValid = this.hasValue(this.cmbCt);
+            var isRaValid = this.hasValue(this.cmbRa);
+            var isHeelValid = this.hasValue(this.cmbHeel);
+            var isDigitalValid = this.hasValue(this.cmbDigital);
+
+            return isReferenceValid &&
+                isNumberValid &&
+                isNameValid &&
+                isAgeValid &&
+                isEntityValid &&
+                isGenderValid &&
+                isBaseValid &&
+                isShapeValid &&
+                isCoverValid &&
+                isExternalMediaValid &&
+                isInternalMediaValid &&
+                isOliveValid &&
+                isCtValid &&
+                isRaValid &&
+                isHeelValid &&
+                isDigitalValid;
         }
         saveFeet(data:any, callback: any, form: any) {
             var onlineFeet = new OnlineFeet(
@@ -517,17 +559,18 @@ namespace Cidob.Templates {
                     this.txtObservation1.val() + "\n" + this.txtObservation2.val(),
                     parseInt(this.txtQuantity.val()),
                     this.chk34.attr("checked")
-
                 );
                 $.post({
                     url: '/Services/Templates/OnlineTemplate/Create',
                     contentType: 'application/json',
-                    data: JSON.stringify({Entity:onlineTemplate}),
+                    data: JSON.stringify({ Entity: onlineTemplate }),
                     success: (data: any) => {
                         //self.saveFeet(data, callback, self);
                         self.element.dialog().dialog('close');
                     }
                 });
+            } else {
+                Q.notifyError(Q.text("Validation.InvalidFormMessage"));
             }
         }
 }
