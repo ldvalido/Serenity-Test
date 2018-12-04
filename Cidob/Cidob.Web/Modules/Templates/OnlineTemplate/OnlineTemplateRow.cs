@@ -28,7 +28,7 @@ namespace Cidob.Templates.Entities
             #endregion IdOnlineTemplate
                 
             #region Reference
-            [DisplayName("Reference"), Size(50), QuickSearch]
+            [DisplayName("Reference"), Size(30), QuickSearch]
             public String Reference { get { return Fields.Reference[this]; } set { Fields.Reference[this] = value; } }
             public partial class RowFields { public StringField Reference; }
             #endregion Reference
@@ -80,7 +80,7 @@ namespace Cidob.Templates.Entities
             #endregion IdCover
                 
             #region Observations
-            [DisplayName("Observations")]
+            [DisplayName("Observations"), Size(30)]
             public String Observations { get { return Fields.Observations[this]; } set { Fields.Observations[this] = value; } }
             public partial class RowFields { public StringField Observations; }
             #endregion Observations
@@ -101,7 +101,7 @@ namespace Cidob.Templates.Entities
 
     #region Foreign Fields
             
-                [DisplayName("Id Gender Description"), Expression("jIdGender.[Description]")]
+                [DisplayName("Id Gender Description"), Expression("jIdGender.[Description]"),Size(30)]
                 public String IdGenderDescription { get { return Fields.IdGenderDescription[this]; } set { Fields.IdGenderDescription[this] = value; } }
                 public partial class RowFields { public StringField IdGenderDescription; }
 
@@ -116,7 +116,7 @@ namespace Cidob.Templates.Entities
                 public partial class RowFields { public Int32Field IdBaseOrder; }
 
                         
-                [DisplayName("Id Base Description"), Expression("jIdBase.[Description]")]
+                [DisplayName("Base"), Expression("jIdBase.[Description]"), Size(30)]
                 public String IdBaseDescription { get { return Fields.IdBaseDescription[this]; } set { Fields.IdBaseDescription[this] = value; } }
                 public partial class RowFields { public StringField IdBaseDescription; }
 
@@ -161,7 +161,7 @@ namespace Cidob.Templates.Entities
                 public partial class RowFields { public Int32Field IdShapeOrder; }
 
                         
-                [DisplayName("Id Shape Description"), Expression("jIdShape.[Description]")]
+                [DisplayName("Horma"), Expression("jIdShape.[Description]"), Size(10)]
                 public String IdShapeDescription { get { return Fields.IdShapeDescription[this]; } set { Fields.IdShapeDescription[this] = value; } }
                 public partial class RowFields { public StringField IdShapeDescription; }
 
@@ -181,7 +181,7 @@ namespace Cidob.Templates.Entities
                 public partial class RowFields { public Int32Field IdCoverOrder; }
 
                         
-                [DisplayName("Id Cover Description"), Expression("jIdCover.[Description]")]
+                [DisplayName("Cobertura"), Expression("jIdCover.[Description]"), Size(30)]
                 public String IdCoverDescription { get { return Fields.IdCoverDescription[this]; } set { Fields.IdCoverDescription[this] = value; } }
                 public partial class RowFields { public StringField IdCoverDescription; }
 
@@ -196,7 +196,7 @@ namespace Cidob.Templates.Entities
                 public partial class RowFields { public StringField IdUserCreationUsername; }
 
                         
-                [DisplayName("Id User Creation Display Name"), Expression("jIdUserCreation.[DisplayName]")]
+                [DisplayName("Usuario"), Expression("jIdUserCreation.[DisplayName]"), Size(30)]
                 public String IdUserCreationDisplayName { get { return Fields.IdUserCreationDisplayName[this]; } set { Fields.IdUserCreationDisplayName[this] = value; } }
                 public partial class RowFields { public StringField IdUserCreationDisplayName; }
 
@@ -282,7 +282,8 @@ namespace Cidob.Templates.Entities
 
     public partial class RowFields : RowFieldsBase
     {
-    public RowFields()
+            
+            public RowFields()
     : base("[dbo].[OnlineTemplate]")
     {
     LocalTextPrefix = "Templates.OnlineTemplate";
