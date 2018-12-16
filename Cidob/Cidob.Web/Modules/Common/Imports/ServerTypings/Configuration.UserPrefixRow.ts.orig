@@ -1,0 +1,49 @@
+﻿
+namespace Cidob.Configuration {
+    export interface UserPrefixRow {
+        IdUserPrefix?: number;
+        IdUser?: number;
+        Prefix?: string;
+        IdUserPrefixUsername?: string;
+        IdUserPrefixDisplayName?: string;
+        IdUserPrefixEmail?: string;
+        IdUserPrefixSource?: string;
+        IdUserPrefixPasswordHash?: string;
+        IdUserPrefixPasswordSalt?: string;
+        IdUserPrefixLastDirectoryUpdate?: string;
+        IdUserPrefixUserImage?: string;
+        IdUserPrefixInsertDate?: string;
+        IdUserPrefixInsertUserId?: number;
+        IdUserPrefixUpdateDate?: string;
+        IdUserPrefixUpdateUserId?: number;
+        IdUserPrefixIsActive?: number;
+    }
+
+    export namespace UserPrefixRow {
+        export const idProperty = 'IdUserPrefix';
+        export const nameProperty = 'Prefix';
+        export const localTextPrefix = 'Configuration.UserPrefix';
+
+        export namespace Fields {
+            export declare const IdUserPrefix;
+            export declare const IdUser;
+            export declare const Prefix;
+            export declare const IdUserPrefixUsername: string;
+            export declare const IdUserPrefixDisplayName: string;
+            export declare const IdUserPrefixEmail: string;
+            export declare const IdUserPrefixSource: string;
+            export declare const IdUserPrefixPasswordHash: string;
+            export declare const IdUserPrefixPasswordSalt: string;
+            export declare const IdUserPrefixLastDirectoryUpdate: string;
+            export declare const IdUserPrefixUserImage: string;
+            export declare const IdUserPrefixInsertDate: string;
+            export declare const IdUserPrefixInsertUserId: string;
+            export declare const IdUserPrefixUpdateDate: string;
+            export declare const IdUserPrefixUpdateUserId: string;
+            export declare const IdUserPrefixIsActive: string;
+        }
+
+        ['IdUserPrefix', 'IdUser', 'Prefix', 'IdUserPrefixUsername', 'IdUserPrefixDisplayName', 'IdUserPrefixEmail', 'IdUserPrefixSource', 'IdUserPrefixPasswordHash', 'IdUserPrefixPasswordSalt', 'IdUserPrefixLastDirectoryUpdate', 'IdUserPrefixUserImage', 'IdUserPrefixInsertDate', 'IdUserPrefixInsertUserId', 'IdUserPrefixUpdateDate', 'IdUserPrefixUpdateUserId', 'IdUserPrefixIsActive'].forEach(x => (<any>Fields)[x] = x);
+    }
+}
+

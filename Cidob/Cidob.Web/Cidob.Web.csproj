@@ -1931,6 +1931,14 @@
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateDialog.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditor.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditorDialog.ts" />
+    <Content Include="Modules\Configuration\UserPrefix\UserPrefixIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixGrid.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixDialog.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixEditor.ts" />
+    <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2243,6 +2251,12 @@
     <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateRepository.cs" />
     <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEndpoint.cs" />
     <Compile Include="Modules\Templates\OnlineTemplate\OnlineTemplatePage.cs" />
+    <Compile Include="Modules\Configuration\UserPrefix\UserPrefixRow.cs" />
+    <Compile Include="Modules\Configuration\UserPrefix\UserPrefixColumns.cs" />
+    <Compile Include="Modules\Configuration\UserPrefix\UserPrefixForm.cs" />
+    <Compile Include="Modules\Configuration\UserPrefix\UserPrefixRepository.cs" />
+    <Compile Include="Modules\Configuration\UserPrefix\UserPrefixEndpoint.cs" />
+    <Compile Include="Modules\Configuration\UserPrefix\UserPrefixPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

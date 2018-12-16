@@ -22,13 +22,13 @@ namespace Cidob.Templates.Entities
     public sealed class OnlineTemplateRow : Row, IIdRow, INameRow
     {        
             #region Id Online Template
-            [DisplayName("Id Online Template"), Identity,Width(50)]
+            [DisplayName("Id Online Template"), Identity]
             public Int32? IdOnlineTemplate { get { return Fields.IdOnlineTemplate[this]; } set { Fields.IdOnlineTemplate[this] = value; } }
             public partial class RowFields { public Int32Field IdOnlineTemplate; }
             #endregion IdOnlineTemplate
                 
             #region Reference
-            [DisplayName("Reference"), Width(100), QuickSearch]
+            [DisplayName("Reference"), Size(30), QuickSearch]
             public String Reference { get { return Fields.Reference[this]; } set { Fields.Reference[this] = value; } }
             public partial class RowFields { public StringField Reference; }
             #endregion Reference
@@ -99,22 +99,16 @@ namespace Cidob.Templates.Entities
             #endregion IdUserCreation
                 
             #region Name
-            [DisplayName("Name"), Width(100), NotNull]
+            [DisplayName("Name"), Size(255), NotNull]
             public String Name { get { return Fields.Name[this]; } set { Fields.Name[this] = value; } }
             public partial class RowFields { public StringField Name; }
             #endregion Name
                 
             #region Email
-            [DisplayName("Email"), Width(100), NotNull]
+            [DisplayName("Email"), Size(255), NotNull]
             public String Email { get { return Fields.Email[this]; } set { Fields.Email[this] = value; } }
             public partial class RowFields { public StringField Email; }
             #endregion Email
-                
-            #region Creation Date
-            [DisplayName("Creation Date"), NotNull]
-            public DateTime? CreationDate { get { return Fields.CreationDate[this]; } set { Fields.CreationDate[this] = value; } }
-            public partial class RowFields { public DateTimeField CreationDate; }
-            #endregion CreationDate
         
 
     #region Foreign Fields
@@ -214,7 +208,7 @@ namespace Cidob.Templates.Entities
                 public partial class RowFields { public StringField IdUserCreationUsername; }
 
                         
-                [DisplayName("Usuario"), Expression("jIdUserCreation.[DisplayName]"), Size(20)]
+                [DisplayName("Usuario"), Expression("jIdUserCreation.[DisplayName]"), Size(30)]
                 public String IdUserCreationDisplayName { get { return Fields.IdUserCreationDisplayName[this]; } set { Fields.IdUserCreationDisplayName[this] = value; } }
                 public partial class RowFields { public StringField IdUserCreationDisplayName; }
 

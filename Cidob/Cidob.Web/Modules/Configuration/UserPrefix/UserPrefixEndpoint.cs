@@ -1,25 +1,21 @@
 ﻿
-using System;
-
-namespace Cidob.Templates.Endpoints
+namespace Cidob.Configuration.Endpoints
 {
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
     using System.Data;
     using System.Web.Mvc;
-    using MyRepository = Repositories.OnlineTemplateRepository;
-    using MyRow = Entities.OnlineTemplateRow;
+    using MyRepository = Repositories.UserPrefixRepository;
+    using MyRow = Entities.UserPrefixRow;
 
-    [RoutePrefix("Services/Templates/OnlineTemplate"), Route("{action}")]
-    [ConnectionKey("Default"), ServiceAuthorize("Template:LoadTemplate")]
-    public class OnlineTemplateController : ServiceEndpoint
+    [RoutePrefix("Services/Configuration/UserPrefix"), Route("{action}")]
+    [ConnectionKey("Default"), ServiceAuthorize("Configuration:UserPrefix")]
+    public class UserPrefixController : ServiceEndpoint
     {
         [HttpPost]
         public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request)
         {
-            request.Entity.IdUserCreation = int.Parse(Authorization.UserId);
-            request.Entity.CreationDate = DateTime.Now;
             return new MyRepository().Create(uow, request);
         }
 

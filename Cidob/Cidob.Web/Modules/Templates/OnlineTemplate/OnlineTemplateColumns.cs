@@ -17,13 +17,12 @@ namespace Cidob.Templates.Columns
         public Int32 IdOnlineTemplate { get; set; }
         [EditLink]
         public String Reference { get; set; }
-        public Boolean Urgent { get; set; }
-        public String IdGenderDescription { get; set; }
+        public String Name { get; set; }
+        public String Email { get; set; }
         public String IdBaseDescription { get; set; }
-        public Boolean Is34 { get; set; }
-        public String IdShapeDescription { get; set; }
         public String IdCoverDescription { get; set; }
         public Int32 Quantity { get; set; }
         public String IdUserCreationDisplayName { get; set; }
+        public DateTime? CreationDate { get; set; }
     }
 }

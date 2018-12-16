@@ -50,6 +50,8 @@ namespace Cidob.Templates {
     export class OnlineTemplate {
         Reference: string;
         Number: number;
+        Name: String;
+        Email: String;
         IdGender: number;
         IdBase: number;
         IdShape: number;
@@ -57,9 +59,11 @@ namespace Cidob.Templates {
         Observations: string;
         Quantity: number;
         Is34: boolean;
-        constructor(Reference: String, Number: number, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean) {
+        constructor(Reference: String, Number: number, Name: String, Email: String, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean) {
             this.Reference = Reference;
             this.Number = Number;
+            this.Name = Name;
+            this.Email = Email;
             this.IdGender = IdGender;
             this.IdBase = IdBase;
             this.IdShape = IdShape;
@@ -147,12 +151,16 @@ namespace Cidob.Templates {
         protected txtReference;
         protected txtNumber;
         protected txtName;
+        protected txtEmail;
         protected txtAge;
         protected txtEntity;
         protected chkUrgent;
 
         dialogOpen() {
             super.dialogOpen();
+            if (this.isEditMode()) {
+                alert(this.entity);   
+            }
             var metadata = this.getDictData();
             this.fillData(metadata);
             this.setUi();
@@ -375,11 +383,12 @@ namespace Cidob.Templates {
             this.txtReference = $("#txtReference").first();
             this.txtNumber = $("#txtNumber").first();
             this.txtName = $("#txtName").first();
+            this.txtEmail = $("#txtEmail").first();
             this.txtAge = $("#txtAge").first();
             this.txtEntity = $("#txtEntity").first();
             this.chkUrgent = $("#chkUrgent").first();
-            this.cmbInternalMedial = $("cmbInternalMedial").first();
-            this.cmbExternalMedial = $("cmbExternalMedial").first();
+            this.cmbInternalMedial = $("#cmbInternalMedial").first();
+            this.cmbExternalMedial = $("#cmbExternalMedial").first();
         }
 
         clear() {
@@ -422,6 +431,7 @@ namespace Cidob.Templates {
             this.txtReference.val("");
             this.txtNumber.val("");
             this.txtName.val("");
+            this.txtEmail.val("");
             this.txtAge.val("");
             this.txtEntity.val("");
             this.chkUrgent.prop("checked", false);
@@ -483,6 +493,7 @@ namespace Cidob.Templates {
             var isReferenceValid = this.hasValue(this.txtReference, 10);
             var isNumberValid = this.hasValue(this.txtNumber);
             var isNameValid = this.hasValue(this.txtName);
+            var isEmailValid = this.hasValue(this.txtEmail);
             var isAgeValid = this.hasValue(this.txtAge);
             var isEntityValid = this.hasValue(this.txtEntity);
             var isGenderValid = this.hasValue(this.cmbGender);
@@ -500,6 +511,7 @@ namespace Cidob.Templates {
             return isReferenceValid &&
                 isNumberValid &&
                 isNameValid &&
+                isEmailValid &&
                 isAgeValid &&
                 isEntityValid &&
                 isGenderValid &&
@@ -552,6 +564,8 @@ namespace Cidob.Templates {
                 var onlineTemplate = new OnlineTemplate(
                     this.txtReference.val(),
                     parseInt(this.txtNumber.val()),
+                    this.txtName.val(),
+                    this.txtEmail.val(),
                     parseInt(this.cmbGender.val()),
                     parseInt(this.cmbBase.val()),
                     parseInt(this.cmbShape.val()),

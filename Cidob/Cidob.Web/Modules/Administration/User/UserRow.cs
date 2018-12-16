@@ -10,7 +10,8 @@ namespace Cidob.Administration.Entities
     [ConnectionKey("Default"), DisplayName("Users"), InstanceName("User"), TwoLevelCached]
     [ReadPermission(PermissionKeys.Security)]
     [ModifyPermission(PermissionKeys.Security)]
-    [LookupScript("Administration.User", Permission = PermissionKeys.Security)]
+    [LookupScript("Administration.User")]
+    
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
         [DisplayName("User Id"), Identity]
