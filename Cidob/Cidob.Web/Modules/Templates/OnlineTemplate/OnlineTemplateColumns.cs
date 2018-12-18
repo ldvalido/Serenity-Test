@@ -17,6 +17,7 @@ namespace Cidob.Templates.Columns
         public Int32 IdOnlineTemplate { get; set; }
         [EditLink]
         public String Reference { get; set; }
+        public Int32? Number { get; set; }
         public String Name { get; set; }
         public String Email { get; set; }
         public String IdBaseDescription { get; set; }

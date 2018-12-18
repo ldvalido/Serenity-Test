@@ -34,7 +34,7 @@ namespace Cidob.Templates.Entities
             #endregion Reference
                 
             #region Number
-            [DisplayName("Number"), NotNull]
+            [DisplayName("Number"), NotNull, Size(10)]
             public Int32? Number { get { return Fields.Number[this]; } set { Fields.Number[this] = value; } }
             public partial class RowFields { public Int32Field Number; }
             #endregion Number

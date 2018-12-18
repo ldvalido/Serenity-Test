@@ -436,7 +436,14 @@ namespace Cidob.Templates {
             this.txtEntity.val("");
             this.chkUrgent.prop("checked", false);
         }
-
+        fillUserData() {
+            $.post({
+                contentType: 'application/json',
+                url: 'Services/Configuration/UserPrefix/List',
+                data: null
+            
+            });
+        }
         fillData(dataDict: Array<Data>) {
             dataDict.forEach(element => {
                 $.post({
@@ -504,8 +511,6 @@ namespace Cidob.Templates {
             var isExternalMediaValid = this.hasValue(this.cmbExternalMedial);
             var isOliveValid = this.hasValue(this.cmbOlive);
             var isCtValid = this.hasValue(this.cmbCt);
-            var isRaValid = this.hasValue(this.cmbRa);
-            var isHeelValid = this.hasValue(this.cmbHeel);
             var isDigitalValid = this.hasValue(this.cmbDigital);
 
             return isReferenceValid &&
@@ -522,8 +527,6 @@ namespace Cidob.Templates {
                 isInternalMediaValid &&
                 isOliveValid &&
                 isCtValid &&
-                isRaValid &&
-                isHeelValid &&
                 isDigitalValid;
         }
         saveFeet(data:any, callback: any, form: any) {

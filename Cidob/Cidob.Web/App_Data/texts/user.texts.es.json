@@ -20,6 +20,7 @@
     "Db.Configuration.UserPrefix.EntityPlural": "Prefijo de Usuario",
     "Db.Configuration.UserPrefix.EntitySingular": "Prefijo de Usuario",
     "Db.Configuration.UserPrefix.IdUser": "Usuario",
+    "Db.Configuration.UserPrefix.IdUserDisplayName": "Usuario",
     "Db.Configuration.UserPrefix.IdUserPrefixDisplayName": "Usuario",
     "Db.Configuration.UserPrefix.IdUserPrefixUsername": "Usuario",
     "Db.Configuration.UserPrefix.Prefix": "Prefijo",
