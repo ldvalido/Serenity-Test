@@ -498,7 +498,7 @@ namespace Cidob.Templates {
     
         isValid(): boolean {
             var isReferenceValid = this.hasValue(this.txtReference, 10);
-            var isNumberValid = this.hasValue(this.txtNumber);
+            var isNumberValid = this.hasValue(this.txtNumber, 10);
             var isNameValid = this.hasValue(this.txtName);
             var isEmailValid = this.hasValue(this.txtEmail);
             var isAgeValid = this.hasValue(this.txtAge);
@@ -511,7 +511,7 @@ namespace Cidob.Templates {
             var isExternalMediaValid = this.hasValue(this.cmbExternalMedial);
             var isOliveValid = this.hasValue(this.cmbOlive);
             var isCtValid = this.hasValue(this.cmbCt);
-            var isDigitalValid = this.hasValue(this.cmbDigital);
+            
 
             return isReferenceValid &&
                 isNumberValid &&
@@ -526,8 +526,7 @@ namespace Cidob.Templates {
                 isExternalMediaValid &&
                 isInternalMediaValid &&
                 isOliveValid &&
-                isCtValid &&
-                isDigitalValid;
+                isCtValid ;
         }
         saveFeet(data:any, callback: any, form: any) {
             var onlineFeet = new OnlineFeet(

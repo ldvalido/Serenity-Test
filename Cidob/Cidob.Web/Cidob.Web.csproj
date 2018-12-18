@@ -1932,9 +1932,15 @@
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditor.ts" />
     <TypeScriptCompile Include="Modules\Templates\OnlineTemplate\OnlineTemplateEditorDialog.ts" />
     <Content Include="Modules\Configuration\UserPrefix\UserPrefixIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Configuration.UserPrefixForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixGrid.ts" />
     <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixDialog.ts" />
     <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixEditor.ts" />
