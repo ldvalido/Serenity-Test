@@ -24,13 +24,6 @@ namespace Cidob.Templates.Entities
             set { Fields.IdOnlineFeet[this] = value; }
         }
 
-        [DisplayName("Template Type"), NotNull]
-        public Int32? TemplateType
-        {
-            get { return Fields.TemplateType[this]; }
-            set { Fields.TemplateType[this] = value; }
-        }
-
         [DisplayName("Id Internal Arch"), NotNull, ForeignKey("[dbo].[Arch]", "Id"), LeftJoin("jIdInternalArch"), TextualField("IdInternalArchDescription")]
         [LookupEditor(typeof(ArchRow))]
         public Int32? IdInternalArch
@@ -493,7 +486,6 @@ namespace Cidob.Templates.Entities
         public class RowFields : RowFieldsBase
         {
             public Int32Field IdOnlineFeet;
-            public Int32Field TemplateType;
             public Int32Field IdInternalArch;
             public Int32Field IdExternalArch;
             public Int32Field IdOlive;

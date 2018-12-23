@@ -16,7 +16,7 @@ namespace Cidob.MasterData.Entities
     [LookupScript("MasterData.Shape")]
     public sealed class ShapeRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Id Shape"), Identity]
+        [DisplayName("Id Shape"), Column("IdShape"), Identity]
         public Int32? IdShape
         {
             get { return Fields.IdShape[this]; }

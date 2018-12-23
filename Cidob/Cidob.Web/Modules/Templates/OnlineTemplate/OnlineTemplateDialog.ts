@@ -52,6 +52,7 @@ namespace Cidob.Templates {
         Number: number;
         Name: String;
         Email: String;
+        Age: string;
         IdGender: number;
         IdBase: number;
         IdShape: number;
@@ -59,11 +60,14 @@ namespace Cidob.Templates {
         Observations: string;
         Quantity: number;
         Is34: boolean;
-        constructor(Reference: String, Number: number, Name: String, Email: String, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean) {
+        Urgent: boolean;
+        constructor(Reference: String, Number: number, Name: String, Email: String, Age: string, Entity:string, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean, Urgent: boolean) {
             this.Reference = Reference;
             this.Number = Number;
             this.Name = Name;
             this.Email = Email;
+            this.Age = Age;
+            this.Entity = Entity;
             this.IdGender = IdGender;
             this.IdBase = IdBase;
             this.IdShape = IdShape;
@@ -71,6 +75,7 @@ namespace Cidob.Templates {
             this.Observations = Observations;
             this.Quantity = Quantity;
             this.Is34 = Is34;
+            this.Urgent = Urgent;
         }
     }
     
@@ -122,7 +127,7 @@ namespace Cidob.Templates {
         protected cmbExternalMedial;
         protected txtInternalMedial;
         protected txtExternalMedial;
-        protected txtMetatarsal;
+        protected txtOlive;
         protected txtHeel;
         protected txtRa;
         protected txtCt;
@@ -158,11 +163,14 @@ namespace Cidob.Templates {
 
         dialogOpen() {
             super.dialogOpen();
-            if (this.isEditMode()) {
-                alert(this.entity);   
-            }
+            
             var metadata = this.getDictData();
-            this.fillData(metadata);
+            this.fillData(metadata, () => {
+                if (this.isEditMode()) {
+                    this.fillOnlineTemplate(this.entity);
+                    this.fillOnlineFeet(this.entity.IdOnlineTemplate);
+                }
+            });
             this.setUi();
             var btnClear = this.element.find("#btnClear")[0];
             var btnSearch = this.element.find("#btnSearch")[0];
@@ -191,6 +199,7 @@ namespace Cidob.Templates {
             });
             this.fillFeaturedTemplates(liFeaturedTemplates);
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+            
             $(txtReference).on("keyup", function() {
                 var selection = window.getSelection().toString();
                 if (selection !== '') {
@@ -354,7 +363,7 @@ namespace Cidob.Templates {
             this.cmbDigital = $("#cmbDigital").first();
             this.txtInternalMedial = $("#txtInternalMedial").first();
             this.txtExternalMedial = $("#txtExternalMedial").first();
-            this.txtMetatarsal = $("#txtMetatarsal").first();
+            this.txtOlive = $("#txtOlive").first();
             this.txtHeel = $("#txtHeel").first();
             this.txtRa = $("#txtRa").first();
             this.txtCt = $("#txtCt").first();
@@ -401,9 +410,9 @@ namespace Cidob.Templates {
             this.cmbHeel.val("");
             this.cmbOlive.val("");
             this.cmbDigital.val("");
-            this.txtInternalMedial.val("0");
-            this.txtExternalMedial.val("0");
-            this.txtMetatarsal.val("0");
+            this.txtInternalMedial.val("");
+            this.txtExternalMedial.val("");
+            this.txtOlive.val("0");
             this.txtHeel.val("0");
             this.txtRa.val("0");
             this.txtCt.val("0");
@@ -444,13 +453,77 @@ namespace Cidob.Templates {
             
             });
         }
-        fillData(dataDict: Array<Data>) {
+        fillOnlineTemplate(data: any) {
+            this.txtReference.val(data.Reference);
+            this.txtNumber.val(data.Number);
+            this.txtName.val(data.Name);
+            this.txtEmail.val(data.Email);
+            this.txtAge.val(data.Age);
+            this.txtEntity.val(data.Entity);
+            this.chkUrgent.prop('checked', data.Urgent);
+            this.cmbGender.val(data.IdGender);
+            this.cmbBase.val(data.IdBase);
+            this.chk34.prop('checked', data.Is34);
+            this.cmbShape.val(data.IdShape);
+            this.cmbCover.val(data.IdCover);
+            this.txtQuantity.val(data.Quantity);
+            this.fillObservations(data.Observations);
+        }
+        fillObservations(comments) {
+            if (!comments) return;
+            var commentParts = comments.split("\n");
+            if (commentParts.length > 0) {
+                this.txtObservation2.val(commentParts[1]);
+            }
+            this.txtObservation1.val(commentParts[0]);
+        }
+        fillOnlineFeet(idOnlineTemplate: number) {
+            $.post({
+                contentType: 'application/json',
+                data: JSON.stringify({ EntityId: idOnlineTemplate }),
+                url: '/Services/Templates/OnlineFeet/Retrieve',
+                success: (data: any) => {
+                    this.cmbInternalMedial.val(data.Entity.IdInternalArch);
+                    this.txtInternalMedial.val(data.Entity.InternalArchNumber);
+
+                    this.cmbExternalMedial.val(data.Entity.IdExternalArch);
+                    this.txtExternalMedial.val(data.Entity.ExternalArchNumber);
+
+                    this.cmbOlive.val(data.Entity.IdOlive);
+                    this.txtOlive.val(data.Entity.OliveNumber);
+
+                    this.cmbCt.val(data.Entity.IdCt);
+                    this.txtCt.val(data.Entity.CtNumber);
+
+                    this.cmbRa.val(data.Entity.IdRa);
+                    this.txtRa.val(data.Entity.RaNumber);
+
+                    this.cmbHeel.val(data.Entity.IdHeel);
+                    this.txtHeel.val(data.Entity.HeelNumber);
+
+                    this.chkSingle.prop('checked', data.Entity.IsSingleMit);
+                    this.chkDouble.prop('checked', data.Entity.IsDoubleMit);
+
+                    this.setProgressiveValue("chkBar", data.Entity.BarValue);
+                    this.setProgressiveValue("chkNeck", data.Entity.NeckValue);
+
+                    this.txtAddaptToNumber.val(data.Entity.AddaptToNumber);
+                    this.cmbDigital.val(data.Entity.IdDigital);
+                    this.chkNeckBack.prop("checked", data.Entity.BehindNeck);
+
+                }
+            });
+        }
+        fillData(dataDict: Array<Data>, cb: any) {
+            var dictLength = dataDict.length;
+            var count = 0;
             dataDict.forEach(element => {
                 $.post({
                     contentType: 'application/json',
                     data: element.bodyData || '',
                     url: element.url,
                     success: (data: any) => {
+                        count++;
                         var cmb = $("#" + element.cmbName);
                         if (element.allowBlank) {
                             var option = $('<option />');
@@ -464,6 +537,9 @@ namespace Cidob.Templates {
                             option.attr('value', id).text(friendlyName);
                             cmb.append(option);
                         });
+                        if (count == dictLength) {
+                            cb.apply();
+                        }
                     }
                 });
             });
@@ -488,7 +564,7 @@ namespace Cidob.Templates {
         hasValue(ctrl: any, minimumValueLength?: number): boolean {
             var minLength = minimumValueLength == undefined ? 0 : minimumValueLength;
             var content = ctrl.val();
-            var returnValue = content != null && content !== '';
+            var returnValue = content != null && content !== '' && ctrl.valid();
             if (returnValue) {
                 returnValue = returnValue && content.length >= minLength;
             }
@@ -497,8 +573,8 @@ namespace Cidob.Templates {
         }
     
         isValid(): boolean {
-            var isReferenceValid = this.hasValue(this.txtReference, 10);
-            var isNumberValid = this.hasValue(this.txtNumber, 10);
+            var isReferenceValid = this.hasValue(this.txtReference, 11);
+            var isNumberValid = this.hasValue(this.txtNumber);
             var isNameValid = this.hasValue(this.txtName);
             var isEmailValid = this.hasValue(this.txtEmail);
             var isAgeValid = this.hasValue(this.txtAge);
@@ -530,35 +606,53 @@ namespace Cidob.Templates {
         }
         saveFeet(data:any, callback: any, form: any) {
             var onlineFeet = new OnlineFeet(
-                parseInt(this.txtInternalMedial.val()),
-                parseInt(this.txtExternalMedial.val()),
+                parseInt(this.cmbInternalMedial.val()),
+                parseInt(this.cmbExternalMedial.val()),
                 parseInt(this.cmbOlive.val()),
                 parseInt(this.cmbCt.val()),
                 parseInt(this.cmbRa.val()),
                 parseInt(this.cmbHeel.val()),
-                this.chkSingle.attr('checked'),
-                this.chkDouble.attr('checked'),
+                this.chkSingle.prop('checked'),
+                this.chkDouble.prop('checked'),
                 parseInt(this.txtInternalMedial.val()),
                 parseInt(this.txtExternalMedial.val()),
-                parseInt(this.txtMetatarsal.val()),
+                parseInt(this.txtOlive.val()),
                 parseInt(this.txtCt.val()),
                 parseInt(this.txtRa.val()),
                 parseInt(this.txtHeel.val()),
-                "",
-                "",
-                this.chkNeckBack.atr("checked"),
+                this.getProgressiveValue("chkBar"),
+                this.getProgressiveValue("chkNeck"),
+                this.chkNeckBack.prop("checked"),
                 parseInt(this.cmbDigital.val()),
                 parseInt(this.txtAddaptToNumber.val()),
-                data.id
+                data.EntityId
                 );
             $.post({
-                url: '/Services/Templates/OnlineFeet/Create',
+                url: !this.isEditMode() ? '/Services/Templates/OnlineFeet/Create' : '/Services/Templates/OnlineFeet/Update',
                 contentType: 'application/json',
-                data: JSON.stringify({ Entity: onlineFeet }),
+                data: JSON.stringify({ Entity: onlineFeet, EntityId: this.entity.IdOnlineTemplate }),
                 success: (data: any) => {
                     callback.apply(data);
                 }
             });
+        }
+        setProgressiveValue(baseCtrlName: string, ctrlValue: any) {
+            for (var i = 1; i <= 5; i++) {
+                var ctrlName = "#" + baseCtrlName + i;
+                var ctrl = $(ctrlName);
+                ctrl.prop("checked", ctrlValue.includes(i));
+            }
+        }
+        getProgressiveValue(baseCtrlName: string): string {
+            var returnValue = "";
+            for (var i = 1; i <= 5; i++) {
+                var ctrlName = "#" + baseCtrlName + i;
+                var ctrl = $(ctrlName);
+                if (ctrl.prop("checked")) {
+                    returnValue += i;
+                }
+            }
+            return returnValue;
         }
         save(callback: any) {
             var self = this;
@@ -568,20 +662,23 @@ namespace Cidob.Templates {
                     parseInt(this.txtNumber.val()),
                     this.txtName.val(),
                     this.txtEmail.val(),
+                    this.txtAge.val(),
+                    this.txtEntity.val(),
                     parseInt(this.cmbGender.val()),
                     parseInt(this.cmbBase.val()),
                     parseInt(this.cmbShape.val()),
                     parseInt(this.cmbCover.val()),
                     this.txtObservation1.val() + "\n" + this.txtObservation2.val(),
                     parseInt(this.txtQuantity.val()),
-                    this.chk34.attr("checked")
+                    this.chk34.prop("checked"),
+                    this.chkUrgent.prop("checked")
                 );
                 $.post({
-                    url: '/Services/Templates/OnlineTemplate/Create',
+                    url: !this.isEditMode() ? '/Services/Templates/OnlineTemplate/Create': '/Services/Templates/OnlineTemplate/Update',
                     contentType: 'application/json',
-                    data: JSON.stringify({ Entity: onlineTemplate }),
+                    data: JSON.stringify({ Entity: onlineTemplate, EntityId: this.entity.IdOnlineTemplate}),
                     success: (data: any) => {
-                        //self.saveFeet(data, callback, self);
+                        self.saveFeet(data, callback, self);
                         self.element.dialog().dialog('close');
                     }
                 });

@@ -25,6 +25,7 @@ namespace Cidob.Templates.Repositories
 
         public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request)
         {
+            new OnlineFeetRepository().Delete(uow, request);
             return new MyDeleteHandler().Process(uow, request);
         }
 

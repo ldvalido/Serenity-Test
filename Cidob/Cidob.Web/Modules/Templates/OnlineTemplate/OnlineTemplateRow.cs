@@ -1,6 +1,5 @@
 ﻿
 using Cidob.Administration.Entities;
-using Cidob.MasterData.Entities;
 
 namespace Cidob.Templates.Entities
 {
@@ -12,6 +11,7 @@ namespace Cidob.Templates.Entities
     using System;
     using System.ComponentModel;
     using System.IO;
+    using Cidob.MasterData.Entities;
 
     [ConnectionKey("Default"), DisplayName("OnlineTemplate"), InstanceName("OnlineTemplate"), TwoLevelCached]
     [ReadPermission("Templates:OnlineTemplate:Read")]
@@ -109,6 +109,18 @@ namespace Cidob.Templates.Entities
             public String Email { get { return Fields.Email[this]; } set { Fields.Email[this] = value; } }
             public partial class RowFields { public StringField Email; }
             #endregion Email
+                
+            #region Age
+            [DisplayName("Age"), NotNull]
+            public Int32? Age { get { return Fields.Age[this]; } set { Fields.Age[this] = value; } }
+            public partial class RowFields { public Int32Field Age; }
+            #endregion Age
+                
+            #region Entity
+            [DisplayName("Entity"), Size(255)]
+            public String Entity { get { return Fields.Entity[this]; } set { Fields.Entity[this] = value; } }
+            public partial class RowFields { public StringField Entity; }
+            #endregion Entity
                 
             #region Creation Date
             [DisplayName("Creation Date"), NotNull]
