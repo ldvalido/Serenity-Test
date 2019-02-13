@@ -4,6 +4,7 @@ namespace Cidob.Configuration {
         IdUserPrefix?: number;
         IdUser?: number;
         Prefix?: string;
+        TicketNumber?: number;
         IdUserUsername?: string;
         IdUserDisplayName?: string;
         IdUserEmail?: string;
@@ -28,6 +29,7 @@ namespace Cidob.Configuration {
             export declare const IdUserPrefix;
             export declare const IdUser;
             export declare const Prefix;
+            export declare const TicketNumber;
             export declare const IdUserUsername: string;
             export declare const IdUserDisplayName: string;
             export declare const IdUserEmail: string;
@@ -43,7 +45,7 @@ namespace Cidob.Configuration {
             export declare const IdUserIsActive: string;
         }
 
-        ['IdUserPrefix', 'IdUser', 'Prefix', 'IdUserUsername', 'IdUserDisplayName', 'IdUserEmail', 'IdUserSource', 'IdUserPasswordHash', 'IdUserPasswordSalt', 'IdUserLastDirectoryUpdate', 'IdUserUserImage', 'IdUserInsertDate', 'IdUserInsertUserId', 'IdUserUpdateDate', 'IdUserUpdateUserId', 'IdUserIsActive'].forEach(x => (<any>Fields)[x] = x);
+        ['IdUserPrefix', 'IdUser', 'Prefix', 'TicketNumber', 'IdUserUsername', 'IdUserDisplayName', 'IdUserEmail', 'IdUserSource', 'IdUserPasswordHash', 'IdUserPasswordSalt', 'IdUserLastDirectoryUpdate', 'IdUserUserImage', 'IdUserInsertDate', 'IdUserInsertUserId', 'IdUserUpdateDate', 'IdUserUpdateUserId', 'IdUserIsActive'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

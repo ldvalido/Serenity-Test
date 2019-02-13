@@ -15,5 +15,6 @@ namespace Cidob.Configuration.Forms
     {
         public Int32 IdUser { get; set; }
         public String Prefix { get; set; }
+        public Int32 TicketNumber { get; set; }
     }
 }

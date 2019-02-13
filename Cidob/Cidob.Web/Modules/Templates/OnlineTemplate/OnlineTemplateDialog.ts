@@ -198,6 +198,7 @@ namespace Cidob.Templates {
                 this.doFeaturedTemplateConfirmDelete(liFeaturedTemplates);
             });
             this.fillFeaturedTemplates(liFeaturedTemplates);
+            this.fillUserData();
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
             
             $(txtReference).on("keyup", function() {
@@ -448,9 +449,17 @@ namespace Cidob.Templates {
         fillUserData() {
             $.post({
                 contentType: 'application/json',
-                url: 'Services/Configuration/UserPrefix/List',
-                data: null
-            
+                url: '/Services/Configuration/UserPrefix/List',
+                data: JSON.stringify({
+                    Take: 1,
+                    ContainsText: Cidob.Authorization.userDefinition.UserId,
+                    IncludeColumns: ['IdUserPrefix','IdUserDisplayName','Prefix','TicketNumber']
+                }),
+                success: (data: any) => {
+                    var entity = data.Entities[0];
+                    var currentTicketNumber = parseInt(data.Entities[0].TicketNumber) + 1;
+                    this.txtReference.val(entity.Prefix + "-" + currentTicketNumber.toString().padStart(7,"0") );
+                }
             });
         }
         fillOnlineTemplate(data: any) {
@@ -556,8 +565,8 @@ namespace Cidob.Templates {
             returnValue.push(new Data("cmbHeel", "/Services/MasterData/Heel/List", '{Sort: [\"Order\"]}', "IdHeel", "Description", true));
             returnValue.push(new Data("cmbDigital", "/Services/MasterData/Digital/List", '{Sort: [\"Order\"]}', "IdDigital", "Description", true));
             returnValue.push(new Data("cmbOlive", "/Services/MasterData/Olive/List", '{Sort: [\"Order\"]}', "IdOlive", "Description", true));
-            returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
-            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
+            returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
+            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
             return returnValue;
         }
 

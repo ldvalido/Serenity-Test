@@ -24,6 +24,7 @@
     "Db.Configuration.UserPrefix.IdUserPrefixDisplayName": "Usuario",
     "Db.Configuration.UserPrefix.IdUserPrefixUsername": "Usuario",
     "Db.Configuration.UserPrefix.Prefix": "Prefijo",
+    "Db.Configuration.UserPrefix.TicketNumber": "Número de Comprobante",
     "Db.MasterData.Arch.Description": "Descripción",
     "Db.MasterData.Arch.EntityPlural": "Arcos",
     "Db.MasterData.Arch.EntitySingular": "Arco",

@@ -7861,3 +7861,9 @@ section.content > .s-DataGrid {
 .s-Configuration-UserPrefixDialog .caption {
   width: 150px;
 }
+.s-Configuration-UserPrefixDialog > .size {
+  width: 650px;
+}
+.s-Configuration-UserPrefixDialog .caption {
+  width: 150px;
+}

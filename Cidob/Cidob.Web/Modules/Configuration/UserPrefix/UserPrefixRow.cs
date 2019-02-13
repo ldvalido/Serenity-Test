@@ -27,17 +27,23 @@ namespace Cidob.Configuration.Entities
             #endregion IdUserPrefix
                 
             #region Id User
-            [DisplayName("Id User"), NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIdUser"), TextualField("IdUserUsername")]
+            [DisplayName("Id User"), QuickSearch, NotNull, ForeignKey("[dbo].[Users]", "UserId"), LeftJoin("jIdUser"), TextualField("IdUserUsername")]
             [LookupEditor(typeof(UserRow))]
             public Int32? IdUser { get { return Fields.IdUser[this]; } set { Fields.IdUser[this] = value; } }
             public partial class RowFields { public Int32Field IdUser; }
             #endregion IdUser
                 
             #region Prefix
-            [DisplayName("Prefix"), Size(3), NotNull, QuickSearch]
+            [DisplayName("Prefix"), Size(3), NotNull]
             public String Prefix { get { return Fields.Prefix[this]; } set { Fields.Prefix[this] = value; } }
             public partial class RowFields { public StringField Prefix; }
             #endregion Prefix
+                
+            #region Ticket Number
+            [DisplayName("Ticket Number"), ReadOnly(true)]
+            public Int32? TicketNumber { get { return Fields.TicketNumber[this]; } set { Fields.TicketNumber[this] = value; } }
+            public partial class RowFields { public Int32Field TicketNumber; }
+            #endregion TicketNumber
         
 
     #region Foreign Fields

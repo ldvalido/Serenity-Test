@@ -4,19 +4,19 @@ namespace Cidob.Configuration {
         IdUserPrefix?: number;
         IdUser?: number;
         Prefix?: string;
-        IdUserPrefixUsername?: string;
-        IdUserPrefixDisplayName?: string;
-        IdUserPrefixEmail?: string;
-        IdUserPrefixSource?: string;
-        IdUserPrefixPasswordHash?: string;
-        IdUserPrefixPasswordSalt?: string;
-        IdUserPrefixLastDirectoryUpdate?: string;
-        IdUserPrefixUserImage?: string;
-        IdUserPrefixInsertDate?: string;
-        IdUserPrefixInsertUserId?: number;
-        IdUserPrefixUpdateDate?: string;
-        IdUserPrefixUpdateUserId?: number;
-        IdUserPrefixIsActive?: number;
+        IdUserUsername?: string;
+        IdUserDisplayName?: string;
+        IdUserEmail?: string;
+        IdUserSource?: string;
+        IdUserPasswordHash?: string;
+        IdUserPasswordSalt?: string;
+        IdUserLastDirectoryUpdate?: string;
+        IdUserUserImage?: string;
+        IdUserInsertDate?: string;
+        IdUserInsertUserId?: number;
+        IdUserUpdateDate?: string;
+        IdUserUpdateUserId?: number;
+        IdUserIsActive?: number;
     }
 
     export namespace UserPrefixRow {
@@ -28,22 +28,22 @@ namespace Cidob.Configuration {
             export declare const IdUserPrefix;
             export declare const IdUser;
             export declare const Prefix;
-            export declare const IdUserPrefixUsername: string;
-            export declare const IdUserPrefixDisplayName: string;
-            export declare const IdUserPrefixEmail: string;
-            export declare const IdUserPrefixSource: string;
-            export declare const IdUserPrefixPasswordHash: string;
-            export declare const IdUserPrefixPasswordSalt: string;
-            export declare const IdUserPrefixLastDirectoryUpdate: string;
-            export declare const IdUserPrefixUserImage: string;
-            export declare const IdUserPrefixInsertDate: string;
-            export declare const IdUserPrefixInsertUserId: string;
-            export declare const IdUserPrefixUpdateDate: string;
-            export declare const IdUserPrefixUpdateUserId: string;
-            export declare const IdUserPrefixIsActive: string;
+            export declare const IdUserUsername: string;
+            export declare const IdUserDisplayName: string;
+            export declare const IdUserEmail: string;
+            export declare const IdUserSource: string;
+            export declare const IdUserPasswordHash: string;
+            export declare const IdUserPasswordSalt: string;
+            export declare const IdUserLastDirectoryUpdate: string;
+            export declare const IdUserUserImage: string;
+            export declare const IdUserInsertDate: string;
+            export declare const IdUserInsertUserId: string;
+            export declare const IdUserUpdateDate: string;
+            export declare const IdUserUpdateUserId: string;
+            export declare const IdUserIsActive: string;
         }
 
-        ['IdUserPrefix', 'IdUser', 'Prefix', 'IdUserPrefixUsername', 'IdUserPrefixDisplayName', 'IdUserPrefixEmail', 'IdUserPrefixSource', 'IdUserPrefixPasswordHash', 'IdUserPrefixPasswordSalt', 'IdUserPrefixLastDirectoryUpdate', 'IdUserPrefixUserImage', 'IdUserPrefixInsertDate', 'IdUserPrefixInsertUserId', 'IdUserPrefixUpdateDate', 'IdUserPrefixUpdateUserId', 'IdUserPrefixIsActive'].forEach(x => (<any>Fields)[x] = x);
+        ['IdUserPrefix', 'IdUser', 'Prefix', 'IdUserUsername', 'IdUserDisplayName', 'IdUserEmail', 'IdUserSource', 'IdUserPasswordHash', 'IdUserPasswordSalt', 'IdUserLastDirectoryUpdate', 'IdUserUserImage', 'IdUserInsertDate', 'IdUserInsertUserId', 'IdUserUpdateDate', 'IdUserUpdateUserId', 'IdUserIsActive'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

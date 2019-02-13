@@ -18,5 +18,6 @@ namespace Cidob.Configuration.Columns
         public String IdUserDisplayName { get; set; }
         [EditLink]
         public String Prefix { get; set; }
+        public Int32 TicketNumber { get; set; }
     }
 }
