@@ -583,7 +583,6 @@ namespace Cidob.Templates {
     
         isValid(): boolean {
             var isReferenceValid = this.hasValue(this.txtReference, 11);
-            var isNumberValid = this.hasValue(this.txtNumber);
             var isNameValid = this.hasValue(this.txtName);
             var isEmailValid = this.hasValue(this.txtEmail);
             var isAgeValid = this.hasValue(this.txtAge);
@@ -592,14 +591,10 @@ namespace Cidob.Templates {
             var isBaseValid = this.hasValue(this.cmbBase);
             var isShapeValid = this.hasValue(this.cmbShape);
             var isCoverValid = this.hasValue(this.cmbCover);
-            var isInternalMediaValid = this.hasValue(this.cmbInternalMedial);
-            var isExternalMediaValid = this.hasValue(this.cmbExternalMedial);
             var isOliveValid = this.hasValue(this.cmbOlive);
             var isCtValid = this.hasValue(this.cmbCt);
             
-            //Review the conditions
             return isReferenceValid &&
-                isNumberValid &&
                 isNameValid &&
                 isEmailValid &&
                 isAgeValid &&
@@ -608,8 +603,6 @@ namespace Cidob.Templates {
                 isBaseValid &&
                 isShapeValid &&
                 isCoverValid &&
-                isExternalMediaValid &&
-                isInternalMediaValid &&
                 isOliveValid &&
                 isCtValid ;
         }
