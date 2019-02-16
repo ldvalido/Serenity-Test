@@ -22,7 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
     <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -1234,13 +1234,7 @@
     <Content Include="Modules\MasterData\Arch\ArchIndex.cshtml" />
     <Content Include="Modules\Relationship\BaseArch\BaseArchIndex.cshtml" />
     <None Include="Properties\PublishProfiles\CidobApp - FTP %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\CidobApp - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\CidobApp - Web Deploy %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\CidobApp - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\CidobAppDev - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\CidobAppDev - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\cidobTemplate - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\cidobTemplate - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\cidobTemplates - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\cidobTemplates - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FileCenter.pubxml" />
@@ -2421,7 +2415,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1725/</IISUrl>
+          <IISUrl>http://localhost:2346/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
