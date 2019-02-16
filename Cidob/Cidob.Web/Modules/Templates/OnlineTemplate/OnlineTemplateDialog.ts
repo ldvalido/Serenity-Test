@@ -597,7 +597,7 @@ namespace Cidob.Templates {
             var isOliveValid = this.hasValue(this.cmbOlive);
             var isCtValid = this.hasValue(this.cmbCt);
             
-
+            //Review the conditions
             return isReferenceValid &&
                 isNumberValid &&
                 isNameValid &&
