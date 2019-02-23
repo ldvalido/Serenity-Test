@@ -10,17 +10,24 @@
     <div class="container s-Form">
         <div class="row">
             <div class="col-md-4">
+
                 <div class="box">
+                    <div class="form-group row">
+                        <label for="referencia" class="col-xs-4 col-form-label">ID</label>
+                        <div class="col-md-8">
+                            <input class="form-control required" type="text" id="txtTd" name="txtTd" maxlength="11" minlength="11" readonly>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label for="referencia" class="col-xs-4 col-form-label">Referencia</label>
                         <div class="col-md-8">
-                            <input class="form-control required" type="text" id="txtReference" name="txtReference" maxlength="11" minlength="11" readonly>
+                            <input class="form-control required" type="text" id="txtReference" name="txtReference"  autofocus>
                         </div>
                     </div>
                     <div class="form-group input-group-sm row">
                         <label for="number" class="col-md-4 col-form-label">Numero</label>
                         <div class="col-md-8">
-                            <input class="form-control required" type="number" id="txtNumber" name="txtNumber" maxlength="10" autofocus>
+                            <input class="form-control required" type="number" id="txtNumber" name="txtNumber" min="14" max="60" step="0.5">
                         </div>
                     </div>
                     <div class="form-group input-group-md row">

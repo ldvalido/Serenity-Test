@@ -105,7 +105,7 @@ namespace Cidob.Templates.Entities
             #endregion Name
                 
             #region Email
-            [DisplayName("Email"), Width(100), NotNull]
+            [DisplayName("Email"), Width(100)]
             public String Email { get { return Fields.Email[this]; } set { Fields.Email[this] = value; } }
             public partial class RowFields { public StringField Email; }
             #endregion Email
@@ -127,6 +127,12 @@ namespace Cidob.Templates.Entities
             public DateTime? CreationDate { get { return Fields.CreationDate[this]; } set { Fields.CreationDate[this] = value; } }
             public partial class RowFields { public DateTimeField CreationDate; }
             #endregion CreationDate
+                
+            #region Id Agency
+            [DisplayName("Id Agency"), Size(10), NotNull]
+            public String IdAgency { get { return Fields.IdAgency[this]; } set { Fields.IdAgency[this] = value; } }
+            public partial class RowFields { public StringField IdAgency; }
+            #endregion IdAgency
         
 
     #region Foreign Fields

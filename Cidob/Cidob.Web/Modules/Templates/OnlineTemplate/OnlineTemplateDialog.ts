@@ -49,6 +49,7 @@ namespace Cidob.Templates {
     }
     export class OnlineTemplate {
         Reference: string;
+        IdAgency: string;
         Number: number;
         Name: String;
         Email: String;
@@ -61,8 +62,9 @@ namespace Cidob.Templates {
         Quantity: number;
         Is34: boolean;
         Urgent: boolean;
-        constructor(Reference: String, Number: number, Name: String, Email: String, Age: string, Entity:string, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean, Urgent: boolean) {
+        constructor(Reference: String, IdAgency:String, Number: number, Name: String, Email: String, Age: string, Entity:string, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean, Urgent: boolean) {
             this.Reference = Reference;
+            this.IdAgency = IdAgency;
             this.Number = Number;
             this.Name = Name;
             this.Email = Email;
@@ -153,6 +155,7 @@ namespace Cidob.Templates {
         protected rdFootSingle;
         protected chkFootLeft;
         protected chkFootRight;
+        protected txtId;
         protected txtReference;
         protected txtNumber;
         protected txtName;
@@ -200,36 +203,6 @@ namespace Cidob.Templates {
             this.fillFeaturedTemplates(liFeaturedTemplates);
             this.fillUserData();
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
-            
-            $(txtReference).on("keyup", function() {
-                var selection = window.getSelection().toString();
-                if (selection !== '') {
-                    return;
-                }
-
-                // When the arrow keys are pressed, abort.
-                if ($.inArray(event.keyCode, [38, 40, 37, 39]) !== -1) {
-                    return;
-                }
-
-                var $this = $(this);
-                var input = $this.val();
-                input = input.replace(/[\W\s\._\-]+/g, '');
-
-                var split = 3;
-                var chunk = [];
-
-                if (input.length > split) {
-                    chunk.push(input.substr(0, split));
-                    chunk.push(input.substr(split, input.length - split));
-                } else {
-                    chunk.push(input);
-                }
-
-                $this.val(function() {
-                    return chunk.join("-").toUpperCase();
-                });
-            });
         }
 
         doFeaturedTemplateDelete(idFeaturedTemplate: number) {
@@ -390,6 +363,7 @@ namespace Cidob.Templates {
             this.rdFootSingle = $("#rdFootSingle").first();
             this.chkFootLeft = $("#chkFootLeft").first();
             this.chkFootRight = $("#chkFootRight").first();
+            this.txtId = $("#txtTd").first();
             this.txtReference = $("#txtReference").first();
             this.txtNumber = $("#txtNumber").first();
             this.txtName = $("#txtName").first();
@@ -446,6 +420,22 @@ namespace Cidob.Templates {
             this.txtEntity.val("");
             this.chkUrgent.prop("checked", false);
         }
+        updateUserData(agency, agencyId) {
+            $.post({
+                contentType: 'application/json',
+                url: '/Services/Configuration/UserPrefix/Update',
+                data: JSON.stringify({
+                    Entity: {
+                        IdUser: agency.IdUser,
+                        Prefix: agency.Prefix,
+                        TicketNumber: agencyId,
+                        IdUserPrefix: agency.IdUserPrefix
+
+                    },
+                    EntityId: agency.IdUserPrefix
+                })
+            });
+        }
         fillUserData() {
             $.post({
                 contentType: 'application/json',
@@ -457,12 +447,14 @@ namespace Cidob.Templates {
                 }),
                 success: (data: any) => {
                     var entity = data.Entities[0];
-                    var currentTicketNumber = parseInt(data.Entities[0].TicketNumber) + 1;
-                    this.txtReference.val(entity.Prefix + "-" + currentTicketNumber.toString().padStart(7,"0") );
+                    var currentTicketNumber = isNaN(entity.TicketNumber) ? 1 : parseInt(data.Entities[0].TicketNumber) + 1;
+                    this.txtId.val(entity.Prefix + "-" + currentTicketNumber.toString().padStart(7, "0"));
+                    this.updateUserData(entity, currentTicketNumber++);
                 }
             });
         }
         fillOnlineTemplate(data: any) {
+            this.txtId.val(data.IdAgency);
             this.txtReference.val(data.Reference);
             this.txtNumber.val(data.Number);
             this.txtName.val(data.Name);
@@ -566,7 +558,7 @@ namespace Cidob.Templates {
             returnValue.push(new Data("cmbDigital", "/Services/MasterData/Digital/List", '{Sort: [\"Order\"]}', "IdDigital", "Description", true));
             returnValue.push(new Data("cmbOlive", "/Services/MasterData/Olive/List", '{Sort: [\"Order\"]}', "IdOlive", "Description", true));
             returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
-            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
+            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/TransversalArch/List", '{Sort: [\"Order\"]}', "IdTransversalArch", "Description", true));
             return returnValue;
         }
 
@@ -582,29 +574,23 @@ namespace Cidob.Templates {
         }
     
         isValid(): boolean {
-            var isReferenceValid = this.hasValue(this.txtReference, 11);
+            var returnValue = false;
             var isNameValid = this.hasValue(this.txtName);
-            var isEmailValid = this.hasValue(this.txtEmail);
             var isAgeValid = this.hasValue(this.txtAge);
-            var isEntityValid = this.hasValue(this.txtEntity);
             var isGenderValid = this.hasValue(this.cmbGender);
             var isBaseValid = this.hasValue(this.cmbBase);
             var isShapeValid = this.hasValue(this.cmbShape);
             var isCoverValid = this.hasValue(this.cmbCover);
-            var isOliveValid = this.hasValue(this.cmbOlive);
-            var isCtValid = this.hasValue(this.cmbCt);
-            
-            return isReferenceValid &&
+
+            returnValue = 
                 isNameValid &&
-                isEmailValid &&
                 isAgeValid &&
-                isEntityValid &&
                 isGenderValid &&
                 isBaseValid &&
                 isShapeValid &&
-                isCoverValid &&
-                isOliveValid &&
-                isCtValid ;
+                isCoverValid;
+            console.log(returnValue);
+            return returnValue;
         }
         saveFeet(data:any, callback: any, form: any) {
             var onlineFeet = new OnlineFeet(
@@ -658,9 +644,10 @@ namespace Cidob.Templates {
         }
         save(callback: any) {
             var self = this;
-            if (this.isValid()) {
+            if (self.isValid()) {
                 var onlineTemplate = new OnlineTemplate(
                     this.txtReference.val(),
+                    this.txtId.val(),
                     parseInt(this.txtNumber.val()),
                     this.txtName.val(),
                     this.txtEmail.val(),

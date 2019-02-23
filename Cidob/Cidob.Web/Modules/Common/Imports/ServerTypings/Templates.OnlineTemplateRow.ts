@@ -18,6 +18,7 @@ namespace Cidob.Templates {
         Age?: number;
         Entity?: string;
         CreationDate?: string;
+        IdAgency?: string;
         IdGenderDescription?: string;
         IdBaseIdProduct?: number;
         IdBaseOrder?: number;
@@ -74,6 +75,7 @@ namespace Cidob.Templates {
             export declare const Age;
             export declare const Entity;
             export declare const CreationDate;
+            export declare const IdAgency;
             export declare const IdGenderDescription: string;
             export declare const IdBaseIdProduct: string;
             export declare const IdBaseOrder: string;
@@ -107,7 +109,7 @@ namespace Cidob.Templates {
             export declare const IdUserCreationIsActive: string;
         }
 
-        ['IdOnlineTemplate', 'Reference', 'Number', 'Urgent', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Observations', 'Quantity', 'IdUserCreation', 'Name', 'Email', 'Age', 'Entity', 'CreationDate', 'IdGenderDescription', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdShapeIdProduct', 'IdShapeOrder', 'IdShapeDescription', 'IdShapePrintName', 'IdCoverIdProduct', 'IdCoverOrder', 'IdCoverDescription', 'IdCoverPrintName', 'IdUserCreationUsername', 'IdUserCreationDisplayName', 'IdUserCreationEmail', 'IdUserCreationSource', 'IdUserCreationPasswordHash', 'IdUserCreationPasswordSalt', 'IdUserCreationLastDirectoryUpdate', 'IdUserCreationUserImage', 'IdUserCreationInsertDate', 'IdUserCreationInsertUserId', 'IdUserCreationUpdateDate', 'IdUserCreationUpdateUserId', 'IdUserCreationIsActive'].forEach(x => (<any>Fields)[x] = x);
+        ['IdOnlineTemplate', 'Reference', 'Number', 'Urgent', 'IdGender', 'IdBase', 'Is34', 'IdShape', 'IdCover', 'Observations', 'Quantity', 'IdUserCreation', 'Name', 'Email', 'Age', 'Entity', 'CreationDate', 'IdAgency', 'IdGenderDescription', 'IdBaseIdProduct', 'IdBaseOrder', 'IdBaseDescription', 'IdBasePrintName', 'IdBaseFrom', 'IdBaseTo', 'IdBaseEscatola', 'IdBaseNeedArch', 'IdBaseNeedTransversalArch', 'IdShapeIdProduct', 'IdShapeOrder', 'IdShapeDescription', 'IdShapePrintName', 'IdCoverIdProduct', 'IdCoverOrder', 'IdCoverDescription', 'IdCoverPrintName', 'IdUserCreationUsername', 'IdUserCreationDisplayName', 'IdUserCreationEmail', 'IdUserCreationSource', 'IdUserCreationPasswordHash', 'IdUserCreationPasswordSalt', 'IdUserCreationLastDirectoryUpdate', 'IdUserCreationUserImage', 'IdUserCreationInsertDate', 'IdUserCreationInsertUserId', 'IdUserCreationUpdateDate', 'IdUserCreationUpdateUserId', 'IdUserCreationIsActive'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 
