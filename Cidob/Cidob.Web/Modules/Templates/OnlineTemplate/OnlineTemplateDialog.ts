@@ -200,6 +200,9 @@ namespace Cidob.Templates {
             $(btnFeaturedTemplateDelete).click(() => {
                 this.doFeaturedTemplateConfirmDelete(liFeaturedTemplates);
             });
+            $(this.cmbBase).click(() => {
+                this.fillTemplatesComponents();
+            });
             this.fillFeaturedTemplates(liFeaturedTemplates);
             this.fillUserData();
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
@@ -243,6 +246,17 @@ namespace Cidob.Templates {
             }
         }
 
+        fillTemplatesComponents() {
+            $(this.cmbInternalMedial).prop('disabled', false);
+            $(this.cmbExternalMedial).prop('disabled', false);
+            $(this.cmbShape).prop('disabled', false);
+            $(this.cmbCover).prop('disabled', false);
+
+            var metadata = this.getConditionalData();
+            this.fillData(metadata, () => {
+            });
+
+        }
         fillFeaturedTemplates(liFeaturedTemplates: any) {
             var url = "/Services/Templates/FeaturedTemplate/List";
             var filter = { Take: 100, Criteria: [['IdUserCreation'], '=', Authorization.userDefinition.UserId] };
@@ -538,27 +552,32 @@ namespace Cidob.Templates {
                             option.attr('value', id).text(friendlyName);
                             cmb.append(option);
                         });
-                        if (count == dictLength) {
+                        if (count == dictLength && cb != null) {
                             cb.apply();
                         }
                     }
                 });
             });
         }
+        getConditionalData(): Array<Data> {
 
+            let returnValue: Array<Data> = [];
+            returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
+            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/TransversalArch/List", '{Sort: [\"Order\"]}', "IdTransversalArch", "Description", true));
+            returnValue.push(new Data("cmbShape", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
+            returnValue.push(new Data("cmbCover", "/Services/MasterData/Cover/List", '{Sort: [\"Order\"]}', "IdCover", "Description", true));
+            return returnValue;
+        }
         getDictData(): Array<Data> {
             let returnValue: Array<Data> = [];
             returnValue.push(new Data("cmbGender", "/Services/MasterData/Gender/List", "{}", "IdGender", "Description", false));
+
             returnValue.push(new Data("cmbBase", "/Services/MasterData/Base/List", '{Sort: [\"Order\"]}', "IdBase", "Description", true));
-            returnValue.push(new Data("cmbShape", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
-            returnValue.push(new Data("cmbCover", "/Services/MasterData/Cover/List", '{Sort: [\"Order\"]}', "IdCover", "Description", true));
             returnValue.push(new Data("cmbCt", "/Services/MasterData/CT/List", '{Sort: [\"Order\"]}', "IdCt", "Description", true));
             returnValue.push(new Data("cmbRa", "/Services/MasterData/RA/List", '{Sort: [\"Order\"]}', "IdRa", "Description", true));
             returnValue.push(new Data("cmbHeel", "/Services/MasterData/Heel/List", '{Sort: [\"Order\"]}', "IdHeel", "Description", true));
             returnValue.push(new Data("cmbDigital", "/Services/MasterData/Digital/List", '{Sort: [\"Order\"]}', "IdDigital", "Description", true));
             returnValue.push(new Data("cmbOlive", "/Services/MasterData/Olive/List", '{Sort: [\"Order\"]}', "IdOlive", "Description", true));
-            returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
-            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/TransversalArch/List", '{Sort: [\"Order\"]}', "IdTransversalArch", "Description", true));
             return returnValue;
         }
 
