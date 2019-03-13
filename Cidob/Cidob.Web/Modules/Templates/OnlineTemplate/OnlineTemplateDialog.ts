@@ -200,8 +200,8 @@ namespace Cidob.Templates {
             $(btnFeaturedTemplateDelete).click(() => {
                 this.doFeaturedTemplateConfirmDelete(liFeaturedTemplates);
             });
-            $(this.cmbBase).click(() => {
-                this.fillTemplatesComponents();
+            $(this.cmbBase).on('change', ()  => {
+                this.fillTemplatesComponents(this.cmbBase.val());
             });
             this.fillFeaturedTemplates(liFeaturedTemplates);
             this.fillUserData();
@@ -246,13 +246,13 @@ namespace Cidob.Templates {
             }
         }
 
-        fillTemplatesComponents() {
+        fillTemplatesComponents(idBase: number) {
             $(this.cmbInternalMedial).prop('disabled', false);
             $(this.cmbExternalMedial).prop('disabled', false);
             $(this.cmbShape).prop('disabled', false);
             $(this.cmbCover).prop('disabled', false);
 
-            var metadata = this.getConditionalData();
+            var metadata = this.getConditionalData(idBase);
             this.fillData(metadata, () => {
             });
 
@@ -260,19 +260,26 @@ namespace Cidob.Templates {
         fillFeaturedTemplates(liFeaturedTemplates: any) {
             var url = "/Services/Templates/FeaturedTemplate/List";
             var filter = { Take: 100, Criteria: [['IdUserCreation'], '=', Authorization.userDefinition.UserId] };
+            this.post(url, filter, (response: any) => {
+                for (var i = 0; i < response.Entities.length; i++) {
+                    var entity = response.Entities[i];
+                    this.addFeaturedTemplate(liFeaturedTemplates, entity);
+                }
+            });
+           
+        }
+
+        post(url: string, filter: any, cb:any)
+        {
             $.post({
                 contentType: 'application/json',
                 url: url,
                 data: JSON.stringify(filter),
                 success: (response: any) => {
-                    for (var i = 0; i < response.Entities.length; i++) {
-                        var entity = response.Entities[i];
-                        this.addFeaturedTemplate(liFeaturedTemplates, entity);
-                    }
+                    cb.call(this, response);
                 }
             });
         }
-
         addFeaturedTemplate(liFeaturedTemplates: any, entity: any) {
             var pattern = '<li><input class="form-check-input" type="checkbox" value="" name="chkFeaturedTemplate" id="{0}" tabIndex="-1"><label class="form-check-label" for="test">&nbsp;&nbsp;&nbsp;{1} </label></li>';
             var textToAdd = this.format(pattern, entity.IdFeaturedTemplate, entity.Title);
@@ -540,6 +547,7 @@ namespace Cidob.Templates {
                     success: (data: any) => {
                         count++;
                         var cmb = $("#" + element.cmbName);
+                        cmb.empty();
                         if (element.allowBlank) {
                             var option = $('<option />');
                             option.attr('value', '').text('');
@@ -559,13 +567,13 @@ namespace Cidob.Templates {
                 });
             });
         }
-        getConditionalData(): Array<Data> {
+        getConditionalData(idBase: number): Array<Data> {
 
             let returnValue: Array<Data> = [];
             returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
             returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/TransversalArch/List", '{Sort: [\"Order\"]}', "IdTransversalArch", "Description", true));
             returnValue.push(new Data("cmbShape", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
-            returnValue.push(new Data("cmbCover", "/Services/MasterData/Cover/List", '{Sort: [\"Order\"]}', "IdCover", "Description", true));
+            returnValue.push(new Data("cmbCover", "/Services/Relationship/BaseCover/List", '{Sort: [\"Order\"], Take: 100, Criteria:  [[\"IdBase\"],\"=\",' + idBase + '], "IncludeColumns": [\"IdCoverDescription\"]}', "IdCover", "IdCoverDescription", true));
             return returnValue;
         }
         getDictData(): Array<Data> {
