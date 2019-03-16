@@ -570,9 +570,9 @@ namespace Cidob.Templates {
         getConditionalData(idBase: number): Array<Data> {
 
             let returnValue: Array<Data> = [];
-            returnValue.push(new Data("cmbInternalMedial", "/Services/MasterData/Arch/List", '{Sort: [\"Order\"]}', "IdArch", "Description", true));
-            returnValue.push(new Data("cmbExternalMedial", "/Services/MasterData/TransversalArch/List", '{Sort: [\"Order\"]}', "IdTransversalArch", "Description", true));
-            returnValue.push(new Data("cmbShape", "/Services/MasterData/Shape/List", '{Sort: [\"Order\"]}', "IdShape", "Description", true));
+            returnValue.push(new Data("cmbInternalMedial", "/Services/Relationship/BaseArch/List", '{Sort: [\"Order\"], Take: 100, Criteria:  [[\"IdBase\"],\"=\",' + idBase + '], "IncludeColumns": [\"IdArchDescription\"]}', "IdArch", "IdArchDescription", true));
+            returnValue.push(new Data("cmbExternalMedial", "/Services/Relationship/BaseTransversalArch/List", '{Sort: [\"Order\"], Take: 100, Criteria:  [[\"IdBase\"],\"=\",' + idBase + '], "IncludeColumns": [\"IdTransversalArchDescription\"]}', "IdTransversalArch", "IdTransversalArchDescription", true));
+            returnValue.push(new Data("cmbShape", "/Services/Relationship/BaseShape/List", '{Sort: [\"Order\"], Take: 100, Criteria:  [[\"IdBase\"],\"=\",' + idBase + '], "IncludeColumns": [\"IdShapeDescription\"]}', "IdShape", "IdShapeDescription", true));
             returnValue.push(new Data("cmbCover", "/Services/Relationship/BaseCover/List", '{Sort: [\"Order\"], Take: 100, Criteria:  [[\"IdBase\"],\"=\",' + idBase + '], "IncludeColumns": [\"IdCoverDescription\"]}', "IdCover", "IdCoverDescription", true));
             return returnValue;
         }
