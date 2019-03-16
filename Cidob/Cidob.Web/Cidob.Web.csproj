@@ -1939,6 +1939,14 @@
     <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixDialog.ts" />
     <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixEditor.ts" />
     <TypeScriptCompile Include="Modules\Configuration\UserPrefix\UserPrefixEditorDialog.ts" />
+    <Content Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseTransversalArchRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseTransversalArchService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Relationship.BaseTransversalArchForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchGrid.ts" />
+    <TypeScriptCompile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchDialog.ts" />
+    <TypeScriptCompile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchEditor.ts" />
+    <TypeScriptCompile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchEditorDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2257,6 +2265,12 @@
     <Compile Include="Modules\Configuration\UserPrefix\UserPrefixRepository.cs" />
     <Compile Include="Modules\Configuration\UserPrefix\UserPrefixEndpoint.cs" />
     <Compile Include="Modules\Configuration\UserPrefix\UserPrefixPage.cs" />
+    <Compile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchRow.cs" />
+    <Compile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchColumns.cs" />
+    <Compile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchForm.cs" />
+    <Compile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchRepository.cs" />
+    <Compile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchEndpoint.cs" />
+    <Compile Include="Modules\Relationship\BaseTransversalArch\BaseTransversalArchPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\typings\site\" />

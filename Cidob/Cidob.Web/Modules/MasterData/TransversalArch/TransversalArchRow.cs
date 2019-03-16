@@ -13,6 +13,7 @@ namespace Cidob.MasterData.Entities
     [ConnectionKey("Default"), DisplayName("TransversalArch"), InstanceName("TransversalArch"), TwoLevelCached]
     [ReadPermission("MasterData:TransversalArch")]
     [ModifyPermission("MasterData:TransversalArch")]
+    [LookupScript("MasterData.TransversalArch")]
     public sealed class TransversalArchRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id Transversal Arch"), Identity]

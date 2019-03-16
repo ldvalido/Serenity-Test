@@ -7867,3 +7867,9 @@ section.content > .s-DataGrid {
 .s-Configuration-UserPrefixDialog .caption {
   width: 150px;
 }
+.s-Relationship-BaseTransversalArchDialog > .size {
+  width: 650px;
+}
+.s-Relationship-BaseTransversalArchDialog .caption {
+  width: 150px;
+}
