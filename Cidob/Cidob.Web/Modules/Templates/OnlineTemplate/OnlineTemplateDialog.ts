@@ -45,15 +45,16 @@ namespace Cidob.Templates {
         AddaptToNumber: number;
         IdOnlineTemplate: number;
 
-        
+
     }
     export class OnlineTemplate {
         Reference: string;
         IdAgency: string;
         Number: number;
-        Name: String;
-        Email: String;
+        Name: string;
+        Email: string;
         Age: string;
+        Entity: string;
         IdGender: number;
         IdBase: number;
         IdShape: number;
@@ -62,7 +63,7 @@ namespace Cidob.Templates {
         Quantity: number;
         Is34: boolean;
         Urgent: boolean;
-        constructor(Reference: String, IdAgency:String, Number: number, Name: String, Email: String, Age: string, Entity:string, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34:boolean, Urgent: boolean) {
+        constructor(Reference: string, IdAgency: string, Number: number, Name: string, Email: string, Age: string, Entity: string, IdGender: number, IdBase: number, IdShape: number, IdCover: number, Observations: string, Quantity: number, Is34: boolean, Urgent: boolean) {
             this.Reference = Reference;
             this.IdAgency = IdAgency;
             this.Number = Number;
@@ -80,16 +81,16 @@ namespace Cidob.Templates {
             this.Urgent = Urgent;
         }
     }
-    
+
     export class Data {
         cmbName: string;
         url: string;
-        idProperty:string;
+        idProperty: string;
         friendlyProperty: string;
         bodyData: string;
         allowBlank: boolean;
 
-        constructor(cmbName:string, url:string, bodyData:string, idProperty: string, friendlyProperty:string, allowBlank: boolean){
+        constructor(cmbName: string, url: string, bodyData: string, idProperty: string, friendlyProperty: string, allowBlank: boolean) {
             this.cmbName = cmbName;
             this.url = url;
             this.idProperty = idProperty;
@@ -97,7 +98,7 @@ namespace Cidob.Templates {
             this.bodyData = bodyData;
             this.allowBlank = allowBlank;
         }
-     }
+    }
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.responsive()
     @Serenity.Decorators.maximizable()
@@ -166,7 +167,7 @@ namespace Cidob.Templates {
 
         dialogOpen() {
             super.dialogOpen();
-            
+
             var metadata = this.getDictData();
             this.fillData(metadata, () => {
                 if (this.isEditMode()) {
@@ -200,11 +201,49 @@ namespace Cidob.Templates {
             $(btnFeaturedTemplateDelete).click(() => {
                 this.doFeaturedTemplateConfirmDelete(liFeaturedTemplates);
             });
-            $(this.cmbBase).on('change', ()  => {
+            $(this.cmbBase).on('change', () => {
                 this.fillTemplatesComponents(this.cmbBase.val());
             });
+            $(this.rdFootBoth).on('click', () => {
+                $(this.chkFootRight).prop('checked', false);
+                $(this.chkFootLeft).prop('checked', false);
+                $(this.chkFootRight).prop('disabled', true);
+                $(this.chkFootLeft).prop('disabled', true);
+                this.openTab(event, 'Both',['Ambos']);
+            });
+            $(this.rdFootSingle).on('click', () => {
+                $(this.chkFootRight).prop('checked', true);
+                $(this.chkFootLeft).prop('checked', true);
+
+                $(this.chkFootRight).prop('disabled', false);
+                $(this.chkFootLeft).prop('disabled', false);
+                this.openTab(event, 'Both',['Izquierdo','Derecho']);
+            });
+            $(this.chkFootLeft).on('click', () => {
+                var checkedSides = [];
+                if ((this.chkFootLeft).prop('checked')) {
+                    checkedSides.push('Izquierdo');
+                }
+                if ((this.chkFootRight).prop('checked')) {
+                    checkedSides.push('Derecho');
+                }
+                this.openTab(event, 'Both', checkedSides);
+            });
+
+            $(this.chkFootRight).on('click', () => {
+                var checkedSides = [];
+                if ((this.chkFootLeft).prop('checked')) {
+                    checkedSides.push('Izquierdo');
+                }
+                if ((this.chkFootRight).prop('checked')) {
+                    checkedSides.push('Derecho');
+                }
+                this.openTab(event, 'Both', checkedSides);
+            });
+
             this.fillFeaturedTemplates(liFeaturedTemplates);
             this.fillUserData();
+            this.rdFootBoth.click();
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
         }
 
@@ -212,12 +251,12 @@ namespace Cidob.Templates {
 
             var url = "/Services/Templates/FeaturedTemplate/Delete";
             $.post(
-            {
-                contentType: 'application/json',
-                url: url,
-                data: JSON.stringify({ EntityId: idFeaturedTemplate })
+                {
+                    contentType: 'application/json',
+                    url: url,
+                    data: JSON.stringify({ EntityId: idFeaturedTemplate })
 
-            });
+                });
         }
 
         doFeaturedTemplateConfirmDelete(liFeaturedTemplates: any) {
@@ -232,7 +271,7 @@ namespace Cidob.Templates {
             }
 
             if (lstToPerform.length > 0) {
-                Q.confirm("¿Está seguro de borrar estos elementos?", function() {
+                Q.confirm("¿Está seguro de borrar estos elementos?", function () {
                     for (var i = 0; i < lstToPerform.length; i++) {
                         self.doFeaturedTemplateDelete(lstToPerform[i]);
                     }
@@ -240,8 +279,8 @@ namespace Cidob.Templates {
                     $(liFeaturedTemplates).empty();
                     self.fillFeaturedTemplates(liFeaturedTemplates);
                 }, {
-                    title: 'Confirmación'
-                });
+                        title: 'Confirmación'
+                    });
 
             }
         }
@@ -266,11 +305,10 @@ namespace Cidob.Templates {
                     this.addFeaturedTemplate(liFeaturedTemplates, entity);
                 }
             });
-           
+
         }
 
-        post(url: string, filter: any, cb:any)
-        {
+        post(url: string, filter: any, cb: any) {
             $.post({
                 contentType: 'application/json',
                 url: url,
@@ -313,14 +351,14 @@ namespace Cidob.Templates {
                 success: (response: any) => {
                     alert(response.TotalCount);
                     switch (response.TotalCount) {
-                    case 0:
-                        break;
-                    case 1:
-                        //fill Data
-                        break;
-                    case 2:
-                        //chooseRecord();
-                        break;
+                        case 0:
+                            break;
+                        case 1:
+                            //fill Data
+                            break;
+                        case 2:
+                            //chooseRecord();
+                            break;
                     }
                 }
             })
@@ -464,7 +502,7 @@ namespace Cidob.Templates {
                 data: JSON.stringify({
                     Take: 1,
                     ContainsText: Cidob.Authorization.userDefinition.UserId,
-                    IncludeColumns: ['IdUserPrefix','IdUserDisplayName','Prefix','TicketNumber']
+                    IncludeColumns: ['IdUserPrefix', 'IdUserDisplayName', 'Prefix', 'TicketNumber']
                 }),
                 success: (data: any) => {
                     var entity = data.Entities[0];
@@ -599,7 +637,7 @@ namespace Cidob.Templates {
             ctrl.addClass(returnValue ? 'valid' : 'error');
             return returnValue;
         }
-    
+
         isValid(): boolean {
             var returnValue = false;
             var isNameValid = this.hasValue(this.txtName);
@@ -609,7 +647,7 @@ namespace Cidob.Templates {
             var isShapeValid = this.hasValue(this.cmbShape);
             var isCoverValid = this.hasValue(this.cmbCover);
 
-            returnValue = 
+            returnValue =
                 isNameValid &&
                 isAgeValid &&
                 isGenderValid &&
@@ -619,7 +657,7 @@ namespace Cidob.Templates {
             console.log(returnValue);
             return returnValue;
         }
-        saveFeet(data:any, callback: any, form: any) {
+        saveFeet(data: any, callback: any, form: any) {
             var onlineFeet = new OnlineFeet(
                 parseInt(this.cmbInternalMedial.val()),
                 parseInt(this.cmbExternalMedial.val()),
@@ -641,7 +679,7 @@ namespace Cidob.Templates {
                 parseInt(this.cmbDigital.val()),
                 parseInt(this.txtAddaptToNumber.val()),
                 data.EntityId
-                );
+            );
             $.post({
                 url: !this.isEditMode() ? '/Services/Templates/OnlineFeet/Create' : '/Services/Templates/OnlineFeet/Update',
                 contentType: 'application/json',
@@ -690,9 +728,9 @@ namespace Cidob.Templates {
                     this.chkUrgent.prop("checked")
                 );
                 $.post({
-                    url: !this.isEditMode() ? '/Services/Templates/OnlineTemplate/Create': '/Services/Templates/OnlineTemplate/Update',
+                    url: !this.isEditMode() ? '/Services/Templates/OnlineTemplate/Create' : '/Services/Templates/OnlineTemplate/Update',
                     contentType: 'application/json',
-                    data: JSON.stringify({ Entity: onlineTemplate, EntityId: this.entity.IdOnlineTemplate}),
+                    data: JSON.stringify({ Entity: onlineTemplate, EntityId: this.entity.IdOnlineTemplate }),
                     success: (data: any) => {
                         self.saveFeet(data, callback, self);
                         self.element.dialog().dialog('close');
@@ -702,4 +740,30 @@ namespace Cidob.Templates {
                 Q.notifyError(Q.text("Validation.InvalidFormMessage"));
             }
         }
+        openTab(evt, footSide, textSideVisible) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                if (textSideVisible.includes(tablinks[i].outerText)) {
+                    tablinks[i].style.display = "block";
+                    tablinks[i].hidden = false;
+                } else {
+                    tablinks[i].style.display = "none";
+                    tablinks[i].hidden = true;
+                }
+            }
+            document.getElementById(footSide).style.display = "block";
+
+        }
+    }
 }

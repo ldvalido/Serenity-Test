@@ -10,7 +10,6 @@
     <div class="container s-Form">
         <div class="row">
             <div class="col-md-4">
-
                 <div class="box">
                     <div class="form-group row">
                         <label for="referencia" class="col-xs-4 col-form-label">ID</label>
@@ -121,9 +120,10 @@
                             </div>
                         </div>
                         <div class="col-md-4">
+                            
                             <div class="form-check text-center">
                                 <label class="form-check-label" for="pies">
-                                    <input class="form-check-input" checked="" type="radio" name="status" id="rdFootBoth">
+                                    <input class="form-check-input" checked="checked" type="radio" name="status" id="rdFootBoth">
                                     Ambos pies
                                 </label>
                             </div>
@@ -138,7 +138,7 @@
                                     <div class="col-md-6">
                                         <div class="form-check text-center">
                                             <label class="form-check-label" for="izq">
-                                                <input class="form-check-input" type="checkbox" name="status" id="chkFootLeft">
+                                                <input class="form-check-input" type="checkbox" disabled="disabled" name="status" id="chkFootLeft">
                                                 Izq
                                             </label>
                                         </div>
@@ -146,7 +146,7 @@
                                     <div class="col-md-6">
                                         <div class="form-check text-center">
                                             <label class="form-check-label" for="der">
-                                                <input class="form-check-input" type="checkbox" name="status" id="chkFootRight">
+                                                <input class="form-check-input" type="checkbox" disabled="disabled" name="status" id="chkFootRight">
                                                 Der
                                             </label>
                                         </div>
@@ -161,132 +161,397 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <h4>Ambos</h4>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Medial Interno</label>
-                                        <div class="col-md-7">
-                                            <select class="form-control" id="cmbInternalMedial" disabled></select>
+                                    <div class="tab">
+                                        <button disabled class="tablinks">Ambos</button>
+                                        <button disabled class="tablinks" hidden>Izquierdo</button>
+                                        <button disabled class="tablinks" hidden>Derecho</button>
+                                    </div>
+
+                                    <div id="Both" class="tabcontent">
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Medial Interno</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbInternalMedial" disabled></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtInternalMedial" value="0">
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <input class="form-control" type="text" id="txtInternalMedial" value="0">
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Medial Externo</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbExternalMedial" disabled></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtExternalMedial" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Metatarsal</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbOlive"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtOlive" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">C.T</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbCt"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtCt" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">R.A</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbRa"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtRa" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Talon</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbHeel"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtHeel" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Barra MTT</label>
+                                            <div class="col-md-3 text-center">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkSingle">
+                                                Simple
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkDouble">
+                                                Doble
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Barras</label>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar1">
+                                                1
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar2">
+                                                2
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar3">
+                                                3
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar4">
+                                                4
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar5">
+                                                5
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Cuello</label>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck1">
+                                                1
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck2">
+                                                2
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck3">
+                                                3
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck4">
+                                                4
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck5">
+                                                5
+                                            </div>
+                                            <div class="col-md-2 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeckBack">
+                                                Cuello Atras
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Apoyo Digital</label>
+                                            <div class="col-md-3">
+                                                <select class="form-control" id="cmbDigital"></select>
+                                            </div>
+                                            <label for="" class="col-md-3 col-form-label">Adaptar a numero</label>
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" id="txtAddaptToNumber" value="0">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Medial Externo</label>
-                                        <div class="col-md-7">
-                                            <select class="form-control" id="cmbExternalMedial" disabled></select>
+
+                                    <div id="Left" class="tabcontent">
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Medial Interno</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbInternalMedial" disabled></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtInternalMedial" value="0">
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <input class="form-control" type="text" id="txtExternalMedial" value="0">
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Medial Externo</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbExternalMedial" disabled></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtExternalMedial" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Metatarsal</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbOlive"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtOlive" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">C.T</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbCt"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtCt" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">R.A</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbRa"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtRa" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Talon</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbHeel"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtHeel" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Barra MTT</label>
+                                            <div class="col-md-3 text-center">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkSingle">
+                                                Simple
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkDouble">
+                                                Doble
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Barras</label>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar1">
+                                                1
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar2">
+                                                2
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar3">
+                                                3
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar4">
+                                                4
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar5">
+                                                5
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Cuello</label>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck1">
+                                                1
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck2">
+                                                2
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck3">
+                                                3
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck4">
+                                                4
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck5">
+                                                5
+                                            </div>
+                                            <div class="col-md-2 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeckBack">
+                                                Cuello Atras
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Apoyo Digital</label>
+                                            <div class="col-md-3">
+                                                <select class="form-control" id="cmbDigital"></select>
+                                            </div>
+                                            <label for="" class="col-md-3 col-form-label">Adaptar a numero</label>
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" id="txtAddaptToNumber" value="0">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Metatarsal</label>
-                                        <div class="col-md-7">
-                                            <select class="form-control" id="cmbOlive"></select>
+
+                                    <div id="Right" class="tabcontent">
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Medial Interno</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbInternalMedial" disabled></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtInternalMedial" value="0">
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <input class="form-control" type="text" id="txtOlive" value="0">
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Medial Externo</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbExternalMedial" disabled></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtExternalMedial" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Metatarsal</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbOlive"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtOlive" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">C.T</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbCt"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtCt" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">R.A</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbRa"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtRa" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Talon</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="cmbHeel"></select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" type="text" id="txtHeel" value="0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Barra MTT</label>
+                                            <div class="col-md-3 text-center">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkSingle">
+                                                Simple
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkDouble">
+                                                Doble
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Barras</label>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar1">
+                                                1
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar2">
+                                                2
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar3">
+                                                3
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar4">
+                                                4
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkBar5">
+                                                5
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Cuello</label>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck1">
+                                                1
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck2">
+                                                2
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck3">
+                                                3
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck4">
+                                                4
+                                            </div>
+                                            <div class="col-md-1 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeck5">
+                                                5
+                                            </div>
+                                            <div class="col-md-2 text-center checkbox">
+                                                <input class="form-check-input" type="checkbox" name="" id="chkNeckBack">
+                                                Cuello Atras
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-md-3 col-form-label">Apoyo Digital</label>
+                                            <div class="col-md-3">
+                                                <select class="form-control" id="cmbDigital"></select>
+                                            </div>
+                                            <label for="" class="col-md-3 col-form-label">Adaptar a numero</label>
+                                            <div class="col-md-3">
+                                                <input class="form-control" type="text" id="txtAddaptToNumber" value="0">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">C.T</label>
-                                        <div class="col-md-7">
-                                            <select class="form-control" id="cmbCt"></select>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <input class="form-control" type="text" id="txtCt" value="0">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">R.A</label>
-                                        <div class="col-md-7">
-                                            <select class="form-control" id="cmbRa"></select>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <input class="form-control" type="text" id="txtRa" value="0">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Talon</label>
-                                        <div class="col-md-7">
-                                            <select class="form-control" id="cmbHeel"></select>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <input class="form-control" type="text" id="txtHeel" value="0">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Barra MTT</label>
-                                        <div class="col-md-3 text-center">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkSingle">
-                                            Simple
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkDouble">
-                                            Doble
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Barras</label>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkBar1">
-                                            1
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkBar2">
-                                            2
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkBar3">
-                                            3
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkBar4">
-                                            4
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkBar5">
-                                            5
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Cuello</label>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkNeck1">
-                                            1
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkNeck2">
-                                            2
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkNeck3">
-                                            3
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkNeck4">
-                                            4
-                                        </div>
-                                        <div class="col-md-1 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkNeck5">
-                                            5
-                                        </div>
-                                        <div class="col-md-2 text-center checkbox">
-                                            <input class="form-check-input" type="checkbox" name="" id="chkNeckBack">
-                                            Cuello Atras
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-3 col-form-label">Apoyo Digital</label>
-                                        <div class="col-md-3">
-                                            <select class="form-control" id="cmbDigital"></select>
-                                        </div>
-                                        <label for="" class="col-md-3 col-form-label">Adaptar a numero</label>
-                                        <div class="col-md-3">
-                                            <input class="form-control" type="text" id="txtAddaptToNumber" value="0">
-                                        </div>
-                                    </div>
+
                                     <hr>
 
                                     <div class="form-group input-group-sm row">
