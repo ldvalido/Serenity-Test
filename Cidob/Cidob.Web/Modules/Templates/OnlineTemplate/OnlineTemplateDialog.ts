@@ -209,7 +209,7 @@ namespace Cidob.Templates {
                 $(this.chkFootLeft).prop('checked', false);
                 $(this.chkFootRight).prop('disabled', true);
                 $(this.chkFootLeft).prop('disabled', true);
-                this.openTab(event, 'Both',['Ambos']);
+                this.openTab(event, 'Both', ['Ambos']);
             });
             $(this.rdFootSingle).on('click', () => {
                 $(this.chkFootRight).prop('checked', true);
@@ -217,7 +217,7 @@ namespace Cidob.Templates {
 
                 $(this.chkFootRight).prop('disabled', false);
                 $(this.chkFootLeft).prop('disabled', false);
-                this.openTab(event, 'Both',['Izquierdo','Derecho']);
+                this.openTab(event, 'Both', ['Izquierdo', 'Derecho']);
             });
             $(this.chkFootLeft).on('click', () => {
                 var checkedSides = [];
@@ -240,11 +240,25 @@ namespace Cidob.Templates {
                 }
                 this.openTab(event, 'Both', checkedSides);
             });
+            this.doValidateByNumber($(this.cmbBase), $(this.txtOlive), '/services/MasterData/Base/Retrieve');
 
             this.fillFeaturedTemplates(liFeaturedTemplates);
             this.fillUserData();
             this.rdFootBoth.click();
             this.element.closest(".ui-dialog").find(".ui-icon-maximize-window").click();
+        }
+
+        doValidateByNumber(cmb, txt, url) {
+            var self = this;
+            $(cmb).on('change', function () {
+                self.post(url, { 'EntityId': this.value }, function (cb) {
+
+                    $(txt).attr({
+                        min: cb.Entity.From,
+                        max: cb.Entity.To
+                    });
+                });
+            });
         }
 
         doFeaturedTemplateDelete(idFeaturedTemplate: number) {
@@ -756,10 +770,8 @@ namespace Cidob.Templates {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
                 if (textSideVisible.includes(tablinks[i].outerText)) {
                     tablinks[i].style.display = "block";
-                    tablinks[i].hidden = false;
                 } else {
                     tablinks[i].style.display = "none";
-                    tablinks[i].hidden = true;
                 }
             }
             document.getElementById(footSide).style.display = "block";
